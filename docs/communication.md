@@ -50,7 +50,10 @@ Ismeretlen további mezők figyelmen kívül hagyhatók. Ismeretlen type hibás.
 
 Sorrend: start → load → execute → fetch ismételve a teljes eredményig.
 Ezután új load engedett. A kliens minden eredményt lekér az új load előtt;
-az eszköz új load esetén eldobja az előző eredménytárat. Az execute egyszer
+az eszköz batch_pending hibával elutasítja az új load-ot, amíg minden
+eredményindex nem szerepelt fetch válaszban. Részleges, ismételt vagy csak az
+utolsó oldalt lekérő fetch nem oldja fel a tiltást. Teljes lekérés után az új
+load lecseréli az előző eredménytárat. Az execute egyszer
 engedett adagonként; minden következő execute új load-ot igényel.
 A load visszaigazolása garantálja az adag befogadását, az execute ack a
 feldolgozás végét. Az execute alatt nincs küldés/olvasás az eszközön.
@@ -118,7 +121,10 @@ nem használhatók. A fájl csak run_complete esetén teljes.
 
 A start és execute közé load kell teljes 20 mintás ablakkal. Másolható,
 teljes kérés- és válaszpéldákat a fenti demo exportja tartalmaz.
-Saját bemenet: `--input windows.jsonl`, soronként egy window objektum;
+Saját bemenet: `--input windows.jsonl`, soronként egy window objektum.
+Élő módban a teljes bemenet lehet nyolcnál több ablak is: a kliens egyablakos
+adagokban mindet feldolgozza. A 16384 byte-os keretkorlát minden egyes load-ra
+érvényes; a nyolcas teljes bemeneti korlát csak a benchmark munkakészletéé;
 az alak a `gearshift.client.example_window` függvényből is előállítható.
 
 ## Elfogadási ellenőrzés

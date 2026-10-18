@@ -76,7 +76,7 @@ class Client:
         self.last_batch_end = time.monotonic()
 
     def run(self, windows):
-        if not 1 <= len(windows) <= MAX_BATCH or any(
+        if not windows or (self.mode == 'benchmark' and len(windows) > MAX_BATCH) or any(
                 not isinstance(w, dict) or not identifier(w.get('window_id'))
                 or not identifier(w.get('trip_id')) for w in windows):
             raise ProtocolError('invalid_input_identity')
@@ -102,7 +102,7 @@ def main():
     parser.add_argument('--port', type=int, default=8765)
     parser.add_argument('--mode', choices=('live', 'benchmark'), default='live')
     parser.add_argument('--timeout', type=float, default=5)
-    parser.add_argument('--input', help='JSON Lines windows; bounded to eight windows')
+    parser.add_argument('--input', help='JSON Lines windows; benchmark working set is at most eight windows')
     parser.add_argument('--output', default='simulation.jsonl')
     args = parser.parse_args()
     if args.timeout <= 0:
@@ -116,16 +116,18 @@ def main():
                     line = source.readline(16385)
                     if not line:
                         break
-                    if len(line) > 16384 or len(windows) == MAX_BATCH:
+                    if len(line) > 16384 or (args.mode == 'benchmark' and len(windows) == MAX_BATCH):
                         raise ProtocolError('input_limit_exceeded')
                     windows.append(json.loads(line))
         else:
             windows = [example_window(i) for i in range(3)]
         if not windows:
             raise ProtocolError('empty_input')
-        # Check the full load frame before opening the connection.
-        encode(dict(v=1, type='load', windows=windows, batch_id='b', request_id='1',
-                    run_id='x' * 32, mode=args.mode))
+        # Live sends one window per load; only benchmark loads the whole working set.
+        batches = ([w] for w in windows) if args.mode == 'live' else [windows]
+        for batch in batches:
+            encode(dict(v=1, type='load', windows=batch, batch_id='b', request_id='1',
+                        run_id='x' * 32, mode=args.mode))
         if args.demo:
             sock, peer = socket.socketpair()
             def simulate():

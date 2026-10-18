@@ -2,8 +2,12 @@ import copy
 import io
 import json
 import socket
+import subprocess
+import sys
+import tempfile
 import threading
 import unittest
+from pathlib import Path
 from gearshift.client import Client, example_window
 from gearshift.protocol import MAX_LINE, ProtocolError, Wire, preprocess
 from gearshift.simulator import Device, serve_connection
@@ -36,6 +40,56 @@ class CommunicationTests(unittest.TestCase):
                     self.assertEqual(sum(r['phase'] == 'measured' for r in results), 12000)
                     self.assertTrue(all(r['uart_during_execution'] is False for r in
                                         [x['message'] for x in rows if x['event'] == 'receive' and 'uart_during_execution' in x['message']]))
+
+    def test_live_cli_processes_more_than_eight_windows(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source, output = Path(directory) / 'input.jsonl', Path(directory) / 'output.jsonl'
+            source.write_text(''.join(json.dumps(example_window(i)) + '\n' for i in range(25)))
+            result = subprocess.run([sys.executable, '-m', 'gearshift.client', '--demo',
+                                     '--input', str(source), '--output', str(output)],
+                                    capture_output=True, text=True, timeout=10)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            rows = [json.loads(line) for line in output.read_text().splitlines()]
+            self.assertEqual([r['window_id'] for r in rows if r['event'] == 'result'],
+                             [f'w{i}' for i in range(25)])
+            self.assertEqual(sum(r['event'] == 'batch_end' for r in rows), 25)
+            self.assertEqual(rows[-1]['event'], 'run_complete')
+
+    def test_benchmark_working_set_remains_bounded(self):
+        a, b = socket.socketpair()
+        with a, b:
+            output = io.StringIO()
+            with self.assertRaisesRegex(ProtocolError, 'invalid_input_identity'):
+                Client(a, output, 'benchmark').run([example_window(i) for i in range(9)])
+            self.assertEqual(output.getvalue(), '')
+
+    def test_load_preserves_unfetched_results(self):
+        device = Device()
+        def send(kind, **fields):
+            return device.handle(dict(v=1, request_id='1', run_id='r', mode='benchmark',
+                                      type=kind, **fields))
+        send('start')
+        send('load', batch_id='a', windows=[example_window(0)])
+        send('execute', batch_id='a', count=100, period_ms=10)
+        original = copy.deepcopy(device.records)
+        def assert_pending():
+            reply = send('load', batch_id='b', windows=[example_window(1)])
+            self.assertEqual(reply.get('code'), 'batch_pending')
+            self.assertEqual(device.batch_id, 'a')
+            self.assertEqual(device.records, original)
+        assert_pending()
+        # Fetching the final page alone must not conceal earlier gaps.
+        send('fetch', batch_id='a', offset=96)
+        assert_pending()
+        send('fetch', batch_id='a', offset=0)
+        send('fetch', batch_id='a', offset=0)
+        assert_pending()
+        for offset in range(16, 96, 16):
+            self.assertEqual(send('fetch', batch_id='a', offset=offset)['type'], 'results')
+        self.assertEqual(send('load', batch_id='b', windows=[example_window(1)])['type'], 'ack')
+        send('execute', batch_id='b', count=100, period_ms=10)
+        self.assertEqual(send('load', batch_id='c', windows=[example_window(2)]).get('code'),
+                         'batch_pending')
 
     def test_malformed_oversized_version_and_disconnect(self):
         for data, code in [(b'{oops}\n', 'invalid_json'), (b'NaN\n', 'invalid_json'),
@@ -98,6 +152,8 @@ class CommunicationTests(unittest.TestCase):
         self.assertEqual([r['status'] for r in device.records[:4]], ['late', 'missed', 'missed', 'late'])
         self.assertEqual(len(device.records), 100)
         self.assertEqual(device.records[3]['scheduled_ms'], 30)
+        for offset in range(0, 100, 16):
+            send('fetch', batch_id='b', offset=offset)
         windows[0]['samples'][0][0] = -1
         send('load', batch_id='c', windows=windows)
         send('execute', batch_id='c', period_ms=10, count=100)

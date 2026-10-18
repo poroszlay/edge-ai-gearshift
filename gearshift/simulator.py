@@ -12,6 +12,7 @@ class Device:
         self.windows = []
         self.records = []
         self.executed = False
+        self.fetched = set()
 
     def response(self, request, kind, **fields):
         return dict(v=VERSION, type=kind, request_id=request.get('request_id'),
@@ -39,13 +40,14 @@ class Device:
             windows = r.get('windows')
             if not identifier(r.get('batch_id')) or not isinstance(windows, list) or not 1 <= len(windows) <= MAX_BATCH:
                 return error('invalid_batch')
-            if self.windows and not self.executed:
+            if self.windows and (not self.executed or len(self.fetched) < len(self.records)):
                 return error('batch_pending')
             ids = [w.get('window_id') if isinstance(w, dict) else None for w in windows]
             if any(not identifier(i) for i in ids) or len(set(ids)) != len(ids):
                 return error('invalid_identity')
             self.windows, self.batch_id = windows, r['batch_id']
             self.records, self.executed = [], False
+            self.fetched.clear()
             return self.response(r, 'ack', batch_id=self.batch_id, count=len(windows))
         if op == 'execute':
             if not self.windows or self.executed or r.get('batch_id') != self.batch_id:
@@ -82,6 +84,7 @@ class Device:
             if not self.executed or r.get('batch_id') != self.batch_id or type(offset) is not int or not 0 <= offset < len(self.records):
                 return error('invalid_offset')
             page = self.records[offset:offset + 16]
+            self.fetched.update(range(offset, offset + len(page)))
             return self.response(r, 'results', batch_id=self.batch_id, offset=offset,
                                  records=page, total=len(self.records))
         return error('unknown_command')
