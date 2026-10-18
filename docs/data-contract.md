@@ -90,3 +90,6 @@ Forráskód, konfiguráció és kis referenciaállományok Gitbe kerülnek.
 A teljes generált adat, modell és mérési eredmény reprodukálási leírással,
 verzióval és ellenőrzőösszeggel legyen azonosítható; nagy generált állományokat
 ne adj automatikusan a forráskódhoz.
+
+A kommunikáció v1 mezősémáját, állapotgépét és korlátait a
+[JSON Lines kommunikációs szerződés](communication.md) rögzíti.

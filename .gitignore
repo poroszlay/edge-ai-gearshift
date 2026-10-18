@@ -3,3 +3,4 @@ skills-lock.json
 docs/issues/
 __pycache__/
 *.py[cod]
+simulation*.jsonl
