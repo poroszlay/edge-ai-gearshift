@@ -1,0 +1,7 @@
+esptool.py v4.12.0
+Serial port /dev/ttyUSB0
+
+A fatal error occurred: Could not open /dev/ttyUSB0, the port is busy or doesn't exist.
+([Errno 13] could not open port /dev/ttyUSB0: [Errno 13] Permission denied: '/dev/ttyUSB0')
+
+Hint: Try to add user into dialout or uucp group.
