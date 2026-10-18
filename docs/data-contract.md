@@ -1,5 +1,8 @@
 # Közös adat- és állapotszerződés
 
+A PC-s szabályreferencia nyilvános interfészét, konkrét mezőit és
+hibastátuszait a [szabályreferencia szerződése](rule-reference.md) rögzíti.
+
 Az alábbi döntéseket a felhasználó a tervezési interjúban elfogadta.
 A forrásspecifikáció a `context/projektmunka_elorehaladasi_dokumentacio_masodik_het.md`.
 
