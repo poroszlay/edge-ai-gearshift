@@ -217,6 +217,34 @@ class CommunicationTests(unittest.TestCase):
                 self.assertEqual(self.result_rows[-1]['event'], 'run_complete')
                 self.assertEqual(sum(row['event'] == 'result' for row in self.result_rows), 1)
 
+    def test_result_extensions_do_not_override_export_metadata(self):
+        base = dict(index=0, window_id='w0', batch_id='live-0', scheduled_ms=0)
+        extensions = dict(simulated=False, phase='other', series=99, period_ms=999,
+                          mode='benchmark', run_id='other-run', v=999, event='failure',
+                          host_elapsed_ms=-1, self='other', future_field={'nested': True})
+        for fields in [dict(status='ok', processing_ms=3, decision='hold', decision_source='simulator_stub'),
+                       dict(status='late', processing_ms=51, decision='hold', decision_source='simulator_stub'),
+                       dict(status='missed'), dict(status='invalid_window', error='invalid_signals')]:
+            original = dict(base, **fields)
+            for extra in [dict(simulated=True), *[{k: v} for k, v in extensions.items()], extensions]:
+                with self.subTest(status=fields['status'], extra=extra):
+                    self.run_with_result(dict(original, **extra))
+                    rows = self.result_rows
+                    self.assertEqual(rows[-1]['event'], 'run_complete')
+                    self.assertNotIn('failure', [row['event'] for row in rows])
+                    result, = [row for row in rows if row['event'] == 'result']
+                    self.assertEqual({k: result[k] for k in original}, original)
+                    self.assertEqual(result['phase'], 'live')
+                    self.assertEqual(result['series'], 0)
+                    self.assertEqual(result['period_ms'], 50)
+                    self.assertTrue(all(row['simulated'] is True and row['mode'] == 'live'
+                                        and row['v'] == 1 and row['run_id'] == rows[0]['run_id']
+                                        and row['host_elapsed_ms'] >= 0 for row in rows))
+                    self.assertNotIn('future_field', result)
+                    self.assertNotIn('self', result)
+                    received = [row['message'] for row in rows if row['event'] == 'receive'][-1]
+                    self.assertEqual(received['records'], [dict(original, **extra)])
+
     def test_wrong_pairing_is_rejected(self):
         a, b = socket.socketpair()
         with a, b:

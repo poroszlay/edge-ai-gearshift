@@ -75,7 +75,11 @@ class Client:
                 if record.get('index') != i or record.get('window_id') != windows[i % len(windows)]['window_id'] or record.get('batch_id') != batch_id:
                     self.log('failure', error='result_identity_mismatch', request_id=str(self.sequence))
                     raise ProtocolError('result_identity_mismatch')
-                self.log('result', phase=phase, series=series, period_ms=period, **record)
+                # Wire extensions must not become arguments or metadata in the export.
+                result = {key: record[key] for key in (
+                    'index', 'window_id', 'batch_id', 'scheduled_ms', 'status',
+                    'processing_ms', 'decision', 'decision_source', 'error') if key in record}
+                self.log('result', phase=phase, series=series, period_ms=period, **result)
             offset += len(records)
         self.log('batch_end', batch_id=batch_id, count=count)
         self.last_batch_end = time.monotonic()

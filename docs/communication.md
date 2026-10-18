@@ -114,7 +114,10 @@ A receive uart_wait_ms hostoldali kérés-válasz várakozás, az execute eseté
 feldolgozásra várást is tartalmazhat; nem MCU-feldolgozási idő. Az
 adagközi szünetet nem adjuk a processing_ms-hoz. A napló időadatainak
 szimulációs eredete minden sorban jelölt, valódi hardveres eredményként
-nem használhatók. A fájl csak run_complete esetén teljes.
+nem használhatók. A result exportsor csak a fent dokumentált eredménymezőket emeli ki a
+rekordból; az extra rekordmezők nem írhatják át a kliens metaadatait és
+figyelmen kívül maradnak. Az eredeti válasz a receive esemény message
+objektumában továbbra is megmarad. A fájl csak run_complete esetén teljes.
 
 ## Példa
 
