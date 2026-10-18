@@ -93,6 +93,37 @@ def validate_window(window):
     return None
 
 
+def validate_result(record, period_ms):
+    """Validate a simulator result before it can become a successful export row."""
+    if not isinstance(record, dict):
+        return 'result_schema_mismatch'
+    if (type(record.get('index')) is not int or record['index'] < 0
+            or not identifier(record.get('window_id')) or not identifier(record.get('batch_id'))
+            or type(record.get('scheduled_ms')) is not int
+            or record['scheduled_ms'] != record['index'] * period_ms):
+        return 'result_schema_mismatch'
+    status = record.get('status')
+    if status in ('ok', 'late'):
+        duration = record.get('processing_ms')
+        if (not number(duration) or duration < 0
+                or (duration > period_ms) != (status == 'late')
+                or record.get('decision') != 'hold'
+                or record.get('decision_source') != 'simulator_stub'
+                or 'error' in record):
+            return 'result_schema_mismatch'
+    elif status in ('missed', 'invalid_window'):
+        if any(key in record for key in ('processing_ms', 'decision', 'decision_source')):
+            return 'result_schema_mismatch'
+        if status == 'invalid_window':
+            if not isinstance(record.get('error'), str) or not record['error']:
+                return 'result_schema_mismatch'
+        elif 'error' in record:
+            return 'result_schema_mismatch'
+    else:
+        return 'result_schema_mismatch'
+    return None
+
+
 def preprocess(window):
     error = validate_window(window)
     if error:

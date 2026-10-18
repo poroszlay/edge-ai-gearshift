@@ -159,6 +159,64 @@ class CommunicationTests(unittest.TestCase):
         send('execute', batch_id='c', period_ms=10, count=100)
         self.assertTrue(all(r['status'] == 'invalid_window' and 'decision' not in r for r in device.records))
 
+    def run_with_result(self, record):
+        # Valid envelopes and acknowledgements isolate result validation on the real wire.
+        a, b = socket.socketpair()
+        output = io.StringIO()
+        with a, b:
+            client = Client(a, output, 'live')
+            device = Device()
+            for sequence, (kind, fields) in enumerate([
+                    ('start', {}),
+                    ('load', dict(batch_id='live-0', windows=[example_window(0)])),
+                    ('execute', dict(batch_id='live-0', count=1, period_ms=50)),
+                    ('fetch', dict(batch_id='live-0', offset=0))], 1):
+                reply = device.handle(dict(v=1, type=kind, request_id=str(sequence),
+                                           run_id=client.run_id, mode='live', **fields))
+                if kind == 'fetch':
+                    reply['records'] = [record]
+                Wire(b).send(reply)
+            try:
+                client.run([example_window(0)])
+            finally:
+                self.result_rows = [json.loads(line) for line in output.getvalue().splitlines()]
+
+    def test_invalid_result_cannot_complete_run(self):
+        valid = dict(index=0, window_id='w0', batch_id='live-0', scheduled_ms=0,
+                     status='ok', processing_ms=3, decision='hold', decision_source='simulator_stub')
+        cases = [None, [], {'index': 0, 'window_id': 'w0', 'batch_id': 'live-0'}]
+        cases += [{k: v for k, v in valid.items() if k != missing}
+                  for missing in valid]
+        cases += [dict(valid, **change) for change in [
+            {'status': 'unknown'}, {'status': []}, {'scheduled_ms': True},
+            {'scheduled_ms': -1}, {'scheduled_ms': 50}, {'index': False},
+            {'processing_ms': -1}, {'processing_ms': True}, {'processing_ms': '3'},
+            {'processing_ms': 51}, {'status': 'late'}, {'decision': None},
+            {'decision': 'unknown'}, {'decision_source': ''}, {'error': 'invalid_signals'},
+            {'status': 'missed'}, {'status': 'invalid_window', 'error': 'invalid_signals'}]]
+        cases += [dict(index=0, window_id='w0', batch_id='live-0', scheduled_ms=0,
+                       status='invalid_window', **fields)
+                  for fields in [{}, {'error': ''}, {'error': 3}]]
+        for record in cases:
+            with self.subTest(record=record):
+                with self.assertRaises(ProtocolError):
+                    self.run_with_result(record)
+                events = [row['event'] for row in self.result_rows]
+                self.assertNotIn('run_complete', events)
+                self.assertNotIn('result', events)
+                self.assertIn('failure', events)
+
+    def test_valid_result_statuses_complete_run(self):
+        base = dict(index=0, window_id='w0', batch_id='live-0', scheduled_ms=0)
+        for fields in [dict(status='ok', processing_ms=0, decision='hold', decision_source='simulator_stub'),
+                       dict(status='ok', processing_ms=50, decision='hold', decision_source='simulator_stub'),
+                       dict(status='late', processing_ms=51, decision='hold', decision_source='simulator_stub'),
+                       dict(status='missed'), dict(status='invalid_window', error='invalid_signals')]:
+            with self.subTest(status=fields['status']):
+                self.run_with_result(dict(base, **fields))
+                self.assertEqual(self.result_rows[-1]['event'], 'run_complete')
+                self.assertEqual(sum(row['event'] == 'result' for row in self.result_rows), 1)
+
     def test_wrong_pairing_is_rejected(self):
         a, b = socket.socketpair()
         with a, b:

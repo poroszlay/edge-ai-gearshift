@@ -81,7 +81,14 @@ Minden eredmény: index (az execute-on belüli ütemezési sorszám), window_id,
 batch_id, scheduled_ms, status. A kliens ellenőrzi az ablakok sorrendjét.
 A státusz ok/late esetén processing_ms, decision és decision_source is van;
 missed esetén nincs feldolgozási idő vagy döntés; invalid_window esetén error
-adja az okot. A szimulátor döntése mindig hold, decision_source=simulator_stub.
+adja az okot, nem üres sztringként. Az index és scheduled_ms nemnegatív egész
+(bool nem megengedett); scheduled_ms=index×period_ms. A processing_ms véges,
+nemnegatív szám; ok esetén legfeljebb period_ms, late esetén annál nagyobb.
+Missed és invalid_window rekordban processing_ms, decision és decision_source
+tiltott; error csak invalid_window esetén megengedett és kötelező.
+A szimulátor döntése mindig hold, decision_source=simulator_stub.
+A kliens ezt a szimulációs eredménysémát is ellenőrzi; hiányzó, hibás vagy
+ellentmondó mező esetén failure eseménnyel és hibával leáll, run_complete nélkül.
 Ez nem szabályreferencia, tanult modell vagy portolási helyesség igazolása.
 A processing_ms alapértéke 3, a szimulátor `--duration-ms` opciójával állítható,
 virtuális idő, nem a PC végrehajtási ideje. simulated_memory_bytes az ablakok

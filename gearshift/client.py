@@ -6,7 +6,7 @@ import sys
 import threading
 import time
 import uuid
-from .protocol import MAX_BATCH, VERSION, ProtocolError, Wire, encode, identifier
+from .protocol import MAX_BATCH, VERSION, ProtocolError, Wire, encode, identifier, validate_result
 from .simulator import serve_connection
 
 
@@ -68,7 +68,12 @@ class Client:
             if reply.get('batch_id') != batch_id or reply.get('offset') != offset or reply.get('total') != count or not isinstance(records, list) or not 1 <= len(records) <= min(16, count - offset):
                 raise ProtocolError('result_page_mismatch')
             for i, record in enumerate(records, offset):
+                error = validate_result(record, period)
+                if error:
+                    self.log('failure', error=error, request_id=str(self.sequence))
+                    raise ProtocolError(error)
                 if record.get('index') != i or record.get('window_id') != windows[i % len(windows)]['window_id'] or record.get('batch_id') != batch_id:
+                    self.log('failure', error='result_identity_mismatch', request_id=str(self.sequence))
                     raise ProtocolError('result_identity_mismatch')
                 self.log('result', phase=phase, series=series, period_ms=period, **record)
             offset += len(records)
