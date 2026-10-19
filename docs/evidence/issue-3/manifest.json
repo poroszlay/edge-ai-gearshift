@@ -1,0 +1,36 @@
+{
+  "config": {
+    "duration_s": 120,
+    "noise_s": 0.03,
+    "noise_u": 0.005,
+    "noise_v": 0.15,
+    "noisy_variants": 1,
+    "period_samples": 240,
+    "runs_per_type": 40,
+    "seed": 20261019
+  },
+  "dataset_id": "7537958c902a6c325507fa3f3b2e56ff9000a9ca9824b2e3d5b27b26098f7e4e",
+  "generator": {
+    "sha256": "c130c44ef3effd96abb4974aea5f25ab48bad9356bd18b9c50140da26582319e",
+    "version": "synthetic-v1"
+  },
+  "labeler": {
+    "sha256": "01699ddd70f04b9399dde7a0fdde0e67a32fecb0f506de12a34a3fa55ef77607",
+    "version": "rule-reference-v1"
+  },
+  "python_version": "3.13.5",
+  "schema_version": "dataset-v1",
+  "sha256": {
+    "config.json": "e81960448c559853123eab9cb9ceaa0b2f3ec7be45dd2106ba47513dc5dbead6",
+    "invalid.jsonl": "07431a6230eb59e5aa926f314943cc7776efc92f2d38c1b1c5a2ffb91875b41c",
+    "report.json": "091401a00835744d785a31693452cd561072192254266b30e29ed34d36eb5651",
+    "runs.csv": "44a20630457adb78cce369d6bd43a8993cc6e6898c9c64319d3f900b575c4198",
+    "test-windows.csv": "c552e28f395cb37ae2489e43be8e0ad9f83d9f3656e567518bfbc14c0525496e",
+    "test.csv": "2d3ed27b6528cc7745753a780da50b886c3714bb5b9747228ef36fbe25ea550d",
+    "train-windows.csv": "e4ecc9cd98bf92e909e2dae4fd5c6993473dfb254cd440a897762b70126ab822",
+    "train.csv": "835b0a5fbd16b8de1ee92ba717cf504fbeb1ddc8829b8b80b0aa0f7050960590",
+    "validation-windows.csv": "adac269a1b4ad753083e2c9f9829cd29be511ef3c521e327e326c2bc23a30df4",
+    "validation.csv": "a3944f3a29c99695c3917a853f2617a07a91f456c37497a0a16055228c992e50"
+  },
+  "split_policy": "70/15/15, stratified by kind, whole families before windows"
+}

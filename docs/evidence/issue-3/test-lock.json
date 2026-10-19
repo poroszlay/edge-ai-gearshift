@@ -1,0 +1,7 @@
+{
+  "dataset_id": "7537958c902a6c325507fa3f3b2e56ff9000a9ca9824b2e3d5b27b26098f7e4e",
+  "manifest_sha256": "62299170080444e5158e26d130af6cc6b5219f248df471cddc3be6b7d53b25b5",
+  "policy": "Evaluation only; no model selection, normalization fitting or INT8 calibration.",
+  "test_sha256": "2d3ed27b6528cc7745753a780da50b886c3714bb5b9747228ef36fbe25ea550d",
+  "test_windows_sha256": "c552e28f395cb37ae2489e43be8e0ad9f83d9f3656e567518bfbc14c0525496e"
+}

@@ -1,0 +1,10 @@
+Python 3.13.5
+python3 -m pc.dataset generate data/generated/dataset-v1 --config config/dataset-v1.json
+exit=0
+Inspected report.json before sealing: coverage_ok=true, coverage_errors=[]
+python3 -m pc.dataset seal data/generated/dataset-v1
+exit=0
+python3 -m pc.dataset generate data/generated/dataset-v1-repeat --config config/dataset-v1.json
+exit=0
+diff -r --exclude=test-lock.json data/generated/dataset-v1 data/generated/dataset-v1-repeat
+exit=0, no output; 11 common files byte-identical
