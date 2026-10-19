@@ -1,0 +1,49 @@
+$ bash firmware/esp32/bringup/build.sh inference
+# Actual build log excerpt; exit=0. Full log SHA-256: 8b7a36d70e618ae8301d65308810b51a1c901a1d575345da6ce94e59e3e44bef
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+NOTICE: Processing 3 dependencies:
+NOTICE: [1/3] espressif/esp-nn (1.1.1)
+NOTICE: [2/3] espressif/esp-tflite-micro (1.3.5)
+NOTICE: [3/3] idf (5.5.1)
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:150:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:209:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:249:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:150:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:209:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:249:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:264:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:284:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:308:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:420:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:264:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:284:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:308:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:420:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:150:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:209:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:249:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+[1230/1236] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main_functions.cc.obj
+[1231/1236] Linking C static library esp-idf/main/libmain.a
+[1232/1236] Generating esp-idf/esp_system/ld/sections.ld
+[1233/1236] Building C object CMakeFiles/hello_world.elf.dir/project_elf_src_esp32.c.obj
+[1234/1236] Linking CXX executable hello_world.elf
+[1235/1236] Generating binary image from built executable
+esptool.py v4.12.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/build/hello_world.bin
+[1236/1236] cd /tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/build/esp-idf/esptool_py && /tmp/gearshift-idf-tools/python_env/idf5.5_py3.13_env/bin/python /tmp/gearshift-esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/build/partition_table/partition-table.bin /tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/build/hello_world.bin
+hello_world.bin binary size 0x33160 bytes. Smallest app partition is 0x100000 bytes. 0xccea0 bytes (80%) free.
+
+Project build complete. To flash, run:
+ idf.py flash
+or
+ idf.py -p PORT flash
+or
+ python -m esptool --chip esp32 -b 460800 --before default_reset --after hard_reset write_flash --flash_mode dio --flash_size 2MB --flash_freq 40m 0x1000 firmware/esp32/bringup/inference/build/bootloader/bootloader.bin 0x8000 firmware/esp32/bringup/inference/build/partition_table/partition-table.bin 0x10000 firmware/esp32/bringup/inference/build/hello_world.bin
+or from the "/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/inference/build" directory
+ python -m esptool --chip esp32 -b 460800 --before default_reset --after hard_reset write_flash "@flash_args"

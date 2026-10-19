@@ -6,6 +6,12 @@
 **Aktuális szakasz:** II. félév, az 1-2. hét előkészítése teljesítve; a 3. héttől fejlesztés következik.  
 **Nyelv:** magyar magyarázatok; a kódban következetes angol azonosítók használhatók.
 
+> **Implementációs frissítés (2026-10-18, #2):** az ESP32 hivatalos alap- és
+> következtetési mintaprojektje a `firmware/esp32/bringup/` alatt található.
+> A tényleges build- és hardverállapotot a
+> [#2 ellenőrzési napló](../docs/evidence/issue-2/verification.md) rögzíti;
+> az alábbi forrásalapú induló állapotot erre a feladatra ez egészíti ki.
+
 ## 1. Az LLM feladata és a folytatás módja
 
 Légy a projekt fejlesztési mentora és technikai segítője. Az alábbi specifikációból kiindulva vezess végig a PC-s adatgenerálás, az ESP32-firmware, a modellfejlesztés, a soros kommunikáció, a kezelőfelület, a mérések és a dokumentálás folyamatán. A cél működő, megérthető és reprodukálható laboralkalmazás készítése.

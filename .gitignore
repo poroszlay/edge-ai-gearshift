@@ -1,6 +1,10 @@
 .agents/
 skills-lock.json
 docs/issues/
-__pycache__/
-*.py[cod]
-simulation*.jsonl
+
+# ESP-IDF local/generated files (dependency locks stay versioned)
+firmware/**/build/
+firmware/**/managed_components/
+firmware/**/sdkconfig
+firmware/**/sdkconfig.old
+results/issue-2/

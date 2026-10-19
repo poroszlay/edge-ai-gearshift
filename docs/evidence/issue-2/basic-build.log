@@ -1,0 +1,28 @@
+$ bash firmware/esp32/bringup/build.sh basic
+# Actual build log excerpt; exit=0. Full log SHA-256: d6b2d2c2e88ef3f026111f58e4c16a2b4557e0af64a67d0c23eb5f333fa758ba
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+[481/487] No install step for 'bootloader'
+[482/487] Completed 'bootloader'
+[483/487] Generating esp-idf/esp_system/ld/sections.ld
+[484/487] Building C object CMakeFiles/hello_world.elf.dir/project_elf_src_esp32.c.obj
+[485/487] Linking CXX executable hello_world.elf
+[486/487] Generating binary image from built executable
+esptool.py v4.12.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/basic/build/hello_world.bin
+[487/487] cd /tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/basic/build/esp-idf/esptool_py && /tmp/gearshift-idf-tools/python_env/idf5.5_py3.13_env/bin/python /tmp/gearshift-esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/basic/build/partition_table/partition-table.bin /tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/basic/build/hello_world.bin
+hello_world.bin binary size 0x261c0 bytes. Smallest app partition is 0x100000 bytes. 0xd9e40 bytes (85%) free.
+
+Project build complete. To flash, run:
+ idf.py flash
+or
+ idf.py -p PORT flash
+or
+ python -m esptool --chip esp32 -b 460800 --before default_reset --after hard_reset write_flash --flash_mode dio --flash_size 2MB --flash_freq 40m 0x1000 firmware/esp32/bringup/basic/build/bootloader/bootloader.bin 0x8000 firmware/esp32/bringup/basic/build/partition_table/partition-table.bin 0x10000 firmware/esp32/bringup/basic/build/hello_world.bin
+or from the "/tmp/edge-ai-gearshift-issue-2/firmware/esp32/bringup/basic/build" directory
+ python -m esptool --chip esp32 -b 460800 --before default_reset --after hard_reset write_flash "@flash_args"
