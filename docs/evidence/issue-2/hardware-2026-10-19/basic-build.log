@@ -1,0 +1,36 @@
+$ bash firmware/esp32/bringup/build.sh basic
+# Actual build excerpt; exit=0. Full log SHA-256: 17620f6343349e8af1271fa55bf14e3bac2da7df43bcf1d870c22b2644472525
+Executing action: all (aliases: build)
+Running cmake in directory /tmp/edge-ai-gearshift-hardware/firmware/esp32/bringup/basic/build
+Executing "cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/tmp/gearshift-idf-tools/python_env/idf5.5_py3.13_env/bin/python -DESP_PLATFORM=1 -DIDF_TARGET=esp32 -DCCACHE_ENABLE=0 /tmp/edge-ai-gearshift-hardware/firmware/esp32/bringup/basic"...
+-- Found Git: /usr/bin/git (found version "2.47.3")
+-- Minimal build - ON
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /tmp/gearshift-idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc
+-- Detecting C compiler ABI info
+# ... omitted successful build steps ...
+# ...
+[481/487] No install step for 'bootloader'
+[482/487] Completed 'bootloader'
+[483/487] Generating esp-idf/esp_system/ld/sections.ld
+[484/487] Building C object CMakeFiles/hello_world.elf.dir/project_elf_src_esp32.c.obj
+[485/487] Linking CXX executable hello_world.elf
+[486/487] Generating binary image from built executable
+esptool.py v4.12.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /tmp/edge-ai-gearshift-hardware/firmware/esp32/bringup/basic/build/hello_world.bin
+[487/487] cd /tmp/edge-ai-gearshift-hardware/firmware/esp32/bringup/basic/build/esp-idf/esptool_py && /tmp/gearshift-idf-tools/python_env/idf5.5_py3.13_env/bin/python /tmp/gearshift-esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /tmp/edge-ai-gearshift-hardware/firmware/esp32/bringup/basic/build/partition_table/partition-table.bin /tmp/edge-ai-gearshift-hardware/firmware/esp32/bringup/basic/build/hello_world.bin
+hello_world.bin binary size 0x261c0 bytes. Smallest app partition is 0x100000 bytes. 0xd9e40 bytes (85%) free.
+
+Project build complete. To flash, run:
+ idf.py flash
+or
+ idf.py -p PORT flash
+or
+ python -m esptool --chip esp32 -b 460800 --before default_reset --after hard_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 40m 0x1000 firmware/esp32/bringup/basic/build/bootloader/bootloader.bin 0x8000 firmware/esp32/bringup/basic/build/partition_table/partition-table.bin 0x10000 firmware/esp32/bringup/basic/build/hello_world.bin
+or from the "/tmp/edge-ai-gearshift-hardware/firmware/esp32/bringup/basic/build" directory
+ python -m esptool --chip esp32 -b 460800 --before default_reset --after hard_reset write_flash "@flash_args"

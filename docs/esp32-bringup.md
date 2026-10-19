@@ -43,9 +43,14 @@ EACCES esetén a felhasználó saját termináljában:
 próbát. USB-újracsatlakoztatás után az ACL elveszhet. Az ACL önmagában
 nem igazol sikeres chipazonosítást vagy futást.
 
-A 2026-10-19-i [folytatás](evidence/issue-2/verification.md#hardveres-folytatás-2026-10-19)
-ismét EACCES hibát adott. A korábban használt `/tmp`-beli SDK, toolchain,
-worktree és binárisok már hiányoznak. Előbb ellenőrizd a meglévő SDK és
+A 2026-10-19-i folytatás először ismét EACCES hibát adott; a felhasználói
+ACL megadása után a port azonnal megnyílt, kijelentkezés nélkül. A valódi
+[hardveres próba](evidence/issue-2/hardware-2026-10-19/README.md) mindkét
+mintán sikeres lett, 124 folyamatos következtetéssel, váratlan reset nélkül.
+A korábban használt `/tmp`-beli SDK, toolchain, worktree és binárisok
+hiányoztak, ezért a környezetet helyreállítottuk.
+
+Előbb ellenőrizd a meglévő SDK és
 projektenkénti build/config/flash-argumentumok helyét és hash-eit; ha
 megmaradtak, használd őket új telepítés és build nélkül. A korábbi hashlista
 nem helyettesíti a hiányzó binárisokat. Ha valóban hiányoznak, az alábbi
@@ -83,11 +88,13 @@ bash firmware/esp32/bringup/build.sh inference
 ```
 
 A build rögzített célja `esp32`; ez az ESP-WROOM-32 alapján választott
-**buildcél**, nem a csatlakoztatott chip azonosításának bizonyítéka.
-Mindkét projekt alapbeállítása: flash DIO, 40 MHz, **2 MiB konfigurált
-kapacitás**, CPU 240 MHz, UART0 115200 baud, nincs PSRAM-feltételezés.
-A 2 MiB nem mért flashméret. A tényleges flash azonosítása kötelező feltöltés
-előtt. A watchdogok alapértelmezésben bekapcsolva maradnak. A következtetési
+**buildcél**. A 2026-10-19-i esptool-azonosítás ténylegesen
+ESP32-D0WD-V3 v3.1 chipet és **4 MiB fizikai flasht** igazolt. A korábbi
+2 MiB feltételezés helyett mindkét projekt alapbeállítása: flash DIO,
+40 MHz, **4 MiB konfigurált kapacitás**, CPU 240 MHz, UART0 115200 baud,
+nincs PSRAM-feltételezés. Másik panel tényleges chipjét és flashméretét
+feltöltés előtt külön azonosítani kell. A watchdogok alapértelmezésben
+bekapcsolva maradnak. A következtetési
 mintán teljesítményre optimalizáló fordítás fut. Nincs hozzáadott WiFi-funkció.
 
 A teljes effektív konfiguráció a projektenként generált `sdkconfig` fájlban
@@ -171,4 +178,6 @@ futtatásokat is megtartva. Hardver hiányában ne tölts ki mintakimenetekkel
 semmilyen eredménymezőt.
 
 A saját mérő firmware, UART-protokoll és saját MLP-integráció külön issue
-feladata. A #2 nem zárható le a hardveres feltételek bizonyítéka nélkül.
+feladata. A #2 hardveres feltételeinek bizonyítéka a dátumozott
+[hardveres naplócsomag](evidence/issue-2/hardware-2026-10-19/README.md);
+a siker csak az ott megadott mintára és megfigyelési időszakra vonatkozik.

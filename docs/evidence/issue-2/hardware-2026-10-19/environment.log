@@ -1,0 +1,32 @@
+UTC: 2026-10-19T17:22:29.655746+00:00
+$ git rev-parse HEAD
+479b225808aa26399b6b200044aeb4085593cff4
+exit=0
+
+$ git -C /tmp/gearshift-esp-idf describe --tags --exact-match
+v5.5.1
+exit=0
+
+$ git -C /tmp/gearshift-esp-idf rev-parse HEAD
+fcae32885b0296b32044cb99ecbdc50d98dddb83
+exit=0
+
+$ /tmp/gearshift-idf-tools/python_env/idf5.5_py3.13_env/bin/python --version
+Python 3.13.5
+exit=0
+
+$ /tmp/gearshift-idf-tools/python_env/idf5.5_py3.13_env/bin/python -m esptool version
+esptool.py v4.12.0
+4.12.0
+exit=0
+
+$ /tmp/gearshift-hardware-venv/bin/cmake --version
+cmake version 3.31.6
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+exit=0
+
+$ ninja --version
+1.12.1
+exit=0
+

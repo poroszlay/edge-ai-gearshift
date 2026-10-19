@@ -1,0 +1,110 @@
+{
+  "port": "/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0",
+  "baud": 115200,
+  "start_utc": "2026-10-19T17:20:25.088720+00:00",
+  "elapsed_s": 18.15877668899998,
+  "requested_s": 18.0,
+  "controlled_reset": "RTS/EN pulse 100 ms, DTR deasserted",
+  "chunks": [
+    {
+      "elapsed_s": 0.30329808700003014,
+      "offset": 0,
+      "bytes": 2001
+    },
+    {
+      "elapsed_s": 0.5035018969999783,
+      "offset": 2001,
+      "bytes": 1072
+    },
+    {
+      "elapsed_s": 1.5079202210001768,
+      "offset": 3073,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 2.5090483760000097,
+      "offset": 3101,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 3.5103225540001404,
+      "offset": 3129,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 4.511600991000023,
+      "offset": 3157,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 5.512921987000027,
+      "offset": 3185,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 6.514164206000032,
+      "offset": 3213,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 7.5154623690000335,
+      "offset": 3241,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 8.516705850000108,
+      "offset": 3269,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 9.524263281000003,
+      "offset": 3297,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 10.525853632999997,
+      "offset": 3325,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 11.529351691000102,
+      "offset": 3353,
+      "bytes": 1481
+    },
+    {
+      "elapsed_s": 11.72949987700008,
+      "offset": 4834,
+      "bytes": 1603
+    },
+    {
+      "elapsed_s": 12.731196889000103,
+      "offset": 6437,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 13.732538504000104,
+      "offset": 6465,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 14.744219688000157,
+      "offset": 6493,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 15.752016787999992,
+      "offset": 6521,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 16.75691985200001,
+      "offset": 6549,
+      "bytes": 28
+    },
+    {
+      "elapsed_s": 17.758192017000056,
+      "offset": 6577,
+      "bytes": 28
+    }
+  ]
+}
