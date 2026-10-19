@@ -93,6 +93,12 @@ Ez nem szabályreferencia, tanult modell vagy portolási helyesség igazolása.
 A processing_ms alapértéke 3, a szimulátor `--duration-ms` opciójával állítható,
 virtuális idő, nem a PC végrehajtási ideje. simulated_memory_bytes az ablakok
 100×4 byte-os becslése; nem tényleges RAM-mérés.
+A memóriamező kötelező, nemnegatív egész byte-szám (bool nem megengedett),
+amely véges lebegőpontos számként is reprezentálható. Hibás vagy hiányzó érték
+esetén a kliens invalid_simulated_memory_bytes hibával leáll; az eredeti ACK
+a receive naplóban megmarad. A sikeresen ellenőrzött érték külön batch_memory
+eseménybe kerül batch_id/phase/series/period_ms metaadatokkal, a fetch előtt.
+Grafikon kizárólag ebből az ellenőrzött mérési eseményből készül.
 
 ## Módok és mérési elszámolás
 

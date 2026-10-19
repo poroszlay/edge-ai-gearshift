@@ -6,7 +6,7 @@ import sys
 import threading
 import time
 import uuid
-from .protocol import MAX_BATCH, VERSION, ProtocolError, Wire, encode, identifier, validate_result
+from .protocol import MAX_BATCH, VERSION, ProtocolError, Wire, encode, identifier, number, validate_result
 from .simulator import serve_connection
 
 
@@ -41,11 +41,11 @@ class Client:
             reply = self.wire.receive()
             if any(reply.get(k) != request[k] for k in ('v', 'run_id', 'request_id', 'mode')) or reply.get('simulated') is not True:
                 raise ProtocolError('response_identity_mismatch')
+            self.log('receive', message=reply, uart_wait_ms=(time.monotonic() - start) * 1000)
             if reply.get('type') == 'error':
                 raise ProtocolError(reply.get('code', 'device_error'))
             if reply.get('type') != ('results' if kind == 'fetch' else 'ack'):
                 raise ProtocolError('unexpected_response')
-            self.log('receive', message=reply, uart_wait_ms=(time.monotonic() - start) * 1000)
             return reply
         except (ProtocolError, OSError) as exc:
             self.log('failure', error=str(exc), request_id=request['request_id'])
@@ -61,6 +61,14 @@ class Client:
         ack = self.request('execute', batch_id=batch_id, count=count, period_ms=period)
         if ack.get('count') != count or ack.get('batch_id') != batch_id or ack.get('uart_during_execution') is not False:
             raise ProtocolError('execute_ack_mismatch')
+        memory = ack.get('simulated_memory_bytes')
+        if type(memory) is not int or not number(memory) or memory < 0:
+            self.log('failure', error='invalid_simulated_memory_bytes', request_id=str(self.sequence))
+            raise ProtocolError('invalid_simulated_memory_bytes')
+        # Raw receive events remain lossless, including malformed ACKs. Only
+        # validated measurement events are suitable for presentation.
+        self.log('batch_memory', batch_id=batch_id, phase=phase, series=series,
+                 period_ms=period, simulated_memory_bytes=memory)
         offset = 0
         while offset < count:
             reply = self.request('fetch', batch_id=batch_id, offset=offset)
@@ -84,7 +92,13 @@ class Client:
         self.log('batch_end', batch_id=batch_id, count=count)
         self.last_batch_end = time.monotonic()
 
-    def run(self, windows):
+    def run(self, windows, profiles=(10, 20, 50, 100), cancelled=None):
+        if not profiles or any(type(p) is not int or p not in (10, 20, 50, 100) for p in profiles) or len(set(profiles)) != len(profiles):
+            raise ProtocolError('invalid_profile')
+        def check_cancelled():
+            if cancelled is not None and cancelled():
+                raise ProtocolError('cancelled')
+        check_cancelled()
         if not windows or (self.mode == 'benchmark' and len(windows) > MAX_BATCH) or any(
                 not isinstance(w, dict) or not identifier(w.get('window_id'))
                 or not identifier(w.get('trip_id')) for w in windows):
@@ -95,12 +109,16 @@ class Client:
         self.request('start')
         if self.mode == 'live':
             for i, window in enumerate(windows):
+                check_cancelled()
                 self.batch([window], f'live-{i}')
         else:
-            for period in (10, 20, 50, 100):
+            for period in profiles:
+                check_cancelled()
                 self.batch(windows, f'p{period}-warmup', 100, period, 'warmup')
                 for series in range(1, 4):
+                    check_cancelled()
                     self.batch(windows, f'p{period}-s{series}', 1000, period, 'measured', series)
+        check_cancelled()
         self.log('run_complete')
 
 
