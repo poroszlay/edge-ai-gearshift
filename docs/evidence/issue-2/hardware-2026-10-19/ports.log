@@ -1,0 +1,16 @@
+5 ports found
+/dev/ttyS0          
+    desc: n/a
+    hwid: n/a
+/dev/ttyS1          
+    desc: n/a
+    hwid: n/a
+/dev/ttyS2          
+    desc: n/a
+    hwid: n/a
+/dev/ttyS3          
+    desc: n/a
+    hwid: n/a
+/dev/ttyUSB0        
+    desc: CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+    hwid: USB VID:PID=10C4:EA60 SER=0001 LOCATION=1-9

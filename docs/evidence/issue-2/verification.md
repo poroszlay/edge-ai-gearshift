@@ -1,10 +1,124 @@
 # #2 ellenőrzési és átadási napló
 
+## Aktuális hardveres elfogadás – 2026-10-19
+
+**A #2 hardveres elfogadási feltételei a hivatalos mintákra teljesültek.**
+A korábbi hozzáférési akadályt a felhasználó `setfacl` paranccsal feloldotta;
+a port logout nélkül, azonnal megnyílt. A #5 megvalósítása nem indult el.
+Nem történt PR-merge vagy issue-lezárás.
+
+| Feltétel | Tényleges eredmény | Bizonyíték |
+| --- | --- | --- |
+| Chip, port és flash | ESP32-D0WD-V3 v3.1; CP2102 `/dev/ttyUSB0`; 4 MiB fizikai flash, gyártó `68`, eszköz `4016`, 3,3 V | `access.log`, `ports.log`, `chip-id.log`, `flash-id.log` |
+| Rögzített verziók, build | IDF v5.5.1, TFLM 1.3.5, ESP-NN 1.1.1; mindkét build exit 0 | `environment.log`, `python-packages.txt`, lock, buildkivonatok |
+| Alapminta feltöltés és futás | Feltöltés sikeres; bootloader, partíciós tábla, app: mindhárom `verify OK`; `Hello world!`, chip/flash/heap és szándékos újraindulás megfigyelve | `basic-flash.log`, `basic-verify-flash.log`, `basic-monitor.log` |
+| Következtetési minta feltöltés és futás | Feltöltés sikeres; mindhárom szegmens `verify OK`; **124 folyamatos sikeres következtetés** | `inference-flash.log`, `inference-verify-flash.log`, `inference-monitor.log` |
+| Stabilitás | 62,174 s megfigyelés a vezérelt indulástól; 1 induláskori POWERON_RESET, **0 későbbi reset**, 0 észlelt hiba | Teljes nyers boot-/UART-napló, `analysis.json` |
+| Modell | Változatlan hivatalos INT8 hello_world **szinuszmodell**, nem a saját fokozatváltási MLP | `upstream-comparison.log`, modellhash az `ARTIFACT_SHA256SUMS` fájlban |
+| Reprodukálhatóság | Pontos parancsok, nyers naplók, időadatok, teljes konfigurációk és hash-ek megőrizve | [Futási csomag](hardware-2026-10-19/README.md) |
+
+A táblázat fájljai a [hardware-2026-10-19](hardware-2026-10-19/) könyvtárban
+vannak. A `capture_serial.py` már a vezérelt reset elengedése előtt rögzít;
+a naplók nincsenek szűrve vagy normalizálva. Az `analyze_capture.py`
+ellenőrzi a legalább 100 véges kimenetet, az `x` bemenet 20 elemű ismétlődő
+sorrendjét és a boot-/hibaüzeneteket. Hat teljes ciklus és további négy
+következtetés történt. Az első és utolsó következtetés UART-blokkjainak
+megfigyelési távolsága 61,471 s; ez **nem MCU-következtetési futásidő**.
+Az alapminta 18,159 s naplója egy indulást és a `Restarting now.` utáni
+szándékos `SW_CPU_RESET` újraindulást tartalmaz; ezt nem számoltuk a
+következtetési minta resetjei közé.
+
+Mindkét boot figyelmeztetése: a felismert Boya flashhez általános SPI-flash
+driver fut. A pontos üzenet megmaradt a nyers naplókban; a feltöltés,
+visszaellenőrzés és megfigyelt futás sikeres volt. A TFLM build upstream
+`-Wshadow` figyelmeztetései szintén megmaradtak a buildkivonatban.
+A megfigyelés egy panelre és erre a rövid mintapróbára vonatkozik;
+nem igazol hosszú távú stabilitást, saját MLP-t, portolási helyességet vagy
+a későbbi mérő firmware teljesítményét.
+
+### A futtatott build azonosítása
+
+Friss main alap: `c3ef45dc77769b6c0a5012ab49c434bace425ddd`.
+Worktree: `/tmp/edge-ai-gearshift-hardware`, ág:
+`chore/issue-2-hardware-acceptance`. A 4 MiB konfiguráció forráscommitja:
+`479b225808aa26399b6b200044aeb4085593cff4`. A hivatalos minták 14 C/C++-,
+header- és CMake-fájlja bytepontosan egyezik a rögzített upstream forrással.
+
+Az alapminta a konfiguráció commitolása előtt fordult, ezért a beágyazott
+projektverzió **`82cbe10-dirty`**; az ekkor módosított firmware-fájlok a
+következő `479b225` commitban rögzített 4 MiB defaultsok. A következtetési
+minta beágyazott verziója **`479b225`**. Ezeket nem írtuk át utólag és nem
+fordítottuk újra csak a verziófelirat miatt. A két ténylegesen feltöltött
+binárist, a teljes konfigurációkat és a helyi teljes buildnaplókat az
+`ARTIFACT_SHA256SUMS` azonosítja. A nyers bizonyítékok saját hashlistája a
+futási csomag `SHA256SUMS` fájlja. A korábbi hashlistát nem írtuk felül.
+
+A hiányzó `/tmp`-beli környezet helyreállítása indokolt volt; a korábbi
+sikeres buildeket nem tekintettük most elérhető binárisnak. A teljes helyi
+naplók és buildtermékek a worktree `results/issue-2/hardware-2026-10-19/`
+könyvtárából és a projektek buildkönyvtáraiból archiválva is megmaradnak
+az eredeti munkapéldány `results/issue-2/` könyvtárában. A nagy binárisok
+és ELF-ek nem kerülnek Gitbe; a kis teljes konfigurációk és nyers soros
+naplók igen.
+
+## Korábbi ellenőrzések és akadályok (történeti napló)
+
+Az alábbi állapotok a korábbi, hozzáférés nélküli futásokra vonatkoznak;
+a jelenlegi elfogadási állapot a fenti táblázat. Az eredeti naplókat és
+hash-eket megtartottuk.
+
+
 Dátum: 2026-10-18. Ág: `feat/issue-2-esp32-bringup`.
 Külön worktree: `/tmp/edge-ai-gearshift-issue-2`, kiindulás: `dda8783`.
 A fő munkapéldány meglévő, nem követett tervezési dokumentuma változatlan.
 
-## Elfogadási feltételek
+## Korábbi hozzáférési próba: 2026-10-19 17:13 UTC
+
+Friss `origin/main`: `c3ef45dc77769b6c0a5012ab49c434bace425ddd` (merge-elt #13).
+Külön worktree: `/tmp/edge-ai-gearshift-hardware`, ág:
+`chore/issue-2-hardware-acceptance`. A #2 teljes szövegét és kommentjeit
+(nincs komment), valamint a #13 leírását újra ellenőriztük.
+
+A hoston végzett új próba:
+[hardware-preflight-2026-10-19.log](hardware-preflight-2026-10-19.log).
+A CP2102 ismét `/dev/ttyUSB0`, azonos stabil by-id névvel; az eszköz
+`root:dialout`, `0660`, felhasználói ACL nélkül. A hoston futó `richie`
+nem dialout-tag. A tényleges `os.open(..., O_RDWR | O_NOCTTY | O_NONBLOCK)`
+próba **EACCES (errno 13)** hibával állt meg. Ez operációsrendszer-szintű
+portmegnyitási próba, nem új esptool chip-/flashazonosítás.
+
+A korábbi `/tmp/gearshift-esp-idf`, `/tmp/gearshift-idf-tools`,
+`/tmp/gearshift-build-venv` és `/tmp/edge-ai-gearshift-issue-2` már nem létezik.
+A felhasználói Desktop, `.cache`, `.local`, `/opt` és `/tmp` célzott
+keresése nem talált `idf.py`, SDK `export.sh`, `esptool.py` vagy
+`hello_world.bin` fájlt. A korábbi sikeres buildek bizonyítéka érvényes
+korábbi eredmény, de a korábbi binárisok és teljes helyi naplók jelenleg
+nem hozzáférhetők ezeken a helyeken. A lentebb szereplő megőrzési állítások
+az eredeti futás időpontjára vonatkoznak. Nem indítottunk új telepítést
+vagy buildet a hozzáférés rendezése előtt.
+
+**Új hardveres következtetésszám: 0.** Nem történt feltöltés, chip- vagy
+flashazonosítás, alapminta-megfigyelés vagy resetstabilitási mérés.
+A fizikai chip és flashméret változatlanul ismeretlen. A hardveres
+elfogadási feltételek továbbra is nyitottak; a #2 nem zárható le.
+
+Kért konkrét közreműködés a felhasználó saját termináljában:
+
+```bash
+sudo setfacl -m u:richie:rw /dev/ttyUSB0
+getfacl /dev/ttyUSB0
+```
+
+Ezután új tényleges portmegnyitás szükséges. Ha sikerül, a hiányzó,
+rögzített környezetet helyre kell állítani (vagy előkeríteni az eredeti
+binárisokat és konfigurációkat, ellenőrizhető hash-sel). Ezután chip-/flash-
+azonosítás, kompatibilitásellenőrzés, a felülírás előzetes jelzése,
+alapminta feltöltése és naplózása, majd a következtetési minta feltöltése
+és boot kezdetétől legalább 100 folyamatos következtetés naplózása következik.
+A modell továbbra is az INT8 szinuszminta; a saját fokozatváltási MLP és
+az #5 megvalósítása nem része ennek a folytatásnak.
+
+## Korábbi elfogadási állapot, hozzáférés nélkül
 
 | Feltétel | Tényleges állapot | Bizonyíték / hiány |
 | --- | --- | --- |

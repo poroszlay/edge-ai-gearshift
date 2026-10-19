@@ -12,7 +12,9 @@
   az `idf_component.yml` helyi override helyett pontos registry-verziókat kér.
   Licenc: Apache-2.0, mellékelve az `inference/LICENSE` fájlban.
 - Mindkét `sdkconfig.defaults` saját, konzervatív konfiguráció;
-  DIO/40 MHz/2 MiB, UART 115200 baud, CPU 240 MHz.
+  DIO/40 MHz/4 MiB, UART 115200 baud, CPU 240 MHz.
+  A 4 MiB kapacitást a 2026-10-19-i esptool `flash_id` igazolja; a korábbi
+  2 MiB feltételezést a hardveres próba előtt módosítottuk.
   Nincs PSRAM-feltételezés, nincs WiFi-funkció. Az upstream minta
   watchdog-kikapcsolásait nem vettük át.
 

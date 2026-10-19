@@ -1,0 +1,31 @@
+{
+  "basic": {
+    "capture_elapsed_s": 18.15877668899998,
+    "start_utc": "2026-10-19T17:20:25.088720+00:00",
+    "bytes": 6605,
+    "reset_lines": [
+      "rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)",
+      "rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)"
+    ],
+    "fault_lines": [],
+    "intentional_software_restarts": 1,
+    "status": "PASS"
+  },
+  "inference": {
+    "capture_elapsed_s": 62.17442851999999,
+    "start_utc": "2026-10-19T17:24:24.686705+00:00",
+    "bytes": 7783,
+    "reset_lines": [
+      "rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)"
+    ],
+    "fault_lines": [],
+    "continuous_inferences": 124,
+    "complete_20_sample_cycles": 6,
+    "x_sequence_checked": true,
+    "unexpected_boots_after_first_inference": 0,
+    "first_inference_observed_s": 0.5032175030000872,
+    "last_inference_observed_s": 61.974170589000096,
+    "first_to_last_uart_observation_s": 61.47095308600001,
+    "status": "PASS"
+  }
+}
