@@ -41,11 +41,11 @@ class Client:
             reply = self.wire.receive()
             if any(reply.get(k) != request[k] for k in ('v', 'run_id', 'request_id', 'mode')) or reply.get('simulated') is not True:
                 raise ProtocolError('response_identity_mismatch')
+            self.log('receive', message=reply, uart_wait_ms=(time.monotonic() - start) * 1000)
             if reply.get('type') == 'error':
                 raise ProtocolError(reply.get('code', 'device_error'))
             if reply.get('type') != ('results' if kind == 'fetch' else 'ack'):
                 raise ProtocolError('unexpected_response')
-            self.log('receive', message=reply, uart_wait_ms=(time.monotonic() - start) * 1000)
             return reply
         except (ProtocolError, OSError) as exc:
             self.log('failure', error=str(exc), request_id=request['request_id'])
@@ -84,7 +84,13 @@ class Client:
         self.log('batch_end', batch_id=batch_id, count=count)
         self.last_batch_end = time.monotonic()
 
-    def run(self, windows):
+    def run(self, windows, profiles=(10, 20, 50, 100), cancelled=None):
+        if not profiles or any(type(p) is not int or p not in (10, 20, 50, 100) for p in profiles) or len(set(profiles)) != len(profiles):
+            raise ProtocolError('invalid_profile')
+        def check_cancelled():
+            if cancelled is not None and cancelled():
+                raise ProtocolError('cancelled')
+        check_cancelled()
         if not windows or (self.mode == 'benchmark' and len(windows) > MAX_BATCH) or any(
                 not isinstance(w, dict) or not identifier(w.get('window_id'))
                 or not identifier(w.get('trip_id')) for w in windows):
@@ -95,12 +101,16 @@ class Client:
         self.request('start')
         if self.mode == 'live':
             for i, window in enumerate(windows):
+                check_cancelled()
                 self.batch([window], f'live-{i}')
         else:
-            for period in (10, 20, 50, 100):
+            for period in profiles:
+                check_cancelled()
                 self.batch(windows, f'p{period}-warmup', 100, period, 'warmup')
                 for series in range(1, 4):
+                    check_cancelled()
                     self.batch(windows, f'p{period}-s{series}', 1000, period, 'measured', series)
+        check_cancelled()
         self.log('run_complete')
 
 

@@ -1,0 +1,24 @@
+name: Measurement UI
+on: [push, pull_request]
+jobs:
+  simulator-ui:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.13']
+    env:
+      QT_QPA_PLATFORM: offscreen
+      UI_EVIDENCE_DIR: ui-evidence
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -r requirements-ui.txt
+      - run: python -c 'from gearshift.gui import Window'
+      - run: python -m unittest discover -s tests -v
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ui-evidence-${{ matrix.python }}
+          path: ui-evidence/

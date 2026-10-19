@@ -6,6 +6,7 @@ döntésbecslés és laboratóriumi értékelés.
 - [ESP32-fejlesztőkörnyezet és hivatalos minták (#2)](docs/esp32-bringup.md)
 - [Közös adatszerződés](docs/data-contract.md)
 - [Modell- és mérési szerződés](docs/model-measurement-contract.md)
+- [PySide6 mérőfelület és CSV-export](docs/measurement-ui.md)
 
 A bringup szinuszmodellje hivatalos kompatibilitási próba. A projekt saját
 100 → 32 → 16 → 3 MLP-je és hardveres mérési eredményei még nem készültek el.
