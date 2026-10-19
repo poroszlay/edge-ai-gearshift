@@ -26,6 +26,33 @@ kompatibilitási alap. A tranzitív komponenseket a projekthez tartozó
 `dependencies.lock` rögzíti. A források eredete:
 [UPSTREAM.md](../firmware/esp32/bringup/UPSTREAM.md).
 
+## Folytatás meglévő környezetből
+
+Először a **hoston** ellenőrizd a portot és a hozzáférést; a sandboxban
+hiányzó eszköz nem bizonyítja, hogy a hoston sincs port:
+
+```bash
+ls -l /dev/serial/by-id/ /dev/ttyUSB0
+id
+getfacl /dev/ttyUSB0
+python3 -c 'import os; fd=os.open("/dev/ttyUSB0", os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK); os.close(fd); print("OPEN OK")'
+```
+
+EACCES esetén a felhasználó saját termináljában:
+`sudo setfacl -m u:richie:rw /dev/ttyUSB0`, majd ismételd meg a megnyitási
+próbát. USB-újracsatlakoztatás után az ACL elveszhet. Az ACL önmagában
+nem igazol sikeres chipazonosítást vagy futást.
+
+A 2026-10-19-i [folytatás](evidence/issue-2/verification.md#hardveres-folytatás-2026-10-19)
+ismét EACCES hibát adott. A korábban használt `/tmp`-beli SDK, toolchain,
+worktree és binárisok már hiányoznak. Előbb ellenőrizd a meglévő SDK és
+projektenkénti build/config/flash-argumentumok helyét és hash-eit; ha
+megmaradtak, használd őket új telepítés és build nélkül. A korábbi hashlista
+nem helyettesíti a hiányzó binárisokat. Ha valóban hiányoznak, az alábbi
+rögzített környezet helyreállítása és új build indokolt; az új binárisokhoz
+új hash-ek és teljes konfiguráció szükséges. A hosszabb távon szükséges SDK-t
+és mérési bizonyítékot tartós könyvtárban őrizd, a `/tmp` törölhető.
+
 ## Telepítés Debianon
 
 Bash terminál, a repó gyökerében. Az SDK-t és a toolchaint a repón kívül

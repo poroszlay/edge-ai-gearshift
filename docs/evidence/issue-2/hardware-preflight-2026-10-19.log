@@ -1,0 +1,34 @@
+UTC: 2026-10-19T17:13:14.277093+00:00
+$ git rev-parse HEAD
+c3ef45dc77769b6c0a5012ab49c434bace425ddd
+exit=0
+
+$ id
+uid=1000(richie) gid=1000(richie) groups=1000(richie),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),100(users),101(netdev),102(scanner),108(bluetooth),110(lpadmin)
+exit=0
+
+$ ls -l /dev/ttyUSB0 /dev/serial/by-id/
+crw-rw---- 1 root dialout 188, 0 Oct 19 18:51 /dev/ttyUSB0
+
+/dev/serial/by-id/:
+total 0
+lrwxrwxrwx 1 root root 13 Oct 19 18:51 usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0 -> ../../ttyUSB0
+exit=0
+
+$ getfacl /dev/ttyUSB0
+getfacl: Removing leading '/' from absolute path names
+# file: dev/ttyUSB0
+# owner: root
+# group: dialout
+user::rw-
+group::rw-
+other::---
+exit=0
+
+$ python3: os.open(/dev/ttyUSB0, O_RDWR | O_NOCTTY | O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/ttyUSB0'
+errno=13
+/tmp/gearshift-esp-idf: missing
+/tmp/gearshift-idf-tools: missing
+/tmp/gearshift-build-venv: missing
+/tmp/edge-ai-gearshift-issue-2: missing

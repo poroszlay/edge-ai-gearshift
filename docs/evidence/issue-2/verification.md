@@ -4,6 +4,52 @@ Dátum: 2026-10-18. Ág: `feat/issue-2-esp32-bringup`.
 Külön worktree: `/tmp/edge-ai-gearshift-issue-2`, kiindulás: `dda8783`.
 A fő munkapéldány meglévő, nem követett tervezési dokumentuma változatlan.
 
+## Hardveres folytatás: 2026-10-19
+
+Friss `origin/main`: `c3ef45dc77769b6c0a5012ab49c434bace425ddd` (merge-elt #13).
+Külön worktree: `/tmp/edge-ai-gearshift-hardware`, ág:
+`chore/issue-2-hardware-acceptance`. A #2 teljes szövegét és kommentjeit
+(nincs komment), valamint a #13 leírását újra ellenőriztük.
+
+A hoston végzett új próba:
+[hardware-preflight-2026-10-19.log](hardware-preflight-2026-10-19.log).
+A CP2102 ismét `/dev/ttyUSB0`, azonos stabil by-id névvel; az eszköz
+`root:dialout`, `0660`, felhasználói ACL nélkül. A hoston futó `richie`
+nem dialout-tag. A tényleges `os.open(..., O_RDWR | O_NOCTTY | O_NONBLOCK)`
+próba **EACCES (errno 13)** hibával állt meg. Ez operációsrendszer-szintű
+portmegnyitási próba, nem új esptool chip-/flashazonosítás.
+
+A korábbi `/tmp/gearshift-esp-idf`, `/tmp/gearshift-idf-tools`,
+`/tmp/gearshift-build-venv` és `/tmp/edge-ai-gearshift-issue-2` már nem létezik.
+A felhasználói Desktop, `.cache`, `.local`, `/opt` és `/tmp` célzott
+keresése nem talált `idf.py`, SDK `export.sh`, `esptool.py` vagy
+`hello_world.bin` fájlt. A korábbi sikeres buildek bizonyítéka érvényes
+korábbi eredmény, de a korábbi binárisok és teljes helyi naplók jelenleg
+nem hozzáférhetők ezeken a helyeken. A lentebb szereplő megőrzési állítások
+az eredeti futás időpontjára vonatkoznak. Nem indítottunk új telepítést
+vagy buildet a hozzáférés rendezése előtt.
+
+**Új hardveres következtetésszám: 0.** Nem történt feltöltés, chip- vagy
+flashazonosítás, alapminta-megfigyelés vagy resetstabilitási mérés.
+A fizikai chip és flashméret változatlanul ismeretlen. A hardveres
+elfogadási feltételek továbbra is nyitottak; a #2 nem zárható le.
+
+Kért konkrét közreműködés a felhasználó saját termináljában:
+
+```bash
+sudo setfacl -m u:richie:rw /dev/ttyUSB0
+getfacl /dev/ttyUSB0
+```
+
+Ezután új tényleges portmegnyitás szükséges. Ha sikerül, a hiányzó,
+rögzített környezetet helyre kell állítani (vagy előkeríteni az eredeti
+binárisokat és konfigurációkat, ellenőrizhető hash-sel). Ezután chip-/flash-
+azonosítás, kompatibilitásellenőrzés, a felülírás előzetes jelzése,
+alapminta feltöltése és naplózása, majd a következtetési minta feltöltése
+és boot kezdetétől legalább 100 folyamatos következtetés naplózása következik.
+A modell továbbra is az INT8 szinuszminta; a saját fokozatváltási MLP és
+az #5 megvalósítása nem része ennek a folytatásnak.
+
 ## Elfogadási feltételek
 
 | Feltétel | Tényleges állapot | Bizonyíték / hiány |
