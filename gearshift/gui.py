@@ -6,7 +6,7 @@ import threading
 from collections import Counter, deque
 
 import pyqtgraph as pg
-from PySide6.QtCore import QTimer
+from PySide6.QtCore import QTimer, Slot
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDoubleSpinBox,
                                QFileDialog, QFormLayout, QHBoxLayout, QLabel,
                                QLineEdit, QMainWindow, QPushButton, QSpinBox,
@@ -117,6 +117,7 @@ class Window(QMainWindow):
         self.timer.timeout.connect(self.poll)
         self.timer.start()
 
+    @Slot()
     def configure(self):
         busy = self.session is not None and not self.finished
         for widget in self.config_widgets:
@@ -133,11 +134,13 @@ class Window(QMainWindow):
             'Előtöltött készlet (≤8 ablak), execute alatt nincs kommunikáció; '
             'a grafikon csak a sorozat utáni eredményátvitelnél frissül.')
 
+    @Slot()
     def choose_input(self):
         path, _ = QFileDialog.getOpenFileName(self, 'Ablakok', '', 'JSON Lines (*.jsonl);;Minden fájl (*)')
         if path:
             self.input.setText(path)
 
+    @Slot()
     def start(self):
         profiles = tuple(p for p, box in self.profiles if box.isChecked())
         if self.mode.currentIndex() == 1 and not profiles:
@@ -164,6 +167,7 @@ class Window(QMainWindow):
         self.configure()
         self.session.start()
 
+    @Slot()
     def stop(self):
         if self.session and not self.finished:
             self.session.stop()
@@ -193,6 +197,7 @@ class Window(QMainWindow):
                 for phase in ('live', 'warmup', 'measured')
                 if any(p == phase for p, _ in self.counts)))
 
+    @Slot()
     def poll(self):
         if self.session and not self.finished:
             for _ in range(1000):
@@ -237,6 +242,7 @@ class Window(QMainWindow):
                 self.export_thread is None or not self.export_thread.is_alive()):
             self.close()
 
+    @Slot()
     def choose_export(self):
         path, _ = QFileDialog.getSaveFileName(self, 'CSV-export', 'measurement.csv', 'CSV (*.csv)')
         if path:

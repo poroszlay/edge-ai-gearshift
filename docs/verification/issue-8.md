@@ -7,7 +7,7 @@ Az eredeti worktree meglévő, nem követett dokumentuma nem módosult.
 
 ## Környezet és futtatás
 
-Linux x86_64, Python 3.13, PySide6 6.12.0, pyqtgraph 0.14.0, NumPy 2.5.4.
+Linux x86_64, Python 3.13, PySide6 6.10.2, pyqtgraph 0.14.0, NumPy 2.5.4.
 Izolált `/tmp/issue8-venv` környezet; Qt `offscreen` platform.
 
 ```bash
@@ -15,7 +15,7 @@ QT_QPA_PLATFORM=offscreen UI_EVIDENCE_DIR=docs/verification/issue-8 \
   /tmp/issue8-venv/bin/python -m unittest discover -s tests -v
 ```
 
-Eredmény: **41 teszt, 10,369 s, OK, nincs skip**.
+Eredmény: **41 teszt, 10,379 s, OK, nincs skip**.
 [Teljes tesztnapló](issue-8/tests.txt).
 A kezdeti sandboxos futtatás a helyi socketpár `sendall` műveletét
 `PermissionError` hibával tiltotta; a végső futás engedélyezett, sandboxon
@@ -23,6 +23,9 @@ kívüli környezetben, valódi socketpárral és loopback TCP-vel történt.
 Az offscreen platform `propagateSizeHints` üzenetei nem teszthibák.
 A GitHub Ubuntu runner első GUI-jobjából hiányzott a `libEGL.so.1`;
 a workflow explicit `libegl1`/`libopengl0` rendszerfüggőség-telepítést kapott.
+A kezdetben feloldott PySide6 6.12 több CI-futásban natív felszabadítási
+hibával állt le; a függőség a helyben ellenőrzött 6.10.2 verzióra rögzített,
+a GUI Qt-visszahívásai explicit Slot deklarációt kaptak.
 
 ## Bizonyítékok
 

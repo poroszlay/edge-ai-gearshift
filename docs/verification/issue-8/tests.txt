@@ -21,7 +21,6 @@ This plugin does not support propagateSizeHints()
 This plugin does not support propagateSizeHints()
 This plugin does not support propagateSizeHints()
 This plugin does not support propagateSizeHints()
-This plugin does not support propagateSizeHints()
 ok
 test_select_start_stop_export_and_restart (test_measurement_ui.GuiTests.test_select_start_stop_export_and_restart) ... This plugin does not support propagateSizeHints()
 ok
@@ -58,6 +57,6 @@ test_window_cannot_cross_runs (test_reference.ReferenceTests.test_window_cannot_
 test_wrong_types_are_reported_without_coercion (test_reference.ReferenceTests.test_wrong_types_are_reported_without_coercion) ... ok
 
 ----------------------------------------------------------------------
-Ran 41 tests in 10.369s
+Ran 41 tests in 10.379s
 
 OK
