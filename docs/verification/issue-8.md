@@ -21,6 +21,8 @@ A kezdeti sandboxos futtatás a helyi socketpár `sendall` műveletét
 `PermissionError` hibával tiltotta; a végső futás engedélyezett, sandboxon
 kívüli környezetben, valódi socketpárral és loopback TCP-vel történt.
 Az offscreen platform `propagateSizeHints` üzenetei nem teszthibák.
+A GitHub Ubuntu runner első GUI-jobjából hiányzott a `libEGL.so.1`;
+a workflow explicit `libegl1`/`libopengl0` rendszerfüggőség-telepítést kapott.
 
 ## Bizonyítékok
 
