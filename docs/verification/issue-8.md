@@ -1,5 +1,8 @@
 # #8 átadási ellenőrzés
 
+A későbbi review-javítás reprodukciója és friss ellenőrzése:
+[hibás memóriamező kezelése](issue-8-review.md).
+
 Kiindulás: frissen fetch-elt `origin/main`,
 `c3ef45dc77769b6c0a5012ab49c434bace425ddd`.
 Külön worktree: `/tmp/edge-ai-issue8`, branch: `feat/issue-8-measurement-ui`.

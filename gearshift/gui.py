@@ -181,9 +181,9 @@ class Window(QMainWindow):
                                 f"{row['phase']} • T=D={row['period_ms']} ms")
         elif event == 'send' and row['message']['type'] == 'execute':
             self.status.setText(f"SZIMULÁCIÓ • {row['mode']} • feldolgozás; eredményre vár…")
-        elif event == 'receive' and 'simulated_memory_bytes' in row['message']:
+        elif event == 'batch_memory':
             self.memory.append((row['host_elapsed_ms'] / 1000,
-                                row['message']['simulated_memory_bytes']))
+                                float(row['simulated_memory_bytes'])))
         elif event == 'result':
             self.result_index += 1
             self.points.append((self.result_index, row.get('processing_ms', math.nan)))

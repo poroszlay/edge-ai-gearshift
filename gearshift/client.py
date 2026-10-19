@@ -6,7 +6,7 @@ import sys
 import threading
 import time
 import uuid
-from .protocol import MAX_BATCH, VERSION, ProtocolError, Wire, encode, identifier, validate_result
+from .protocol import MAX_BATCH, VERSION, ProtocolError, Wire, encode, identifier, number, validate_result
 from .simulator import serve_connection
 
 
@@ -61,6 +61,14 @@ class Client:
         ack = self.request('execute', batch_id=batch_id, count=count, period_ms=period)
         if ack.get('count') != count or ack.get('batch_id') != batch_id or ack.get('uart_during_execution') is not False:
             raise ProtocolError('execute_ack_mismatch')
+        memory = ack.get('simulated_memory_bytes')
+        if type(memory) is not int or not number(memory) or memory < 0:
+            self.log('failure', error='invalid_simulated_memory_bytes', request_id=str(self.sequence))
+            raise ProtocolError('invalid_simulated_memory_bytes')
+        # Raw receive events remain lossless, including malformed ACKs. Only
+        # validated measurement events are suitable for presentation.
+        self.log('batch_memory', batch_id=batch_id, phase=phase, series=series,
+                 period_ms=period, simulated_memory_bytes=memory)
         offset = 0
         while offset < count:
             reply = self.request('fetch', batch_id=batch_id, offset=offset)

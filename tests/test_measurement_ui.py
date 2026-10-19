@@ -167,6 +167,61 @@ class GuiTests(unittest.TestCase):
         self.assertEqual({r['period_ms'] for r in rows if r['event'] == 'result'}, {20})
         self.assertEqual(sum(r['event'] == 'result' for r in rows), 3100)
 
+    def test_invalid_memory_ack_can_finish_export_and_restart_in_both_modes(self):
+        source = Path(self.directory.name) / 'windows.jsonl'
+        source.write_text('\n'.join(json.dumps(example_window(i)) for i in range(2)) + '\n')
+        self.window.input.setText(str(source))
+        original_handle = Device.handle
+        for mode in (0, 1):
+            with self.subTest(mode=mode):
+                self.window.mode.setCurrentIndex(mode)
+                # Fail the second execute so earlier results must survive too.
+                def malformed_ack(device, request):
+                    reply = original_handle(device, request)
+                    if request['type'] == 'execute':
+                        device.ui_test_executes = getattr(device, 'ui_test_executes', 0) + 1
+                        if device.ui_test_executes == 2:
+                            reply['simulated_memory_bytes'] = 'bad'
+                    return reply
+                self.window.timer.stop()  # Propagate poll exceptions into the test.
+                with patch.object(Device, 'handle', malformed_ack):
+                    self.click(self.window.start_button)
+                    deadline = time.monotonic() + 5
+                    while not self.window.finished and time.monotonic() < deadline:
+                        self.window.poll()
+                        self.app.processEvents()
+                        time.sleep(.005)
+                    self.assertTrue(self.window.finished)
+                self.window.timer.start()
+                self.assertIn('Hibás', self.window.status.text())
+                self.assertTrue(self.window.start_button.isEnabled())
+                self.assertTrue(self.window.export_button.isEnabled())
+                self.assertFalse(self.window.stop_button.isEnabled())
+                self.assertTrue(all(isinstance(y, (int, float)) for _, y in self.window.memory))
+                for _ in range(3):
+                    self.window.poll()  # A later tick must not repeat a plotting error.
+                rows = self.export(f'invalid-memory-{mode}.csv')
+                self.assertEqual(rows, json.loads(json.dumps(self.window.session.rows)))
+                self.assertEqual(rows[-1]['event'], 'run_failed')
+                self.assertEqual(rows[-1]['error'], 'invalid_simulated_memory_bytes')
+                self.assertNotIn('run_complete', [r['event'] for r in rows])
+                bad_ack, = [r for r in rows if r['event'] == 'receive'
+                            and r['message'].get('simulated_memory_bytes') == 'bad']
+                self.assertTrue(bad_ack['simulated'])
+                self.assertTrue(any(r['event'] == 'result' for r in rows))
+                self.assertIn('Hibás', self.window.status.text())
+                evidence = os.environ.get('UI_EVIDENCE_DIR')
+                if evidence:
+                    directory = Path(evidence)
+                    directory.mkdir(parents=True, exist_ok=True)
+                    self.assertTrue(self.window.grab().save(str(directory / f'invalid-memory-{mode}.png')))
+                old_id = rows[0]['run_id']
+                self.click(self.window.start_button)
+                self.wait_for(lambda: self.window.finished)
+                self.assertEqual(self.window.session.rows[-1]['event'], 'run_complete')
+                self.assertNotEqual(self.window.session.rows[0]['run_id'], old_id)
+                self.export(f'restarted-memory-{mode}.csv')
+
     def test_timeout_disconnect_device_error_are_visible_and_exportable(self):
         for fault in ('timeout', 'disconnected', 'firmware_error'):
             with self.subTest(fault=fault):

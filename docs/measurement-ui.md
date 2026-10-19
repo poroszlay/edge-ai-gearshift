@@ -56,9 +56,13 @@ Az időgrafikon utolsó 2000 beérkezett feladatát mutatja, bemelegítéssel
 együtt, ms egységgel. A vízszintes tengely beérkezési sorszám, nem egy
 profilokon átívelő eszközidőrács. Missed/invalid_window esetén nincs kitalált
 feldolgozási idő: a görbe megszakad. A memóriagrafikon az execute ack
-`simulated_memory_bytes` becslését mutatja byte-ban, host eltelt idő szerint;
+ellenőrzött `simulated_memory_bytes` becslését mutatja byte-ban a kliens
+`batch_memory` eseményéből, host eltelt idő szerint;
 ez az előtöltött ablakok becsült mérete, nem teljes vagy szabad MCU-RAM.
 A számlálók külön kezelik a live/warmup/measured fázist és a négy státuszt.
+Hibás vagy hiányzó memóriamező hibás, részleges futást eredményez; a nyers ACK
+exportálható marad, a felület pedig ismét indítható. A nyers receive események
+közvetlenül nem kerülnek a memóriagrafikonra.
 
 ## CSV-séma és visszaolvasás
 
