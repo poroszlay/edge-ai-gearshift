@@ -1,5 +1,8 @@
 # Közös adat- és állapotszerződés
 
+A PC-s szabályreferencia nyilvános interfészét, konkrét mezőit és
+hibastátuszait a [szabályreferencia szerződése](rule-reference.md) rögzíti.
+
 Az alábbi döntéseket a felhasználó a tervezési interjúban elfogadta.
 A forrásspecifikáció a `context/projektmunka_elorehaladasi_dokumentacio_masodik_het.md`.
 
@@ -87,3 +90,6 @@ Forráskód, konfiguráció és kis referenciaállományok Gitbe kerülnek.
 A teljes generált adat, modell és mérési eredmény reprodukálási leírással,
 verzióval és ellenőrzőösszeggel legyen azonosítható; nagy generált állományokat
 ne adj automatikusan a forráskódhoz.
+
+A kommunikáció v1 mezősémáját, állapotgépét és korlátait a
+[JSON Lines kommunikációs szerződés](communication.md) rögzíti.
