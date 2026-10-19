@@ -12,6 +12,36 @@ from pc.dataset import Config, RunSpec, generate_run
 
 
 class GenerationTests(unittest.TestCase):
+    def test_reviewed_shift_windows_are_not_copied_across_profile_families(self):
+        from pc.dataset import iter_windows, make_plan
+
+        config = Config(duration_s=12)
+        plan = make_plan(config)
+        train = next(spec for spec in plan["train"] if spec.run_id == "acceleration-0008-v0")
+        test = next(spec for spec in plan["test"] if spec.run_id == "acceleration-0014-v0")
+        train_windows = {w.window_id: w for w in iter_windows(generate_run(train, config))}
+        test_windows = {w.window_id: w for w in iter_windows(generate_run(test, config))}
+        for train_index, test_index in ((119, 47), (234, 162)):
+            with self.subTest(train_index=train_index, test_index=test_index):
+                self.assertFalse(
+                    train_windows[f"{train.run_id}:{train_index}"].features ==
+                    test_windows[f"{test.run_id}:{test_index}"].features,
+                    "a phase-shifted root profile leaked across train/test",
+                )
+
+    def test_all_split_pairs_have_disjoint_scaled_windows_including_noisy_derivatives(self):
+        from pc.dataset import iter_windows, make_plan
+
+        config = Config(duration_s=12)
+        observed = []
+        for split, specs in make_plan(config).items():
+            features = set()
+            for spec in specs:
+                features.update(window.features for window in iter_windows(generate_run(spec, config)))
+            for previous in observed:
+                self.assertTrue(features.isdisjoint(previous), f"copied model input in {split}")
+            observed.append(features)
+
     def test_bad_configuration_and_run_specs_are_rejected(self):
         for settings in ({"duration_s": 0}, {"duration_s": 1.5}, {"duration_s": True},
                          {"seed": "7"}, {"noise_v": float("nan")}, {"noise_u": -1},
@@ -46,7 +76,7 @@ class GenerationTests(unittest.TestCase):
         plan = make_plan(Config())
         self.assertEqual({key: len(value) for key, value in plan.items()},
                          {"train": 140, "validation": 30, "test": 30})
-        seen_runs, family_splits = set(), {}
+        seen_runs, family_splits, family_roots = set(), {}, {}
         gears = {1: 0, 2: 0}
         for split, specs in plan.items():
             counts = {}
@@ -54,6 +84,8 @@ class GenerationTests(unittest.TestCase):
                 self.assertNotIn(spec.run_id, seen_runs)
                 seen_runs.add(spec.run_id)
                 self.assertEqual(family_splits.setdefault(spec.family_id, split), split)
+                root = (spec.profile_seed, spec.phase_samples, spec.initial_gear)
+                self.assertEqual(family_roots.setdefault(spec.family_id, root), root)
                 gears[spec.initial_gear] += 1
                 counts[spec.kind] = counts.get(spec.kind, 0) + 1
             self.assertEqual(sorted(counts.values()), [len(specs) // 5] * 5)
@@ -150,6 +182,69 @@ class ExportTests(unittest.TestCase):
             self.assertNotEqual(result.returncode, 0)
         return result
 
+    def test_overlap_audit_compares_actual_scaled_windows_without_run_ids(self):
+        with tempfile.TemporaryDirectory() as temp:
+            output = Path(temp)
+            for split, extra_tau in (("train", 0), ("validation", 20), ("test", 40)):
+                rows = generate_run(RunSpec(split, split, "threshold", 1), Config(duration_s=1))
+                for row in rows:
+                    row["tau"] += extra_tau
+                with (output / f"{split}.csv").open("w", newline="") as handle:
+                    writer = csv.DictWriter(handle, list(rows[0]))
+                    writer.writeheader()
+                    writer.writerows(rows)
+            result = self.cli("audit-overlap", output, success=False)
+            self.assertEqual(result.returncode, 1, result.stderr)
+            audit = json.loads(result.stdout)
+            self.assertEqual(audit["checked_windows"], 3)
+            self.assertEqual(audit["matching_windows"], {
+                "train:validation": 1, "train:test": 1, "validation:test": 1,
+            })
+            self.assertTrue(audit["examples"])
+
+    def test_verify_and_seal_reject_checksum_valid_cross_split_copies(self):
+        from pc.dataset import iter_windows, make_plan
+
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            output = root / "data"
+            config_file = root / "config.json"
+            config_file.write_text(json.dumps({"duration_s": 4}))
+            self.cli("generate", output, "--config", config_file)
+            config = Config(duration_s=4)
+            plan = make_plan(config)
+            target = plan["test"][0]
+            source = next(spec for spec in plan["train"] if spec.initial_gear == target.initial_gear)
+            copied = [dict(row, run_id=target.run_id) for row in generate_run(source, config)]
+            for name, replacement in (
+                ("test.csv", copied),
+                ("test-windows.csv", [dict(window_id=w.window_id, run_id=w.run_id,
+                                           start_timestamp_ms=w.timestamp_ms - 950,
+                                           timestamp_ms=w.timestamp_ms, action=w.action,
+                                           class_index=w.class_index) for w in iter_windows(copied)]),
+            ):
+                with (output / name).open(newline="") as handle:
+                    reader = csv.DictReader(handle)
+                    fields = reader.fieldnames
+                    remaining = [row for row in reader if row["run_id"] != target.run_id]
+                with (output / name).open("w", newline="") as handle:
+                    writer = csv.DictWriter(handle, fields, lineterminator="\n")
+                    writer.writeheader()
+                    writer.writerows(replacement + remaining)
+            # This is a checksum-valid input fixture, not accidental corruption.
+            # Its copied samples have valid state, labels and window indices.
+            manifest_path = output / "manifest.json"
+            manifest = json.loads(manifest_path.read_text())
+            for name in ("test.csv", "test-windows.csv"):
+                manifest["sha256"][name] = hashlib.sha256((output / name).read_bytes()).hexdigest()
+            del manifest["dataset_id"]
+            manifest["dataset_id"] = hashlib.sha256(json.dumps(manifest, sort_keys=True).encode()).hexdigest()
+            manifest_path.write_text(json.dumps(manifest, sort_keys=True, indent=2) + "\n")
+            for command in ("verify", "seal"):
+                result = self.cli(command, output, success=False)
+                self.assertIn("cross-split model-window overlap", result.stderr)
+            self.assertFalse((output / "test-lock.json").exists())
+
     def test_export_is_byte_reproducible_and_records_provenance_and_split_membership(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
@@ -203,6 +298,10 @@ class ExportTests(unittest.TestCase):
             self.cli("generate", complete, "--config", config)
             report = json.loads((complete / "report.json").read_text())
             self.assertTrue(report["coverage_ok"], report["coverage_errors"])
+            self.assertEqual(report["overlap"]["matching_windows"], {
+                "train:validation": 0, "train:test": 0, "validation:test": 0,
+            })
+            self.assertEqual(report["overlap"]["checked_windows"], 44200)
             for split in ("train", "validation", "test"):
                 stats = report["splits"][split]
                 self.assertEqual(stats["samples"], stats["runs"] * 240)

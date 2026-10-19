@@ -1,0 +1,136 @@
+{
+  "coverage_errors": [],
+  "coverage_ok": true,
+  "invariants_checked": [
+    "50ms chronology",
+    "predecision state",
+    "next-sample gear/tau",
+    "reference labels",
+    "20 past/present samples",
+    "family split before windows",
+    "no identical model windows across splits"
+  ],
+  "overlap": {
+    "checked_windows": 476200,
+    "examples": [],
+    "fingerprint": "sha256 of 100 big-endian binary64 values; -0=+0",
+    "matching_windows": {
+      "train:test": 0,
+      "train:validation": 0,
+      "validation:test": 0
+    }
+  },
+  "splits": {
+    "test": {
+      "boundaries": {
+        "blocked_down": 30,
+        "blocked_up": 391,
+        "lower_equal": 210,
+        "lower_near": 979,
+        "tau_0_95": 594,
+        "tau_1": 594,
+        "tau_above_10": 15064,
+        "upper_equal": 962,
+        "upper_near": 628
+      },
+      "classes": {
+        "0": 296,
+        "1": 70833,
+        "2": 301
+      },
+      "events": {
+        "down": 296,
+        "up": 301
+      },
+      "families": 15,
+      "initial_gears": {
+        "1": 18,
+        "2": 12
+      },
+      "kinds": {
+        "acceleration": 6,
+        "cruise": 6,
+        "deceleration": 6,
+        "threshold": 6,
+        "uphill": 6
+      },
+      "runs": 30,
+      "samples": 72000,
+      "windows": 71430
+    },
+    "train": {
+      "boundaries": {
+        "blocked_down": 259,
+        "blocked_up": 1755,
+        "lower_equal": 1042,
+        "lower_near": 5274,
+        "tau_0_95": 2976,
+        "tau_1": 2974,
+        "tau_above_10": 28872,
+        "upper_equal": 4303,
+        "upper_near": 2921
+      },
+      "classes": {
+        "0": 1496,
+        "1": 330347,
+        "2": 1497
+      },
+      "events": {
+        "down": 1496,
+        "up": 1497
+      },
+      "families": 70,
+      "initial_gears": {
+        "1": 64,
+        "2": 76
+      },
+      "kinds": {
+        "acceleration": 28,
+        "cruise": 28,
+        "deceleration": 28,
+        "threshold": 28,
+        "uphill": 28
+      },
+      "runs": 140,
+      "samples": 336000,
+      "windows": 333340
+    },
+    "validation": {
+      "boundaries": {
+        "blocked_down": 50,
+        "blocked_up": 377,
+        "lower_equal": 213,
+        "lower_near": 1119,
+        "tau_0_95": 574,
+        "tau_1": 572,
+        "tau_above_10": 11224,
+        "upper_equal": 936,
+        "upper_near": 555
+      },
+      "classes": {
+        "0": 284,
+        "1": 70854,
+        "2": 292
+      },
+      "events": {
+        "down": 284,
+        "up": 292
+      },
+      "families": 15,
+      "initial_gears": {
+        "1": 18,
+        "2": 12
+      },
+      "kinds": {
+        "acceleration": 6,
+        "cruise": 6,
+        "deceleration": 6,
+        "threshold": 6,
+        "uphill": 6
+      },
+      "runs": 30,
+      "samples": 72000,
+      "windows": 71430
+    }
+  }
+}

@@ -1,0 +1,15 @@
+Python 3.13.5
+python3 -m unittest discover -s tests -v
+exit=0, 48 tests OK
+python3 -m pc.dataset audit-overlap data/generated/dataset-v1
+exit=1, leakage reproduced; see v1-overlap.json
+Frozen v1: ten data checksums plus sealed manifest hash unchanged. Original evidence SHA256SUMS: all OK.
+python3 -m pc.dataset generate data/generated/dataset-v2 --config config/dataset-v2.json
+exit=0
+Inspected report.json before sealing: coverage_ok=true, coverage_errors=[], 476200 windows, all three overlap counts zero.
+python3 -m pc.dataset seal data/generated/dataset-v2
+exit=0
+python3 -m pc.dataset generate data/generated/dataset-v2-repeat --config config/dataset-v2.json
+exit=0
+diff -r --exclude=test-lock.json data/generated/dataset-v2 data/generated/dataset-v2-repeat
+exit=0, no output; all 11 shared files byte-identical. First dataset already sealed.
