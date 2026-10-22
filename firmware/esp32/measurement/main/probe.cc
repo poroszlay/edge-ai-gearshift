@@ -146,11 +146,15 @@ const char* error_name(Error error) {
     return "\"invalid_config\"";
 }
 
-void drain_uart() {
+void drain_uart(ProbeClock& clock) {
     std::fflush(stdout);
 #ifdef ESP_PLATFORM
     esp_rom_output_tx_wait_idle(0);
+#elif defined(MEASUREMENT_HOST_UART_DRAIN_US)
+    // Host-only deterministic transport latency for export regression tests.
+    clock.wait_until_us(clock.now_us() + MEASUREMENT_HOST_UART_DRAIN_US);
 #endif
+    (void)clock;
 }
 
 int probe(bool live) {
@@ -201,10 +205,11 @@ int probe(bool live) {
             std::printf("],\"uart_wait_us\":%" PRId64 ",\"memory\":", uart_wait);
             memory(before, false);
             std::printf("}\n");
-            drain_uart();
+            drain_uart(clock);
 #ifdef ESP_PLATFORM
             if (heap_caps_monitor_local_minimum_free_size_start() != ESP_OK) return 1;
 #endif
+            const int64_t complete_uart_wait = clock.now_us() - previous_end;
             const auto result = run({count, period, live ? 1U : 4U}, clock, workload, records, 1000);
             previous_end = clock.now_us();
             if (result.error != Error::none) return 1;
@@ -232,13 +237,13 @@ int probe(bool live) {
                 std::printf("}\n");
             }
             std::printf("{\"event\":\"series_end\",\"batch_id\":\"b%u\",\"count\":%u,"
-                        "\"end_us\":%" PRId64 ",\"uart_during_execution\":false}\n",
-                        static_cast<unsigned>(batch), static_cast<unsigned>(result.count), result.end_us);
+                        "\"end_us\":%" PRId64 ",\"uart_wait_us\":%" PRId64 ",\"uart_during_execution\":false}\n",
+                        static_cast<unsigned>(batch), static_cast<unsigned>(result.count), result.end_us, complete_uart_wait);
         }
     }
     std::printf("{\"event\":\"run_complete\",\"batches\":%u,\"tasks\":%u}\n",
                 expected_batches, expected_tasks);
-    drain_uart();
+    drain_uart(clock);
     return 0;
 }
 }  // namespace

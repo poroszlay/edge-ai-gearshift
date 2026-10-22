@@ -122,6 +122,9 @@ def validate(events):
             check(integer(event['end_us']) and
                   event['end_us'] >= max(count * active['period_us'], latest_finish) and
                   event['uart_during_execution'] is False, 'invalid execution end or UART in execution')
+            if 'uart_wait_us' in event:
+                check(integer(event['uart_wait_us']) and
+                      event['uart_wait_us'] >= active['uart_wait_us'], 'invalid complete UART pause')
             total += count
             batches += 1
             active = None
@@ -155,7 +158,9 @@ def analyze(events):
                 inference_ms=distribution([(r['inference_finished_us'] - r['inference_started_us']) / 1000
                                            for r in completed]),
                 inferences_per_second=len(completed) * 1_000_000 / event['end_us'],
-                uart_wait_us=start['uart_wait_us'], memory_before=start.get('memory'),
+                uart_wait_us=event.get('uart_wait_us', start['uart_wait_us']),
+                uart_wait_scope='complete' if 'uart_wait_us' in event else 'before_header',
+                memory_before=start.get('memory'),
                 memory_after=memory_after))
     return dict(schema=header['schema'], run_id=header['run_id'], simulated=header['simulated'],
                 mode=header['mode'], workload=header['workload'], metadata=dict(header), batches=batches)

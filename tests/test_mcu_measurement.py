@@ -28,6 +28,7 @@ class McuMeasurementTests(unittest.TestCase):
             executable = str(pathlib.Path(directory) / 'probe')
             build = subprocess.run([
                 'g++', '-std=c++17', '-Wall', '-Wextra', '-Werror', '-pedantic',
+                '-DMEASUREMENT_HOST_UART_DRAIN_US=7000',
                 '-I', str(module / 'include'), str(module / 'measurement.cc'),
                 str(root / 'firmware/esp32/measurement/main/probe.cc'), '-o', executable,
             ], capture_output=True, text=True)
@@ -36,6 +37,10 @@ class McuMeasurementTests(unittest.TestCase):
             self.assertEqual(run.returncode, 0, run.stderr)
             rows = [json.loads(line) for line in run.stdout.splitlines()]
             self.assertTrue(rows[0]['simulated'])
+            # The virtual UART takes 7 ms to drain each series header.
+            # Every pause must include it, including the first series.
+            ends = [row for row in rows if row['event'] == 'series_end']
+            self.assertEqual([row.get('uart_wait_us') for row in ends], [7000] * 16)
             self.assertEqual(rows[-1], dict(event='run_complete', batches=16, tasks=12400))
             source = pathlib.Path(directory) / 'probe.jsonl'
             source.write_text(run.stdout)
@@ -44,6 +49,7 @@ class McuMeasurementTests(unittest.TestCase):
             ], cwd=root, capture_output=True, text=True, timeout=10)
             self.assertEqual(analysis.returncode, 0, analysis.stderr)
             batches = json.loads(analysis.stdout)['batches']
+            self.assertEqual([b['uart_wait_us'] for b in batches], [7000] * 16)
             self.assertEqual(sum(b['scheduled'] for b in batches if b['phase'] == 'warmup'), 400)
             self.assertEqual(sum(b['scheduled'] for b in batches if b['phase'] == 'measured'), 12000)
             first = next(b for b in batches if b['phase'] == 'measured' and b['period_us'] == 10000)

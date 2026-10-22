@@ -109,3 +109,26 @@ class ProfilerTests(unittest.TestCase):
                 result = self.analyze(events)
                 self.assertNotEqual(result.returncode, 0)
                 self.assertEqual(result.stdout, '')
+
+    def test_complete_uart_pause_cannot_be_negative_or_shorter_than_its_prefix(self):
+        for value in (-1, True, None, 199, 200.5):
+            events = capture()
+            events[-2]['uart_wait_us'] = value
+            with self.subTest(value=value):
+                result = self.analyze(events)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertEqual(result.stdout, '')
+
+    def test_report_distinguishes_complete_pause_from_legacy_prefix(self):
+        events = capture()
+        legacy = self.analyze(events)
+        self.assertEqual(legacy.returncode, 0, legacy.stderr)
+        batch = json.loads(legacy.stdout)['batches'][0]
+        self.assertEqual((batch['uart_wait_us'], batch['uart_wait_scope']),
+                         (200, 'before_header'))
+        events[-2]['uart_wait_us'] = 7200
+        result = self.analyze(events)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        batch = json.loads(result.stdout)['batches'][0]
+        self.assertEqual((batch['uart_wait_us'], batch['uart_wait_scope']),
+                         (7200, 'complete'))

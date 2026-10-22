@@ -163,3 +163,43 @@ PY
 - A #6-ra nem vártunk, annak fájljait és branchét nem módosítottuk.
   Modellminőség, teljes tesztadat-értékelés és portolási helyesség továbbra
   is #6/#7 feladat, nem ennek a mesterséges terhelésnek az eredménye.
+
+
+## #17 review-kommentek javítása — 2026-10-22
+
+Az UART-szünet hiányos elszámolása javítva. A `series_end.uart_wait_us`
+az előző végrehajtás vége és az aktuális `run` előtti időpont közötti teljes
+szünetet rögzíti, a következő fejléc átvitelével és TX-drainnel együtt.
+A `series_start` korábbi részértéke kompatibilitási okból megmarad.
+A profiler a teljes értéket használja; régi exportnál a hiányos mérési
+határt `uart_wait_scope=before_header`, újnál `complete` jelöli.
+
+A felhasználó jóváhagyta a próbafirmware JSONL-exportja és a profiler
+jelentése tesztelési határt. Három egymást követő red → green szelet:
+
+1. A benchmark exportteszt 16 teljes, egyenként 7000 µs-os szünetet várt,
+   és először a hiányzó `series_end.uart_wait_us` miatt elbukott. A hostos
+   TX-drainhez fordításkor beállított 7000 µs virtuális átviteli késleltetés
+   után a firmware exportja és a profiler jelentése is helyes. Az eredeti
+   400 bemelegítő + 12000 mért feladat és túlterhelési elszámolás megmarad.
+2. A negatív, nem egész, bool, null vagy a fejléc előtti részértéknél kisebb
+   teljes szünetet a CLI kezdetben elfogadta (öt bukás), a javítás elutasítja.
+3. A régi és új export mérési határának jelölését ellenőrző teszt először
+   hiányzó `uart_wait_scope` miatt elbukott; a javítás után sikeres.
+
+Ellenőrzések a javított forráson:
+
+- Teljes regresszió a sandboxon kívül, helyi socketekkel:
+  **67 teszt, 54,356 s, OK, 7 GUI-skip**; [napló](review-fixes-tests.log).
+- ESP-IDF v5.5.1 benchmark és live build: **mindkettő exit 0**.
+  Helyi naplók: `/tmp/issue5-review-{benchmark,live}-build.log`.
+- `git diff --check`: sikeres.
+
+**A paneles review-pont továbbra is nyitott.** A sandboxon kívüli hoston
+látható a CP2102 `/dev/ttyUSB0` és a dokumentált by-id útvonal, de a port
+`os.open` próbája `PermissionError: errno=13` hibát adott. Nem történt
+flash, paneles live/benchmark futás, idő-/heapmérés vagy fizikai UART-csend
+igazolása. A folytatáshoz a felhasználó saját termináljában adhat hozzáférést:
+`sudo setfacl -m u:richie:rw /dev/ttyUSB0`; utána a fent dokumentált
+azonosítási és paneles ellenőrzési lépések szükségesek. A hostos késleltetés
+kizárólag regressziós szimuláció, nem hardveres bizonyíték.

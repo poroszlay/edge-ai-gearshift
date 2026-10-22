@@ -112,10 +112,19 @@ külön ablak fut, külön egyfeladatos adagban, 50 ms periódussal.
 A sorozat eleji kiírás után `fflush` és az SDK ESP32-re javított
 `esp_rom_output_tx_wait_idle()` függvénye kiüríti a TX-et. A `run` alatt
 nincs UART-küldés/olvasás vagy formázás. Eredmények és memóriaadatok csak
-utána mennek ki. A két sorozat közötti `uart_wait_us` a korábbi végrehajtás
-vége és a következő adag előkészítése közötti, főként átviteli idő;
-nem tiszta UART-driveridő és nem része az MCU-feldolgozási időnek. A későbbi
-start-üzenet átvitele és a TX kiürítése szintén a futtatáson kívül történik.
+utána mennek ki. A `series_end.uart_wait_us` a korábbi végrehajtás vége és
+az aktuális `run` hívás előtti mérési pont közötti teljes szünet: tartalmazza
+az eredményátvitelt, a következő `series_start` fejléc átvitelét és a TX
+kiürítését is. Az értéket a végrehajtás előtt lezárjuk, utána exportáljuk.
+Az első sorozatnál a kiindulópont a `run_start` kiírása utáni időpont.
+Ez főként átviteli idő, nem tiszta UART-driveridő, és nem része az
+MCU-feldolgozási időnek. A kompatibilitás miatt megtartott
+`series_start.uart_wait_us` csak a fejléc előtti részintervallum.
+
+A profiler az új `series_end` mezőt használja, `uart_wait_scope=complete`
+jelöléssel. Régi exportnál a fejlécbeli részértéket mutatja,
+`uart_wait_scope=before_header` jelöléssel; ebből teljes szünet nem
+állítható elő. A teljes érték nem lehet kisebb a fejléc előtti részértéknél.
 
 ### Paneles futtatás
 
