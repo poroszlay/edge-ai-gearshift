@@ -1,5 +1,8 @@
 # Közös adat- és állapotszerződés
 
+A szintetikus adatkészlet generátorát, CSV-sémáját, menetcsalád-felosztását
+és lezárási folyamatát az [adatkészlet dokumentációja](dataset.md) rögzíti.
+
 A PC-s szabályreferencia nyilvános interfészét, konkrét mezőit és
 hibastátuszait a [szabályreferencia szerződése](rule-reference.md) rögzíti.
 

@@ -1,0 +1,37 @@
+{
+  "config": {
+    "duration_s": 120,
+    "noise_s": 0.03,
+    "noise_u": 0.005,
+    "noise_v": 0.15,
+    "noisy_variants": 1,
+    "period_samples": 240,
+    "runs_per_type": 40,
+    "seed": 20261019
+  },
+  "dataset_id": "ef6f8048efec22e32cc44fd4c58b08052359ab6880ee52c2257e3da59f27ba4a",
+  "generator": {
+    "sha256": "8edb788c8a4850d1b761b1eacd5a718e451db8ac3f70c2563edfedc53808e6e7",
+    "version": "synthetic-v2"
+  },
+  "labeler": {
+    "sha256": "01699ddd70f04b9399dde7a0fdde0e67a32fecb0f506de12a34a3fa55ef77607",
+    "version": "rule-reference-v1"
+  },
+  "profile_policy": "independent parameter realization per family; derivatives share profile_seed",
+  "python_version": "3.13.5",
+  "schema_version": "dataset-v2",
+  "sha256": {
+    "config.json": "e81960448c559853123eab9cb9ceaa0b2f3ec7be45dd2106ba47513dc5dbead6",
+    "invalid.jsonl": "07431a6230eb59e5aa926f314943cc7776efc92f2d38c1b1c5a2ffb91875b41c",
+    "report.json": "c8306acd786a7bc8caf61d8ed3e709c90ea7d131752c270151936185e64803b8",
+    "runs.csv": "665e8ac219eb95fcf075e53a9fa55e96e6cf2ede0fef042c3e3b660fae1ae6de",
+    "test-windows.csv": "d9249594dfc925aca6f7c875eca611c40d2e5db447c0b28464aa42f9a5528f88",
+    "test.csv": "07fb28184340fcbb21dadff4500fa5e14f990190d282d5c26b911a923d423d78",
+    "train-windows.csv": "db5833854700012bf3fb63e360d34e4207189f1dad16ea9d4cec99981c1117a2",
+    "train.csv": "97aa680a8f92f08a5de2a00f7461264a4a71147bae1fd1f349b6a5f22df63efd",
+    "validation-windows.csv": "c00e2391b98f75effb1b0cb9c58f91d7c3537c7a19c58687f0f41b3430b6e1b3",
+    "validation.csv": "90262367a8331f6966918709032bf6d5b521408d3b45106d7e79a7c2dd0ea650"
+  },
+  "split_policy": "70/15/15, stratified by kind, whole root-profile families before windows"
+}

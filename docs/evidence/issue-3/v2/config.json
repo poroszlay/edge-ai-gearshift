@@ -1,0 +1,10 @@
+{
+  "duration_s": 120,
+  "noise_s": 0.03,
+  "noise_u": 0.005,
+  "noise_v": 0.15,
+  "noisy_variants": 1,
+  "period_samples": 240,
+  "runs_per_type": 40,
+  "seed": 20261019
+}

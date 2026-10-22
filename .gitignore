@@ -10,3 +10,8 @@ firmware/**/managed_components/
 firmware/**/sdkconfig
 firmware/**/sdkconfig.old
 results/issue-2/
+
+# Reproducible datasets stay outside source control.
+data/generated/
+__pycache__/
+*.py[cod]

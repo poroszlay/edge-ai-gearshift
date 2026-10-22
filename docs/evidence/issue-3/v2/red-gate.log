@@ -1,0 +1,15 @@
+test_verify_and_seal_reject_checksum_valid_cross_split_copies (test_dataset.ExportTests.test_verify_and_seal_reject_checksum_valid_cross_split_copies) ... FAIL
+
+======================================================================
+FAIL: test_verify_and_seal_reject_checksum_valid_cross_split_copies (test_dataset.ExportTests.test_verify_and_seal_reject_checksum_valid_cross_split_copies)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-3/tests/test_dataset.py", line 230, in test_verify_and_seal_reject_checksum_valid_cross_split_copies
+    self.assertIn("cross-split model-window overlap", result.stderr)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'cross-split model-window overlap' not found in 'coverage report differs from raw data\n'
+
+----------------------------------------------------------------------
+Ran 1 test in 3.681s
+
+FAILED (failures=1)

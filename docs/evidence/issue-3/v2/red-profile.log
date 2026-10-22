@@ -1,0 +1,42 @@
+test_reviewed_shift_windows_are_not_copied_across_profile_families (test_dataset.GenerationTests.test_reviewed_shift_windows_are_not_copied_across_profile_families) ...
+  test_reviewed_shift_windows_are_not_copied_across_profile_families (test_dataset.GenerationTests.test_reviewed_shift_windows_are_not_copied_across_profile_families) (train_index=119, test_index=47) ... FAIL
+  test_reviewed_shift_windows_are_not_copied_across_profile_families (test_dataset.GenerationTests.test_reviewed_shift_windows_are_not_copied_across_profile_families) (train_index=234, test_index=162) ... FAIL
+
+======================================================================
+FAIL: test_reviewed_shift_windows_are_not_copied_across_profile_families (test_dataset.GenerationTests.test_reviewed_shift_windows_are_not_copied_across_profile_families) (train_index=119, test_index=47)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-3/tests/test_dataset.py", line 26, in test_reviewed_shift_windows_are_not_copied_across_profile_families
+    self.assertFalse(
+    ~~~~~~~~~~~~~~~~^
+        train_windows[f"{train.run_id}:{train_index}"].features ==
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        test_windows[f"{test.run_id}:{test_index}"].features,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "a phase-shifted root profile leaked across train/test",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: True is not false : a phase-shifted root profile leaked across train/test
+
+======================================================================
+FAIL: test_reviewed_shift_windows_are_not_copied_across_profile_families (test_dataset.GenerationTests.test_reviewed_shift_windows_are_not_copied_across_profile_families) (train_index=234, test_index=162)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-3/tests/test_dataset.py", line 26, in test_reviewed_shift_windows_are_not_copied_across_profile_families
+    self.assertFalse(
+    ~~~~~~~~~~~~~~~~^
+        train_windows[f"{train.run_id}:{train_index}"].features ==
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        test_windows[f"{test.run_id}:{test_index}"].features,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "a phase-shifted root profile leaked across train/test",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: True is not false : a phase-shifted root profile leaked across train/test
+
+----------------------------------------------------------------------
+Ran 1 test in 0.067s
+
+FAILED (failures=2)

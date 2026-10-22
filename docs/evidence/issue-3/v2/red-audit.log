@@ -1,0 +1,17 @@
+test_overlap_audit_compares_actual_scaled_windows_without_run_ids (test_dataset.ExportTests.test_overlap_audit_compares_actual_scaled_windows_without_run_ids) ... FAIL
+
+======================================================================
+FAIL: test_overlap_audit_compares_actual_scaled_windows_without_run_ids (test_dataset.ExportTests.test_overlap_audit_compares_actual_scaled_windows_without_run_ids)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-3/tests/test_dataset.py", line 182, in test_overlap_audit_compares_actual_scaled_windows_without_run_ids
+    self.assertEqual(result.returncode, 1, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 1 : usage: dataset.py [-h] {generate,seal,verify} ...
+dataset.py: error: argument command: invalid choice: 'audit-overlap' (choose from generate, seal, verify)
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.075s
+
+FAILED (failures=1)
