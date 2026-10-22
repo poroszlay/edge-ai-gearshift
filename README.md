@@ -7,6 +7,7 @@ döntésbecslés és laboratóriumi értékelés.
 - [Közös adatszerződés](docs/data-contract.md)
 - [Modell- és mérési szerződés](docs/model-measurement-contract.md)
 - [Szintetikus adatkészlet, reprodukálás és tesztlezárás (#3)](docs/dataset.md)
+- [PySide6 mérőfelület és CSV-export](docs/measurement-ui.md)
 
 A bringup szinuszmodellje hivatalos kompatibilitási próba. A projekt saját
 100 → 32 → 16 → 3 MLP-je és hardveres mérési eredményei még nem készültek el.

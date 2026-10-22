@@ -1,0 +1,2 @@
+# Keep raw log bytes (UART emits CRLF/CRCRLF; list_ports pads port names).
+*.log -text whitespace=-blank-at-eol,-blank-at-eof

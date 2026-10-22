@@ -254,6 +254,37 @@ class CommunicationTests(unittest.TestCase):
                 Client(a, output, 'live').request('start')
             self.assertEqual(json.loads(output.getvalue().splitlines()[-1])['event'], 'failure')
 
+    def test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply(self):
+        fields = [{}] + [dict(simulated_memory_bytes=value)
+                         for value in ('bad', None, True, False, -1, 1.5, [], {}, 10 ** 400)]
+        for memory in fields:
+            with self.subTest(memory=memory):
+                a, b = socket.socketpair()
+                output = io.StringIO()
+                with a, b:
+                    client = Client(a, output, 'live')
+                    device = Device()
+                    for sequence, (kind, values) in enumerate([
+                            ('start', {}),
+                            ('load', dict(batch_id='live-0', windows=[example_window(0)])),
+                            ('execute', dict(batch_id='live-0', count=1, period_ms=50))], 1):
+                        reply = device.handle(dict(v=1, type=kind, request_id=str(sequence),
+                                                   run_id=client.run_id, mode='live', **values))
+                        if kind == 'execute':
+                            reply.pop('simulated_memory_bytes')
+                            reply.update(memory)
+                        Wire(b).send(reply)
+                    with self.assertRaisesRegex(ProtocolError, 'invalid_simulated_memory_bytes'):
+                        client.run([example_window(0)])
+                rows = [json.loads(line) for line in output.getvalue().splitlines()]
+                self.assertEqual(rows[-1]['event'], 'failure')
+                self.assertEqual(rows[-1]['request_id'], '3')
+                self.assertEqual(rows[-2]['event'], 'receive')
+                self.assertEqual({k: v for k, v in rows[-2]['message'].items()
+                                  if k == 'simulated_memory_bytes'}, memory)
+                self.assertFalse(any(r['event'] in ('batch_memory', 'result', 'run_complete') for r in rows))
+                self.assertFalse(any(r['event'] == 'send' and r['message']['type'] == 'fetch' for r in rows))
+
 
 if __name__ == '__main__':
     unittest.main()

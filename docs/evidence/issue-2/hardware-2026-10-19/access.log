@@ -1,0 +1,17 @@
+UTC: 2026-10-19T17:18:41.028226+00:00
+$ id
+uid=1000(richie) gid=1000(richie) groups=1000(richie),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),100(users),101(netdev),102(scanner),108(bluetooth),110(lpadmin)
+exit=0
+$ getfacl /dev/ttyUSB0
+getfacl: Removing leading '/' from absolute path names
+# file: dev/ttyUSB0
+# owner: root
+# group: dialout
+user::rw-
+user:richie:rw-
+group::rw-
+mask::rw-
+other::---
+exit=0
+$ os.open(/dev/ttyUSB0, O_RDWR | O_NOCTTY | O_NONBLOCK)
+OPEN OK

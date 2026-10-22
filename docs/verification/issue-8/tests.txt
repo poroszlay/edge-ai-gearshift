@@ -1,0 +1,62 @@
+test_benchmark_working_set_remains_bounded (test_communication.CommunicationTests.test_benchmark_working_set_remains_bounded) ... ok
+test_both_modes_complete_and_every_export_is_marked (test_communication.CommunicationTests.test_both_modes_complete_and_every_export_is_marked) ... ok
+test_fragmented_and_coalesced_frames (test_communication.CommunicationTests.test_fragmented_and_coalesced_frames) ... ok
+test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) ... ok
+test_live_cli_processes_more_than_eight_windows (test_communication.CommunicationTests.test_live_cli_processes_more_than_eight_windows) ... ok
+test_load_preserves_unfetched_results (test_communication.CommunicationTests.test_load_preserves_unfetched_results) ... ok
+test_malformed_oversized_version_and_disconnect (test_communication.CommunicationTests.test_malformed_oversized_version_and_disconnect) ... ok
+test_overload_and_invalid_windows (test_communication.CommunicationTests.test_overload_and_invalid_windows) ... ok
+test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) ... ok
+test_timeout_and_partial_line (test_communication.CommunicationTests.test_timeout_and_partial_line) ... ok
+test_valid_result_statuses_complete_run (test_communication.CommunicationTests.test_valid_result_statuses_complete_run) ... ok
+test_validation_and_scaling (test_communication.CommunicationTests.test_validation_and_scaling) ... ok
+test_wrong_pairing_is_rejected (test_communication.CommunicationTests.test_wrong_pairing_is_rejected) ... ok
+test_export_roundtrip_preserves_every_event_and_accounting (test_measurement_ui.ArchiveTests.test_export_roundtrip_preserves_every_event_and_accounting) ... ok
+test_benchmark_four_profiles_post_execute_fetch_and_invalid_input (test_measurement_ui.GuiTests.test_benchmark_four_profiles_post_execute_fetch_and_invalid_input) ... This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+ok
+test_select_start_stop_export_and_restart (test_measurement_ui.GuiTests.test_select_start_stop_export_and_restart) ... This plugin does not support propagateSizeHints()
+ok
+test_selected_profile_only (test_measurement_ui.GuiTests.test_selected_profile_only) ... This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+ok
+test_slow_file_operations_keep_event_loop_running_and_export_error (test_measurement_ui.GuiTests.test_slow_file_operations_keep_event_loop_running_and_export_error) ... This plugin does not support propagateSizeHints()
+ok
+test_stop_interrupts_pending_socket_and_close_waits_without_blocking (test_measurement_ui.GuiTests.test_stop_interrupts_pending_socket_and_close_waits_without_blocking) ... This plugin does not support propagateSizeHints()
+ok
+test_timeout_disconnect_device_error_are_visible_and_exportable (test_measurement_ui.GuiTests.test_timeout_disconnect_device_error_are_visible_and_exportable) ... This plugin does not support propagateSizeHints()
+ok
+test_action_is_not_the_class_index (test_reference.ReferenceTests.test_action_is_not_the_class_index) ... ok
+test_documented_downshift (test_reference.ReferenceTests.test_documented_downshift) ... ok
+test_documented_lockout_holds (test_reference.ReferenceTests.test_documented_lockout_holds) ... ok
+test_documented_upper_threshold_equality_holds (test_reference.ReferenceTests.test_documented_upper_threshold_equality_holds) ... ok
+test_documented_upshift (test_reference.ReferenceTests.test_documented_upshift) ... ok
+test_downshift_uses_latest_gear_not_the_preceding_four (test_reference.ReferenceTests.test_downshift_uses_latest_gear_not_the_preceding_four) ... ok
+test_each_of_v_u_s_is_averaged_over_all_five_recent_samples (test_reference.ReferenceTests.test_each_of_v_u_s_is_averaged_over_all_five_recent_samples) ... ok
+test_inclusive_range_limits_and_tau_above_ten_are_valid (test_reference.ReferenceTests.test_inclusive_range_limits_and_tau_above_ten_are_valid) ... ok
+test_invalid_window_length_has_no_label (test_reference.ReferenceTests.test_invalid_window_length_has_no_label) ... ok
+test_labeling_does_not_change_replayed_state (test_reference.ReferenceTests.test_labeling_does_not_change_replayed_state) ... ok
+test_large_integers_have_explicit_status_instead_of_overflow (test_reference.ReferenceTests.test_large_integers_have_explicit_status_instead_of_overflow) ... ok
+test_latest_predecision_state_is_used (test_reference.ReferenceTests.test_latest_predecision_state_is_used) ... ok
+test_lower_threshold_equality_holds (test_reference.ReferenceTests.test_lower_threshold_equality_holds) ... ok
+test_missing_signal_anywhere_has_no_label_even_during_lockout (test_reference.ReferenceTests.test_missing_signal_anywhere_has_no_label_even_during_lockout) ... ok
+test_non_finite_signal_anywhere_has_no_label (test_reference.ReferenceTests.test_non_finite_signal_anywhere_has_no_label) ... ok
+test_one_second_unlocks_both_directions (test_reference.ReferenceTests.test_one_second_unlocks_both_directions) ... ok
+test_only_last_five_samples_are_averaged (test_reference.ReferenceTests.test_only_last_five_samples_are_averaged) ... ok
+test_out_of_range_signal_anywhere_has_no_label (test_reference.ReferenceTests.test_out_of_range_signal_anywhere_has_no_label) ... ok
+test_sampling_requires_nonnegative_integer_milliseconds_and_50ms_steps (test_reference.ReferenceTests.test_sampling_requires_nonnegative_integer_milliseconds_and_50ms_steps) ... ok
+test_window_cannot_cross_runs (test_reference.ReferenceTests.test_window_cannot_cross_runs) ... ok
+test_wrong_types_are_reported_without_coercion (test_reference.ReferenceTests.test_wrong_types_are_reported_without_coercion) ... ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 10.379s
+
+OK
