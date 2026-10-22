@@ -235,6 +235,12 @@ int probe(bool live) {
                 nullable_time("inference_finished_us", r.inference_finished_us);
                 nullable_time("finished_us", r.finished_us);
                 std::printf("}\n");
+#ifdef ESP_PLATFORM
+                // UART VFS writes poll the TX FIFO. Let IDLE1 run between
+                // records so a long export cannot starve its watchdog.
+                // This is outside run(); the next UART pause includes it.
+                vTaskDelay(1);
+#endif
             }
             std::printf("{\"event\":\"series_end\",\"batch_id\":\"b%u\",\"count\":%u,"
                         "\"end_us\":%" PRId64 ",\"uart_wait_us\":%" PRId64 ",\"uart_during_execution\":false}\n",
