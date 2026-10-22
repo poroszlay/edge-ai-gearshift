@@ -1,0 +1,77 @@
+Executing action: reconfigure
+Running cmake in directory /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/build
+Executing "cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/tmp/gearshift-issue5-sdk/tools/python_env/idf5.5_py3.13_env/bin/python -DESP_PLATFORM=1 -DIDF_TARGET=esp32 -DCCACHE_ENABLE=0 /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe"...
+-- Minimal build - OFF
+-- Building ESP-IDF components for target esp32
+NOTICE: Cannot establish a connection to the component registry. Skipping checks of dependency changes.
+NOTICE: Processing 3 dependencies:
+NOTICE: [1/3] espressif/esp-nn (1.1.1)
+NOTICE: [2/3] espressif/esp-tflite-micro (1.3.5)
+NOTICE: [3/3] idf (5.5.1)
+-- Project sdkconfig file /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/sdkconfig
+Loading defaults file /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/sdkconfig.defaults...
+-- Compiler supported targets: xtensa-esp-elf
+-- USING O3
+-- App "gearshift_model_probe" version: b4c5fb2-dirty
+-- Adding linker script /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script /tmp/gearshift-issue5-sdk/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /tmp/gearshift-issue5-sdk/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /tmp/gearshift-issue5-sdk/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /tmp/gearshift-issue5-sdk/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /tmp/gearshift-issue5-sdk/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /tmp/gearshift-issue5-sdk/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libc-funcs.ld
+-- Adding linker script /tmp/gearshift-issue5-sdk/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-reent-funcs.ld
+-- Adding linker script /tmp/gearshift-issue5-sdk/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+CMake Deprecation Warning at managed_components/espressif__esp-nn/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at managed_components/espressif__esp-tflite-micro/CMakeLists.txt:3 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_bootloader_format esp_coex esp_common esp_driver_ana_cmpr esp_driver_bitscrambler esp_driver_cam esp_driver_dac esp_driver_gpio esp_driver_gptimer esp_driver_i2c esp_driver_i2s esp_driver_isp esp_driver_jpeg esp_driver_ledc esp_driver_mcpwm esp_driver_parlio esp_driver_pcnt esp_driver_ppa esp_driver_rmt esp_driver_sdio esp_driver_sdm esp_driver_sdmmc esp_driver_sdspi esp_driver_spi esp_driver_touch_sens esp_driver_tsens esp_driver_twai esp_driver_uart esp_driver_usb_serial_jtag esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_security esp_system esp_timer esp_vfs_console esp_wifi espcoredump espressif__esp-nn espressif__esp-tflite-micro esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash nvs_sec_provider openthread partition_table perfmon protobuf-c protocomm pthread rt sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /tmp/gearshift-issue5-sdk/esp-idf/components/app_trace /tmp/gearshift-issue5-sdk/esp-idf/components/app_update /tmp/gearshift-issue5-sdk/esp-idf/components/bootloader /tmp/gearshift-issue5-sdk/esp-idf/components/bootloader_support /tmp/gearshift-issue5-sdk/esp-idf/components/bt /tmp/gearshift-issue5-sdk/esp-idf/components/cmock /tmp/gearshift-issue5-sdk/esp-idf/components/console /tmp/gearshift-issue5-sdk/esp-idf/components/cxx /tmp/gearshift-issue5-sdk/esp-idf/components/driver /tmp/gearshift-issue5-sdk/esp-idf/components/efuse /tmp/gearshift-issue5-sdk/esp-idf/components/esp-tls /tmp/gearshift-issue5-sdk/esp-idf/components/esp_adc /tmp/gearshift-issue5-sdk/esp-idf/components/esp_app_format /tmp/gearshift-issue5-sdk/esp-idf/components/esp_bootloader_format /tmp/gearshift-issue5-sdk/esp-idf/components/esp_coex /tmp/gearshift-issue5-sdk/esp-idf/components/esp_common /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_ana_cmpr /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_bitscrambler /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_cam /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_dac /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_gpio /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_gptimer /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_i2c /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_i2s /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_isp /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_jpeg /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_ledc /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_mcpwm /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_parlio /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_pcnt /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_ppa /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_rmt /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_sdio /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_sdm /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_sdmmc /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_sdspi /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_spi /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_touch_sens /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_tsens /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_twai /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_uart /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_usb_serial_jtag /tmp/gearshift-issue5-sdk/esp-idf/components/esp_eth /tmp/gearshift-issue5-sdk/esp-idf/components/esp_event /tmp/gearshift-issue5-sdk/esp-idf/components/esp_gdbstub /tmp/gearshift-issue5-sdk/esp-idf/components/esp_hid /tmp/gearshift-issue5-sdk/esp-idf/components/esp_http_client /tmp/gearshift-issue5-sdk/esp-idf/components/esp_http_server /tmp/gearshift-issue5-sdk/esp-idf/components/esp_https_ota /tmp/gearshift-issue5-sdk/esp-idf/components/esp_https_server /tmp/gearshift-issue5-sdk/esp-idf/components/esp_hw_support /tmp/gearshift-issue5-sdk/esp-idf/components/esp_lcd /tmp/gearshift-issue5-sdk/esp-idf/components/esp_local_ctrl /tmp/gearshift-issue5-sdk/esp-idf/components/esp_mm /tmp/gearshift-issue5-sdk/esp-idf/components/esp_netif /tmp/gearshift-issue5-sdk/esp-idf/components/esp_netif_stack /tmp/gearshift-issue5-sdk/esp-idf/components/esp_partition /tmp/gearshift-issue5-sdk/esp-idf/components/esp_phy /tmp/gearshift-issue5-sdk/esp-idf/components/esp_pm /tmp/gearshift-issue5-sdk/esp-idf/components/esp_psram /tmp/gearshift-issue5-sdk/esp-idf/components/esp_ringbuf /tmp/gearshift-issue5-sdk/esp-idf/components/esp_rom /tmp/gearshift-issue5-sdk/esp-idf/components/esp_security /tmp/gearshift-issue5-sdk/esp-idf/components/esp_system /tmp/gearshift-issue5-sdk/esp-idf/components/esp_timer /tmp/gearshift-issue5-sdk/esp-idf/components/esp_vfs_console /tmp/gearshift-issue5-sdk/esp-idf/components/esp_wifi /tmp/gearshift-issue5-sdk/esp-idf/components/espcoredump /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/managed_components/espressif__esp-nn /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/managed_components/espressif__esp-tflite-micro /tmp/gearshift-issue5-sdk/esp-idf/components/esptool_py /tmp/gearshift-issue5-sdk/esp-idf/components/fatfs /tmp/gearshift-issue5-sdk/esp-idf/components/freertos /tmp/gearshift-issue5-sdk/esp-idf/components/hal /tmp/gearshift-issue5-sdk/esp-idf/components/heap /tmp/gearshift-issue5-sdk/esp-idf/components/http_parser /tmp/gearshift-issue5-sdk/esp-idf/components/idf_test /tmp/gearshift-issue5-sdk/esp-idf/components/ieee802154 /tmp/gearshift-issue5-sdk/esp-idf/components/json /tmp/gearshift-issue5-sdk/esp-idf/components/log /tmp/gearshift-issue5-sdk/esp-idf/components/lwip /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/main /tmp/gearshift-issue5-sdk/esp-idf/components/mbedtls /tmp/gearshift-issue5-sdk/esp-idf/components/mqtt /tmp/gearshift-issue5-sdk/esp-idf/components/newlib /tmp/gearshift-issue5-sdk/esp-idf/components/nvs_flash /tmp/gearshift-issue5-sdk/esp-idf/components/nvs_sec_provider /tmp/gearshift-issue5-sdk/esp-idf/components/openthread /tmp/gearshift-issue5-sdk/esp-idf/components/partition_table /tmp/gearshift-issue5-sdk/esp-idf/components/perfmon /tmp/gearshift-issue5-sdk/esp-idf/components/protobuf-c /tmp/gearshift-issue5-sdk/esp-idf/components/protocomm /tmp/gearshift-issue5-sdk/esp-idf/components/pthread /tmp/gearshift-issue5-sdk/esp-idf/components/rt /tmp/gearshift-issue5-sdk/esp-idf/components/sdmmc /tmp/gearshift-issue5-sdk/esp-idf/components/soc /tmp/gearshift-issue5-sdk/esp-idf/components/spi_flash /tmp/gearshift-issue5-sdk/esp-idf/components/spiffs /tmp/gearshift-issue5-sdk/esp-idf/components/tcp_transport /tmp/gearshift-issue5-sdk/esp-idf/components/ulp /tmp/gearshift-issue5-sdk/esp-idf/components/unity /tmp/gearshift-issue5-sdk/esp-idf/components/usb /tmp/gearshift-issue5-sdk/esp-idf/components/vfs /tmp/gearshift-issue5-sdk/esp-idf/components/wear_levelling /tmp/gearshift-issue5-sdk/esp-idf/components/wifi_provisioning /tmp/gearshift-issue5-sdk/esp-idf/components/wpa_supplicant /tmp/gearshift-issue5-sdk/esp-idf/components/xtensa
+-- Configuring done (4.0s)
+-- Generating done (0.6s)
+-- Build files have been written to: /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/build
+Executing action: all (aliases: build)
+Running ninja in directory /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/build
+Executing "ninja all"...
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/build/bootloader/esp-idf/esptool_py && /tmp/gearshift-issue5-sdk/tools/python_env/idf5.5_py3.13_env/bin/python /tmp/gearshift-issue5-sdk/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/build/bootloader/bootloader.bin
+Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Completed 'bootloader'
+[4/9] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cc.obj
+[5/9] Linking C static library esp-idf/main/libmain.a
+[6/9] Generating esp-idf/esp_system/ld/sections.ld
+[7/9] Linking CXX executable gearshift_model_probe.elf
+[8/9] Generating binary image from built executable
+esptool.py v4.12.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/build/gearshift_model_probe.bin
+[9/9] cd /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/build/esp-idf/esptool_py && /tmp/gearshift-issue5-sdk/tools/python_env/idf5.5_py3.13_env/bin/python /tmp/gearshift-issue5-sdk/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/build/partition_table/partition-table.bin /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/build/gearshift_model_probe.bin
+gearshift_model_probe.bin binary size 0x37b50 bytes. Smallest app partition is 0x100000 bytes. 0xc84b0 bytes (78%) free.
+
+Project build complete. To flash, run:
+ idf.py flash
+or
+ idf.py -p PORT flash
+or
+ python -m esptool --chip esp32 -b 460800 --before default_reset --after hard_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 40m 0x1000 firmware/esp32/model_probe/build/bootloader/bootloader.bin 0x8000 firmware/esp32/model_probe/build/partition_table/partition-table.bin 0x10000 firmware/esp32/model_probe/build/gearshift_model_probe.bin
+or from the "/tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/build" directory
+ python -m esptool --chip esp32 -b 460800 --before default_reset --after hard_reset write_flash "@flash_args"

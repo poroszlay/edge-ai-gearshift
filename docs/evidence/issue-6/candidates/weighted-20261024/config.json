@@ -1,0 +1,16 @@
+{
+  "architecture": [
+    100,
+    32,
+    16,
+    3
+  ],
+  "batch_size": 1024,
+  "calibration_size": 1024,
+  "class_weight": "inverse_sqrt",
+  "epochs": 100,
+  "learning_rate": 0.001,
+  "patience": 15,
+  "schema_version": "mlp-config-v1",
+  "seed": 20261024
+}

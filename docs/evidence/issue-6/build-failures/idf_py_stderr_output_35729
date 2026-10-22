@@ -1,0 +1,43 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/tmp/gearshift-issue5-sdk/tools/python_env/idf5.5_py3.13_env/bin/python -DESP_PLATFORM=1 -DIDF_TARGET=esp32 -DCCACHE_ENABLE=0 /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe
+CMake Error at /tmp/gearshift-issue5-sdk/esp-idf/tools/cmake/component.cmake:229 (message):
+  CMake Warning (dev) at build_properties.temp.cmake:8:
+
+    Syntax Warning in cmake code at column 106
+
+  
+
+    Argument not separated from preceding token by whitespace.
+
+  Call Stack (most recent call first):
+
+    /tmp/gearshift-issue5-sdk/esp-idf/tools/cmake/scripts/component_get_requirements.cmake:3 (include)
+
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+
+
+
+  CMake Error: File
+  /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/build/model_data.h.in
+  does not exist.
+
+  CMake Error at
+  /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe/main/CMakeLists.txt:6
+  (configure_file):
+
+    configure_file Problem configuring file
+
+  Call Stack (most recent call first):
+
+    /tmp/gearshift-issue5-sdk/esp-idf/tools/cmake/scripts/component_get_requirements.cmake:107 (include)
+    /tmp/gearshift-issue5-sdk/esp-idf/tools/cmake/scripts/component_get_requirements.cmake:160 (__component_get_requirements)
+
+  
+
+
+
+Call Stack (most recent call first):
+  /tmp/gearshift-issue5-sdk/esp-idf/tools/cmake/build.cmake:664 (__component_get_requirements)
+  /tmp/gearshift-issue5-sdk/esp-idf/tools/cmake/project.cmake:740 (idf_build_process)
+  CMakeLists.txt:3 (project)
+
+

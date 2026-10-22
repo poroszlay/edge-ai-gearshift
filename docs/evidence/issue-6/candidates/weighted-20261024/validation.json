@@ -1,0 +1,112 @@
+{
+  "dataset_id": "ef6f8048efec22e32cc44fd4c58b08052359ab6880ee52c2257e3da59f27ba4a",
+  "decision_agreement": 0.9915721685566289,
+  "disagreements": 602,
+  "fp32": {
+    "accuracy": 0.9866442671146577,
+    "classes": [
+      {
+        "action": -1,
+        "class_index": 0,
+        "f1": 0.6125714285714285,
+        "name": "downshift",
+        "precision": 0.45346869712351945,
+        "recall": 0.9436619718309859,
+        "support": 284
+      },
+      {
+        "action": 0,
+        "class_index": 1,
+        "f1": 0.9932339465808026,
+        "name": "hold",
+        "precision": 0.9982607208029197,
+        "recall": 0.988257543681373,
+        "support": 70854
+      },
+      {
+        "action": 1,
+        "class_index": 2,
+        "f1": 0.3768996960486322,
+        "name": "upshift",
+        "precision": 0.26762589928057556,
+        "recall": 0.636986301369863,
+        "support": 292
+      }
+    ],
+    "confusion_matrix": [
+      [
+        268,
+        16,
+        0
+      ],
+      [
+        323,
+        70022,
+        509
+      ],
+      [
+        0,
+        106,
+        186
+      ]
+    ],
+    "count": 71430,
+    "macro_f1": 0.6609016904002878
+  },
+  "int8": {
+    "accuracy": 0.9848803023939521,
+    "classes": [
+      {
+        "action": -1,
+        "class_index": 0,
+        "f1": 0.4568106312292359,
+        "name": "downshift",
+        "precision": 0.29891304347826086,
+        "recall": 0.9683098591549296,
+        "support": 284
+      },
+      {
+        "action": 0,
+        "class_index": 1,
+        "f1": 0.9923361859752203,
+        "name": "hold",
+        "precision": 0.9979020380202089,
+        "recall": 0.9868320772292319,
+        "support": 70854
+      },
+      {
+        "action": 1,
+        "class_index": 2,
+        "f1": 0.4196185286103542,
+        "name": "upshift",
+        "precision": 0.34841628959276016,
+        "recall": 0.5273972602739726,
+        "support": 292
+      }
+    ],
+    "confusion_matrix": [
+      [
+        275,
+        9,
+        0
+      ],
+      [
+        645,
+        69921,
+        288
+      ],
+      [
+        0,
+        138,
+        154
+      ]
+    ],
+    "count": 71430,
+    "macro_f1": 0.6229217819382701
+  },
+  "model_id": "6bea762e3ef3fe9b98032eae5219b0fc48c80d93f07e05e9151e0de1f360ea8b",
+  "quality_target_met": false,
+  "schema_version": "mlp-validation-v1",
+  "split": "validation",
+  "window_ids_sha256": "6747e59f5e6c2db58d296c77489bb25260004e4f57c82ad0ed7e72e52c0329eb"
+}

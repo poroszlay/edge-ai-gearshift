@@ -1,0 +1,9 @@
+{
+  "epochs": 66,
+  "history_byte_equal": true,
+  "weights_bit_equal": true,
+  "original_weight_sha256": "ea7736c01bee2aea2f9ceb87b7655fcc49425c1b82990574e1ea3fe23feecf25",
+  "repeat_weight_sha256": "ea7736c01bee2aea2f9ceb87b7655fcc49425c1b82990574e1ea3fe23feecf25",
+  "archive_byte_equal": false,
+  "note": "Keras zip metadata date_saved may differ; weight arrays and epoch history are compared."
+}

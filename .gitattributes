@@ -1,0 +1,5 @@
+
+# Preserve raw diagnostic streams, including upstream whitespace.
+docs/evidence/issue-6/*.log -whitespace
+docs/evidence/issue-6/**/training.log -whitespace
+docs/evidence/issue-6/build-failures/* -whitespace

@@ -1,0 +1,18 @@
+test_audit_rejects_float_model_even_when_it_runs_in_tflite (test_model.ExportTests.test_audit_rejects_float_model_even_when_it_runs_in_tflite) ... ERROR
+test_quantization_rounds_half_away_from_zero_then_saturates (test_model.ReferenceTests.test_quantization_rounds_half_away_from_zero_then_saturates) ... ok
+test_report_counts_rare_classes_instead_of_hiding_them_in_accuracy (test_model.ReferenceTests.test_report_counts_rare_classes_instead_of_hiding_them_in_accuracy) ... ok
+
+======================================================================
+ERROR: test_audit_rejects_float_model_even_when_it_runs_in_tflite (test_model.ExportTests.test_audit_rejects_float_model_even_when_it_runs_in_tflite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_model.py", line 24, in test_audit_rejects_float_model_even_when_it_runs_in_tflite
+    from pc.model import audit_model
+ImportError: cannot import name 'audit_model' from 'pc.model' (/tmp/edge-ai-gearshift-issue-6/pc/model.py)
+
+----------------------------------------------------------------------
+Ran 3 tests in 2.596s
+
+FAILED (errors=1)
+
+exit_code=1

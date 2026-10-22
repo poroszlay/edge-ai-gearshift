@@ -1,0 +1,94 @@
+Saved artifact at '/tmp/tmp3z08rlda'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 100), dtype=tf.float32, name='keras_tensor')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  140297246621520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140297244328784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+Saved artifact at '/tmp/tmpzkgyl3cl'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 100), dtype=tf.float32, name='input_layer_1')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  140297244333008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140297244332624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140297244331472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140297244335696: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140297244333392: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140297244336464: TensorSpec(shape=(), dtype=tf.resource, name=None)
+Saved artifact at '/tmp/tmpszdrsarp'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 100), dtype=tf.float32, name='input_layer_2')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  140297244330896: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140297244336080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+test_audit_rejects_float_model_even_when_it_runs_in_tflite (test_model.ExportTests.test_audit_rejects_float_model_even_when_it_runs_in_tflite) ... 2026-10-22 15:32:00.804186: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Attribute.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Call.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Try.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: FunctionDef.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Attribute.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Call.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: keyword.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Try.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: FunctionDef.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1792675921.904775       7 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1792675921.912416       7 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1792675921.917685       7 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
+ok
+test_export_runs_real_int8_model_and_records_training_only_calibration (test_model.IntegerExportTests.test_export_runs_real_int8_model_and_records_training_only_calibration) ... /tmp/gearshift-issue6-venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:172: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  return np.array(x)
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/tensorflow/lite/python/convert.py:863: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+W0000 00:00:1792675922.953653       7 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1792675922.953765       7 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+ok
+test_raw_and_prequantized_reference_agree_and_invalid_window_has_no_decision (test_model.PCModelTests.test_raw_and_prequantized_reference_agree_and_invalid_window_has_no_decision) ... /tmp/gearshift-issue6-venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:172: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  return np.array(x)
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/tensorflow/lite/python/convert.py:863: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+W0000 00:00:1792675923.780424       7 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1792675923.780528       7 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+ok
+test_model_development_refuses_locked_test_and_validation_calibration (test_model.PipelineTests.test_model_development_refuses_locked_test_and_validation_calibration) ... ok
+test_quantization_rounds_half_away_from_zero_then_saturates (test_model.ReferenceTests.test_quantization_rounds_half_away_from_zero_then_saturates) ... ok
+test_report_counts_rare_classes_instead_of_hiding_them_in_accuracy (test_model.ReferenceTests.test_report_counts_rare_classes_instead_of_hiding_them_in_accuracy) ... ok
+test_cli_trains_and_preserves_selection_without_test_files (test_model.TrainingCLITests.test_cli_trains_and_preserves_selection_without_test_files) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 19.707s
+
+OK
+
+exit_code=0

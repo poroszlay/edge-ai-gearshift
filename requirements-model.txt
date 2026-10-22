@@ -1,0 +1,3 @@
+# Python 3.13; exact resolved environment: docs/evidence/issue-6/requirements-lock.txt
+# CPU training and the bundled TFLite interpreter/converter; no GPU required.
+tensorflow==2.20.0

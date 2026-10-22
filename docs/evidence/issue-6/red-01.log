@@ -1,0 +1,14 @@
+test_quantization_rounds_half_away_from_zero_then_saturates (test_model.ReferenceTests.test_quantization_rounds_half_away_from_zero_then_saturates) ... ERROR
+
+======================================================================
+ERROR: test_quantization_rounds_half_away_from_zero_then_saturates (test_model.ReferenceTests.test_quantization_rounds_half_away_from_zero_then_saturates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_model.py", line 7, in test_quantization_rounds_half_away_from_zero_then_saturates
+    from pc.model import quantize
+ModuleNotFoundError: No module named 'pc.model'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

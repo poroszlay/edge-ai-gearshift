@@ -1,0 +1,65 @@
+test_raw_and_prequantized_reference_agree_and_invalid_window_has_no_decision (test_model.PCModelTests.test_raw_and_prequantized_reference_agree_and_invalid_window_has_no_decision) ... 2026-10-22 15:31:41.683637: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:172: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  return np.array(x)
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Attribute.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Call.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Try.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: FunctionDef.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Attribute.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Call.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: keyword.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Try.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: FunctionDef.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+Saved artifact at '/tmp/tmpg0j0fh37'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 100), dtype=tf.float32, name='input_layer')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  140194566849936: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140194566850128: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/tensorflow/lite/python/convert.py:863: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1792675901.892866       6 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1792675901.892896       6 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1792675901.895286       6 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+Fatal Python error: Aborted
+
+Current thread 0x00007f81ea090780 (most recent call first):
+  File "/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py", line 554 in allocate_tensors
+  File "/tmp/edge-ai-gearshift-issue-6/pc/model.py", line 106 in audit_model
+  File "/tmp/edge-ai-gearshift-issue-6/pc/model.py", line 202 in export_model
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_model.py", line 144 in test_raw_and_prequantized_reference_agree_and_invalid_window_has_no_decision
+  File "/usr/lib/python3.13/unittest/case.py", line 606 in _callTestMethod
+  File "/usr/lib/python3.13/unittest/case.py", line 651 in run
+  File "/usr/lib/python3.13/unittest/case.py", line 707 in __call__
+  File "/usr/lib/python3.13/unittest/suite.py", line 122 in run
+  File "/usr/lib/python3.13/unittest/suite.py", line 84 in __call__
+  File "/usr/lib/python3.13/unittest/suite.py", line 122 in run
+  File "/usr/lib/python3.13/unittest/suite.py", line 84 in __call__
+  File "/usr/lib/python3.13/unittest/runner.py", line 240 in run
+  File "/usr/lib/python3.13/unittest/main.py", line 270 in runTests
+  File "/usr/lib/python3.13/unittest/main.py", line 104 in __init__
+  File "/usr/lib/python3.13/unittest/__main__.py", line 18 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 198 in _run_module_as_main
+
+Extension modules: numpy._core._multiarray_umath, numpy.linalg._umath_linalg, google._upb._message, charset_normalizer.md, charset_normalizer.cd, requests.packages.charset_normalizer.md, requests.packages.chardet.md, requests.packages.charset_normalizer.cd, requests.packages.chardet.cd, h5py._errors, h5py.defs, h5py._objects, h5py.h5, h5py.utils, h5py.h5t, h5py.h5s, h5py.h5ac, h5py.h5p, h5py.h5r, h5py._npystrings, h5py._proxy, h5py._conv, h5py.h5z, h5py.h5a, h5py.h5d, h5py.h5ds, h5py.h5g, h5py.h5i, h5py.h5o, h5py.h5f, h5py.h5fd, h5py.h5pl, h5py.h5l, h5py._selector, PIL._imaging (total: 35)

@@ -1,0 +1,10 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/tmp/gearshift-issue5-sdk/tools/python_env/idf5.5_py3.13_env/bin/python -DESP_PLATFORM=1 -DIDF_TARGET=esp32 -DCCACHE_ENABLE=0 /tmp/edge-ai-gearshift-issue-6/firmware/esp32/model_probe
+CMake Error at /tmp/gearshift-issue5-sdk/esp-idf/tools/cmake/build.cmake:629 (message):
+  ERROR: Failed to create cache directory:
+  /home/richie/.cache/Espressif/ComponentManager
+
+Call Stack (most recent call first):
+  /tmp/gearshift-issue5-sdk/esp-idf/tools/cmake/project.cmake:740 (idf_build_process)
+  CMakeLists.txt:3 (project)
+
+
