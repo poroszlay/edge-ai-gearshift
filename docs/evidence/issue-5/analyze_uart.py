@@ -2,7 +2,7 @@
 """Extract strict JSONL and host-observed UART silence from a raw capture.
 
 Usage: python analyze_uart.py CAPTURE.log OUTPUT_PREFIX
-The capture.py .log.json chunk timeline must accompany the raw bytes.
+The capture_uart.py .log.json chunk timeline must accompany the raw bytes.
 The profiler separately validates task accounting and memory values.
 """
 import bisect
@@ -31,11 +31,18 @@ rows, silence, position, start, memory_begin = [], [], 0, None, None
 for line in raw.splitlines(keepends=True):
     if line.startswith(b'{'):
         event = json.loads(line)
+        if start is not None and memory_begin is None:
+            # This is the actual first received byte after the series header.
+            # Any intervening JSON data invalidates the claimed quiet interval.
+            memory_begin = received_at(position)
+            assert event['event'] == 'series_memory', 'UART data before series_memory'
+            assert event['batch_id'] == start[0]['batch_id'], 'unexpected memory batch'
         rows.append(event)
         if event['event'] == 'series_start':
             start = (event, received_at(position + len(line) - 1))
+            memory_begin = None
         elif event['event'] == 'series_memory':
-            memory_begin = received_at(position)
+            assert start is not None, 'orphan memory snapshot'
         elif event['event'] == 'series_end':
             gap = memory_begin - start[1]
             expected = event['end_us'] / 1_000_000
@@ -46,6 +53,7 @@ for line in raw.splitlines(keepends=True):
                                 first_result_byte_received_s=memory_begin,
                                 observed_no_rx_s=gap,
                                 complete_uart_pause_us=event['uart_wait_us']))
+            start, memory_begin = None, None
     elif rows:
         raise ValueError('Unexpected non-JSON output after run_start')
     position += len(line)
