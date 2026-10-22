@@ -13,7 +13,8 @@ def quantize(values, scale, zero_point):
     if not np.all(np.isfinite(values)):
         raise ValueError("non-finite model input")
     scaled = values / np.float32(scale)
-    rounded = np.copysign(np.floor(np.abs(scaled) + np.float32(0.5)), scaled)
+    # Preserve adjacent float32 values around half-integers during addition.
+    rounded = np.copysign(np.floor(np.abs(scaled).astype(np.float64) + 0.5), scaled)
     return np.clip(rounded + zero_point, -128, 127).astype(np.int8)
 
 
@@ -352,7 +353,10 @@ class ReferenceModel:
     def predict_int8(self, values, *, window_id, trip_id):
         """Run already quantized values; errors never become a hold decision."""
         result = self._identity(window_id, trip_id)
-        values = np.asarray(values)
+        try:
+            values = np.asarray(values)
+        except (ValueError, TypeError) as error:
+            return dict(result, status='invalid_input', error=str(error))
         if values.shape != (100,) or values.dtype.kind not in 'iu' or np.any((values < -128) | (values > 127)):
             return dict(result, status='invalid_input', error='expected 100 integer INT8 codes')
         values = values.astype(np.int8)

@@ -160,3 +160,27 @@ szintetikus profilok reprezentativitását, sem a hiba pontos okát nem bizonyí
 Új tanítási vagy architektúra-kísérlet csak új, dokumentált modellverzióként,
 tanító/validációs adatokon következhet; a teszt nem hangolási visszacsatolás.
 A #6 issue minőségi célja nem lett késznek nyilvánítva, issue-lezárás nem történt.
+
+
+## PR #18 review-javítások (2026-10-22)
+
+A felhasználó a `quantize` és `ReferenceModel.predict_int8` publikus
+interfészeket jóváhagyta teszthatárként. Mindkét javítás külön red→green
+ciklusban készült, belső komponensek mockolása nélkül.
+
+- Kvantálás: a megőrzött modell skálájával a pozitív és negatív félérték,
+  illetve közvetlen float32 szomszédai szerepelnek a regresszióban. A régi
+  összeadás a félérték alatti abszolút értéket is felfelé kerekítette.
+  Az osztás továbbra is float32; a hozzáadás float64-re szélesítése megőrzi
+  a különbséget. [Bukó teszt](review-rounding-red.log),
+  [sikeres tesztek](review-rounding-green.log).
+- Hibás INT8-bemenet: az egyenetlen beágyazott lista korábban ValueError
+  kivételt okozott. Most azonosítókkal és error mezővel ellátott invalid_input
+  rekord keletkezik, döntési mezők nélkül; a következő érvényes hívás működik.
+  [Bukó teszt](review-input-red.log), [sikeres teszt](review-input-green.log).
+- A teljes modellteszt-csomag: **11 teszt, OK, kihagyás nélkül**,
+  valódi TensorFlow/TFLite futással: [napló](review-model-regression.log).
+- A dokumentált reference CLI újrafuttatása után a 11 archivált ablak
+  PC-referenciája `cmp` szerint bájtra azonos. A modell és az archivált
+  minőségi eredmények nem változtak. Újratanítás és tesztadat-értékelés
+  nem történt. `git diff --check` sikeres.

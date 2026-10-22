@@ -1,0 +1,22 @@
+test_ragged_int8_input_returns_error_without_decision (test_model.PCModelTests.test_ragged_int8_input_returns_error_without_decision) ... /tmp/gearshift-issue6-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+ERROR
+
+======================================================================
+ERROR: test_ragged_int8_input_returns_error_without_decision (test_model.PCModelTests.test_ragged_int8_input_returns_error_without_decision)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_model.py", line 154, in test_ragged_int8_input_returns_error_without_decision
+    result = reference.predict_int8([[1], [1, 2]], window_id='w', trip_id='t')
+  File "/tmp/edge-ai-gearshift-issue-6/pc/model.py", line 355, in predict_int8
+    values = np.asarray(values)
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+
+----------------------------------------------------------------------
+Ran 1 test in 2.247s
+
+FAILED (errors=1)

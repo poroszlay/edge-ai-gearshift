@@ -12,6 +12,17 @@ class ReferenceTests(unittest.TestCase):
         self.assertEqual(quantize([-100, -0.75, -0.25, 0.25, 0.75, 100], 0.5, -3).tolist(),
                          [-128, -5, -4, -2, -1, 127])
 
+    def test_quantization_distinguishes_half_from_adjacent_float32_values(self):
+        import numpy as np
+        from pc.model import quantize
+        scale = 0.005345386452972889
+        below = np.nextafter(np.float32(.5), np.float32(0))
+        above = np.nextafter(np.float32(.5), np.float32(1))
+        values = np.float32(scale) * np.array(
+            [-above, -.5, -below, below, .5, above], dtype=np.float32)
+        self.assertEqual(quantize(values, scale, -60).tolist(),
+                         [-61, -61, -60, -60, -59, -59])
+
     def test_report_counts_rare_classes_instead_of_hiding_them_in_accuracy(self):
         from pc.model import classification_report
         report = classification_report([0, 0, 1, 1, 2, 2], [0, 1, 1, 1, 0, 2])
@@ -137,6 +148,19 @@ class TrainingCLITests(unittest.TestCase):
 
 @unittest.skipUnless(MODEL_DEPS, 'install requirements-model.txt to run model integration tests')
 class PCModelTests(unittest.TestCase):
+    def test_ragged_int8_input_returns_error_without_decision(self):
+        from pc.model import ReferenceModel
+        reference = ReferenceModel('models/mlp-v1')
+        result = reference.predict_int8([[1], [1, 2]], window_id='w', trip_id='t')
+        self.assertEqual(result['status'], 'invalid_input')
+        self.assertTrue(result['error'])
+        self.assertEqual((result['window_id'], result['trip_id']), ('w', 't'))
+        self.assertEqual(result['model_id'], reference.model_id)
+        for field in ('action', 'decision', 'class_index', 'output_int8'):
+            self.assertNotIn(field, result)
+        valid = reference.predict_int8([0] * 100, window_id='next', trip_id='t')
+        self.assertEqual(valid['status'], 'ok')
+
     def test_raw_and_prequantized_reference_agree_and_invalid_window_has_no_decision(self):
         import tempfile
         from pathlib import Path
