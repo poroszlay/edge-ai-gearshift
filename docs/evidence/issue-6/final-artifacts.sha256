@@ -1,0 +1,4 @@
+527bc3e722f8b2902fbf5a56e8872b185888b4939c4e5d6a7ff87175b786f1f9  models/mlp-v1/model.tflite
+87f7cdf0c9d670c9c63120f3db3348e5b56b08c326026309ff52c741c8615ee8  models/mlp-v1/model.keras
+6f6249f20d27bab7af8d73b5814ea7c1cf09505ef6dc75c028e8c17b4e259f3c  firmware/esp32/model_probe/build/gearshift_model_probe.bin
+37dfb18dc15b2195c836e5ef763a18af245f0f0424ead70c85e9d823387f2a67  firmware/esp32/model_probe/build/gearshift_model_probe.elf

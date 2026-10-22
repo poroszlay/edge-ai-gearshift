@@ -1,0 +1,27 @@
+2026-10-22 15:43:54.022788: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+Saved artifact at '/tmp/tmplqkdpfzm'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 100), dtype=tf.float32, name='window')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  139997789127504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139997789128464: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139997789127696: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139997789129232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139997789128080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139997789130192: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/tensorflow/lite/python/convert.py:863: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1792676634.303856       6 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1792676634.303874       6 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1792676634.306634       6 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+/tmp/gearshift-issue6-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)

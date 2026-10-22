@@ -1,0 +1,2033 @@
+test_benchmark_working_set_remains_bounded (test_communication.CommunicationTests.test_benchmark_working_set_remains_bounded) ... ok
+test_both_modes_complete_and_every_export_is_marked (test_communication.CommunicationTests.test_both_modes_complete_and_every_export_is_marked) ... 
+  test_both_modes_complete_and_every_export_is_marked (test_communication.CommunicationTests.test_both_modes_complete_and_every_export_is_marked) (mode='live') ... ERROR
+  test_both_modes_complete_and_every_export_is_marked (test_communication.CommunicationTests.test_both_modes_complete_and_every_export_is_marked) (mode='benchmark') ... ERROR
+test_fragmented_and_coalesced_frames (test_communication.CommunicationTests.test_fragmented_and_coalesced_frames) ... ERROR
+test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) ... 
+  test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={}) ... ERROR
+  test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': 'bad'}) ... ERROR
+  test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': None}) ... ERROR
+  test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': True}) ... ERROR
+  test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': False}) ... ERROR
+  test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': -1}) ... ERROR
+  test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': 1.5}) ... ERROR
+  test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': []}) ... ERROR
+  test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': {}}) ... ERROR
+  test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000}) ... ERROR
+test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) ... 
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record=None) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record=[]) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'unknown', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': [], 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': True, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': -1, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 50, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': False, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': -1, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': True, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': '3', 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 51, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'late', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': None, 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'unknown', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': ''}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub', 'error': 'invalid_signals'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'missed', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'invalid_window', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub', 'error': 'invalid_signals'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'invalid_window'}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'invalid_window', 'error': ''}) ... ERROR
+  test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'invalid_window', 'error': 3}) ... ERROR
+test_live_cli_processes_more_than_eight_windows (test_communication.CommunicationTests.test_live_cli_processes_more_than_eight_windows) ... FAIL
+test_load_preserves_unfetched_results (test_communication.CommunicationTests.test_load_preserves_unfetched_results) ... ok
+test_malformed_oversized_version_and_disconnect (test_communication.CommunicationTests.test_malformed_oversized_version_and_disconnect) ... 
+  test_malformed_oversized_version_and_disconnect (test_communication.CommunicationTests.test_malformed_oversized_version_and_disconnect) (code='invalid_json') ... ERROR
+  test_malformed_oversized_version_and_disconnect (test_communication.CommunicationTests.test_malformed_oversized_version_and_disconnect) (code='invalid_json') ... ERROR
+  test_malformed_oversized_version_and_disconnect (test_communication.CommunicationTests.test_malformed_oversized_version_and_disconnect) (code='message_too_large') ... ERROR
+  test_malformed_oversized_version_and_disconnect (test_communication.CommunicationTests.test_malformed_oversized_version_and_disconnect) (code='unsupported_version') ... ERROR
+test_overload_and_invalid_windows (test_communication.CommunicationTests.test_overload_and_invalid_windows) ... ok
+test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) ... 
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'simulated': True}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'simulated': False}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'phase': 'other'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'series': 99}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'period_ms': 999}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'mode': 'benchmark'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'run_id': 'other-run'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'v': 999}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'event': 'failure'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'host_elapsed_ms': -1}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'self': 'other'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'future_field': {'nested': True}}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'simulated': False, 'phase': 'other', 'series': 99, 'period_ms': 999, 'mode': 'benchmark', 'run_id': 'other-run', 'v': 999, 'event': 'failure', 'host_elapsed_ms': -1, 'self': 'other', 'future_field': {'nested': True}}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'simulated': True}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'simulated': False}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'phase': 'other'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'series': 99}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'period_ms': 999}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'mode': 'benchmark'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'run_id': 'other-run'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'v': 999}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'event': 'failure'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'host_elapsed_ms': -1}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'self': 'other'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'future_field': {'nested': True}}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'simulated': False, 'phase': 'other', 'series': 99, 'period_ms': 999, 'mode': 'benchmark', 'run_id': 'other-run', 'v': 999, 'event': 'failure', 'host_elapsed_ms': -1, 'self': 'other', 'future_field': {'nested': True}}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'simulated': True}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'simulated': False}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'phase': 'other'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'series': 99}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'period_ms': 999}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'mode': 'benchmark'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'run_id': 'other-run'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'v': 999}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'event': 'failure'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'host_elapsed_ms': -1}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'self': 'other'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'future_field': {'nested': True}}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'simulated': False, 'phase': 'other', 'series': 99, 'period_ms': 999, 'mode': 'benchmark', 'run_id': 'other-run', 'v': 999, 'event': 'failure', 'host_elapsed_ms': -1, 'self': 'other', 'future_field': {'nested': True}}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'simulated': True}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'simulated': False}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'phase': 'other'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'series': 99}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'period_ms': 999}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'mode': 'benchmark'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'run_id': 'other-run'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'v': 999}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'event': 'failure'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'host_elapsed_ms': -1}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'self': 'other'}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'future_field': {'nested': True}}) ... ERROR
+  test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'simulated': False, 'phase': 'other', 'series': 99, 'period_ms': 999, 'mode': 'benchmark', 'run_id': 'other-run', 'v': 999, 'event': 'failure', 'host_elapsed_ms': -1, 'self': 'other', 'future_field': {'nested': True}}) ... ERROR
+test_timeout_and_partial_line (test_communication.CommunicationTests.test_timeout_and_partial_line) ... ERROR
+test_valid_result_statuses_complete_run (test_communication.CommunicationTests.test_valid_result_statuses_complete_run) ... 
+  test_valid_result_statuses_complete_run (test_communication.CommunicationTests.test_valid_result_statuses_complete_run) (status='ok') ... ERROR
+  test_valid_result_statuses_complete_run (test_communication.CommunicationTests.test_valid_result_statuses_complete_run) (status='ok') ... ERROR
+  test_valid_result_statuses_complete_run (test_communication.CommunicationTests.test_valid_result_statuses_complete_run) (status='late') ... ERROR
+  test_valid_result_statuses_complete_run (test_communication.CommunicationTests.test_valid_result_statuses_complete_run) (status='missed') ... ERROR
+  test_valid_result_statuses_complete_run (test_communication.CommunicationTests.test_valid_result_statuses_complete_run) (status='invalid_window') ... ERROR
+test_validation_and_scaling (test_communication.CommunicationTests.test_validation_and_scaling) ... ok
+test_wrong_pairing_is_rejected (test_communication.CommunicationTests.test_wrong_pairing_is_rejected) ... ERROR
+test_coverage_reports_every_split_and_missing_coverage_blocks_sealing (test_dataset.ExportTests.test_coverage_reports_every_split_and_missing_coverage_blocks_sealing) ... ok
+test_export_is_byte_reproducible_and_records_provenance_and_split_membership (test_dataset.ExportTests.test_export_is_byte_reproducible_and_records_provenance_and_split_membership) ... ok
+test_invalid_cases_are_separate_standard_json_with_no_valid_labels (test_dataset.ExportTests.test_invalid_cases_are_separate_standard_json_with_no_valid_labels) ... ok
+test_overlap_audit_compares_actual_scaled_windows_without_run_ids (test_dataset.ExportTests.test_overlap_audit_compares_actual_scaled_windows_without_run_ids) ... ok
+test_sealed_test_identity_is_preserved_and_corruption_is_rejected (test_dataset.ExportTests.test_sealed_test_identity_is_preserved_and_corruption_is_rejected) ... ok
+test_verify_and_seal_reject_checksum_valid_cross_split_copies (test_dataset.ExportTests.test_verify_and_seal_reject_checksum_valid_cross_split_copies) ... ok
+test_all_split_pairs_have_disjoint_scaled_windows_including_noisy_derivatives (test_dataset.GenerationTests.test_all_split_pairs_have_disjoint_scaled_windows_including_noisy_derivatives) ... ok
+test_bad_configuration_and_run_specs_are_rejected (test_dataset.GenerationTests.test_bad_configuration_and_run_specs_are_rejected) ... ok
+test_default_base_families_do_not_duplicate_complete_signal_profiles (test_dataset.GenerationTests.test_default_base_families_do_not_duplicate_complete_signal_profiles) ... ok
+test_five_profiles_and_seeded_noise_use_only_reference_labels (test_dataset.GenerationTests.test_five_profiles_and_seeded_noise_use_only_reference_labels) ... ok
+test_plan_splits_whole_families_before_generation (test_dataset.GenerationTests.test_plan_splits_whole_families_before_generation) ... ok
+test_reference_decision_changes_only_the_next_sample_state (test_dataset.GenerationTests.test_reference_decision_changes_only_the_next_sample_state) ... ok
+test_reviewed_shift_windows_are_not_copied_across_profile_families (test_dataset.GenerationTests.test_reviewed_shift_windows_are_not_copied_across_profile_families) ... ok
+test_windows_start_at_sample_twenty_and_scale_without_changing_raw_tau (test_dataset.WindowTests.test_windows_start_at_sample_twenty_and_scale_without_changing_raw_tau) ... ok
+test_export_roundtrip_preserves_every_event_and_accounting (test_measurement_ui.ArchiveTests.test_export_roundtrip_preserves_every_event_and_accounting) ... FAIL
+test_benchmark_four_profiles_post_execute_fetch_and_invalid_input (test_measurement_ui.GuiTests.test_benchmark_four_profiles_post_execute_fetch_and_invalid_input) ... skipped 'Install requirements-ui.txt for GUI acceptance tests'
+test_invalid_memory_ack_can_finish_export_and_restart_in_both_modes (test_measurement_ui.GuiTests.test_invalid_memory_ack_can_finish_export_and_restart_in_both_modes) ... skipped 'Install requirements-ui.txt for GUI acceptance tests'
+test_select_start_stop_export_and_restart (test_measurement_ui.GuiTests.test_select_start_stop_export_and_restart) ... skipped 'Install requirements-ui.txt for GUI acceptance tests'
+test_selected_profile_only (test_measurement_ui.GuiTests.test_selected_profile_only) ... skipped 'Install requirements-ui.txt for GUI acceptance tests'
+test_slow_file_operations_keep_event_loop_running_and_export_error (test_measurement_ui.GuiTests.test_slow_file_operations_keep_event_loop_running_and_export_error) ... skipped 'Install requirements-ui.txt for GUI acceptance tests'
+test_stop_interrupts_pending_socket_and_close_waits_without_blocking (test_measurement_ui.GuiTests.test_stop_interrupts_pending_socket_and_close_waits_without_blocking) ... skipped 'Install requirements-ui.txt for GUI acceptance tests'
+test_timeout_disconnect_device_error_are_visible_and_exportable (test_measurement_ui.GuiTests.test_timeout_disconnect_device_error_are_visible_and_exportable) ... skipped 'Install requirements-ui.txt for GUI acceptance tests'
+test_audit_rejects_float_model_even_when_it_runs_in_tflite (test_model.ExportTests.test_audit_rejects_float_model_even_when_it_runs_in_tflite) ... skipped 'install requirements-model.txt to run model integration tests'
+test_export_runs_real_int8_model_and_records_training_only_calibration (test_model.IntegerExportTests.test_export_runs_real_int8_model_and_records_training_only_calibration) ... skipped 'install requirements-model.txt to run model integration tests'
+test_evaluate_cli_reports_full_validation_and_fp32_int8_comparison (test_model.PCModelTests.test_evaluate_cli_reports_full_validation_and_fp32_int8_comparison) ... skipped 'install requirements-model.txt to run model integration tests'
+test_raw_and_prequantized_reference_agree_and_invalid_window_has_no_decision (test_model.PCModelTests.test_raw_and_prequantized_reference_agree_and_invalid_window_has_no_decision) ... skipped 'install requirements-model.txt to run model integration tests'
+test_reference_cli_exports_window_identity_and_reports_invalid_input (test_model.PCModelTests.test_reference_cli_exports_window_identity_and_reports_invalid_input) ... skipped 'install requirements-model.txt to run model integration tests'
+test_model_development_refuses_locked_test_and_validation_calibration (test_model.PipelineTests.test_model_development_refuses_locked_test_and_validation_calibration) ... skipped 'install requirements-model.txt to run model integration tests'
+test_quantization_rounds_half_away_from_zero_then_saturates (test_model.ReferenceTests.test_quantization_rounds_half_away_from_zero_then_saturates) ... skipped 'install requirements-model.txt to run model integration tests'
+test_report_counts_rare_classes_instead_of_hiding_them_in_accuracy (test_model.ReferenceTests.test_report_counts_rare_classes_instead_of_hiding_them_in_accuracy) ... skipped 'install requirements-model.txt to run model integration tests'
+test_cli_trains_and_preserves_selection_without_test_files (test_model.TrainingCLITests.test_cli_trains_and_preserves_selection_without_test_files) ... skipped 'install requirements-model.txt to run model integration tests'
+test_action_is_not_the_class_index (test_reference.ReferenceTests.test_action_is_not_the_class_index) ... ok
+test_documented_downshift (test_reference.ReferenceTests.test_documented_downshift) ... ok
+test_documented_lockout_holds (test_reference.ReferenceTests.test_documented_lockout_holds) ... ok
+test_documented_upper_threshold_equality_holds (test_reference.ReferenceTests.test_documented_upper_threshold_equality_holds) ... ok
+test_documented_upshift (test_reference.ReferenceTests.test_documented_upshift) ... ok
+test_downshift_uses_latest_gear_not_the_preceding_four (test_reference.ReferenceTests.test_downshift_uses_latest_gear_not_the_preceding_four) ... ok
+test_each_of_v_u_s_is_averaged_over_all_five_recent_samples (test_reference.ReferenceTests.test_each_of_v_u_s_is_averaged_over_all_five_recent_samples) ... ok
+test_inclusive_range_limits_and_tau_above_ten_are_valid (test_reference.ReferenceTests.test_inclusive_range_limits_and_tau_above_ten_are_valid) ... ok
+test_invalid_window_length_has_no_label (test_reference.ReferenceTests.test_invalid_window_length_has_no_label) ... ok
+test_labeling_does_not_change_replayed_state (test_reference.ReferenceTests.test_labeling_does_not_change_replayed_state) ... ok
+test_large_integers_have_explicit_status_instead_of_overflow (test_reference.ReferenceTests.test_large_integers_have_explicit_status_instead_of_overflow) ... ok
+test_latest_predecision_state_is_used (test_reference.ReferenceTests.test_latest_predecision_state_is_used) ... ok
+test_lower_threshold_equality_holds (test_reference.ReferenceTests.test_lower_threshold_equality_holds) ... ok
+test_missing_signal_anywhere_has_no_label_even_during_lockout (test_reference.ReferenceTests.test_missing_signal_anywhere_has_no_label_even_during_lockout) ... ok
+test_non_finite_signal_anywhere_has_no_label (test_reference.ReferenceTests.test_non_finite_signal_anywhere_has_no_label) ... ok
+test_one_second_unlocks_both_directions (test_reference.ReferenceTests.test_one_second_unlocks_both_directions) ... ok
+test_only_last_five_samples_are_averaged (test_reference.ReferenceTests.test_only_last_five_samples_are_averaged) ... ok
+test_out_of_range_signal_anywhere_has_no_label (test_reference.ReferenceTests.test_out_of_range_signal_anywhere_has_no_label) ... ok
+test_sampling_requires_nonnegative_integer_milliseconds_and_50ms_steps (test_reference.ReferenceTests.test_sampling_requires_nonnegative_integer_milliseconds_and_50ms_steps) ... ok
+test_window_cannot_cross_runs (test_reference.ReferenceTests.test_window_cannot_cross_runs) ... ok
+test_wrong_types_are_reported_without_coercion (test_reference.ReferenceTests.test_wrong_types_are_reported_without_coercion) ... ok
+
+======================================================================
+ERROR: test_both_modes_complete_and_every_export_is_marked (test_communication.CommunicationTests.test_both_modes_complete_and_every_export_is_marked) (mode='live')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 33, in test_both_modes_complete_and_every_export_is_marked
+    Client(self.connection(2), output, mode, 2).run([example_window(i) for i in range(3)])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/client.py", line 109, in run
+    self.request('start')
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/client.py", line 40, in request
+    self.wire.send(request)
+    ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_both_modes_complete_and_every_export_is_marked (test_communication.CommunicationTests.test_both_modes_complete_and_every_export_is_marked) (mode='benchmark')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 33, in test_both_modes_complete_and_every_export_is_marked
+    Client(self.connection(2), output, mode, 2).run([example_window(i) for i in range(3)])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/client.py", line 109, in run
+    self.request('start')
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/client.py", line 40, in request
+    self.wire.send(request)
+    ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_fragmented_and_coalesced_frames (test_communication.CommunicationTests.test_fragmented_and_coalesced_frames)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 120, in test_fragmented_and_coalesced_frames
+    b.sendall(b'{"v":')
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+======================================================================
+ERROR: test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 276, in test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': 'bad'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 276, in test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': None})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 276, in test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 276, in test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 276, in test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 276, in test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': 1.5})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 276, in test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': []})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 276, in test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': {}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 276, in test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) (memory={'simulated_memory_bytes': 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 276, in test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'unknown', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': [], 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': True, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': -1, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 50, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': False, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': -1, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': True, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': '3', 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 51, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'late', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': None, 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'unknown', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'ok', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub', 'error': 'invalid_signals'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'missed', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'invalid_window', 'processing_ms': 3, 'decision': 'hold', 'decision_source': 'simulator_stub', 'error': 'invalid_signals'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'invalid_window'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'invalid_window', 'error': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) (record={'index': 0, 'window_id': 'w0', 'batch_id': 'live-0', 'scheduled_ms': 0, 'status': 'invalid_window', 'error': 3})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 204, in test_invalid_result_cannot_complete_run
+    events = [row['event'] for row in self.result_rows]
+                                      ^^^^^^^^^^^^^^^^
+AttributeError: 'CommunicationTests' object has no attribute 'result_rows'
+
+======================================================================
+ERROR: test_malformed_oversized_version_and_disconnect (test_communication.CommunicationTests.test_malformed_oversized_version_and_disconnect) (code='invalid_json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 100, in test_malformed_oversized_version_and_disconnect
+    sock.sendall(data)
+    ~~~~~~~~~~~~^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+======================================================================
+ERROR: test_malformed_oversized_version_and_disconnect (test_communication.CommunicationTests.test_malformed_oversized_version_and_disconnect) (code='invalid_json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 100, in test_malformed_oversized_version_and_disconnect
+    sock.sendall(data)
+    ~~~~~~~~~~~~^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+======================================================================
+ERROR: test_malformed_oversized_version_and_disconnect (test_communication.CommunicationTests.test_malformed_oversized_version_and_disconnect) (code='message_too_large')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 100, in test_malformed_oversized_version_and_disconnect
+    sock.sendall(data)
+    ~~~~~~~~~~~~^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+======================================================================
+ERROR: test_malformed_oversized_version_and_disconnect (test_communication.CommunicationTests.test_malformed_oversized_version_and_disconnect) (code='unsupported_version')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 100, in test_malformed_oversized_version_and_disconnect
+    sock.sendall(data)
+    ~~~~~~~~~~~~^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'simulated': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'simulated': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'phase': 'other'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'series': 99})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'period_ms': 999})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'mode': 'benchmark'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'run_id': 'other-run'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'v': 999})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'event': 'failure'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'host_elapsed_ms': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'self': 'other'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'future_field': {'nested': True}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='ok', extra={'simulated': False, 'phase': 'other', 'series': 99, 'period_ms': 999, 'mode': 'benchmark', 'run_id': 'other-run', 'v': 999, 'event': 'failure', 'host_elapsed_ms': -1, 'self': 'other', 'future_field': {'nested': True}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'simulated': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'simulated': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'phase': 'other'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'series': 99})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'period_ms': 999})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'mode': 'benchmark'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'run_id': 'other-run'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'v': 999})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'event': 'failure'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'host_elapsed_ms': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'self': 'other'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'future_field': {'nested': True}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='late', extra={'simulated': False, 'phase': 'other', 'series': 99, 'period_ms': 999, 'mode': 'benchmark', 'run_id': 'other-run', 'v': 999, 'event': 'failure', 'host_elapsed_ms': -1, 'self': 'other', 'future_field': {'nested': True}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'simulated': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'simulated': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'phase': 'other'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'series': 99})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'period_ms': 999})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'mode': 'benchmark'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'run_id': 'other-run'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'v': 999})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'event': 'failure'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'host_elapsed_ms': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'self': 'other'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'future_field': {'nested': True}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='missed', extra={'simulated': False, 'phase': 'other', 'series': 99, 'period_ms': 999, 'mode': 'benchmark', 'run_id': 'other-run', 'v': 999, 'event': 'failure', 'host_elapsed_ms': -1, 'self': 'other', 'future_field': {'nested': True}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'simulated': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'simulated': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'phase': 'other'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'series': 99})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'period_ms': 999})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'mode': 'benchmark'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'run_id': 'other-run'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'v': 999})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'event': 'failure'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'host_elapsed_ms': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'self': 'other'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'future_field': {'nested': True}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) (status='invalid_window', extra={'simulated': False, 'phase': 'other', 'series': 99, 'period_ms': 999, 'mode': 'benchmark', 'run_id': 'other-run', 'v': 999, 'event': 'failure', 'host_elapsed_ms': -1, 'self': 'other', 'future_field': {'nested': True}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 231, in test_result_extensions_do_not_override_export_metadata
+    self.run_with_result(dict(original, **extra))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_timeout_and_partial_line (test_communication.CommunicationTests.test_timeout_and_partial_line)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 111, in test_timeout_and_partial_line
+    b.sendall(b'{')
+    ~~~~~~~~~^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+======================================================================
+ERROR: test_valid_result_statuses_complete_run (test_communication.CommunicationTests.test_valid_result_statuses_complete_run) (status='ok')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 216, in test_valid_result_statuses_complete_run
+    self.run_with_result(dict(base, **fields))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_valid_result_statuses_complete_run (test_communication.CommunicationTests.test_valid_result_statuses_complete_run) (status='ok')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 216, in test_valid_result_statuses_complete_run
+    self.run_with_result(dict(base, **fields))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_valid_result_statuses_complete_run (test_communication.CommunicationTests.test_valid_result_statuses_complete_run) (status='late')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 216, in test_valid_result_statuses_complete_run
+    self.run_with_result(dict(base, **fields))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_valid_result_statuses_complete_run (test_communication.CommunicationTests.test_valid_result_statuses_complete_run) (status='missed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 216, in test_valid_result_statuses_complete_run
+    self.run_with_result(dict(base, **fields))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_valid_result_statuses_complete_run (test_communication.CommunicationTests.test_valid_result_statuses_complete_run) (status='invalid_window')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 31, in send
+    self.sock.sendall(encode(message))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 216, in test_valid_result_statuses_complete_run
+    self.run_with_result(dict(base, **fields))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 178, in run_with_result
+    Wire(b).send(reply)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-6/gearshift/protocol.py", line 33, in send
+    raise ProtocolError('send_failed') from exc
+gearshift.protocol.ProtocolError: send_failed
+
+======================================================================
+ERROR: test_wrong_pairing_is_rejected (test_communication.CommunicationTests.test_wrong_pairing_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 251, in test_wrong_pairing_is_rejected
+    b.sendall(b'{"v":1,"type":"ack","request_id":"wrong"}\n')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+======================================================================
+FAIL: test_live_cli_processes_more_than_eight_windows (test_communication.CommunicationTests.test_live_cli_processes_more_than_eight_windows)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_communication.py", line 51, in test_live_cli_processes_more_than_eight_windows
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : Run failed: send_failed
+
+
+======================================================================
+FAIL: test_export_roundtrip_preserves_every_event_and_accounting (test_measurement_ui.ArchiveTests.test_export_roundtrip_preserves_every_event_and_accounting)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_measurement_ui.py", line 41, in test_export_roundtrip_preserves_every_event_and_accounting
+    self.assertEqual(session.rows[-1]['event'], 'run_complete')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'run_failed' != 'run_complete'
+- run_failed
++ run_complete
+
+
+----------------------------------------------------------------------
+Ran 66 tests in 73.157s
+
+FAILED (failures=2, errors=107, skipped=16)

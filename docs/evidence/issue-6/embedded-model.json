@@ -1,0 +1,7 @@
+{
+  "model_id": "527bc3e722f8b2902fbf5a56e8872b185888b4939c4e5d6a7ff87175b786f1f9",
+  "model_bytes": 7568,
+  "embedded_bytes_equal": true,
+  "header_path": "firmware/esp32/model_probe/build/esp-idf/main/model_data.h",
+  "header_sha256": "53e90cc2f4991584008acf0ac827aba3ee82ff9c40ff8ff17436fb266c1ec38f"
+}

@@ -16,3 +16,6 @@ results/issue-5/
 data/generated/
 __pycache__/
 *.py[cod]
+
+# Issue 6 reproducible models and build products
+results/issue-6/

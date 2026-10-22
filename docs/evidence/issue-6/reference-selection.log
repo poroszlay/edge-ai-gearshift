@@ -1,0 +1,1 @@
+{"windows": 11, "minimum_per_class": 3, "boundaries": ["tau=0.95", "tau=1", "tau>10"]}

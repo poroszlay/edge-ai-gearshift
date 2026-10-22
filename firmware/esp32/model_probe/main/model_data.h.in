@@ -1,0 +1,2 @@
+#pragma once
+alignas(16) static const unsigned char model_data[] = {@MODEL_BYTES@};

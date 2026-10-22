@@ -1,0 +1,17 @@
+test_quantization_rounds_half_away_from_zero_then_saturates (test_model.ReferenceTests.test_quantization_rounds_half_away_from_zero_then_saturates) ... ok
+test_report_counts_rare_classes_instead_of_hiding_them_in_accuracy (test_model.ReferenceTests.test_report_counts_rare_classes_instead_of_hiding_them_in_accuracy) ... ERROR
+
+======================================================================
+ERROR: test_report_counts_rare_classes_instead_of_hiding_them_in_accuracy (test_model.ReferenceTests.test_report_counts_rare_classes_instead_of_hiding_them_in_accuracy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_model.py", line 12, in test_report_counts_rare_classes_instead_of_hiding_them_in_accuracy
+    from pc.model import classification_report
+ImportError: cannot import name 'classification_report' from 'pc.model' (/tmp/edge-ai-gearshift-issue-6/pc/model.py)
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.106s
+
+FAILED (errors=1)
+
+exit_code=1

@@ -1,0 +1,112 @@
+{
+  "dataset_id": "ef6f8048efec22e32cc44fd4c58b08052359ab6880ee52c2257e3da59f27ba4a",
+  "decision_agreement": 0.9932661346773064,
+  "disagreements": 481,
+  "fp32": {
+    "accuracy": 0.9810863782724345,
+    "classes": [
+      {
+        "action": -1,
+        "class_index": 0,
+        "f1": 0.6703755215577191,
+        "name": "downshift",
+        "precision": 0.5540229885057472,
+        "recall": 0.8485915492957746,
+        "support": 284
+      },
+      {
+        "action": 0,
+        "class_index": 1,
+        "f1": 0.9903815348251092,
+        "name": "hold",
+        "precision": 0.9992672940162345,
+        "recall": 0.9816524120021453,
+        "support": 70854
+      },
+      {
+        "action": 1,
+        "class_index": 2,
+        "f1": 0.3376932223543401,
+        "name": "upshift",
+        "precision": 0.20431654676258992,
+        "recall": 0.9726027397260274,
+        "support": 292
+      }
+    ],
+    "confusion_matrix": [
+      [
+        241,
+        43,
+        0
+      ],
+      [
+        194,
+        69554,
+        1106
+      ],
+      [
+        0,
+        8,
+        284
+      ]
+    ],
+    "count": 71430,
+    "macro_f1": 0.6661500929123895
+  },
+  "int8": {
+    "accuracy": 0.9762284754304914,
+    "classes": [
+      {
+        "action": -1,
+        "class_index": 0,
+        "f1": 0.5409181636726547,
+        "name": "downshift",
+        "precision": 0.3774373259052925,
+        "recall": 0.954225352112676,
+        "support": 284
+      },
+      {
+        "action": 0,
+        "class_index": 1,
+        "f1": 0.9878761049309552,
+        "name": "hold",
+        "precision": 0.9996820809248554,
+        "recall": 0.9763457250119965,
+        "support": 70854
+      },
+      {
+        "action": 1,
+        "class_index": 2,
+        "f1": 0.3137472283813747,
+        "name": "upshift",
+        "precision": 0.18716931216931218,
+        "recall": 0.9691780821917808,
+        "support": 292
+      }
+    ],
+    "confusion_matrix": [
+      [
+        271,
+        13,
+        0
+      ],
+      [
+        447,
+        69178,
+        1229
+      ],
+      [
+        0,
+        9,
+        283
+      ]
+    ],
+    "count": 71430,
+    "macro_f1": 0.6141804989949948
+  },
+  "model_id": "84fb98ff0dceec5ae7bb6fd1d73daca07843843ac5e05171f133656f49f7cbb6",
+  "quality_target_met": false,
+  "schema_version": "mlp-validation-v1",
+  "split": "validation",
+  "window_ids_sha256": "6747e59f5e6c2db58d296c77489bb25260004e4f57c82ad0ed7e72e52c0329eb"
+}

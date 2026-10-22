@@ -1,0 +1,12 @@
+{
+  "platform": "Linux-6.12.113+deb13-amd64-x86_64-with-glibc2.41",
+  "python": "3.13.5",
+  "base_commit": "b4c5fb2727f023ec31283712fdf1b49de7b7ba25",
+  "idf_commit": "fcae32885b0296b32044cb99ecbdc50d98dddb83",
+  "sdk_root": "/tmp/gearshift-issue5-sdk",
+  "idf_tools_path": "/tmp/gearshift-issue5-sdk/tools",
+  "source_sha256": {
+    "firmware/esp32/model_probe/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/kernels/esp_nn/fully_connected.cc": "46d007270cb3645fbc0de6d306dfff4e34ec51b65fa1bf5ef3a7ff3b27c291e5",
+    "firmware/esp32/model_probe/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/kernels/esp_nn/softmax.cc": "644c4ba5784c51f437df9db9b99ba5b96e68d34e3e2b9978e7d2e5b4cbcb2bf4"
+  }
+}

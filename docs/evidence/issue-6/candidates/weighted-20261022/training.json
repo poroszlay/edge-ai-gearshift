@@ -1,0 +1,32 @@
+{
+  "best_epoch": 51,
+  "class_counts": [
+    1496,
+    330347,
+    1497
+  ],
+  "class_order": [
+    "downshift",
+    "hold",
+    "upshift"
+  ],
+  "class_weights": [
+    13.215668678283691,
+    0.8893439173698425,
+    13.211254119873047
+  ],
+  "dataset_id": "ef6f8048efec22e32cc44fd4c58b08052359ab6880ee52c2257e3da59f27ba4a",
+  "input_version": "window-v1:20x5:sample-major:fixed-scaling:float32",
+  "manifest_sha256": "b45896680afa82671dd18450e56b85ffb4fbfa58a1a90218eaf8a95f45cb45bb",
+  "model_sha256": "87f7cdf0c9d670c9c63120f3db3348e5b56b08c326026309ff52c741c8615ee8",
+  "schema_version": "mlp-training-v1",
+  "seed": 20261022,
+  "selection_metric": "macro_f1",
+  "selection_split": "validation",
+  "tensorflow": "2.20.0",
+  "train_window_ids_sha256": "ddbf10940448e65f9d60dd195cd45433041841864248a7544382466c242fc64c",
+  "train_windows": 333340,
+  "training_split": "train",
+  "validation_macro_f1": 0.7193671440035141,
+  "validation_windows": 71430
+}

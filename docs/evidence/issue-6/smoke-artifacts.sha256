@@ -1,0 +1,3 @@
+33bed6f6a14c046bda048efb0b6b3d1f39d98295224109b821a2a044e653f42c  results/issue-6/smoke/export/model.tflite
+66962dc8b22147a1e769c21bf91219bca0478528231a5833167baa00dc7bf380  firmware/esp32/model_probe/build/gearshift_model_probe.bin
+695dffbb25eb876a1d262a7e3ebc7ab9ae295d455c5140fdd8e9711025ff3527  firmware/esp32/model_probe/build/gearshift_model_probe.elf

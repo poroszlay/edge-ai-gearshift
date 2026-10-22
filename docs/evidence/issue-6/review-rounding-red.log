@@ -1,0 +1,28 @@
+test_quantization_distinguishes_half_from_adjacent_float32_values (test_model.ReferenceTests.test_quantization_distinguishes_half_from_adjacent_float32_values) ... FAIL
+
+======================================================================
+FAIL: test_quantization_distinguishes_half_from_adjacent_float32_values (test_model.ReferenceTests.test_quantization_distinguishes_half_from_adjacent_float32_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-6/tests/test_model.py", line 23, in test_quantization_distinguishes_half_from_adjacent_float32_values
+    self.assertEqual(quantize(values, scale, -60).tolist(),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     [-61, -61, -60, -60, -59, -59])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [-61, -61, -61, -59, -59, -59] != [-61, -61, -60, -60, -59, -59]
+
+First differing element 2:
+-61
+-60
+
+- [-61, -61, -61, -59, -59, -59]
+?              ^       -----
+
++ [-61, -61, -60, -60, -59, -59]
+?              ^ +++++
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.086s
+
+FAILED (failures=1)

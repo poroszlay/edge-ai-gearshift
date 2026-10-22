@@ -8,7 +8,12 @@ döntésbecslés és laboratóriumi értékelés.
 - [Modell- és mérési szerződés](docs/model-measurement-contract.md)
 - [ESP32 mérőmodul, reprodukálás és #7-átadás (#5)](docs/measurement-module.md)
 - [Szintetikus adatkészlet, reprodukálás és tesztlezárás (#3)](docs/dataset.md)
+- [MLP-tanítás, teljes INT8-export és PC-s referencia (#6)](docs/model.md)
 - [PySide6 mérőfelület és CSV-export](docs/measurement-ui.md)
 
-A bringup szinuszmodellje hivatalos kompatibilitási próba. A projekt saját
-100 → 32 → 16 → 3 MLP-je és hardveres mérési eredményei még nem készültek el.
+A bringup szinuszmodellje hivatalos kompatibilitási próba. A saját
+100 → 32 → 16 → 3 MLP tanítása, INT8-exportja és tényleges validációs
+eredményei a [modell dokumentációjában](docs/model.md) követhetők. A saját
+modell paneles portolási helyessége és terhelésmérése a #7 feladata.
+A kiválasztott INT8-modell validációs makro-F1-e 0,6812; a 0,95-ös cél
+még nem teljesült.
