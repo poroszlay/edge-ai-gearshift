@@ -1,0 +1,40 @@
+{
+  "utc": "2026-10-22T13:21:02.707759+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_mcu_measurement.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "sha256": {
+    "firmware/esp32/components/measurement/include/measurement.h": "470230e8dc68b78d3c72ddc6fd5c8c52a73e877b99362e5f8525418856f5886e",
+    "firmware/esp32/components/measurement/measurement.cc": "f8b898b82b6ddca154b91a3ee8a716978835df5a6aee6f160e9ab0f3e81a7b8c",
+    "tests/mcu_measurement_test.cc": "7a3bd7a65489a7aed29ef75aa106222c0143a386e6b38c3bc2d6d1eec96d6b43",
+    "tests/test_mcu_measurement.py": "3ad42f9d6c523cadb5fac2fe7f4f4fe0ee2c820b2fdb04f03520f3b601a031da",
+    "tests/test_measurement_ui.py": "49006292c3c4a73f581235b684a2ecebff547cd76290877d05c660966514a064"
+  }
+}
+test_public_runner (test_mcu_measurement.McuMeasurementTests.test_public_runner) ... FAIL
+
+======================================================================
+FAIL: test_public_runner (test_mcu_measurement.McuMeasurementTests.test_public_runner)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_mcu_measurement.py", line 21, in test_public_runner
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : PASS separate_measurement_intervals
+PASS overload_keeps_original_grid_and_drains_last_job
+FAIL insufficient result storage must be an explicit memory error before any work
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.503s
+
+FAILED (failures=1)

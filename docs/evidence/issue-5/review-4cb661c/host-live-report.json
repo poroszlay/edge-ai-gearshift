@@ -1,0 +1,163 @@
+{
+  "schema": "gearshift.measurement.v1",
+  "run_id": "synthetic-7548908944470",
+  "simulated": true,
+  "mode": "live",
+  "workload": "synthetic_delay_25ms",
+  "metadata": {
+    "event": "run_start",
+    "schema": "gearshift.measurement.v1",
+    "run_id": "synthetic-7548908944470",
+    "mode": "live",
+    "simulated": true,
+    "workload": "synthetic_delay_25ms",
+    "sdk": "host_virtual_clock",
+    "cpu_mhz": 0,
+    "model_bytes": null,
+    "expected_batches": 3,
+    "expected_tasks": 3
+  },
+  "batches": [
+    {
+      "batch_id": "b1",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b2",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b3",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    }
+  ]
+}

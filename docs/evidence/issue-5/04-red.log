@@ -1,0 +1,41 @@
+{
+  "utc": "2026-10-22T13:21:40.480965+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_mcu_measurement.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "sha256": {
+    "firmware/esp32/components/measurement/include/measurement.h": "470230e8dc68b78d3c72ddc6fd5c8c52a73e877b99362e5f8525418856f5886e",
+    "firmware/esp32/components/measurement/measurement.cc": "3105a22e28a66094f495242418dc6f794d3709656654d95646c81b8cf09d66ce",
+    "tests/mcu_measurement_test.cc": "a87a1bc531bc1554ae0ccc5b87398369ea4378cedbae1495cc9d3bbc883671f7",
+    "tests/test_mcu_measurement.py": "3ad42f9d6c523cadb5fac2fe7f4f4fe0ee2c820b2fdb04f03520f3b601a031da",
+    "tests/test_measurement_ui.py": "49006292c3c4a73f581235b684a2ecebff547cd76290877d05c660966514a064"
+  }
+}
+test_public_runner (test_mcu_measurement.McuMeasurementTests.test_public_runner) ... FAIL
+
+======================================================================
+FAIL: test_public_runner (test_mcu_measurement.McuMeasurementTests.test_public_runner)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_mcu_measurement.py", line 21, in test_public_runner
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : PASS separate_measurement_intervals
+PASS overload_keeps_original_grid_and_drains_last_job
+PASS insufficient_storage_is_reported_without_running_work
+FAIL only bounded counts, 1..8 windows and the four profiles are accepted
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.533s
+
+FAILED (failures=1)

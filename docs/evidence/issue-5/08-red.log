@@ -1,0 +1,81 @@
+{
+  "utc": "2026-10-22T13:24:12.163316+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_profiler.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "sha256": {
+    "firmware/esp32/components/measurement/include/measurement.h": "470230e8dc68b78d3c72ddc6fd5c8c52a73e877b99362e5f8525418856f5886e",
+    "firmware/esp32/components/measurement/measurement.cc": "53bd3b7db52b39df1641a9ec679cd51eeef90281604bf23ad31451beafe07283",
+    "gearshift/profiler.py": "5af3145bd02d5d9bbf36f6667c5a1005f1f30bec4881f3b1b6cc8868c1b790f0",
+    "tests/mcu_measurement_test.cc": "4ba42aeb6159d5bea7661a3a5b877127f092af240ba253a38e2481105d08d012",
+    "tests/test_mcu_measurement.py": "3ad42f9d6c523cadb5fac2fe7f4f4fe0ee2c820b2fdb04f03520f3b601a031da",
+    "tests/test_measurement_ui.py": "49006292c3c4a73f581235b684a2ecebff547cd76290877d05c660966514a064",
+    "tests/test_profiler.py": "886c215e357981634e5f1fc48d29ac7be94b621491db6e2e8d6ec5beef4b1c27"
+  }
+}
+test_overload_statistics_are_recomputed_from_raw_timestamps (test_profiler.ProfilerTests.test_overload_statistics_are_recomputed_from_raw_timestamps) ... ok
+test_partial_or_duplicated_capture_cannot_be_reported_as_complete (test_profiler.ProfilerTests.test_partial_or_duplicated_capture_cannot_be_reported_as_complete) ... 
+  test_partial_or_duplicated_capture_cannot_be_reported_as_complete (test_profiler.ProfilerTests.test_partial_or_duplicated_capture_cannot_be_reported_as_complete) (events=0) ... FAIL
+  test_partial_or_duplicated_capture_cannot_be_reported_as_complete (test_profiler.ProfilerTests.test_partial_or_duplicated_capture_cannot_be_reported_as_complete) (events=7) ... FAIL
+  test_partial_or_duplicated_capture_cannot_be_reported_as_complete (test_profiler.ProfilerTests.test_partial_or_duplicated_capture_cannot_be_reported_as_complete) (events=6) ... FAIL
+  test_partial_or_duplicated_capture_cannot_be_reported_as_complete (test_profiler.ProfilerTests.test_partial_or_duplicated_capture_cannot_be_reported_as_complete) (events=7) ... FAIL
+  test_partial_or_duplicated_capture_cannot_be_reported_as_complete (test_profiler.ProfilerTests.test_partial_or_duplicated_capture_cannot_be_reported_as_complete) (events=9) ... FAIL
+
+======================================================================
+FAIL: test_partial_or_duplicated_capture_cannot_be_reported_as_complete (test_profiler.ProfilerTests.test_partial_or_duplicated_capture_cannot_be_reported_as_complete) (events=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_profiler.py", line 65, in test_partial_or_duplicated_capture_cannot_be_reported_as_complete
+    self.assertIn('invalid measurement:', result.stderr)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'invalid measurement:' not found in 'Traceback (most recent call last):\n  File "<frozen runpy>", line 198, in _run_module_as_main\n  File "<frozen runpy>", line 88, in _run_code\n  File "/tmp/edge-ai-gearshift-issue-5/gearshift/profiler.py", line 58, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File "/tmp/edge-ai-gearshift-issue-5/gearshift/profiler.py", line 50, in main\n    print(json.dumps(analyze(events), indent=2, allow_nan=False))\n                     ~~~~~~~^^^^^^^^\n  File "/tmp/edge-ai-gearshift-issue-5/gearshift/profiler.py", line 19, in analyze\n    header = events[0]\n             ~~~~~~^^^\nIndexError: list index out of range\n'
+
+======================================================================
+FAIL: test_partial_or_duplicated_capture_cannot_be_reported_as_complete (test_profiler.ProfilerTests.test_partial_or_duplicated_capture_cannot_be_reported_as_complete) (events=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_profiler.py", line 63, in test_partial_or_duplicated_capture_cannot_be_reported_as_complete
+    self.assertNotEqual(result.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_partial_or_duplicated_capture_cannot_be_reported_as_complete (test_profiler.ProfilerTests.test_partial_or_duplicated_capture_cannot_be_reported_as_complete) (events=6)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_profiler.py", line 63, in test_partial_or_duplicated_capture_cannot_be_reported_as_complete
+    self.assertNotEqual(result.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_partial_or_duplicated_capture_cannot_be_reported_as_complete (test_profiler.ProfilerTests.test_partial_or_duplicated_capture_cannot_be_reported_as_complete) (events=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_profiler.py", line 63, in test_partial_or_duplicated_capture_cannot_be_reported_as_complete
+    self.assertNotEqual(result.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_partial_or_duplicated_capture_cannot_be_reported_as_complete (test_profiler.ProfilerTests.test_partial_or_duplicated_capture_cannot_be_reported_as_complete) (events=9)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_profiler.py", line 63, in test_partial_or_duplicated_capture_cannot_be_reported_as_complete
+    self.assertNotEqual(result.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.341s
+
+FAILED (failures=5)

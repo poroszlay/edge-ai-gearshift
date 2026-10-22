@@ -1,0 +1,33 @@
+{
+  "run_id": "synthetic-18071729586940730324",
+  "simulated": false,
+  "method": "Physical CP2102 RX, host monotonic chunk timestamps; tolerance 50 ms",
+  "limitation": "Host receive silence does not measure electrical edge timing or prove a future WCET",
+  "elapsed_s": 0.7389525100006722,
+  "series": [
+    {
+      "batch_id": "b1",
+      "execution_s": 0.05,
+      "last_header_byte_received_s": 0.36295517300095526,
+      "first_result_byte_received_s": 0.4133631990007416,
+      "observed_no_rx_s": 0.05040802599978633,
+      "complete_uart_pause_us": 43648
+    },
+    {
+      "batch_id": "b2",
+      "execution_s": 0.05,
+      "last_header_byte_received_s": 0.4979116240010626,
+      "first_result_byte_received_s": 0.5481774130003032,
+      "observed_no_rx_s": 0.05026578899924061,
+      "complete_uart_pause_us": 84930
+    },
+    {
+      "batch_id": "b3",
+      "execution_s": 0.050001,
+      "last_header_byte_received_s": 0.6328929930004961,
+      "first_result_byte_received_s": 0.6830026879997604,
+      "observed_no_rx_s": 0.05010969499926432,
+      "complete_uart_pause_us": 84729
+    }
+  ]
+}

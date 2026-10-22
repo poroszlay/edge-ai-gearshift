@@ -1,0 +1,163 @@
+{
+  "schema": "gearshift.measurement.v1",
+  "run_id": "synthetic-18071729586940730324",
+  "simulated": false,
+  "mode": "live",
+  "workload": "synthetic_delay_25ms",
+  "metadata": {
+    "event": "run_start",
+    "schema": "gearshift.measurement.v1",
+    "run_id": "synthetic-18071729586940730324",
+    "mode": "live",
+    "simulated": false,
+    "workload": "synthetic_delay_25ms",
+    "sdk": "v5.5.1",
+    "cpu_mhz": 240,
+    "model_bytes": null,
+    "expected_batches": 3,
+    "expected_tasks": 3
+  },
+  "batches": [
+    {
+      "batch_id": "b1",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 25.117,
+        "p95": 25.117,
+        "maximum": 25.117
+      },
+      "inference_ms": {
+        "median": 25.008,
+        "p95": 25.008,
+        "maximum": 25.008
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 43648,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 246864,
+        "minimum_free_heap_bytes": 246864,
+        "largest_free_block_bytes": 114688,
+        "stack_high_water_bytes": 2188,
+        "result_buffer_bytes": 56000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": 246840,
+        "minimum_free_heap_bytes": 246840,
+        "largest_free_block_bytes": 114688,
+        "stack_high_water_bytes": 2188,
+        "result_buffer_bytes": 56000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b2",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 25.034,
+        "p95": 25.034,
+        "maximum": 25.034
+      },
+      "inference_ms": {
+        "median": 25.001,
+        "p95": 25.001,
+        "maximum": 25.001
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 84930,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 246864,
+        "minimum_free_heap_bytes": 246840,
+        "largest_free_block_bytes": 114688,
+        "stack_high_water_bytes": 2188,
+        "result_buffer_bytes": 56000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": 246840,
+        "minimum_free_heap_bytes": 246840,
+        "largest_free_block_bytes": 114688,
+        "stack_high_water_bytes": 2188,
+        "result_buffer_bytes": 56000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b3",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 25.034,
+        "p95": 25.034,
+        "maximum": 25.034
+      },
+      "inference_ms": {
+        "median": 25.001,
+        "p95": 25.001,
+        "maximum": 25.001
+      },
+      "inferences_per_second": 19.99960000799984,
+      "uart_wait_us": 84729,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 246864,
+        "minimum_free_heap_bytes": 246840,
+        "largest_free_block_bytes": 114688,
+        "stack_high_water_bytes": 2188,
+        "result_buffer_bytes": 56000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": 246840,
+        "minimum_free_heap_bytes": 246840,
+        "largest_free_block_bytes": 114688,
+        "stack_high_water_bytes": 2188,
+        "result_buffer_bytes": 56000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    }
+  ]
+}

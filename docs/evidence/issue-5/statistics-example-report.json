@@ -1,0 +1,47 @@
+{
+  "schema": "gearshift.measurement.v1",
+  "run_id": "worked-statistics",
+  "simulated": true,
+  "mode": "benchmark",
+  "workload": "worked_example_not_device",
+  "metadata": {
+    "event": "run_start",
+    "schema": "gearshift.measurement.v1",
+    "run_id": "worked-statistics",
+    "mode": "benchmark",
+    "workload": "worked_example_not_device",
+    "simulated": true,
+    "expected_batches": 1,
+    "expected_tasks": 20
+  },
+  "batches": [
+    {
+      "batch_id": "b1",
+      "phase": "measured",
+      "series": 1,
+      "period_us": 100000,
+      "scheduled": 20,
+      "counts": {
+        "ok": 20,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 10.5,
+        "p95": 19.0,
+        "maximum": 20.0
+      },
+      "inference_ms": {
+        "median": 10.5,
+        "p95": 19.0,
+        "maximum": 20.0
+      },
+      "inferences_per_second": 10.0,
+      "uart_wait_us": 200,
+      "memory_before": null,
+      "memory_after": null
+    }
+  ]
+}

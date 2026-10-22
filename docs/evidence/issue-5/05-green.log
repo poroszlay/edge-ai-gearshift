@@ -1,0 +1,28 @@
+{
+  "utc": "2026-10-22T13:22:05.845383+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_mcu_measurement.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "sha256": {
+    "firmware/esp32/components/measurement/include/measurement.h": "470230e8dc68b78d3c72ddc6fd5c8c52a73e877b99362e5f8525418856f5886e",
+    "firmware/esp32/components/measurement/measurement.cc": "babcdcf78dc6fc8754fec03b3934219089e7df67b95dae42fc21b913f8c6f188",
+    "tests/mcu_measurement_test.cc": "463ebf3ba91fef657d222ea3c7949d012d4abd784cb3b2ec11cd2ed6fe45eb1d",
+    "tests/test_mcu_measurement.py": "3ad42f9d6c523cadb5fac2fe7f4f4fe0ee2c820b2fdb04f03520f3b601a031da",
+    "tests/test_measurement_ui.py": "49006292c3c4a73f581235b684a2ecebff547cd76290877d05c660966514a064"
+  }
+}
+test_public_runner (test_mcu_measurement.McuMeasurementTests.test_public_runner) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.403s
+
+OK

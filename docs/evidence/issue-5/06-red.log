@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-22T13:22:28.425293+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_mcu_measurement.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "sha256": {
+    "firmware/esp32/components/measurement/include/measurement.h": "470230e8dc68b78d3c72ddc6fd5c8c52a73e877b99362e5f8525418856f5886e",
+    "firmware/esp32/components/measurement/measurement.cc": "babcdcf78dc6fc8754fec03b3934219089e7df67b95dae42fc21b913f8c6f188",
+    "tests/mcu_measurement_test.cc": "4ba42aeb6159d5bea7661a3a5b877127f092af240ba253a38e2481105d08d012",
+    "tests/test_mcu_measurement.py": "3ad42f9d6c523cadb5fac2fe7f4f4fe0ee2c820b2fdb04f03520f3b601a031da",
+    "tests/test_measurement_ui.py": "49006292c3c4a73f581235b684a2ecebff547cd76290877d05c660966514a064"
+  }
+}
+test_public_runner (test_mcu_measurement.McuMeasurementTests.test_public_runner) ... FAIL
+
+======================================================================
+FAIL: test_public_runner (test_mcu_measurement.McuMeasurementTests.test_public_runner)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_mcu_measurement.py", line 21, in test_public_runner
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : PASS separate_measurement_intervals
+PASS overload_keeps_original_grid_and_drains_last_job
+PASS insufficient_storage_is_reported_without_running_work
+PASS rejects_unbounded_or_unknown_profiles
+PASS failed_model_is_not_a_successful_decision
+FAIL expired slots are missed; late start consumes the original deadline budget
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.554s
+
+FAILED (failures=1)

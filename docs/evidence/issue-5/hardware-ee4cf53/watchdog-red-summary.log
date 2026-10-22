@@ -1,0 +1,15 @@
+test_benchmark_export_does_not_trigger_idle_watchdog (test_measurement_hardware.MeasurementHardwareTests.test_benchmark_export_does_not_trigger_idle_watchdog) ... FAIL
+
+======================================================================
+FAIL: test_benchmark_export_does_not_trigger_idle_watchdog (test_measurement_hardware.MeasurementHardwareTests.test_benchmark_export_does_not_trigger_idle_watchdog)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_measurement_hardware.py", line 24, in test_benchmark_export_does_not_trigger_idle_watchdog
+    self.assertNotIn(b'task_wdt:', raw, 'idle task starved during benchmark export')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+----------------------------------------------------------------------
+Ran 1 test in 25.270s
+
+FAILED (failures=1)
+Full raw reproducer: results/issue-5/hardware-4cb661c/watchdog-repro.log

@@ -1,0 +1,6 @@
+test_benchmark_export_does_not_trigger_idle_watchdog (test_measurement_hardware.MeasurementHardwareTests.test_benchmark_export_does_not_trigger_idle_watchdog) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 25.272s
+
+OK

@@ -10,6 +10,7 @@ firmware/**/managed_components/
 firmware/**/sdkconfig
 firmware/**/sdkconfig.old
 results/issue-2/
+results/issue-5/
 
 # Reproducible datasets stay outside source control.
 data/generated/

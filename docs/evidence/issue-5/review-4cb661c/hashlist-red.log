@@ -1,0 +1,69 @@
+test_corrected_evidence_identifies_the_sources_it_built (test_measurement_evidence.MeasurementEvidenceTests.test_corrected_evidence_identifies_the_sources_it_built) ... ok
+test_documented_evidence_checksum_command_succeeds (test_measurement_evidence.MeasurementEvidenceTests.test_documented_evidence_checksum_command_succeeds) ... FAIL
+
+======================================================================
+FAIL: test_documented_evidence_checksum_command_succeeds (test_measurement_evidence.MeasurementEvidenceTests.test_documented_evidence_checksum_command_succeeds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_measurement_evidence.py", line 25, in test_documented_evidence_checksum_command_succeeds
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : docs/evidence/issue-5/.gitattributes: OK
+docs/evidence/issue-5/01-green.log: OK
+docs/evidence/issue-5/01-red.log: OK
+docs/evidence/issue-5/02-green.log: OK
+docs/evidence/issue-5/02-red.log: OK
+docs/evidence/issue-5/03-green.log: OK
+docs/evidence/issue-5/03-red.log: OK
+docs/evidence/issue-5/04-green.log: OK
+docs/evidence/issue-5/04-red.log: OK
+docs/evidence/issue-5/05-green.log: OK
+docs/evidence/issue-5/05-red.log: OK
+docs/evidence/issue-5/06-green.log: OK
+docs/evidence/issue-5/06-red.log: OK
+docs/evidence/issue-5/07-green.log: OK
+docs/evidence/issue-5/07-red.log: OK
+docs/evidence/issue-5/08-green.log: OK
+docs/evidence/issue-5/08-red.log: OK
+docs/evidence/issue-5/09-green.log: OK
+docs/evidence/issue-5/09-red.log: OK
+docs/evidence/issue-5/10-attempt1.log: OK
+docs/evidence/issue-5/10-green.log: OK
+docs/evidence/issue-5/10-red.log: OK
+docs/evidence/issue-5/11-green.log: OK
+docs/evidence/issue-5/11-red.log: OK
+docs/evidence/issue-5/12-green.log: OK
+docs/evidence/issue-5/12-red.log: OK
+docs/evidence/issue-5/12-test-syntax-error.log: OK
+docs/evidence/issue-5/13-green.log: OK
+docs/evidence/issue-5/13-red.log: OK
+docs/evidence/issue-5/14-green.log: OK
+docs/evidence/issue-5/14-red.log: OK
+docs/evidence/issue-5/15-green.log: OK
+docs/evidence/issue-5/15-red.log: OK
+docs/evidence/issue-5/16-green.log: OK
+docs/evidence/issue-5/16-red.log: OK
+docs/evidence/issue-5/benchmark-build.log: OK
+docs/evidence/issue-5/benchmark-size.json: OK
+docs/evidence/issue-5/benchmark.sdkconfig: OK
+docs/evidence/issue-5/build-first-attempt.log: OK
+docs/evidence/issue-5/environment.log: OK
+docs/evidence/issue-5/hardware-preflight.log: OK
+docs/evidence/issue-5/host-benchmark-report.json: OK
+docs/evidence/issue-5/host-live-report.json: OK
+docs/evidence/issue-5/live-build.log: OK
+docs/evidence/issue-5/live-size.json: OK
+docs/evidence/issue-5/live.sdkconfig: OK
+docs/evidence/issue-5/manifest.json: OK
+docs/evidence/issue-5/sanitizers.log: OK
+docs/evidence/issue-5/statistics-example-report.json: OK
+docs/evidence/issue-5/statistics-example.jsonl: OK
+docs/evidence/issue-5/tests.log: OK
+docs/evidence/issue-5/verification.md: FAILED
+sha256sum: WARNING: 1 computed checksum did NOT match
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.087s
+
+FAILED (failures=1)

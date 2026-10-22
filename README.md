@@ -6,6 +6,7 @@ döntésbecslés és laboratóriumi értékelés.
 - [ESP32-fejlesztőkörnyezet és hivatalos minták (#2)](docs/esp32-bringup.md)
 - [Közös adatszerződés](docs/data-contract.md)
 - [Modell- és mérési szerződés](docs/model-measurement-contract.md)
+- [ESP32 mérőmodul, reprodukálás és #7-átadás (#5)](docs/measurement-module.md)
 - [Szintetikus adatkészlet, reprodukálás és tesztlezárás (#3)](docs/dataset.md)
 - [PySide6 mérőfelület és CSV-export](docs/measurement-ui.md)
 

@@ -1,0 +1,24 @@
+test_corrected_evidence_identifies_the_sources_it_built (test_measurement_evidence.MeasurementEvidenceTests.test_corrected_evidence_identifies_the_sources_it_built) ... ERROR
+
+======================================================================
+ERROR: test_corrected_evidence_identifies_the_sources_it_built (test_measurement_evidence.MeasurementEvidenceTests.test_corrected_evidence_identifies_the_sources_it_built)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_measurement_evidence.py", line 14, in test_corrected_evidence_identifies_the_sources_it_built
+    manifest = json.loads((EVIDENCE / 'review-4cb661c/manifest.json').read_text())
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 548, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pathlib/_abc.py", line 632, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 539, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/edge-ai-gearshift-issue-5/docs/evidence/issue-5/review-4cb661c/manifest.json'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.010s
+
+FAILED (errors=1)

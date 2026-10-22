@@ -1,0 +1,137 @@
+{
+  "run_id": "synthetic-5827818519332263345",
+  "simulated": false,
+  "method": "Physical CP2102 RX, host monotonic chunk timestamps; tolerance 50 ms",
+  "limitation": "Host receive silence does not measure electrical edge timing or prove a future WCET",
+  "elapsed_s": 795.9520473769999,
+  "series": [
+    {
+      "batch_id": "b1",
+      "execution_s": 1.01504,
+      "last_header_byte_received_s": 0.3663387729993701,
+      "first_result_byte_received_s": 1.3805475789995398,
+      "observed_no_rx_s": 1.0142088060001697,
+      "complete_uart_pause_us": 45299
+    },
+    {
+      "batch_id": "b2",
+      "execution_s": 10.015035,
+      "last_header_byte_received_s": 3.279018176000136,
+      "first_result_byte_received_s": 13.294099541999458,
+      "observed_no_rx_s": 10.015081365999322,
+      "complete_uart_pause_us": 1898536
+    },
+    {
+      "batch_id": "b3",
+      "execution_s": 10.015036,
+      "last_header_byte_received_s": 31.938162336999994,
+      "first_result_byte_received_s": 41.952530912999464,
+      "observed_no_rx_s": 10.01436857599947,
+      "complete_uart_pause_us": 18643571
+    },
+    {
+      "batch_id": "b4",
+      "execution_s": 10.015036,
+      "last_header_byte_received_s": 60.59627966700009,
+      "first_result_byte_received_s": 70.61114153000017,
+      "observed_no_rx_s": 10.014861863000078,
+      "complete_uart_pause_us": 18643655
+    },
+    {
+      "batch_id": "b5",
+      "execution_s": 2.0,
+      "last_header_byte_received_s": 89.25480791999962,
+      "first_result_byte_received_s": 91.25441329800015,
+      "observed_no_rx_s": 1.999605378000524,
+      "complete_uart_pause_us": 18643394
+    },
+    {
+      "batch_id": "b6",
+      "execution_s": 20.000001,
+      "last_header_byte_received_s": 93.1754362040001,
+      "first_result_byte_received_s": 113.17489878200013,
+      "observed_no_rx_s": 19.99946257800002,
+      "complete_uart_pause_us": 1920558
+    },
+    {
+      "batch_id": "b7",
+      "execution_s": 20.000001,
+      "last_header_byte_received_s": 132.1005933460001,
+      "first_result_byte_received_s": 152.10046837899972,
+      "observed_no_rx_s": 19.999875032999626,
+      "complete_uart_pause_us": 18925770
+    },
+    {
+      "batch_id": "b8",
+      "execution_s": 20.000001,
+      "last_header_byte_received_s": 171.02672155299933,
+      "first_result_byte_received_s": 191.0264890039998,
+      "observed_no_rx_s": 19.99976745100048,
+      "complete_uart_pause_us": 18925857
+    },
+    {
+      "batch_id": "b9",
+      "execution_s": 5.0,
+      "last_header_byte_received_s": 209.95203960799972,
+      "first_result_byte_received_s": 214.95193526099956,
+      "observed_no_rx_s": 4.9998956529998395,
+      "complete_uart_pause_us": 18925600
+    },
+    {
+      "batch_id": "b10",
+      "execution_s": 50.0,
+      "last_header_byte_received_s": 216.90303975799998,
+      "first_result_byte_received_s": 266.90298522899957,
+      "observed_no_rx_s": 49.99994547099959,
+      "complete_uart_pause_us": 1951462
+    },
+    {
+      "batch_id": "b11",
+      "execution_s": 50.0,
+      "last_header_byte_received_s": 286.39832149999984,
+      "first_result_byte_received_s": 336.398066535,
+      "observed_no_rx_s": 49.99974503500016,
+      "complete_uart_pause_us": 19495037
+    },
+    {
+      "batch_id": "b12",
+      "execution_s": 50.0,
+      "last_header_byte_received_s": 355.8929911419991,
+      "first_result_byte_received_s": 405.8926981149989,
+      "observed_no_rx_s": 49.999706972999775,
+      "complete_uart_pause_us": 19495123
+    },
+    {
+      "batch_id": "b13",
+      "execution_s": 10.0,
+      "last_header_byte_received_s": 425.38797371300006,
+      "first_result_byte_received_s": 435.3877091439999,
+      "observed_no_rx_s": 9.999735430999863,
+      "complete_uart_pause_us": 19494950
+    },
+    {
+      "batch_id": "b14",
+      "execution_s": 100.000001,
+      "last_header_byte_received_s": 437.3529999249995,
+      "first_result_byte_received_s": 537.3526576089998,
+      "observed_no_rx_s": 99.99965768400034,
+      "complete_uart_pause_us": 1965264
+    },
+    {
+      "batch_id": "b15",
+      "execution_s": 100.000001,
+      "last_header_byte_received_s": 556.8958703879989,
+      "first_result_byte_received_s": 656.8955068419991,
+      "observed_no_rx_s": 99.99963645400021,
+      "complete_uart_pause_us": 19543387
+    },
+    {
+      "batch_id": "b16",
+      "execution_s": 100.0,
+      "last_header_byte_received_s": 676.4393945999991,
+      "first_result_byte_received_s": 776.4388167709994,
+      "observed_no_rx_s": 99.99942217100033,
+      "complete_uart_pause_us": 19543474
+    }
+  ]
+}
