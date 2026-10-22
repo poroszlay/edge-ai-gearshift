@@ -1,0 +1,44 @@
+{
+  "utc": "2026-10-22T13:31:08.641535+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_mcu_measurement.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "sha256": {
+    "firmware/esp32/components/measurement/include/measurement.h": "470230e8dc68b78d3c72ddc6fd5c8c52a73e877b99362e5f8525418856f5886e",
+    "firmware/esp32/components/measurement/measurement.cc": "53bd3b7db52b39df1641a9ec679cd51eeef90281604bf23ad31451beafe07283",
+    "gearshift/profiler.py": "2a67ed4e5e9d36c94ba3f052d44d0c44d7456d14f89c5301c93d6d87802d7709",
+    "tests/mcu_measurement_test.cc": "4ba42aeb6159d5bea7661a3a5b877127f092af240ba253a38e2481105d08d012",
+    "tests/test_mcu_measurement.py": "f6d933b93a39efd2b33ec400b522cb3a6d6ddeb96927e21b2212a26cc984e19f",
+    "tests/test_measurement_ui.py": "49006292c3c4a73f581235b684a2ecebff547cd76290877d05c660966514a064",
+    "tests/test_profiler.py": "4712911b24df5a77f71d97fe9fec02e3e1654739d24fd908bcea014b4bb44805"
+  }
+}
+test_live_probe_exports_one_result_per_window_outside_processing (test_mcu_measurement.McuMeasurementTests.test_live_probe_exports_one_result_per_window_outside_processing) ... FAIL
+test_probe_exports_all_12400_scheduled_tasks_without_a_model (test_mcu_measurement.McuMeasurementTests.test_probe_exports_all_12400_scheduled_tasks_without_a_model) ... ok
+test_public_runner (test_mcu_measurement.McuMeasurementTests.test_public_runner) ... ok
+
+======================================================================
+FAIL: test_live_probe_exports_one_result_per_window_outside_processing (test_mcu_measurement.McuMeasurementTests.test_live_probe_exports_one_result_per_window_outside_processing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_mcu_measurement.py", line 66, in test_live_probe_exports_one_result_per_window_outside_processing
+    self.assertEqual(rows[0]['mode'], 'live')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'benchmark' != 'live'
+- benchmark
++ live
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.845s
+
+FAILED (failures=1)

@@ -1,0 +1,5 @@
+menu "Gearshift measurement probe"
+config MEASUREMENT_LIVE
+    bool "Run three live windows instead of the full benchmark"
+    default n
+endmenu

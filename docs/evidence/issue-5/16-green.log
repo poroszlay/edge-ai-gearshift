@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-22T13:36:18.297894+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_mcu_measurement.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "sha256": {
+    "firmware/esp32/components/measurement/include/measurement.h": "470230e8dc68b78d3c72ddc6fd5c8c52a73e877b99362e5f8525418856f5886e",
+    "firmware/esp32/components/measurement/measurement.cc": "8bd69a44efb771e73a5f0941a2e382b230f7fe65d39ddb880fbe638925d61a7f",
+    "gearshift/profiler.py": "79d0d702a1b32cc7ece2f1bd18f016938849f252950fb62f25d6a82eaa2d1c6b",
+    "tests/mcu_measurement_test.cc": "dea5fd65657cc371cc5c609eb4766579e2c4d570a6ff321caefcba4166fba56c",
+    "tests/test_mcu_measurement.py": "189d1d525b5b9d31bb3d379a96aeecdf6d7e660e12adb4f84598a14e9e514def",
+    "tests/test_measurement_ui.py": "49006292c3c4a73f581235b684a2ecebff547cd76290877d05c660966514a064",
+    "tests/test_profiler.py": "4a180fdc94f527f883198232b436c558610eb7bb1f6f36b3735e0f81165ab73c"
+  }
+}
+test_live_probe_exports_one_result_per_window_outside_processing (test_mcu_measurement.McuMeasurementTests.test_live_probe_exports_one_result_per_window_outside_processing) ... ok
+test_probe_exports_all_12400_scheduled_tasks_without_a_model (test_mcu_measurement.McuMeasurementTests.test_probe_exports_all_12400_scheduled_tasks_without_a_model) ... ok
+test_public_runner (test_mcu_measurement.McuMeasurementTests.test_public_runner) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.839s
+
+OK

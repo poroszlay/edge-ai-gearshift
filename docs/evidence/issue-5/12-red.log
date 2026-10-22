@@ -1,0 +1,42 @@
+{
+  "utc": "2026-10-22T13:30:05.313539+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_profiler.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "sha256": {
+    "firmware/esp32/components/measurement/include/measurement.h": "470230e8dc68b78d3c72ddc6fd5c8c52a73e877b99362e5f8525418856f5886e",
+    "firmware/esp32/components/measurement/measurement.cc": "53bd3b7db52b39df1641a9ec679cd51eeef90281604bf23ad31451beafe07283",
+    "gearshift/profiler.py": "a04792ce8ac0d94468ec30ad340030ba89fba044d46d22644c53845219476518",
+    "tests/mcu_measurement_test.cc": "4ba42aeb6159d5bea7661a3a5b877127f092af240ba253a38e2481105d08d012",
+    "tests/test_mcu_measurement.py": "5b3ac258287c0d27d3c55d5f6805aef5aeabe15fddd371de33527a1556503d9b",
+    "tests/test_measurement_ui.py": "49006292c3c4a73f581235b684a2ecebff547cd76290877d05c660966514a064",
+    "tests/test_profiler.py": "4712911b24df5a77f71d97fe9fec02e3e1654739d24fd908bcea014b4bb44805"
+  }
+}
+test_contradictory_task_timestamps_and_status_are_rejected (test_profiler.ProfilerTests.test_contradictory_task_timestamps_and_status_are_rejected) ... ok
+test_hardware_memory_snapshots_remain_separate_and_are_validated (test_profiler.ProfilerTests.test_hardware_memory_snapshots_remain_separate_and_are_validated) ... ERROR
+test_overload_statistics_are_recomputed_from_raw_timestamps (test_profiler.ProfilerTests.test_overload_statistics_are_recomputed_from_raw_timestamps) ... ok
+test_partial_or_duplicated_capture_cannot_be_reported_as_complete (test_profiler.ProfilerTests.test_partial_or_duplicated_capture_cannot_be_reported_as_complete) ... ok
+
+======================================================================
+ERROR: test_hardware_memory_snapshots_remain_separate_and_are_validated (test_profiler.ProfilerTests.test_hardware_memory_snapshots_remain_separate_and_are_validated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_profiler.py", line 80, in test_hardware_memory_snapshots_remain_separate_and_are_validated
+    self.assertEqual(report['batches'][0]['memory_before'], before)
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'memory_before'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.935s
+
+FAILED (errors=1)

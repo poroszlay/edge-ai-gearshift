@@ -1,0 +1,45 @@
+{
+  "utc": "2026-10-22T13:29:42.383741+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_profiler.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "sha256": {
+    "firmware/esp32/components/measurement/include/measurement.h": "470230e8dc68b78d3c72ddc6fd5c8c52a73e877b99362e5f8525418856f5886e",
+    "firmware/esp32/components/measurement/measurement.cc": "53bd3b7db52b39df1641a9ec679cd51eeef90281604bf23ad31451beafe07283",
+    "gearshift/profiler.py": "a04792ce8ac0d94468ec30ad340030ba89fba044d46d22644c53845219476518",
+    "tests/mcu_measurement_test.cc": "4ba42aeb6159d5bea7661a3a5b877127f092af240ba253a38e2481105d08d012",
+    "tests/test_mcu_measurement.py": "5b3ac258287c0d27d3c55d5f6805aef5aeabe15fddd371de33527a1556503d9b",
+    "tests/test_measurement_ui.py": "49006292c3c4a73f581235b684a2ecebff547cd76290877d05c660966514a064",
+    "tests/test_profiler.py": "a18597e75a502e74a1185e2dd5276566fd05d95071f27195139c254e861bd221"
+  }
+}
+test_profiler (unittest.loader._FailedTest.test_profiler) ... ERROR
+
+======================================================================
+ERROR: test_profiler (unittest.loader._FailedTest.test_profiler)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_profiler
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.13/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_profiler.py", line 87
+    self.assertIn('invalid measurement:', result.stderr)
+IndentationError: unexpected indent
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

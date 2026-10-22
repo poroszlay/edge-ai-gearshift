@@ -1,0 +1,6 @@
+test_public_runner (test_mcu_measurement.McuMeasurementTests.test_public_runner) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.390s
+
+OK

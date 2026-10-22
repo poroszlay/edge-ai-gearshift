@@ -1,0 +1,21 @@
+test_public_runner (test_mcu_measurement.McuMeasurementTests.test_public_runner) ... FAIL
+
+======================================================================
+FAIL: test_public_runner (test_mcu_measurement.McuMeasurementTests.test_public_runner)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_mcu_measurement.py", line 19, in test_public_runner
+    self.assertEqual(build.returncode, 0, build.stdout + build.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : /tmp/edge-ai-gearshift-issue-5/tests/mcu_measurement_test.cc:1:10: fatal error: measurement.h: No such file or directory
+    1 | #include "measurement.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+cc1plus: fatal error: /tmp/edge-ai-gearshift-issue-5/firmware/esp32/components/measurement/measurement.cc: No such file or directory
+compilation terminated.
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.034s
+
+FAILED (failures=1)
