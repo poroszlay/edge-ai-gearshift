@@ -105,3 +105,9 @@ python3 -m gearshift.profiler \
 `live-serial.log`/`live` kimenet használható, `--require-benchmark` nélkül.
 A capture eszköz Python-környezete pyserialt igényel; a JSONL-elemzéshez
 csak a projekt alapfüggőségei kellenek.
+
+
+Az UART-csend elemzőjének utólag javított sorrendellenőrzése a megőrzött
+nyers felvételeket is elfogadja. Az újraellenőrzés forrásverziója és
+azonosítói: [uart-review-b2108ed/manifest.json](../uart-review-b2108ed/manifest.json).
+A korábban rögzített csendjelentések byteazonosan újra előálltak.

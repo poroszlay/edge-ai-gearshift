@@ -1,0 +1,36 @@
+{
+  "source_commit": "b2108edc5bf2fd022e3cc6880993b144072f5b45",
+  "source_sha256": {
+    "docs/evidence/issue-5/analyze_uart.py": "99619227368f32738133c4dcb40e81ea2f728718f0999cf8cd09da7642fc4f6c",
+    "tests/test_uart_evidence.py": "60aef39c13d87e6a47f9ce5d3ed110bb7163db61697dafdf7926e25fe75a9dc0"
+  },
+  "input_artifacts": {
+    "results/issue-5/hardware-ee4cf53/live-serial.log": {
+      "bytes": 6129,
+      "sha256": "ae0421ea5646cb1f465b4133204ec52a9cdbf4bfa27080d44b101c121b95bda2"
+    },
+    "results/issue-5/hardware-ee4cf53/live-serial.log.json": {
+      "bytes": 99906,
+      "sha256": "9dd7dd63a779ec87a24b5e23b1ea9f8c1eb4f030313f8c37cd255bdf5f60e250"
+    },
+    "results/issue-5/hardware-ee4cf53/benchmark-serial.log": {
+      "bytes": 2739886,
+      "sha256": "98b60b7871df23a8dffae948ed3076e8754e813d6ff335457f34aa5d50d7488e"
+    },
+    "results/issue-5/hardware-ee4cf53/benchmark-serial.log.json": {
+      "bytes": 44350956,
+      "sha256": "12a0ea977ea4db8753175e0170339b966325eaf05a54f48f90ac3bd8dbe5f4df"
+    }
+  },
+  "outputs": {
+    "docs/evidence/issue-5/uart-review-b2108ed/live.silence.json": {
+      "bytes": 1108,
+      "sha256": "c5a6d37f190fc40102211eb76bbeacb08fba5f517d0f5780ff62196dd1884d82"
+    },
+    "docs/evidence/issue-5/uart-review-b2108ed/benchmark.silence.json": {
+      "bytes": 4576,
+      "sha256": "b7408b3dc7d4f922798da6518293a55d5d4f97f4a5c347aae01fea003be9a192"
+    }
+  },
+  "result": "Both original physical captures accepted; JSONL and silence reports byte-identical to previously recorded outputs"
+}

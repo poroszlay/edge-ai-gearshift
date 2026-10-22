@@ -1,0 +1,16 @@
+test_json_task_during_execution_cannot_be_reported_as_uart_silence (test_uart_evidence.UartEvidenceTests.test_json_task_during_execution_cannot_be_reported_as_uart_silence) ... FAIL
+
+======================================================================
+FAIL: test_json_task_during_execution_cannot_be_reported_as_uart_silence (test_uart_evidence.UartEvidenceTests.test_json_task_during_execution_cannot_be_reported_as_uart_silence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/edge-ai-gearshift-issue-5/tests/test_uart_evidence.py", line 54, in test_json_task_during_execution_cannot_be_reported_as_uart_silence
+    self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : 6 events, 1 observed UART-silent execution intervals
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.048s
+
+FAILED (failures=1)

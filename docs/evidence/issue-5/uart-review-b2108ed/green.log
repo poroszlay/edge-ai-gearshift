@@ -1,0 +1,7 @@
+test_json_task_during_execution_cannot_be_reported_as_uart_silence (test_uart_evidence.UartEvidenceTests.test_json_task_during_execution_cannot_be_reported_as_uart_silence) ... ok
+test_quiet_execution_ends_at_first_memory_byte_received (test_uart_evidence.UartEvidenceTests.test_quiet_execution_ends_at_first_memory_byte_received) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.091s
+
+OK

@@ -15,7 +15,7 @@ a javítás és a paneles red → green regresszió részleteit a
 
 | Ellenőrzés | Eredmény |
 | --- | --- |
-| Teljes regresszió | 70 teszt, 52,009 s, OK; 7 GUI-skip és 1 külön indítandó hardveres teszt kihagyva |
+| Teljes regresszió | 72 teszt, 52,658 s, OK; 7 GUI-skip és 1 külön indítandó hardveres teszt kihagyva |
 | Külön paneles watchdog-regresszió | Javítás előtt FAIL, utána PASS, 25 s-os reprodukció |
 | ESP-IDF v5.5.1 benchmark/live build | Mindkettő sikeres |
 | Chip-/flashazonosítás és feltöltések | ESP32-D0WD-V3, 4 MB; flash-visszaellenőrzések sikeresek |
@@ -128,3 +128,27 @@ A mérőmag `run()` interfésze és mérési szakasza változatlan. A saját mod
 elő-/utófeldolgozása, a #4 vezérlőprotokoll firmware-illesztése és a saját
 modell portolási helyessége a #7 integrációja. A mesterséges túlterhelés
 nem tanult modell teljesítménye. PR-merge és issue-lezárás nem történt.
+
+
+## UART-csend elemző review-javítása — b2108ed
+
+A korábbi elemző a `series_start` és `series_memory` közé érkező JSON-adatot
+nem utasította el. A reprodukcióban a fejléc 0,001 s, a közben elküldött
+`task` 0,025 s, a memóriarekord 0,051 s időbélyeggel szerepelt. Az elemző
+hibásan 0,050 s csendet jelentett. A CLI-regresszió előbb [elbukott](uart-review-b2108ed/red.log),
+majd a javítással [zöld lett](uart-review-b2108ed/green.log).
+
+A javítás a fejléc utáni tényleges legelső fogadott bájtnál zárja le az
+intervallumot, és megköveteli, hogy az a megfelelő adag `series_memory`
+rekordjához tartozzon. Más JSON-esemény esetén hibával kilép, sikeres
+bizonyítékfájl nélkül. A szabályos felvétel külön pozitív regressziója
+ellenőrzi a 0,051 s első fogadást és a 0,050 s csendet.
+
+Mindkét eredeti fizikai felvételt újraelemeztük: a 3 live és 16 benchmark
+intervallum továbbra is érvényes. A kinyert JSONL és csendjelentés byteazonos
+a korábban rögzített eredménnyel. Az elemző forráscommitját, forráshash-eit,
+az ellenőrzött nyers bemeneteket és az újraelemzett eredményeket külön
+[manifest](uart-review-b2108ed/manifest.json) azonosítja. A firmware, annak
+manifestjei és a tartós nyersadat-archívum változatlanok; új flash nem kellett.
+
+Az elemzőjavítás utáni [teljes regresszió](uart-review-b2108ed/tests.log): **72 teszt, OK, 8 skip**.

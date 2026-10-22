@@ -13,7 +13,8 @@ class MeasurementEvidenceTests(unittest.TestCase):
     def test_corrected_evidence_identifies_the_sources_it_built(self):
         manifests = [EVIDENCE / 'manifest.json',
                      EVIDENCE / 'review-4cb661c/manifest.json',
-                     EVIDENCE / 'hardware-ee4cf53/manifest.json']
+                     EVIDENCE / 'hardware-ee4cf53/manifest.json',
+                     EVIDENCE / 'uart-review-b2108ed/manifest.json']
         for path in manifests:
             manifest = json.loads(path.read_text())
             for name, expected in manifest['source_sha256'].items():
@@ -21,7 +22,7 @@ class MeasurementEvidenceTests(unittest.TestCase):
                     committed = subprocess.check_output(
                         ['git', 'show', manifest['source_commit'] + ':' + name], cwd=ROOT)
                     self.assertEqual(hashlib.sha256(committed).hexdigest(), expected)
-                    if path.parent.name == 'hardware-ee4cf53':
+                    if path.parent.name in ('hardware-ee4cf53', 'uart-review-b2108ed'):
                         self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(),
                                          expected)
 
