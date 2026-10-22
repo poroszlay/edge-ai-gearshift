@@ -1,0 +1,111 @@
+{
+  "created_utc": "2026-10-22T19:37:37.366997+00:00",
+  "base_commit": "b4c5fb2727f023ec31283712fdf1b49de7b7ba25",
+  "branch": "feat/issue-5-measurement",
+  "idf_commit": "fcae32885b0296b32044cb99ecbdc50d98dddb83",
+  "source_sha256": {
+    "firmware/esp32/components/measurement/CMakeLists.txt": "1adf20b81d0effed26457be14b65954766ceb5347997e716b600b61d86bab5d0",
+    "firmware/esp32/components/measurement/include/measurement.h": "470230e8dc68b78d3c72ddc6fd5c8c52a73e877b99362e5f8525418856f5886e",
+    "firmware/esp32/components/measurement/measurement.cc": "8bd69a44efb771e73a5f0941a2e382b230f7fe65d39ddb880fbe638925d61a7f",
+    "firmware/esp32/measurement/CMakeLists.txt": "82dd8a20995b074809fccaa9956bb61797d9db4e9d24e1422ba3bc4204205c6a",
+    "firmware/esp32/measurement/build.sh": "7254860fe13d1d74ba80d610118771bc4baaa6f9673577cd0d4407124e9dccdb",
+    "firmware/esp32/measurement/main/CMakeLists.txt": "a3cd8285ce523ee298f1c47b2696eacbaed90bff0a70cae057c300eec35088b9",
+    "firmware/esp32/measurement/main/Kconfig.projbuild": "6a0d4f83e6a9de4d3b3f5fd8367b980a227980e813668ea0a3326e6943ccde5f",
+    "firmware/esp32/measurement/main/probe.cc": "2c157d284f2fe5ba70ceeb438a5a8f06020a913d4e823b564056cd612a65d1ce",
+    "firmware/esp32/measurement/sdkconfig.defaults": "a3577d14d185b73586c61f42f4c5e8d377d86c6abf02c1bbf4124e514c21b1af",
+    "firmware/esp32/measurement/sdkconfig.live": "b6a14929a535826178052ada328410ebcfec8a3ecb54fdc48dcf2061985c50bd",
+    "gearshift/profiler.py": "6ccd26ecdd3f07338364c10bcadaf698f15922f52347ec426f2f3c41ae8ed67b",
+    "tests/mcu_measurement_test.cc": "dea5fd65657cc371cc5c609eb4766579e2c4d570a6ff321caefcba4166fba56c",
+    "tests/test_mcu_measurement.py": "6a632e79f5b7236344844c1c681fbbbeb51b855227d099b2ab1815b070d2da6e",
+    "tests/test_measurement_ui.py": "49006292c3c4a73f581235b684a2ecebff547cd76290877d05c660966514a064",
+    "tests/test_profiler.py": "a9d8a4fe4ecd240964fe7ee4d48657d1d83721f20f9f60d29217136932b28360"
+  },
+  "local_artifacts": {
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/benchmark/bootloader/bootloader.bin": {
+      "bytes": 26240,
+      "sha256": "15e645832e40aafa26a6ec46b9e8c9740777485af836fa08aa8661d02ef580c4"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/benchmark/flash_args": {
+      "bytes": 161,
+      "sha256": "e68b21b75d66e1bd3eed42819f56d8721b933f6451ac4ffabb3e3cb60e248772"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/benchmark/flasher_args.json": {
+      "bytes": 937,
+      "sha256": "dc2a936424d997f5e024971cfb6f39b509ec6ba8cb9321023e0b2abff1f6e25b"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/benchmark/gearshift_measurement.bin": {
+      "bytes": 233472,
+      "sha256": "4da06a420f3b56619d82b8c701b1f5de2f5314fb40d6ff2b0fb6bffdf9c509e1"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/benchmark/gearshift_measurement.elf": {
+      "bytes": 3150160,
+      "sha256": "33f282d22712b05849f85f0455ae22007af117213f8f61a4c783e329453662c8"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/benchmark/gearshift_measurement.map": {
+      "bytes": 2215999,
+      "sha256": "a089e9d367f68bbbd8782336e7cdd07319306b667003db0eaba2e41b7315a12f"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/benchmark/partition_table/partition-table.bin": {
+      "bytes": 3072,
+      "sha256": "7f00b6c042a89b15b0cac534f82ed988caf29278ff5700b0c511eb1b5bb7c820"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/benchmark/sdkconfig": {
+      "bytes": 65799,
+      "sha256": "c3cc04cd98daf64067a666f18b69b1c0c0cacc10a540c20b5960dd313579036b"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/benchmark/size.json": {
+      "bytes": 764,
+      "sha256": "ab1b5b9724866c5c9d31d11b1ade703f17e051123a6221c8c406fa2c15be08f3"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/live/bootloader/bootloader.bin": {
+      "bytes": 26240,
+      "sha256": "cffdb1df89fa0dfc1e7d49245afcb4c0a00b63a16c1ee25e72a17abdb3f396ff"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/live/flash_args": {
+      "bytes": 161,
+      "sha256": "e68b21b75d66e1bd3eed42819f56d8721b933f6451ac4ffabb3e3cb60e248772"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/live/flasher_args.json": {
+      "bytes": 937,
+      "sha256": "dc2a936424d997f5e024971cfb6f39b509ec6ba8cb9321023e0b2abff1f6e25b"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/live/gearshift_measurement.bin": {
+      "bytes": 233408,
+      "sha256": "d920e2d7251472468398c481173987b4b11d08e25e3ff1dcf5f3d6f1a8ded94d"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/live/gearshift_measurement.elf": {
+      "bytes": 3150096,
+      "sha256": "de44f214e160854db59a736056bcbd4742d38ae14fc39615ff21ef82458400e4"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/live/gearshift_measurement.map": {
+      "bytes": 2215921,
+      "sha256": "ee806cceb9e10058629e56282fc667c1b544c606703d6f8e2b4af5b5c39dea39"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/live/partition_table/partition-table.bin": {
+      "bytes": 3072,
+      "sha256": "7f00b6c042a89b15b0cac534f82ed988caf29278ff5700b0c511eb1b5bb7c820"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/live/sdkconfig": {
+      "bytes": 65788,
+      "sha256": "fba8f88ed9a3f55e69409877fd486975913ac7618d696400c3e92608ef282a4c"
+    },
+    "results/issue-5/review-4cb661c/firmware/esp32/measurement/build/live/size.json": {
+      "bytes": 764,
+      "sha256": "7ffbf3d7c751d66e6749d6816133232cda81ecd56df1272c36444eb9fe9f51a8"
+    },
+    "results/issue-5/review-4cb661c/probe": {
+      "bytes": 88568,
+      "sha256": "6ac628427aba3988bf6e8be9560f92282fbd7f9b9516b553a51dcbca4c9f8c75"
+    },
+    "results/issue-5/review-4cb661c/host-benchmark.jsonl": {
+      "bytes": 2724117,
+      "sha256": "0d891afd42a7eb2437cfca60b98e245e3083a6b38ca1ecdf4280ff53491bfe3a"
+    },
+    "results/issue-5/review-4cb661c/host-live.jsonl": {
+      "bytes": 3150,
+      "sha256": "435dacd54ad95b2c89877ec293c9487b0105036638629009aa9407f61ab042c2"
+    }
+  },
+  "hardware_status": "blocked: host EACCES opening /dev/ttyUSB0; no flash or measurements performed",
+  "source_commit": "4cb661c271551975202d90b6342ee83b18ab5a9f"
+}

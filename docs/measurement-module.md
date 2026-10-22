@@ -65,6 +65,7 @@ Hoston C++17 fordító és Python 3.10+ szükséges, ESP-IDF nélkül:
 ```bash
 python3 -m unittest discover -s tests -p test_mcu_measurement.py -v
 python3 -m unittest discover -s tests -p test_profiler.py -v
+python3 -m unittest discover -s tests -p test_measurement_evidence.py -v
 mkdir -p results/issue-5
 g++ -std=c++17 -Wall -Wextra -Werror -pedantic \
   -Ifirmware/esp32/components/measurement/include \
@@ -112,7 +113,10 @@ külön ablak fut, külön egyfeladatos adagban, 50 ms periódussal.
 A sorozat eleji kiírás után `fflush` és az SDK ESP32-re javított
 `esp_rom_output_tx_wait_idle()` függvénye kiüríti a TX-et. A `run` alatt
 nincs UART-küldés/olvasás vagy formázás. Eredmények és memóriaadatok csak
-utána mennek ki. A `series_end.uart_wait_us` a korábbi végrehajtás vége és
+utána mennek ki. ESP32-n minden exportált feladatrekord után egy RTOS-tick
+várakozás engedi futni az idle feladatot; enélkül a polling UART-driver
+hosszú exportja watchdog-jelzést okozhat. A várakozás csak az UART-szünet
+része, nem a mért végrehajtásé. A `series_end.uart_wait_us` a korábbi végrehajtás vége és
 az aktuális `run` hívás előtti mérési pont közötti teljes szünet: tartalmazza
 az eredményátvitelt, a következő `series_start` fejléc átvitelét és a TX
 kiürítését is. Az értéket a végrehajtás előtt lezárjuk, utána exportáljuk.
@@ -127,6 +131,19 @@ jelöléssel. Régi exportnál a fejlécbeli részértéket mutatja,
 állítható elő. A teljes érték nem lehet kisebb a fejléc előtti részértéknél.
 
 ### Paneles futtatás
+
+A már benchmark firmware-rel feltöltött panel 25 másodperces, külön indítható
+watchdog-regressziója (reseteli a panelt, párhuzamos portolvasó nélkül):
+
+```bash
+GEARSHIFT_TEST_ESP32_PORT=/dev/ttyUSB0 python -m unittest discover \
+  -s tests -p test_measurement_hardware.py -v
+```
+
+Portváltozó nélkül a hardveres teszt kimarad a szokásos tesztfutásból.
+Ez csak a korábban hibázó exportút rövid regressziója; a teljes négyprofilos
+benchmarkot és az élő módot külön kell lefuttatni.
+
 
 Előbb a hoston ellenőrizd a portot és a megnyithatóságot, majd a chipet és a
 fizikai flashméretet. Azonosítatlan vagy eltérő panelre ne tölts ESP32-buildet.

@@ -1,0 +1,13 @@
+0x400d3503: uart_ll_get_txfifo_len at /tmp/gearshift-issue5-sdk/esp-idf/components/hal/esp32/include/hal/uart_ll.h:439
+ (inlined by) uart_tx_char at /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_uart/src/uart_vfs.c:190
+0x400d3f5d: uart_write at /tmp/gearshift-issue5-sdk/esp-idf/components/esp_driver_uart/src/uart_vfs.c:245
+0x400d4f93: esp_vfs_write at /tmp/gearshift-issue5-sdk/esp-idf/components/vfs/vfs.c:982 (discriminator 4)
+0x400d8127: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:232
+0x400dbdd3: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x400db7ea: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+0x400d81f7: printf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c:56
+0x400d5e9d: app_main at /tmp/edge-ai-gearshift-issue-5/firmware/esp32/measurement/main/probe.cc:125 (discriminator 1)
+ (inlined by) nullable_time at /tmp/edge-ai-gearshift-issue-5/firmware/esp32/measurement/main/probe.cc:123 (discriminator 1)
+ (inlined by) probe at /tmp/edge-ai-gearshift-issue-5/firmware/esp32/measurement/main/probe.cc:233 (discriminator 1)
+ (inlined by) app_main at /tmp/edge-ai-gearshift-issue-5/firmware/esp32/measurement/main/probe.cc:258 (discriminator 1)

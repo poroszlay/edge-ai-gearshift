@@ -1,0 +1,12 @@
+{
+  "chip": "ESP32-D0WD-V3",
+  "revision": "v3.1",
+  "mac": "3c:8a:1f:77:57:dc",
+  "flash_manufacturer_hex": "68",
+  "flash_device_hex": "4016",
+  "detected_flash_bytes": 4194304,
+  "cpu_mhz": 240,
+  "crystal_mhz": 40,
+  "port": "/dev/ttyUSB0",
+  "note": "Transcribed from successful esptool chip_id and flash_id output in this session. Autobaud reported 41.01/41.13 MHz warnings before normalizing crystal to 40 MHz. Raw flash/boot logs preserve independent chip and build identity."
+}

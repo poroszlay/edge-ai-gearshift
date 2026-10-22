@@ -1,0 +1,7 @@
+test_corrected_evidence_identifies_the_sources_it_built (test_measurement_evidence.MeasurementEvidenceTests.test_corrected_evidence_identifies_the_sources_it_built) ... ok
+test_documented_evidence_checksum_command_succeeds (test_measurement_evidence.MeasurementEvidenceTests.test_documented_evidence_checksum_command_succeeds) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.216s
+
+OK

@@ -1,0 +1,11 @@
+{
+  "absolute_local_path": "/home/richie/Desktop/edge-ai-gearshift/results/issue-5/hardware-ee4cf53.tar.gz",
+  "bytes": 11429700,
+  "sha256": "44ad1942df9b3c8900efa0986e0f97a930a780684064fb29886c50be49e31137",
+  "contents": [
+    "results/issue-5/review-4cb661c",
+    "results/issue-5/hardware-4cb661c",
+    "results/issue-5/hardware-ee4cf53"
+  ],
+  "restore": "Verify sha256, then extract with tar -xzf ARCHIVE -C REPOSITORY_ROOT"
+}

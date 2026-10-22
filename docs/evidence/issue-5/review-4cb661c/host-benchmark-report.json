@@ -1,0 +1,774 @@
+{
+  "schema": "gearshift.measurement.v1",
+  "run_id": "synthetic-7548870529125",
+  "simulated": true,
+  "mode": "benchmark",
+  "workload": "synthetic_delay_25ms",
+  "metadata": {
+    "event": "run_start",
+    "schema": "gearshift.measurement.v1",
+    "run_id": "synthetic-7548870529125",
+    "mode": "benchmark",
+    "simulated": true,
+    "workload": "synthetic_delay_25ms",
+    "sdk": "host_virtual_clock",
+    "cpu_mhz": 0,
+    "model_bytes": null,
+    "expected_batches": 16,
+    "expected_tasks": 12400
+  },
+  "batches": [
+    {
+      "batch_id": "b1",
+      "phase": "warmup",
+      "series": 0,
+      "period_us": 10000,
+      "scheduled": 100,
+      "counts": {
+        "ok": 0,
+        "late": 34,
+        "missed": 66,
+        "failed": 0
+      },
+      "deadline_failure_percent": 100.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 33.49753694581281,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b2",
+      "phase": "measured",
+      "series": 1,
+      "period_us": 10000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 0,
+        "late": 334,
+        "missed": 666,
+        "failed": 0
+      },
+      "deadline_failure_percent": 100.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 33.34997503744383,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b3",
+      "phase": "measured",
+      "series": 2,
+      "period_us": 10000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 0,
+        "late": 334,
+        "missed": 666,
+        "failed": 0
+      },
+      "deadline_failure_percent": 100.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 33.34997503744383,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b4",
+      "phase": "measured",
+      "series": 3,
+      "period_us": 10000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 0,
+        "late": 334,
+        "missed": 666,
+        "failed": 0
+      },
+      "deadline_failure_percent": 100.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 33.34997503744383,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b5",
+      "phase": "warmup",
+      "series": 0,
+      "period_us": 20000,
+      "scheduled": 100,
+      "counts": {
+        "ok": 0,
+        "late": 50,
+        "missed": 50,
+        "failed": 0
+      },
+      "deadline_failure_percent": 100.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 25.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b6",
+      "phase": "measured",
+      "series": 1,
+      "period_us": 20000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 0,
+        "late": 500,
+        "missed": 500,
+        "failed": 0
+      },
+      "deadline_failure_percent": 100.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 25.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b7",
+      "phase": "measured",
+      "series": 2,
+      "period_us": 20000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 0,
+        "late": 500,
+        "missed": 500,
+        "failed": 0
+      },
+      "deadline_failure_percent": 100.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 25.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b8",
+      "phase": "measured",
+      "series": 3,
+      "period_us": 20000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 0,
+        "late": 500,
+        "missed": 500,
+        "failed": 0
+      },
+      "deadline_failure_percent": 100.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 25.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b9",
+      "phase": "warmup",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 100,
+      "counts": {
+        "ok": 100,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b10",
+      "phase": "measured",
+      "series": 1,
+      "period_us": 50000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b11",
+      "phase": "measured",
+      "series": 2,
+      "period_us": 50000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b12",
+      "phase": "measured",
+      "series": 3,
+      "period_us": 50000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b13",
+      "phase": "warmup",
+      "series": 0,
+      "period_us": 100000,
+      "scheduled": 100,
+      "counts": {
+        "ok": 100,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 10.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b14",
+      "phase": "measured",
+      "series": 1,
+      "period_us": 100000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 10.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b15",
+      "phase": "measured",
+      "series": 2,
+      "period_us": 100000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 10.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    },
+    {
+      "batch_id": "b16",
+      "phase": "measured",
+      "series": 3,
+      "period_us": 100000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inference_ms": {
+        "median": 25.0,
+        "p95": 25.0,
+        "maximum": 25.0
+      },
+      "inferences_per_second": 10.0,
+      "uart_wait_us": 0,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "boot"
+      },
+      "memory_after": {
+        "free_heap_bytes": null,
+        "minimum_free_heap_bytes": null,
+        "largest_free_block_bytes": null,
+        "stack_high_water_bytes": null,
+        "result_buffer_bytes": 64000,
+        "window_buffer_bytes": 2640,
+        "model_workspace_bytes": null,
+        "minimum_scope": "series"
+      }
+    }
+  ]
+}

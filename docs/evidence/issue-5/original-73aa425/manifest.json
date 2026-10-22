@@ -1,0 +1,106 @@
+{
+  "created_utc": "2026-10-22T13:43:18.399278+00:00",
+  "base_commit": "b4c5fb2727f023ec31283712fdf1b49de7b7ba25",
+  "branch": "feat/issue-5-measurement",
+  "idf_commit": "fcae32885b0296b32044cb99ecbdc50d98dddb83",
+  "source_sha256": {
+    "firmware/esp32/components/measurement/CMakeLists.txt": "1adf20b81d0effed26457be14b65954766ceb5347997e716b600b61d86bab5d0",
+    "firmware/esp32/components/measurement/include/measurement.h": "470230e8dc68b78d3c72ddc6fd5c8c52a73e877b99362e5f8525418856f5886e",
+    "firmware/esp32/components/measurement/measurement.cc": "8bd69a44efb771e73a5f0941a2e382b230f7fe65d39ddb880fbe638925d61a7f",
+    "firmware/esp32/measurement/CMakeLists.txt": "82dd8a20995b074809fccaa9956bb61797d9db4e9d24e1422ba3bc4204205c6a",
+    "firmware/esp32/measurement/build.sh": "7254860fe13d1d74ba80d610118771bc4baaa6f9673577cd0d4407124e9dccdb",
+    "firmware/esp32/measurement/main/CMakeLists.txt": "a3cd8285ce523ee298f1c47b2696eacbaed90bff0a70cae057c300eec35088b9",
+    "firmware/esp32/measurement/main/Kconfig.projbuild": "6a0d4f83e6a9de4d3b3f5fd8367b980a227980e813668ea0a3326e6943ccde5f",
+    "firmware/esp32/measurement/main/probe.cc": "17a4ce558f5f4f257bedb006035eeeeb62b88dbbff2d58dc2e2180a0cc8f8202",
+    "firmware/esp32/measurement/sdkconfig.defaults": "a3577d14d185b73586c61f42f4c5e8d377d86c6abf02c1bbf4124e514c21b1af",
+    "firmware/esp32/measurement/sdkconfig.live": "b6a14929a535826178052ada328410ebcfec8a3ecb54fdc48dcf2061985c50bd",
+    "gearshift/profiler.py": "79d0d702a1b32cc7ece2f1bd18f016938849f252950fb62f25d6a82eaa2d1c6b",
+    "tests/mcu_measurement_test.cc": "dea5fd65657cc371cc5c609eb4766579e2c4d570a6ff321caefcba4166fba56c",
+    "tests/test_mcu_measurement.py": "1d3f21487aac6c20df7d498aa8f2afccc1c3b7d3e7306e5591e904c967541d00",
+    "tests/test_measurement_ui.py": "49006292c3c4a73f581235b684a2ecebff547cd76290877d05c660966514a064",
+    "tests/test_profiler.py": "1eb991fa12b3435b7820c0ae16761070c7640a1c0fcf0d8269d03f54d1912256"
+  },
+  "local_artifacts": {
+    "firmware/esp32/measurement/build/benchmark/bootloader/bootloader.bin": {
+      "bytes": 26240,
+      "sha256": "15e645832e40aafa26a6ec46b9e8c9740777485af836fa08aa8661d02ef580c4"
+    },
+    "firmware/esp32/measurement/build/benchmark/flash_args": {
+      "bytes": 161,
+      "sha256": "e68b21b75d66e1bd3eed42819f56d8721b933f6451ac4ffabb3e3cb60e248772"
+    },
+    "firmware/esp32/measurement/build/benchmark/flasher_args.json": {
+      "bytes": 937,
+      "sha256": "dc2a936424d997f5e024971cfb6f39b509ec6ba8cb9321023e0b2abff1f6e25b"
+    },
+    "firmware/esp32/measurement/build/benchmark/gearshift_measurement.bin": {
+      "bytes": 233408,
+      "sha256": "b548f124771fa80c736eaf837e0f719fb940729699b44316b9ab33b933363326"
+    },
+    "firmware/esp32/measurement/build/benchmark/gearshift_measurement.elf": {
+      "bytes": 3149760,
+      "sha256": "7c0c795879d4ff23c46589e596a1e4d2935aa98a1d7d169bc093a8498ba4c80c"
+    },
+    "firmware/esp32/measurement/build/benchmark/gearshift_measurement.map": {
+      "bytes": 2215999,
+      "sha256": "291a27a814046afb9ac7226588fe1286d636da84d4e5680e111ce1f1ef59c585"
+    },
+    "firmware/esp32/measurement/build/benchmark/partition_table/partition-table.bin": {
+      "bytes": 3072,
+      "sha256": "7f00b6c042a89b15b0cac534f82ed988caf29278ff5700b0c511eb1b5bb7c820"
+    },
+    "firmware/esp32/measurement/build/benchmark/sdkconfig": {
+      "bytes": 65799,
+      "sha256": "c3cc04cd98daf64067a666f18b69b1c0c0cacc10a540c20b5960dd313579036b"
+    },
+    "firmware/esp32/measurement/build/benchmark/size.json": {
+      "bytes": 764,
+      "sha256": "efd1e8655f4860a4191483735bec12dbe5bc0e417e9052485da0e4c5547c2ea7"
+    },
+    "firmware/esp32/measurement/build/live/bootloader/bootloader.bin": {
+      "bytes": 26240,
+      "sha256": "cffdb1df89fa0dfc1e7d49245afcb4c0a00b63a16c1ee25e72a17abdb3f396ff"
+    },
+    "firmware/esp32/measurement/build/live/flash_args": {
+      "bytes": 161,
+      "sha256": "e68b21b75d66e1bd3eed42819f56d8721b933f6451ac4ffabb3e3cb60e248772"
+    },
+    "firmware/esp32/measurement/build/live/flasher_args.json": {
+      "bytes": 937,
+      "sha256": "dc2a936424d997f5e024971cfb6f39b509ec6ba8cb9321023e0b2abff1f6e25b"
+    },
+    "firmware/esp32/measurement/build/live/gearshift_measurement.bin": {
+      "bytes": 233328,
+      "sha256": "4ab97a3195d8b56612d43ce969a9282626af490640b0efd6397206eac59782f4"
+    },
+    "firmware/esp32/measurement/build/live/gearshift_measurement.elf": {
+      "bytes": 3149624,
+      "sha256": "ace3c3e504a827b81f6023a706af36647796757131f4939ddb47db45c3d53b0f"
+    },
+    "firmware/esp32/measurement/build/live/gearshift_measurement.map": {
+      "bytes": 2215960,
+      "sha256": "a6f95a506322ca25df162dc7c5c9ea79a7a3f11c8c6c0e6003b6be30aa271ea8"
+    },
+    "firmware/esp32/measurement/build/live/partition_table/partition-table.bin": {
+      "bytes": 3072,
+      "sha256": "7f00b6c042a89b15b0cac534f82ed988caf29278ff5700b0c511eb1b5bb7c820"
+    },
+    "firmware/esp32/measurement/build/live/sdkconfig": {
+      "bytes": 65788,
+      "sha256": "fba8f88ed9a3f55e69409877fd486975913ac7618d696400c3e92608ef282a4c"
+    },
+    "firmware/esp32/measurement/build/live/size.json": {
+      "bytes": 764,
+      "sha256": "811b6664f07efaa738ca479d72bd41d04e545ee745912f32c7afdfb0e088021f"
+    },
+    "results/issue-5/host-benchmark.jsonl": {
+      "bytes": 2723845,
+      "sha256": "161287892efe39bb3a6be839e58a251f4c22baafa1952526155683ac28ddc065"
+    },
+    "results/issue-5/host-live.jsonl": {
+      "bytes": 3099,
+      "sha256": "8bfe59c39dc70889bf0287b716de6ec7a99dc1248ad2cc244f8218078ac08b79"
+    }
+  },
+  "hardware_status": "blocked: host EACCES opening /dev/ttyUSB0; no flash or measurements performed"
+}
