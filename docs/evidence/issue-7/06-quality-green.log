@@ -1,0 +1,11 @@
+test_firmware_raw_path_matches_frozen_pc_reference_and_boundary_rounding (test_inference.FirmwareInputTests.test_firmware_raw_path_matches_frozen_pc_reference_and_boundary_rounding) ... ok
+test_firmware_quality_batch_visits_each_preloaded_window_once (test_inference.FirmwareProtocolTests.test_firmware_quality_batch_visits_each_preloaded_window_once) ... ok
+test_native_firmware_protocol_preloads_executes_fetches_and_accounts_benchmark (test_inference.FirmwareProtocolTests.test_native_firmware_protocol_preloads_executes_fetches_and_accounts_benchmark) ... ok
+test_client_preserves_hardware_origin_numerics_and_memory_in_csv (test_inference.HardwareContractTests.test_client_preserves_hardware_origin_numerics_and_memory_in_csv) ... ok
+test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict (test_inference.HardwareContractTests.test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict) ... ok
+test_uart_adapter_frames_real_pty_bytes_and_times_out (test_inference.UartTests.test_uart_adapter_frames_real_pty_bytes_and_times_out) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.228s
+
+OK

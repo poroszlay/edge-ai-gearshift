@@ -1,0 +1,4 @@
+usage: client.py [-h] [--demo] [--host HOST] [--port PORT]
+                 [--mode {live,benchmark}] [--timeout TIMEOUT] [--input INPUT]
+                 [--output OUTPUT]
+client.py: error: unrecognized arguments: --serial /dev/ttyUSB0 --model-id 6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79

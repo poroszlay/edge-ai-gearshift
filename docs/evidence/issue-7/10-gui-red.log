@@ -1,0 +1,15 @@
+test_hardware_selection_and_results_are_labelled_as_measured (test_measurement_ui.HardwareGuiTests.test_hardware_selection_and_results_are_labelled_as_measured) ... FAIL
+
+======================================================================
+FAIL: test_hardware_selection_and_results_are_labelled_as_measured (test_measurement_ui.HardwareGuiTests.test_hardware_selection_and_results_are_labelled_as_measured)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/richie/Desktop/edge-ai-gearshift/tests/test_measurement_ui.py", line 336, in test_hardware_selection_and_results_are_labelled_as_measured
+    self.assertIn('ESP32', widget.origin.text())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ESP32' not found in 'SZIMULÁCIÓ • hold döntési stub • virtuális idő • memóriabecslés'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.157s
+
+FAILED (failures=1)

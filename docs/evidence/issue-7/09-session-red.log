@@ -1,0 +1,34 @@
+test_firmware_raw_path_matches_frozen_pc_reference_and_boundary_rounding (test_inference.FirmwareInputTests.test_firmware_raw_path_matches_frozen_pc_reference_and_boundary_rounding) ... ok
+test_firmware_quality_batch_visits_each_preloaded_window_once (test_inference.FirmwareProtocolTests.test_firmware_quality_batch_visits_each_preloaded_window_once) ... ok
+test_native_firmware_protocol_preloads_executes_fetches_and_accounts_benchmark (test_inference.FirmwareProtocolTests.test_native_firmware_protocol_preloads_executes_fetches_and_accounts_benchmark) ... ok
+test_client_preserves_hardware_origin_numerics_and_memory_in_csv (test_inference.HardwareContractTests.test_client_preserves_hardware_origin_numerics_and_memory_in_csv) ... ok
+test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict (test_inference.HardwareContractTests.test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict) ... ok
+test_missing_uart_keeps_hardware_origin_and_never_completes (test_inference.HardwareSessionTests.test_missing_uart_keeps_hardware_origin_and_never_completes) ... ERROR
+test_porting_report_separates_raw_input_mismatch_from_output_tolerance_and_quality (test_inference.PortingReportTests.test_porting_report_separates_raw_input_mismatch_from_output_tolerance_and_quality) ... ERROR
+test_uart_adapter_frames_real_pty_bytes_and_times_out (test_inference.UartTests.test_uart_adapter_frames_real_pty_bytes_and_times_out) ... ok
+
+======================================================================
+ERROR: test_missing_uart_keeps_hardware_origin_and_never_completes (test_inference.HardwareSessionTests.test_missing_uart_keeps_hardware_origin_and_never_completes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/richie/Desktop/edge-ai-gearshift/tests/test_inference.py", line 252, in test_missing_uart_keeps_hardware_origin_and_never_completes
+    session = Session(Settings(demo=False, serial_port='/no/such/uart', model_id=MODEL))
+                      ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Settings.__init__() got an unexpected keyword argument 'serial_port'
+
+======================================================================
+ERROR: test_porting_report_separates_raw_input_mismatch_from_output_tolerance_and_quality (test_inference.PortingReportTests.test_porting_report_separates_raw_input_mismatch_from_output_tolerance_and_quality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/richie/Desktop/edge-ai-gearshift/tests/test_inference.py", line 227, in test_porting_report_separates_raw_input_mismatch_from_output_tolerance_and_quality
+    report = porting_report([pc], [actual])
+  File "/home/richie/Desktop/edge-ai-gearshift/gearshift/porting.py", line 12, in porting_report
+    from pc.model import classification_report
+  File "/home/richie/Desktop/edge-ai-gearshift/pc/model.py", line 5, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+
+----------------------------------------------------------------------
+Ran 8 tests in 7.741s
+
+FAILED (errors=2)

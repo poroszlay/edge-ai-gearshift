@@ -1,0 +1,6 @@
+test_client_preserves_hardware_origin_numerics_and_memory_in_csv (test_inference.HardwareContractTests.test_client_preserves_hardware_origin_numerics_and_memory_in_csv) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.019s
+
+OK

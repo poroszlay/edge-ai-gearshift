@@ -19,3 +19,6 @@ __pycache__/
 
 # Issue 6 reproducible models and build products
 results/issue-6/
+
+# Issue 7 complete PC/MCU captures and final-test artifacts
+results/issue-7/

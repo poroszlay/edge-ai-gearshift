@@ -246,6 +246,9 @@ előre lefoglalt. A mintavétel előtte/utána történik, nem minden feladatná
 
 ## #7-átadás és fennmaradó integráció
 
+Az alábbi lista a #5 átadási állapotát rögzíti. A #7 saját modelles
+megvalósítása és aktuális paneles bizonyítéka: [ESP32 INT8 MLP](esp32-inference.md).
+
 1. A firmware saját projektjéhez add hozzá az ESP-IDF `measurement` modult.
    A #6 runtime-adaptere valósítsa meg a `Workload` interfészt; a mérőmag
    nem igényel változtatást a modell cseréjéhez.
@@ -261,7 +264,7 @@ előre lefoglalt. A mintavétel előtte/utána történik, nem minden feladatná
    döntés nélkül. A modell-/memóriahiba külön eszközhiba; a #7 a meglévő
    szerződés felelős integrációjában rögzíti a továbbítását. A próbafirmware
    nyers hibaidői nem kerülhetnek érvényes döntésként a szimulációs sémába.
-5. A main kliens, GUI és CSV ma kizárólag szimulációt fogad. A paneles
+5. A #5 átadásakor a main kliens, GUI és CSV kizárólag szimulációt fogadott. A paneles
    eredetkezelés és UART-adapter a #7 feladata; nem szabad a valódi
    eredményt `simulated:true` értékre átírni kompatibilitási kerülőútként.
 6. A teljes tesztadat minőségi vizsgálata külön, adagokban történik.

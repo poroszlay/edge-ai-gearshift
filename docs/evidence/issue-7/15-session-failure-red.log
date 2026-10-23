@@ -1,0 +1,29 @@
+test_invalid_expected_model_terminates_the_worker_without_losing_origin (test_inference.HardwareSessionFailureTests.test_invalid_expected_model_terminates_the_worker_without_losing_origin) ... Exception in thread Thread-1 (_run):
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/threading.py", line 1043, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3.13/threading.py", line 994, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/richie/Desktop/edge-ai-gearshift/gearshift/measurement.py", line 128, in _run
+    client = Client(None, self, s.mode, s.timeout, simulated=not bool(s.serial_port),
+                    model_id=s.model_id or None)
+  File "/home/richie/Desktop/edge-ai-gearshift/gearshift/client.py", line 23, in __init__
+    raise ProtocolError('expected_model_id_required')
+gearshift.protocol.ProtocolError: expected_model_id_required
+FAIL
+
+======================================================================
+FAIL: test_invalid_expected_model_terminates_the_worker_without_losing_origin (test_inference.HardwareSessionFailureTests.test_invalid_expected_model_terminates_the_worker_without_losing_origin)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/richie/Desktop/edge-ai-gearshift/tests/test_inference.py", line 313, in test_invalid_expected_model_terminates_the_worker_without_losing_origin
+    self.assertTrue(session.done.wait(2), 'worker must finish even when the model ID is missing')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : worker must finish even when the model ID is missing
+
+----------------------------------------------------------------------
+Ran 1 test in 2.012s
+
+FAILED (failures=1)

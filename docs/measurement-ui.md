@@ -70,7 +70,7 @@ UTF-8, vessző elválasztó, fejléc, szabványos CSV-idézés. Egy sor egy klie
 vagy futásesemény. A kereshető skalármezők: v, run_id, mode, simulated,
 event, host_elapsed_ms, batch_id, phase, series, period_ms, index, window_id,
 scheduled_ms, status, processing_ms, decision, decision_source, error,
-request_id. Hiányzó mérés üres mező, nem nulla. Minden sor `simulated=True`.
+request_id. Hiányzó mérés üres mező, nem nulla. Minden sor az eredeti `simulated` jelölést hordozza.
 
 Az `event_json` az esemény teljes, veszteségmentes JSON-reprezentációja:
 megmarad a bemeneti trip_id, a nyers minták, az ablaksorrend, a kérés/válasz,
@@ -99,12 +99,11 @@ A GUI-függőségek nélkül a GUI-tesztek skip állapotúak; az átadási ellen
 telepített PySide6/pyqtgraph mellett futott. Részletes bizonyíték:
 [issue-8 ellenőrzés](verification/issue-8.md).
 
-Nincs UART-/panelválasztó adapter a main kliensben: a felület beépített és
-TCP eszközszimulátort kínál. Hardveres működés, valódi inferenciaidő/RAM,
-tanult modell és portolási helyesség nincs igazolva; ezek a #4 integrációjára
-várnak. A döntés továbbra is `hold`/`simulator_stub`. A szimulációs jelölés
-nem kapcsolható ki. A benchmark legfeljebb nyolc rögzített ablakot ismétel;
-nem a teljes tesztadat minőségellenőrzése.
+A beépített és TCP szimulátor döntése `hold`/`simulator_stub`, eredete
+kötelezően szimuláció. A #7 hozzáadta az ESP32 UART-választót, saját INT8
+MLP-kimenettel és valódi idő-/memóriaadatokkal; részletei lent. A benchmark
+legfeljebb nyolc rögzített ablakot ismétel, nem a teljes tesztadat
+minőségellenőrzése.
 
 A teljes eseménynapló RAM-ban marad az exportig, alkalmazásösszeomlás ellen
 nem tartós. Saját bemenet legfeljebb 100000 ablak lehet; benchmarkban a
@@ -112,3 +111,22 @@ kliens nyolcas korlátja érvényes. Nagy élő bemenet sok memóriát használh
 A megjelenített 2000 pontos korlát az exportot nem csonkolja. Az automatizált
 átadás offscreen Qt-t használ, a natív fájlválasztókat tesztben helyettesíti;
 asztali ablakkezelős és paneles kézi ellenőrzés nem történt.
+
+## ESP32 UART (#7)
+
+Az eszközválasztó harmadik eleme az ESP32 UART. Add meg a portot, az
+elvárt modell SHA-256 azonosítóját és a firmware-rel egyező baudot
+(alapérték: 921600). Új futás előtt reseteld a panelt és várd meg a bootot;
+a portot másik terminál/monitor ne tartsa nyitva. A paneles választás
+120 s-os kérés-timeoutot állít be a legfeljebb 100 s-os sorozatokhoz.
+
+A fejléc és állapot ESP32-t, a grafikon mért MCU-feldolgozási időt, a
+memóriagrafikon sorozat utáni szabad heapet mutat. Modell-/memóriahibának
+nincs döntése vagy érvényes időgrafikon-pontja, de saját számlálója van.
+A felület továbbra is ugyanazt a Client-et használja, mint a CLI,
+nincs külön firmware-protokollja.
+
+A CSV `event_json` mezője megőrzi az INT8 bemenetet/kimenetet, modell- és
+adatverziót, nyers időpontokat és a teljes memóriaobjektumot is. Paneles
+futásnál minden esemény `simulated:false`; a szimulátor adatai változatlanul
+`simulated:true` jelölést kapnak. [Futtatás és paneles bizonyíték](esp32-inference.md).

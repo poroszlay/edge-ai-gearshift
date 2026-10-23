@@ -1,0 +1,39 @@
+{
+  "schema": "gearshift.porting.v1",
+  "count": 1,
+  "model_id": "6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79",
+  "run_ids": [
+    "1ae20f3f4755425587f57b6df3c876ab"
+  ],
+  "simulated": false,
+  "tolerance_int8_codes": 1,
+  "max_output_code_difference": 5,
+  "porting_passed": false,
+  "differences": [
+    {
+      "run_id": "1ae20f3f4755425587f57b6df3c876ab",
+      "model_id": "6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79",
+      "window_id": "acceleration-0004-v1:375",
+      "kind": "output_difference",
+      "delta": [
+        5,
+        5,
+        0
+      ],
+      "pc": [
+        -120,
+        120,
+        -128
+      ],
+      "mcu": [
+        -125,
+        125,
+        -128
+      ],
+      "class_agreement": true,
+      "within_tolerance": false
+    }
+  ],
+  "quality": null,
+  "quality_target_met": false
+}

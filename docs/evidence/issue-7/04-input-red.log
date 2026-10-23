@@ -1,0 +1,22 @@
+test_firmware_raw_path_matches_frozen_pc_reference_and_boundary_rounding (test_inference.FirmwareInputTests.test_firmware_raw_path_matches_frozen_pc_reference_and_boundary_rounding) ... FAIL
+test_client_preserves_hardware_origin_numerics_and_memory_in_csv (test_inference.HardwareContractTests.test_client_preserves_hardware_origin_numerics_and_memory_in_csv) ... ok
+test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict (test_inference.HardwareContractTests.test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict) ... ok
+test_uart_adapter_frames_real_pty_bytes_and_times_out (test_inference.UartTests.test_uart_adapter_frames_real_pty_bytes_and_times_out) ... ok
+
+======================================================================
+FAIL: test_firmware_raw_path_matches_frozen_pc_reference_and_boundary_rounding (test_inference.FirmwareInputTests.test_firmware_raw_path_matches_frozen_pc_reference_and_boundary_rounding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/richie/Desktop/edge-ai-gearshift/tests/test_inference.py", line 137, in test_firmware_raw_path_matches_frozen_pc_reference_and_boundary_rounding
+    self.assertEqual(build.returncode, 0, build.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : /tmp/tmps82o4_1b/test.cc:1:10: fatal error: inference.h: No such file or directory
+    1 | #include "inference.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.071s
+
+FAILED (failures=1)

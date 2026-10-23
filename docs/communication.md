@@ -11,9 +11,9 @@ python3 -m unittest discover -s tests -v
 Külön folyamatokban: `python3 -m gearshift.simulator --port 8765`, majd
 `python3 -m gearshift.client --port 8765 --mode live`. A szimulátor csak
 loopback TCP-n figyel. A `--demo` valódi helyi socketpárt használ.
-A `Wire` bytefolyam-keretezése UART-on is alkalmazandó; soros port adapter és
-firmware ebben a repóban még nincs. A firmware v1 implementációjának ezt a
-szerződést kell követnie; paneles kompatibilitás nincs igazolva.
+A `Wire` bytefolyam-keretezését a POSIX UART-adapter és a
+[saját modelles ESP32-firmware](esp32-inference.md) is használja.
+A szimuláció és a paneles eredet explicit külön kezelendő.
 
 ## Keretezés és korlátok
 
@@ -36,9 +36,10 @@ Minden kérés: `v:1`, `type`, `request_id`, `run_id`, `mode`.
 Az azonosítók 1..64 nyomtatható ASCII karakterből álló sztringek.
 A kliens request_id-ja kapcsolaton belül növekvő. A mód `live` vagy
 `benchmark`, futás közben nem változtatható. A válasz azonos v/request_id/
-run_id/mode mezőket hordoz, és `simulated:true` mezőt tartalmaz.
-Ez a kliens szándékosan kizárólag szimulációt fogad el; hardveradapternek
-explicit eredetkezelést kell adnia, nem írhatja át a jelölést csendben.
+run_id/mode mezőket hordoz. A szimulátor `simulated:true`, az ESP32
+`simulated:false` eredetet ad. A kliens alapértelmezésben szimulációt vár;
+`--serial` explicit paneles eredetet és kötelező `--model-id` ellenőrzést
+kapcsol be. A jelölés nem írható át kompatibilitási kerülőútként.
 Ismeretlen további mezők figyelmen kívül hagyhatók. Ismeretlen type hibás.
 
 | Kérés | További mezők | Válasz |
@@ -153,3 +154,53 @@ túlméret, verzióhiba, EOF, timeout, darabolt/összevont keretek,
 Hardver: **nem futtatott**, nincs csatlakoztatott panel/firmware.
 A firmware-rel azonos szerződés dokumentált; tényleges firmware-kompatibilitás,
 UART nélküli fizikai futás és kétmódú paneles működés továbbra is ellenőrizendő.
+
+## #7 paneles, kompatibilis v1 kiegészítés
+
+A firmware ugyanazt a start → load → execute → fetch állapotgépet és
+8 ablak / 1000 eredmény / legfeljebb 16 rekordos fetch korlátot követi.
+A firmware jelenleg 8 rekordot ad oldalanként, a keretméret miatt. Egy boot
+egy futás; új start előtt reset kell. Az effektív UART-sebesség 921600 baud.
+A részletes futtatás és bizonyíték: [saját MLP](esp32-inference.md).
+
+Minden paneles válasz `model_id` mezőt is hordoz. A start ACK kiegészítése:
+`dataset_id`, `input_version`, `class_order`, `input_scale`,
+`input_zero_point`, `model_bytes`, `model_workspace_bytes`,
+`model_workspace_storage=static`. Az execute ACK a szimulált memóriabecslés
+helyett `memory.before` és `memory.after` objektumot, továbbá `end_us` és
+`uart_wait_us` egész µs értékeket ad. Mindkét snapshot a heap-/stack-adatokat,
+`model_workspace_bytes`, `device_state_bytes`, `result_buffer_bytes`,
+`window_buffer_bytes` értékeket tartalmazza, byte-ban. A pufferadatok a
+statikus teljes állapot részhalmazai, nem külön összeadandó memóriák.
+
+A paneles ok/late rekord `decision_source=int8_mlp`, a fenti osztálysorrend
+szerinti `decision`, 100 elemű `input_int8`, 3 elemű `output_int8`, `model_id`,
+valamint `started_us`, `inference_started_us`, `inference_finished_us`,
+`finished_us` mezőket tartalmaz. Az időpontok az execute saját epochjához
+viszonyított µs értékek. `processing_ms=(finished_us-started_us)/1000`.
+A határidő `index*period_ms+period_ms`, nem a tényleges indítástól számítódik;
+late státusz T-nél rövidebb feldolgozási idő mellett is lehetséges. A
+szimulátor meglévő egyszerű időmodellje és eredménysémája változatlan.
+
+Az `invalid_window`, `model_error`, `memory_error` külön rekordstátusz,
+kötelező `error` sztringgel, döntés és numerikus kimenet nélkül. Missed
+esetén a feldolgozási időpontok null értékűek; feldolgozási hibánál a már
+megmért időpontok megmaradnak. Kommunikációs hiba `error` válasz vagy
+megszakadás, nem modellbeli hold. A hardveres kliens nem fogad el
+szimulált eredetet, ismeretlen modellt, hibás INT8 vektort, hibás argmaxot
+vagy ellentmondó időpontokat.
+
+Az előre kvantált ellenőrzési ablak alternatív alakja
+`{window_id,trip_id,input_int8:[100 egész kód -128..127]}`; nem keverhető
+nyers `samples`/`timestamps_ms` mezőkkel. A nyers út továbbra is külön
+ellenőrzendő. A firmware a JSON binary64 reprezentáció miatt a nyers
+időbélyegeknél legfeljebb 2^53-1 milliszekundumot fogad el.
+
+Teljes minőségellenőrzéshez a benchmark execute opcionális
+`purpose:quality` mezőt kap: `count=előtöltött ablakok száma`, 1..8,
+mindegyik pontosan egyszer, egymás után. `period_ms=0`, nincs határidő
+vagy kimaradás, a `scheduled_ms` mező 0; az időpontok az adag epochjához
+viszonyított valódi mérések. Ez nem a négyprofilos benchmark,
+és a kliens `phase=quality` jelöléssel exportálja. Normál benchmarknál
+a count továbbra is 100/1000, élő módban 1. A közös verzió és a korábbi
+szimulátorkérések változatlanok.

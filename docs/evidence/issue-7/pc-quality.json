@@ -1,0 +1,66 @@
+{
+  "schema": "gearshift.final-test.v1",
+  "model_id": "6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79",
+  "dataset_id": "ef6f8048efec22e32cc44fd4c58b08052359ab6880ee52c2257e3da59f27ba4a",
+  "split": "test",
+  "count": 71430,
+  "selection_split": "validation",
+  "tuning_on_test": false,
+  "pc_quality": {
+    "count": 71430,
+    "confusion_matrix": [
+      [
+        294,
+        2,
+        0
+      ],
+      [
+        237,
+        70416,
+        180
+      ],
+      [
+        0,
+        107,
+        194
+      ]
+    ],
+    "classes": [
+      {
+        "class_index": 0,
+        "action": -1,
+        "name": "downshift",
+        "support": 296,
+        "precision": 0.5536723163841808,
+        "recall": 0.9932432432432432,
+        "f1": 0.7110036275695284
+      },
+      {
+        "class_index": 1,
+        "action": 0,
+        "name": "hold",
+        "support": 70833,
+        "precision": 0.9984544487770294,
+        "recall": 0.9941129134725339,
+        "f1": 0.9962789513151007
+      },
+      {
+        "class_index": 2,
+        "action": 1,
+        "name": "upshift",
+        "support": 301,
+        "precision": 0.5187165775401069,
+        "recall": 0.6445182724252492,
+        "f1": 0.5748148148148148
+      }
+    ],
+    "macro_f1": 0.760699131233148,
+    "accuracy": 0.9926361472770544
+  },
+  "model_sha256": "6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79",
+  "manifest_sha256": "b45896680afa82671dd18450e56b85ffb4fbfa58a1a90218eaf8a95f45cb45bb",
+  "sha256": {
+    "reference.jsonl": "e93b838b52bc49df9275f6d7f9d415fa93e3de882c870f9783f55a7f9351ba0b",
+    "windows.jsonl": "287901492c7341cd7511d50e016b410077c39c178a4b2e5cf9ea161173f6aba1"
+  }
+}

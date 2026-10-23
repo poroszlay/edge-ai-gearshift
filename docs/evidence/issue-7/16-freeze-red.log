@@ -1,0 +1,36 @@
+test_final_evaluation_rejects_unfrozen_model_before_reading_locked_test (test_inference.FrozenCampaignTests.test_final_evaluation_rejects_unfrozen_model_before_reading_locked_test) ... /tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+ERROR
+
+======================================================================
+ERROR: test_final_evaluation_rejects_unfrozen_model_before_reading_locked_test (test_inference.FrozenCampaignTests.test_final_evaluation_rejects_unfrozen_model_before_reading_locked_test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/richie/Desktop/edge-ai-gearshift/tests/test_inference.py", line 332, in test_final_evaluation_rejects_unfrozen_model_before_reading_locked_test
+    prepare(root / 'not-readable-test', root / 'model', root / 'output')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/richie/Desktop/edge-ai-gearshift/gearshift/campaign.py", line 17, in prepare
+    x, y, ids, manifest = read_windows(dataset, 'test', purpose='final-evaluation')
+                          ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/richie/Desktop/edge-ai-gearshift/pc/model.py", line 131, in read_windows
+    manifest = json.loads((root / 'manifest.json').read_text())
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 548, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pathlib/_abc.py", line 632, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 539, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmp588141j4/not-readable-test/manifest.json'
+
+----------------------------------------------------------------------
+Ran 1 test in 2.385s
+
+FAILED (errors=1)
