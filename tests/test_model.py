@@ -133,7 +133,8 @@ class TrainingCLITests(unittest.TestCase):
             (root / 'test-lock.json').write_text(json.dumps({'dataset_id': manifest['dataset_id'],
                 'manifest_sha256': hashlib.sha256((root / 'manifest.json').read_bytes()).hexdigest()}))
             config = json.loads(Path('config/model-v1.json').read_text())
-            config.update(epochs=2, patience=2, batch_size=8)
+            config.update(epochs=2, patience=2, batch_size=8, architecture=[100, 64, 32, 3],
+                          architecture_reason='Capacity experiment for rare shift classes')
             (root / 'settings.json').write_text(json.dumps(config))
             result = subprocess.run([sys.executable, '-m', 'pc.model', 'train', '--dataset', str(root),
                 '--output', str(root / 'trained'), '--config', str(root / 'settings.json')],
@@ -148,6 +149,44 @@ class TrainingCLITests(unittest.TestCase):
 
 @unittest.skipUnless(MODEL_DEPS, 'install requirements-model.txt to run model integration tests')
 class PCModelTests(unittest.TestCase):
+    def test_evaluate_cli_diagnoses_train_without_reading_validation_or_test(self):
+        import tempfile
+        import json
+        import subprocess
+        import sys
+        from pathlib import Path
+        import tensorflow as tf
+        from pc.model import export_model
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            make_training_fixture(root)
+            model = tf.keras.Sequential([tf.keras.Input((100,)), tf.keras.layers.Dense(
+                3, activation='softmax', kernel_initializer=tf.keras.initializers.Constant(.01),
+                bias_initializer=tf.keras.initializers.Constant([0, .001, -1]))])
+            model.save(root / 'model.keras')
+            export_model(root / 'model.keras', root, root / 'export', calibration_size=10)
+            result = subprocess.run([sys.executable, '-m', 'pc.model', 'evaluate',
+                '--dataset', str(root), '--export', str(root / 'export'),
+                '--keras', str(root / 'model.keras'), '--split', 'train',
+                '--output', str(root / 'diagnosis.json')], capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            report = json.loads((root / 'diagnosis.json').read_text())
+            self.assertEqual(report['split'], 'train')
+            self.assertEqual(report['int8']['confusion_matrix'], [[1, 0, 0], [59, 0, 0], [1, 0, 0]])
+            self.assertEqual(report['input_quantized_fp32']['confusion_matrix'],
+                             [[0, 1, 0], [0, 59, 0], [0, 1, 0]])
+            self.assertEqual(report['quantization_errors']['input']['new_errors'], 0)
+            self.assertEqual(report['quantization_errors']['network']['new_errors'], 59)
+            self.assertEqual(report['quantization_errors']['network']['corrected_errors'], 1)
+            self.assertEqual(report['quantization_errors']['network']['classes'], [
+                {'class_index': 0, 'new_errors': 0, 'corrected_errors': 1, 'decision_changes': 1},
+                {'class_index': 1, 'new_errors': 59, 'corrected_errors': 0, 'decision_changes': 59},
+                {'class_index': 2, 'new_errors': 0, 'corrected_errors': 0, 'decision_changes': 1}])
+            self.assertFalse(report['quality_target_met'])
+            examples = report['error_examples']
+            self.assertTrue(any(e['expected_class'] == 2 for e in examples))
+            self.assertTrue(all(e['window_id'].startswith('fixture:') for e in examples))
+
     def test_ragged_int8_input_returns_error_without_decision(self):
         from pc.model import ReferenceModel
         reference = ReferenceModel('models/mlp-v1')

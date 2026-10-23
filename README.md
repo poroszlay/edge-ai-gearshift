@@ -12,8 +12,8 @@ döntésbecslés és laboratóriumi értékelés.
 - [PySide6 mérőfelület és CSV-export](docs/measurement-ui.md)
 
 A bringup szinuszmodellje hivatalos kompatibilitási próba. A saját
-100 → 32 → 16 → 3 MLP tanítása, INT8-exportja és tényleges validációs
+100 → 64 → 32 → 3, befagyasztott `mlp-v2` MLP tanítása, INT8-exportja és tényleges validációs
 eredményei a [modell dokumentációjában](docs/model.md) követhetők. A saját
 modell paneles portolási helyessége és terhelésmérése a #7 feladata.
-A kiválasztott INT8-modell validációs makro-F1-e 0,6812; a 0,95-ös cél
-még nem teljesült.
+A kiválasztott INT8-modell validációs makro-F1-e 0,7029; a 0,95-ös cél
+nem teljesült, a minőségjavítás a [#19 feladatban](https://github.com/poroszlay/edge-ai-gearshift/issues/19) folytatódik.

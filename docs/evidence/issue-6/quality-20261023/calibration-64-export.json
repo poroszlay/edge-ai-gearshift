@@ -1,0 +1,122 @@
+{
+  "arithmetic": "float32; round-half-away-from-zero(x/scale)+zero_point; saturate [-128,127]",
+  "calibration_split": "train",
+  "calibration_window_ids": [
+    "acceleration-0008-v0:301",
+    "acceleration-0002-v0:487",
+    "acceleration-0011-v0:1787",
+    "acceleration-0017-v0:2216",
+    "cruise-0008-v0:1016",
+    "cruise-0019-v0:1156",
+    "cruise-0011-v1:1976",
+    "uphill-0005-v0:648",
+    "uphill-0013-v1:1234",
+    "uphill-0015-v1:48",
+    "deceleration-0015-v1:1861",
+    "deceleration-0005-v0:33",
+    "deceleration-0018-v1:1481",
+    "deceleration-0013-v0:723",
+    "threshold-0007-v1:2350",
+    "threshold-0013-v0:1290",
+    "threshold-0012-v1:103",
+    "threshold-0011-v1:670",
+    "threshold-0004-v1:980",
+    "threshold-0000-v1:1620",
+    "threshold-0017-v1:2250",
+    "acceleration-0008-v0:19",
+    "acceleration-0012-v0:2374",
+    "acceleration-0019-v1:2382",
+    "acceleration-0016-v0:2365",
+    "acceleration-0009-v1:2359",
+    "cruise-0007-v0:2281",
+    "cruise-0013-v1:2234",
+    "cruise-0005-v0:2190",
+    "cruise-0006-v1:2102",
+    "uphill-0011-v0:2073",
+    "uphill-0008-v1:2063",
+    "uphill-0014-v0:2046",
+    "uphill-0012-v1:2051",
+    "deceleration-0011-v0:2042",
+    "deceleration-0000-v1:2028",
+    "deceleration-0001-v0:2024",
+    "deceleration-0007-v1:2029",
+    "threshold-0013-v0:2112",
+    "threshold-0005-v1:2212",
+    "threshold-0009-v0:2296",
+    "threshold-0017-v1:2399",
+    "acceleration-0008-v0:158",
+    "acceleration-0002-v0:366",
+    "acceleration-0011-v0:1507",
+    "acceleration-0017-v0:2367",
+    "cruise-0008-v0:884",
+    "cruise-0019-v0:1909",
+    "cruise-0006-v0:66",
+    "uphill-0005-v0:1213",
+    "uphill-0013-v1:2048",
+    "uphill-0015-v1:1516",
+    "deceleration-0014-v0:19",
+    "deceleration-0010-v1:2010",
+    "deceleration-0018-v1:19",
+    "deceleration-0006-v1:1606",
+    "threshold-0007-v1:1836",
+    "threshold-0013-v0:402",
+    "threshold-0012-v0:1412",
+    "threshold-0011-v1:398",
+    "threshold-0004-v1:959",
+    "threshold-0000-v1:1708",
+    "threshold-0017-v1:2336",
+    "acceleration-0008-v0:20"
+  ],
+  "class_order": [
+    "downshift",
+    "hold",
+    "upshift"
+  ],
+  "converter": {
+    "input_type": "int8",
+    "optimization": "DEFAULT",
+    "output_type": "int8",
+    "supported_ops": [
+      "TFLITE_BUILTINS_INT8"
+    ],
+    "tensorflow": "2.20.0"
+  },
+  "dataset_id": "ef6f8048efec22e32cc44fd4c58b08052359ab6880ee52c2257e3da59f27ba4a",
+  "input": {
+    "dtype": "int8",
+    "index": 0,
+    "name": "serving_default_window:0",
+    "quantized_dimension": 0,
+    "scales": [
+      0.005339096300303936
+    ],
+    "shape": [
+      1,
+      100
+    ],
+    "zero_points": [
+      -60
+    ]
+  },
+  "input_version": "window-v1:20x5:sample-major:fixed-scaling:float32",
+  "model_id": "17d316921bf1d6ead9a360915aaecdefcb4ad8d7dc404df4d64bb51b639778d3",
+  "normalization": "[v/80,u,s/10,g-1,min(tau,10)/10]",
+  "output": {
+    "dtype": "int8",
+    "index": 10,
+    "name": "StatefulPartitionedCall_1:0",
+    "quantized_dimension": 0,
+    "scales": [
+      0.00390625
+    ],
+    "shape": [
+      1,
+      3
+    ],
+    "zero_points": [
+      -128
+    ]
+  },
+  "schema_version": "mlp-export-v1",
+  "source_model_sha256": "87f7cdf0c9d670c9c63120f3db3348e5b56b08c326026309ff52c741c8615ee8"
+}

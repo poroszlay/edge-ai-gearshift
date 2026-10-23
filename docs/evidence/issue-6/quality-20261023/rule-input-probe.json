@@ -1,0 +1,246 @@
+{
+  "train": {
+    "dataset_id": "ef6f8048efec22e32cc44fd4c58b08052359ab6880ee52c2257e3da59f27ba4a",
+    "errors_by_true_class": [
+      {
+        "class_index": 0,
+        "count": 147,
+        "within_0_25_kmh": 147
+      },
+      {
+        "class_index": 1,
+        "count": 2002,
+        "within_0_25_kmh": 2002
+      },
+      {
+        "class_index": 2,
+        "count": 301,
+        "within_0_25_kmh": 301
+      }
+    ],
+    "input_quantized_rule": {
+      "accuracy": 0.9926501469970601,
+      "classes": [
+        {
+          "action": -1,
+          "class_index": 0,
+          "f1": 0.7802197802197802,
+          "name": "downshift",
+          "precision": 0.6875637104994903,
+          "recall": 0.9017379679144385,
+          "support": 1496
+        },
+        {
+          "action": 0,
+          "class_index": 1,
+          "f1": 0.9962830354704615,
+          "name": "hold",
+          "precision": 0.9986374405781145,
+          "recall": 0.9939397058244815,
+          "support": 330347
+        },
+        {
+          "action": 1,
+          "class_index": 2,
+          "f1": 0.5859872611464968,
+          "name": "upshift",
+          "precision": 0.4626692456479691,
+          "recall": 0.7989311957247829,
+          "support": 1497
+        }
+      ],
+      "confusion_matrix": [
+        [
+          1349,
+          147,
+          0
+        ],
+        [
+          613,
+          328345,
+          1389
+        ],
+        [
+          0,
+          301,
+          1196
+        ]
+      ],
+      "count": 333340,
+      "macro_f1": 0.7874966922789128
+    },
+    "original_scaled_rule": {
+      "accuracy": 0.9904691906161877,
+      "classes": [
+        {
+          "action": -1,
+          "class_index": 0,
+          "f1": 0.8857312018946122,
+          "name": "downshift",
+          "precision": 0.7948990435706695,
+          "recall": 1.0,
+          "support": 1496
+        },
+        {
+          "action": 0,
+          "class_index": 1,
+          "f1": 0.9951681857655391,
+          "name": "hold",
+          "precision": 1.0,
+          "recall": 0.9903828398623266,
+          "support": 330347
+        },
+        {
+          "action": 1,
+          "class_index": 2,
+          "f1": 0.5175453759723423,
+          "name": "upshift",
+          "precision": 0.34911380597014924,
+          "recall": 1.0,
+          "support": 1497
+        }
+      ],
+      "confusion_matrix": [
+        [
+          1496,
+          0,
+          0
+        ],
+        [
+          386,
+          327170,
+          2791
+        ],
+        [
+          0,
+          0,
+          1497
+        ]
+      ],
+      "count": 333340,
+      "macro_f1": 0.7994815878774979
+    }
+  },
+  "validation": {
+    "dataset_id": "ef6f8048efec22e32cc44fd4c58b08052359ab6880ee52c2257e3da59f27ba4a",
+    "errors_by_true_class": [
+      {
+        "class_index": 0,
+        "count": 24,
+        "within_0_25_kmh": 24
+      },
+      {
+        "class_index": 1,
+        "count": 451,
+        "within_0_25_kmh": 451
+      },
+      {
+        "class_index": 2,
+        "count": 62,
+        "within_0_25_kmh": 62
+      }
+    ],
+    "input_quantized_rule": {
+      "accuracy": 0.9924821503569928,
+      "classes": [
+        {
+          "action": -1,
+          "class_index": 0,
+          "f1": 0.8024691358024691,
+          "name": "downshift",
+          "precision": 0.7142857142857143,
+          "recall": 0.9154929577464789,
+          "support": 284
+        },
+        {
+          "action": 0,
+          "class_index": 1,
+          "f1": 0.9962007315537381,
+          "name": "hold",
+          "precision": 0.9987799514817914,
+          "recall": 0.9936347983176673,
+          "support": 70854
+        },
+        {
+          "action": 1,
+          "class_index": 2,
+          "f1": 0.5293440736478712,
+          "name": "upshift",
+          "precision": 0.3986135181975737,
+          "recall": 0.7876712328767124,
+          "support": 292
+        }
+      ],
+      "confusion_matrix": [
+        [
+          260,
+          24,
+          0
+        ],
+        [
+          104,
+          70403,
+          347
+        ],
+        [
+          0,
+          62,
+          230
+        ]
+      ],
+      "count": 71430,
+      "macro_f1": 0.7760046470013595
+    },
+    "original_scaled_rule": {
+      "accuracy": 0.9946241075178497,
+      "classes": [
+        {
+          "action": -1,
+          "class_index": 0,
+          "f1": 0.8875,
+          "name": "downshift",
+          "precision": 0.797752808988764,
+          "recall": 1.0,
+          "support": 284
+        },
+        {
+          "action": 0,
+          "class_index": 1,
+          "f1": 0.9972828394327927,
+          "name": "hold",
+          "precision": 1.0,
+          "recall": 0.9945804047760183,
+          "support": 70854
+        },
+        {
+          "action": 1,
+          "class_index": 2,
+          "f1": 0.6517857142857143,
+          "name": "upshift",
+          "precision": 0.48344370860927155,
+          "recall": 1.0,
+          "support": 292
+        }
+      ],
+      "confusion_matrix": [
+        [
+          284,
+          0,
+          0
+        ],
+        [
+          72,
+          70470,
+          312
+        ],
+        [
+          0,
+          0,
+          292
+        ]
+      ],
+      "count": 71430,
+      "macro_f1": 0.8455228512395023
+    }
+  }
+}

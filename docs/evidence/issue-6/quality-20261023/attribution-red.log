@@ -1,0 +1,58 @@
+test_evaluate_cli_diagnoses_train_without_reading_validation_or_test (test_model.PCModelTests.test_evaluate_cli_diagnoses_train_without_reading_validation_or_test) ... 2026-10-23 17:37:03.327374: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:172: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  return np.array(x)
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Attribute.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Call.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Try.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: FunctionDef.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Attribute.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Call.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: keyword.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Try.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: FunctionDef.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+Saved artifact at '/tmp/tmp7lryrpkq'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 100), dtype=tf.float32, name='input_layer')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  140006824567504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140006824567312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/convert.py:863: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1792769823.654296       3 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1792769823.654337       3 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1792769823.657562       3 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+ERROR
+
+======================================================================
+ERROR: test_evaluate_cli_diagnoses_train_without_reading_validation_or_test (test_model.PCModelTests.test_evaluate_cli_diagnoses_train_without_reading_validation_or_test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/richie/Desktop/edge-ai-gearshift/tests/test_model.py", line 181, in test_evaluate_cli_diagnoses_train_without_reading_validation_or_test
+    self.assertEqual(report['quantization_errors']['network']['classes'], [
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'classes'
+
+----------------------------------------------------------------------
+Ran 1 test in 6.519s
+
+FAILED (errors=1)

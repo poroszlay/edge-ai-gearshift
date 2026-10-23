@@ -223,8 +223,13 @@ def train_model(dataset, output, config):
     """Fit on train, checkpoint exclusively by validation macro-F1."""
     import tensorflow as tf
     config = dict(config)
-    if config.get('architecture') != [100, 32, 16, 3]:
-        raise ValueError('initial architecture must be [100,32,16,3]')
+    architecture = config.get('architecture')
+    if (not isinstance(architecture, list) or len(architecture) != 4
+            or architecture[0] != 100 or architecture[-1] != 3
+            or any(type(width) is not int or width <= 0 for width in architecture)):
+        raise ValueError('architecture must be [100, positive hidden width, positive hidden width, 3]')
+    if architecture != [100, 32, 16, 3] and not config.get('architecture_reason'):
+        raise ValueError('changed architecture requires architecture_reason')
     for key in ('epochs', 'patience', 'batch_size', 'seed', 'calibration_size'):
         if type(config.get(key)) is not int or config[key] <= 0:
             raise ValueError(f'positive integer required: {key}')
@@ -242,8 +247,8 @@ def train_model(dataset, output, config):
     tf.keras.utils.set_random_seed(config['seed'])
     tf.config.experimental.enable_op_determinism()
     model = tf.keras.Sequential([tf.keras.Input(shape=(100,), name='window'),
-        tf.keras.layers.Dense(32, activation='relu'),
-        tf.keras.layers.Dense(16, activation='relu'),
+        tf.keras.layers.Dense(architecture[1], activation='relu'),
+        tf.keras.layers.Dense(architecture[2], activation='relu'),
         tf.keras.layers.Dense(3, activation='softmax')])
     model.compile(optimizer=tf.keras.optimizers.Adam(config['learning_rate']),
                   loss='sparse_categorical_crossentropy')
@@ -302,7 +307,8 @@ def main():
     export.add_argument('--calibration-size', type=int, default=1024)
     audit = commands.add_parser('audit', help='inspect actual integer tensors/operators and run inference')
     audit.add_argument('model', type=Path)
-    evaluate = commands.add_parser('evaluate', help='compare FP32/INT8 on full validation only')
+    evaluate = commands.add_parser('evaluate', help='compare FP32/INT8 on train or validation')
+    evaluate.add_argument('--split', choices=['train', 'validation'], default='validation')
     evaluate.add_argument('--dataset', type=Path, required=True)
     evaluate.add_argument('--export', type=Path, required=True)
     evaluate.add_argument('--keras', type=Path, required=True)
@@ -321,7 +327,7 @@ def main():
         elif args.command == 'audit':
             print(json.dumps(audit_model(args.model), indent=2))
         elif args.command == 'evaluate':
-            evaluate_model(args.export, args.keras, args.dataset, args.output)
+            evaluate_model(args.export, args.keras, args.dataset, args.output, split=args.split)
         elif args.command == 'reference':
             reference_file(args.export, args.input, args.output, run_id=args.run_id)
     except (ValueError, OSError, KeyError) as error:
@@ -386,8 +392,8 @@ class ReferenceModel:
         return result
 
 
-def evaluate_model(export_directory, keras_path, dataset, output):
-    """Comparable FP32 and reference-kernel INT8 results on full validation."""
+def evaluate_model(export_directory, keras_path, dataset, output, *, split='validation'):
+    """Compare original FP32, input-quantized FP32 and INT8, without test access."""
     import tensorflow as tf
     output = Path(output)
     if output.exists():
@@ -395,26 +401,60 @@ def evaluate_model(export_directory, keras_path, dataset, output):
     reference = ReferenceModel(export_directory)
     if file_hash(keras_path) != reference.metadata['source_model_sha256']:
         raise ValueError('FP32 source model mismatch')
-    x, y, ids, manifest = read_windows(dataset, 'validation', purpose='select')
+    if split not in ('train', 'validation'):
+        raise ValueError('evaluation split must be train or validation')
+    x, y, ids, manifest = read_windows(dataset, split, purpose='reference')
     if manifest['dataset_id'] != reference.metadata['dataset_id']:
         raise ValueError('reference/dataset mismatch')
     model = tf.keras.models.load_model(keras_path, compile=False)
     fp32 = fp32_predictions(model, x).argmax(axis=1)
     params = reference.audit['input']
     quantized = quantize(x, params['scales'][0], params['zero_points'][0])
+    restored = (quantized.astype(np.float32) - params['zero_points'][0]) * params['scales'][0]
+    input_fp32 = fp32_predictions(model, restored).argmax(axis=1)
     predicted = []
     for values, identity in zip(quantized, ids):
         result = reference.predict_int8(values, window_id=identity, trip_id=identity.rsplit(':', 1)[0])
         if result['status'] != 'ok':
             raise ValueError(f'inference failed: {identity}: {result}')
         predicted.append(result['class_index'])
-    report = dict(schema_version='mlp-validation-v1', split='validation',
+    predicted = np.asarray(predicted)
+    def changes(before, after):
+        new = (before == y) & (after != y)
+        corrected = (before != y) & (after == y)
+        changed = before != after
+        return dict(new_errors=int(np.count_nonzero(new)),
+                    corrected_errors=int(np.count_nonzero(corrected)),
+                    decision_changes=int(np.count_nonzero(changed)),
+                    classes=[dict(class_index=label,
+                        new_errors=int(np.count_nonzero(new & (y == label))),
+                        corrected_errors=int(np.count_nonzero(corrected & (y == label))),
+                        decision_changes=int(np.count_nonzero(changed & (y == label))))
+                        for label in range(3)])
+    examples = []
+    for label in range(3):
+        errors = np.flatnonzero((y == label) & ((fp32 != y) | (predicted != y)))
+        # Sample across each class rather than allowing hold to hide rare shifts.
+        for index in errors[np.linspace(0, len(errors)-1, min(20, len(errors)), dtype=int)]:
+            recent = x[index].reshape(20, 5)[-5:]
+            v, u, s = recent[:, :3].mean(axis=0) * [80, 1, 10]
+            gear = int(x[index, -2]) + 1
+            margin = float(v - (30 + 20*u + .5*s - (10 if gear == 2 else 0)))
+            examples.append(dict(window_id=ids[index], expected_class=label,
+                fp32_class=int(fp32[index]), input_quantized_fp32_class=int(input_fp32[index]),
+                int8_class=int(predicted[index]), gear=gear, tau_s=float(x[index, -1]*10),
+                speed_threshold_margin_kmh=margin))
+    report = dict(schema_version='mlp-validation-v1', split=split,
                   dataset_id=manifest['dataset_id'], model_id=reference.model_id,
                   fp32=classification_report(y, fp32), int8=classification_report(y, predicted),
+                  input_quantized_fp32=classification_report(y, input_fp32),
+                  quantization_errors=dict(input=changes(fp32, input_fp32),
+                      network=changes(input_fp32, predicted), total=changes(fp32, predicted)),
+                  error_examples=examples,
                   decision_agreement=float(np.mean(fp32 == np.asarray(predicted))),
                   disagreements=int(np.count_nonzero(fp32 != np.asarray(predicted))),
                   window_ids_sha256=hashlib.sha256('\n'.join(ids).encode()).hexdigest())
-    report['quality_target_met'] = report['int8']['macro_f1'] >= 0.95
+    report['quality_target_met'] = split == 'validation' and report['int8']['macro_f1'] >= 0.95
     write_json(output, report)
     return report
 

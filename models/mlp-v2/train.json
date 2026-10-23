@@ -1,0 +1,812 @@
+{
+  "dataset_id": "ef6f8048efec22e32cc44fd4c58b08052359ab6880ee52c2257e3da59f27ba4a",
+  "decision_agreement": 0.9947591048179036,
+  "disagreements": 1747,
+  "error_examples": [
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": -0.20061850547790527,
+      "tau_s": 10.0,
+      "window_id": "acceleration-0011-v0:104"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": -0.22488363087177277,
+      "tau_s": 10.0,
+      "window_id": "acceleration-0011-v1:104"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": -0.04239387810230255,
+      "tau_s": 10.0,
+      "window_id": "cruise-0001-v1:112"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": -0.06931796669960022,
+      "tau_s": 10.0,
+      "window_id": "cruise-0013-v1:243"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": -0.021306052803993225,
+      "tau_s": 10.0,
+      "window_id": "cruise-0019-v0:71"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": -0.0025106221437454224,
+      "tau_s": 10.0,
+      "window_id": "cruise-0019-v1:71"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": -0.07555291056632996,
+      "tau_s": 10.0,
+      "window_id": "cruise-0005-v0:41"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": -0.12558095157146454,
+      "tau_s": 10.0,
+      "window_id": "cruise-0005-v1:41"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": -0.12365385890007019,
+      "tau_s": 10.0,
+      "window_id": "deceleration-0015-v0:97"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": -0.0979110598564148,
+      "tau_s": 10.0,
+      "window_id": "deceleration-0015-v1:97"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": -0.2987325191497803,
+      "tau_s": 2.3999998569488525,
+      "window_id": "deceleration-0018-v0:67"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": -0.3285077214241028,
+      "tau_s": 2.3999998569488525,
+      "window_id": "deceleration-0018-v1:67"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": -0.007294639945030212,
+      "tau_s": 2.6499998569488525,
+      "window_id": "threshold-0010-v1:1475"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": -0.005882736295461655,
+      "tau_s": 3.3500001430511475,
+      "window_id": "threshold-0013-v1:2243"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": -0.01029117964208126,
+      "tau_s": 2.200000047683716,
+      "window_id": "threshold-0003-v1:945"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": -0.00769028440117836,
+      "tau_s": 2.75,
+      "window_id": "threshold-0003-v1:1947"
+    },
+    {
+      "expected_class": 0,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": -0.025689471513032913,
+      "tau_s": 3.1999998092651367,
+      "window_id": "threshold-0009-v1:1684"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": -0.0244913250207901,
+      "tau_s": 10.0,
+      "window_id": "acceleration-0008-v0:157"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": -0.08407555520534515,
+      "tau_s": 5.699999809265137,
+      "window_id": "acceleration-0010-v1:968"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 0,
+      "gear": 2,
+      "input_quantized_fp32_class": 0,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": 0.060097090899944305,
+      "tau_s": 5.400000095367432,
+      "window_id": "acceleration-0017-v1:1435"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 0,
+      "gear": 2,
+      "input_quantized_fp32_class": 0,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": 0.17388524487614632,
+      "tau_s": 6.549999713897705,
+      "window_id": "cruise-0008-v1:1269"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": 0.2668188512325287,
+      "tau_s": 7.049999713897705,
+      "window_id": "cruise-0013-v1:1117"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 0,
+      "gear": 2,
+      "input_quantized_fp32_class": 0,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": 0.03806638764217496,
+      "tau_s": 5.5,
+      "window_id": "cruise-0011-v0:1399"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": 0.21668300032615662,
+      "tau_s": 10.0,
+      "window_id": "uphill-0007-v1:222"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": 0.5329589545726776,
+      "tau_s": 9.100000381469727,
+      "window_id": "uphill-0008-v1:215"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": -0.04975765943527222,
+      "tau_s": 5.450000286102295,
+      "window_id": "uphill-0014-v0:730"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 0,
+      "gear": 2,
+      "input_quantized_fp32_class": 0,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": 0.15065595507621765,
+      "tau_s": 9.15000057220459,
+      "window_id": "deceleration-0014-v0:1461"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 0,
+      "gear": 2,
+      "input_quantized_fp32_class": 0,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.11730045080184937,
+      "tau_s": 6.75,
+      "window_id": "deceleration-0018-v1:1682"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 0,
+      "gear": 2,
+      "input_quantized_fp32_class": 0,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": 0.018908903002738953,
+      "tau_s": 3.5,
+      "window_id": "threshold-0007-v1:2309"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 2,
+      "speed_threshold_margin_kmh": -0.011101216077804565,
+      "tau_s": 4.300000190734863,
+      "window_id": "threshold-0010-v1:1406"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 0,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": 9.685754776000977e-07,
+      "tau_s": 2.450000047683716,
+      "window_id": "threshold-0018-v0:601"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 2,
+      "speed_threshold_margin_kmh": -0.030925944447517395,
+      "tau_s": 1.25,
+      "window_id": "threshold-0018-v1:1821"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 2,
+      "speed_threshold_margin_kmh": -0.021751150488853455,
+      "tau_s": 1.25,
+      "window_id": "threshold-0005-v1:1751"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": -0.009997552260756493,
+      "tau_s": 1.100000023841858,
+      "window_id": "threshold-0003-v1:1368"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 0,
+      "gear": 2,
+      "input_quantized_fp32_class": 0,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": 0.07863730192184448,
+      "tau_s": 3.450000047683716,
+      "window_id": "threshold-0004-v1:1741"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 1,
+      "gear": 2,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": 0.04835940897464752,
+      "tau_s": 3.3000001907348633,
+      "window_id": "threshold-0000-v1:1774"
+    },
+    {
+      "expected_class": 1,
+      "fp32_class": 0,
+      "gear": 2,
+      "input_quantized_fp32_class": 0,
+      "int8_class": 0,
+      "speed_threshold_margin_kmh": 0.01310981810092926,
+      "tau_s": 3.450000047683716,
+      "window_id": "threshold-0017-v1:2205"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.3141894191503525,
+      "tau_s": 6.549999713897705,
+      "window_id": "acceleration-0008-v0:432"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.4101550579071045,
+      "tau_s": 4.75,
+      "window_id": "acceleration-0002-v0:1662"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.16081660985946655,
+      "tau_s": 7.200000286102295,
+      "window_id": "acceleration-0015-v1:1958"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.0842585414648056,
+      "tau_s": 5.699999809265137,
+      "window_id": "cruise-0001-v0:1346"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 1,
+      "gear": 1,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.010010972619056702,
+      "tau_s": 4.850000381469727,
+      "window_id": "cruise-0000-v1:1730"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.14672361314296722,
+      "tau_s": 5.099999904632568,
+      "window_id": "cruise-0019-v0:2343"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 1,
+      "gear": 1,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.041186362504959106,
+      "tau_s": 4.349999904632568,
+      "window_id": "cruise-0014-v1:1596"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.009193778969347477,
+      "tau_s": 8.850000381469727,
+      "window_id": "cruise-0011-v1:425"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.09754855185747147,
+      "tau_s": 3.799999952316284,
+      "window_id": "deceleration-0010-v0:625"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 1,
+      "gear": 1,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.007414408028125763,
+      "tau_s": 4.400000095367432,
+      "window_id": "threshold-0007-v1:1638"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.08826304227113724,
+      "tau_s": 4.300000190734863,
+      "window_id": "threshold-0001-v1:2096"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 1,
+      "gear": 1,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.03999900072813034,
+      "tau_s": 5.599999904632568,
+      "window_id": "threshold-0013-v0:802"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 1,
+      "gear": 1,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.040002837777137756,
+      "tau_s": 5.599999904632568,
+      "window_id": "threshold-0012-v0:212"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.02787061035633087,
+      "tau_s": 3.700000047683716,
+      "window_id": "threshold-0012-v1:2186"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.04000091925263405,
+      "tau_s": 5.599999904632568,
+      "window_id": "threshold-0003-v0:302"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.040002837777137756,
+      "tau_s": 5.599999904632568,
+      "window_id": "threshold-0004-v0:1692"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.02958657220005989,
+      "tau_s": 3.700000047683716,
+      "window_id": "threshold-0009-v1:1416"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 1,
+      "gear": 1,
+      "input_quantized_fp32_class": 1,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 5.8263540267944336e-05,
+      "tau_s": 4.400000095367432,
+      "window_id": "threshold-0000-v1:1708"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.05165107548236847,
+      "tau_s": 3.799999952316284,
+      "window_id": "threshold-0008-v1:1826"
+    },
+    {
+      "expected_class": 2,
+      "fp32_class": 2,
+      "gear": 1,
+      "input_quantized_fp32_class": 2,
+      "int8_class": 1,
+      "speed_threshold_margin_kmh": 0.15444740653038025,
+      "tau_s": 4.300000190734863,
+      "window_id": "threshold-0017-v1:2336"
+    }
+  ],
+  "fp32": {
+    "accuracy": 0.9906971860562789,
+    "classes": [
+      {
+        "action": -1,
+        "class_index": 0,
+        "f1": 0.6518289995592772,
+        "name": "downshift",
+        "precision": 0.48619329388560156,
+        "recall": 0.9886363636363636,
+        "support": 1496
+      },
+      {
+        "action": 0,
+        "class_index": 1,
+        "f1": 0.9952879000384444,
+        "name": "hold",
+        "precision": 0.9992372141841548,
+        "recall": 0.9913696809718265,
+        "support": 330347
+      },
+      {
+        "action": 1,
+        "class_index": 2,
+        "f1": 0.6243516917757471,
+        "name": "upshift",
+        "precision": 0.4952978056426332,
+        "recall": 0.8443553774215097,
+        "support": 1497
+      }
+    ],
+    "confusion_matrix": [
+      [
+        1479,
+        17,
+        0
+      ],
+      [
+        1563,
+        327496,
+        1288
+      ],
+      [
+        0,
+        233,
+        1264
+      ]
+    ],
+    "count": 333340,
+    "macro_f1": 0.7571561971244897
+  },
+  "input_quantized_fp32": {
+    "accuracy": 0.9904031919361613,
+    "classes": [
+      {
+        "action": -1,
+        "class_index": 0,
+        "f1": 0.6505281690140845,
+        "name": "downshift",
+        "precision": 0.4849081364829396,
+        "recall": 0.9879679144385026,
+        "support": 1496
+      },
+      {
+        "action": 0,
+        "class_index": 1,
+        "f1": 0.9951387633098958,
+        "name": "hold",
+        "precision": 0.9991333959892101,
+        "recall": 0.991175945293888,
+        "support": 330347
+      },
+      {
+        "action": 1,
+        "class_index": 2,
+        "f1": 0.6044684507733857,
+        "name": "upshift",
+        "precision": 0.47787267080745344,
+        "recall": 0.822311289245157,
+        "support": 1497
+      }
+    ],
+    "confusion_matrix": [
+      [
+        1478,
+        18,
+        0
+      ],
+      [
+        1570,
+        327432,
+        1345
+      ],
+      [
+        0,
+        266,
+        1231
+      ]
+    ],
+    "count": 333340,
+    "macro_f1": 0.750045127699122
+  },
+  "int8": {
+    "accuracy": 0.9899862002759945,
+    "classes": [
+      {
+        "action": -1,
+        "class_index": 0,
+        "f1": 0.573742047426258,
+        "name": "downshift",
+        "precision": 0.4031427797344893,
+        "recall": 0.9946524064171123,
+        "support": 1496
+      },
+      {
+        "action": 0,
+        "class_index": 1,
+        "f1": 0.9949299642454639,
+        "name": "hold",
+        "precision": 0.9984422203999013,
+        "recall": 0.9914423318510536,
+        "support": 330347
+      },
+      {
+        "action": 1,
+        "class_index": 2,
+        "f1": 0.6382022471910113,
+        "name": "upshift",
+        "precision": 0.6143386897404203,
+        "recall": 0.663994655978624,
+        "support": 1497
+      }
+    ],
+    "confusion_matrix": [
+      [
+        1488,
+        8,
+        0
+      ],
+      [
+        2203,
+        327520,
+        624
+      ],
+      [
+        0,
+        503,
+        994
+      ]
+    ],
+    "count": 333340,
+    "macro_f1": 0.7356247529542443
+  },
+  "model_id": "6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79",
+  "quality_target_met": false,
+  "quantization_errors": {
+    "input": {
+      "classes": [
+        {
+          "class_index": 0,
+          "corrected_errors": 0,
+          "decision_changes": 1,
+          "new_errors": 1
+        },
+        {
+          "class_index": 1,
+          "corrected_errors": 309,
+          "decision_changes": 682,
+          "new_errors": 373
+        },
+        {
+          "class_index": 2,
+          "corrected_errors": 3,
+          "decision_changes": 39,
+          "new_errors": 36
+        }
+      ],
+      "corrected_errors": 312,
+      "decision_changes": 722,
+      "new_errors": 410
+    },
+    "network": {
+      "classes": [
+        {
+          "class_index": 0,
+          "corrected_errors": 10,
+          "decision_changes": 10,
+          "new_errors": 0
+        },
+        {
+          "class_index": 1,
+          "corrected_errors": 731,
+          "decision_changes": 1374,
+          "new_errors": 643
+        },
+        {
+          "class_index": 2,
+          "corrected_errors": 1,
+          "decision_changes": 239,
+          "new_errors": 238
+        }
+      ],
+      "corrected_errors": 742,
+      "decision_changes": 1623,
+      "new_errors": 881
+    },
+    "total": {
+      "classes": [
+        {
+          "class_index": 0,
+          "corrected_errors": 9,
+          "decision_changes": 9,
+          "new_errors": 0
+        },
+        {
+          "class_index": 1,
+          "corrected_errors": 746,
+          "decision_changes": 1468,
+          "new_errors": 722
+        },
+        {
+          "class_index": 2,
+          "corrected_errors": 0,
+          "decision_changes": 270,
+          "new_errors": 270
+        }
+      ],
+      "corrected_errors": 755,
+      "decision_changes": 1747,
+      "new_errors": 992
+    }
+  },
+  "schema_version": "mlp-validation-v1",
+  "split": "train",
+  "window_ids_sha256": "ddbf10940448e65f9d60dd195cd45433041841864248a7544382466c242fc64c"
+}

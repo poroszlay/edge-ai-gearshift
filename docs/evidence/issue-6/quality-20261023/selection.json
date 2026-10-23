@@ -1,0 +1,46 @@
+{
+  "schema_version": "mlp-quality-investigation-v1",
+  "dataset_id": "ef6f8048efec22e32cc44fd4c58b08052359ab6880ee52c2257e3da59f27ba4a",
+  "selection_split": "validation",
+  "test_evaluated": false,
+  "quality_target": 0.95,
+  "quality_target_met": false,
+  "published_model_changed": false,
+  "published_model_id": "527bc3e722f8b2902fbf5a56e8872b185888b4939c4e5d6a7ff87175b786f1f9",
+  "candidates": [
+    {
+      "name": "published",
+      "model_id": "527bc3e722f8b2902fbf5a56e8872b185888b4939c4e5d6a7ff87175b786f1f9",
+      "fp32_macro_f1": 0.7193671440035141,
+      "int8_macro_f1": 0.6812082449675506,
+      "export_directory": "models/mlp-v1",
+      "keras_path": "models/mlp-v1/model.keras"
+    },
+    {
+      "name": "calibration-64",
+      "model_id": "17d316921bf1d6ead9a360915aaecdefcb4ad8d7dc404df4d64bb51b639778d3",
+      "fp32_macro_f1": 0.7193671440035141,
+      "int8_macro_f1": 0.6934866314194217,
+      "export_directory": "results/issue-6/quality/calibration-64",
+      "keras_path": "models/mlp-v1/model.keras"
+    },
+    {
+      "name": "calibration-4096",
+      "model_id": "a1ab51e2127f7b198df56aefbc6a3f4f9da96ce5274dacb7872bcad85867b2ae",
+      "fp32_macro_f1": 0.7193671440035141,
+      "int8_macro_f1": 0.6778354677151336,
+      "export_directory": "results/issue-6/quality/calibration-4096",
+      "keras_path": "models/mlp-v1/model.keras"
+    },
+    {
+      "name": "capacity",
+      "model_id": "6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79",
+      "fp32_macro_f1": 0.7190588743184095,
+      "int8_macro_f1": 0.7028518838863791,
+      "export_directory": "results/issue-6/quality/capacity/export",
+      "keras_path": "results/issue-6/quality/capacity/model.keras"
+    }
+  ],
+  "best_experimental_candidate": "capacity",
+  "best_experimental_int8_macro_f1": 0.7028518838863791
+}

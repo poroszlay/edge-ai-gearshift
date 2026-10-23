@@ -1,0 +1,16 @@
+test_cli_trains_and_preserves_selection_without_test_files (test_model.TrainingCLITests.test_cli_trains_and_preserves_selection_without_test_files) ... FAIL
+
+======================================================================
+FAIL: test_cli_trains_and_preserves_selection_without_test_files (test_model.TrainingCLITests.test_cli_trains_and_preserves_selection_without_test_files)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/richie/Desktop/edge-ai-gearshift/tests/test_model.py", line 141, in test_cli_trains_and_preserves_selection_without_test_files
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : initial architecture must be [100,32,16,3]
+
+
+----------------------------------------------------------------------
+Ran 1 test in 3.147s
+
+FAILED (failures=1)

@@ -63,7 +63,7 @@ b9151308995516cc5cf0bb773fcef752ec9493ca01b7a3c0f140b37c01281b9d  docs/evidence/
 d10128741b34780100e289bf996acc764b606ea1faf91bcc19ecd2ecf91131bf  docs/evidence/issue-6/green-08-fixture-error.log
 3cf2e005387c271a43d2b337787f241740199511f6d748001973491f972468cc  docs/evidence/issue-6/green-08.log
 a4343ff255ecd0d2c6f5cfeb453d3e29dfbfd7ae883ce991c7a3049e0f32b44e  docs/evidence/issue-6/green-09.log
-e0d2fd36f7f75f096acff0367a9ab294e82ae61650a9d3c0a12252c5a8096bd2  docs/evidence/issue-6/handoff-7.md
+e0d2fd36f7f75f096acff0367a9ab294e82ae61650a9d3c0a12252c5a8096bd2  docs/evidence/issue-6/handoff-7-v1.md
 4b298f492d8a1dd69ed6945162f5b67e2e5477afda83e7a68fe8f162b27f3dad  docs/evidence/issue-6/pc-reference.jsonl
 2b45d8df96274853e578edaea16ace67df85c59493a3eb31d8c0d4b32fc41786  docs/evidence/issue-6/red-01.log
 9463bcfff707c8de789d75d134773314784556a79a63138d61f40d3e99a2f8b6  docs/evidence/issue-6/red-02.log
@@ -99,3 +99,4 @@ f444b96a8ea6d72d3813bff96435078149a150a8336458f11edf7cfc44c21920  models/mlp-v1/
 527bc3e722f8b2902fbf5a56e8872b185888b4939c4e5d6a7ff87175b786f1f9  models/mlp-v1/model.tflite
 691e8eda3b75eea566acf73e6d9f6bb0939659c40733583b99ce051c235048e0  models/mlp-v1/training.json
 76ae81c80f05e0fe788ac7296da8f6a9803fcb3a79fccecdeb662625432e12ec  models/mlp-v1/validation.json
+feb70a8796584de779ee54460d1559a666bdf51535f799c460119b6bded641d5  docs/evidence/issue-6/handoff-7.md

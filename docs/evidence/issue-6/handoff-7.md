@@ -4,18 +4,23 @@
 
 A kiválasztás kizárólag a teljes validációs részhalmaz INT8 makro-F1-e
 alapján történt; a lezárt teszt nem kapott modellértékelést.
-[selection.json](selection.json) a négy jelöltet és a befagyasztást rögzíti.
+A jelenlegi átadott modell **mlp-v2**, a 2026-10-23-i kapacitáskísérlet
+validációs INT8 makro-F1 szerinti nyertese. A [freeze.json](../../../models/mlp-v2/freeze.json)
+és a [SHA256SUMS](../../../models/mlp-v2/SHA256SUMS) rögzíti a befagyasztást.
+A korábbi v1 átadás változatlan történeti másolata: [handoff-7-v1.md](handoff-7-v1.md).
+A minőségjavítás külön [#19 feladat](https://github.com/poroszlay/edge-ai-gearshift/issues/19),
+nem feltétele a #7 megkezdésének. A befagyasztott csomagot nem írjuk felül.
 
-- Modell: [models/mlp-v1/model.tflite](../../../models/mlp-v1/model.tflite).
+- Modell: [models/mlp-v2/model.tflite](../../../models/mlp-v2/model.tflite).
 - Modellazonosító / SHA-256:
-  `527bc3e722f8b2902fbf5a56e8872b185888b4939c4e5d6a7ff87175b786f1f9`.
+  `6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79`.
 - FP32 checkpoint, konfiguráció, tanítási proveniencia, audit, kvantálás és
-  kalibrációs ablaklista ugyanebben a `models/mlp-v1/` könyvtárban.
+  kalibrációs ablaklista ugyanebben a `models/mlp-v2/` könyvtárban.
 - Dataset-v2:
   `ef6f8048efec22e32cc44fd4c58b08052359ab6880ee52c2257e3da59f27ba4a`.
 - Érvényes eredménymezők és a PC API: [modell dokumentáció](../../model.md).
 - Minőségi állapot: **a 0,95 makro-F1 cél nem teljesült**; INT8 validáció
-  0,6812082449675506, FP32 0,7193671440035141. Ez nem teszteredmény.
+  0,7028518838863791, FP32 0,7190588743184095. Ez nem teszteredmény.
 
 Az osztálysorrend `downshift, hold, upshift`, index 0/1/2, action -1/0/+1.
 A bemenet `[1,100]`, a kimenet `[1,3]`, mindkettő INT8. Az audit az aktuális
@@ -25,10 +30,10 @@ A biasok INT32 típusúak; ez nem float visszaesés. A reference interpreter
 
 ## Két külön portolási út
 
-1. A [pc-reference.jsonl](pc-reference.jsonl) `input_int8` mezőjét add át az
+1. A [pc-reference.jsonl](../../../models/mlp-v2/pc-reference.jsonl) `input_int8` mezőjét add át az
    MCU-nak. Az osztálydöntésnek egyeznie kell, minden numerikus kimeneti elem
    eltérése legfeljebb **1 INT8 kódérték**. Ne lazítsd automatikusan a tűrést.
-2. A [reference-windows.jsonl](reference-windows.jsonl) nyers ablakait is
+2. A [reference-windows.jsonl](../../../models/mlp-v2/reference-windows.jsonl) nyers ablakait is
    dolgozd fel: érvényesség → rögzített skálázás → float32 → kvantálás.
    A PC `input_float32` és `input_int8` mezőivel külön vesd össze ezt az utat,
    hogy az előre kvantált út ne fedjen el előfeldolgozási hibát.
@@ -48,11 +53,13 @@ Az argmax holtversenyben a kisebb indexet választja. Hibás bemenetnek nincs
 ## Firmware és teljes mérés
 
 A `firmware/esp32/model_probe` önálló projekt a rögzített IDF 5.5.1 /
-esp-tflite-micro 1.3.5 / esp-nn 1.1.1 alaphoz. A tanítás előtti kis exporttal
-és a kiválasztott modellel is fordítási/linkelési próbát kap. A végső build
-beágyazott headerének bájtjait a kiválasztott `.tflite` fájllal külön összevetjük.
-Ez nem helyettesíti az AllocateTensors/Invoke **valódi paneles** futását.
-A próbaaréna 32 KiB mérete nem igazolt szükséges munkaterület.
+esp-tflite-micro 1.3.5 / esp-nn 1.1.1 alaphoz. A korábban megőrzött sikeres
+build a v1 modellre vonatkozik. A nagyobb v2 modell PC-s integer auditja és
+referenciája ellenőrzött, **saját ESP32-buildje és MCU-futtatása még nem**;
+a helyi SDK ebben a munkamenetben nem volt elérhető. A #7-ben kötelező az új
+modell explicit reconfigure/build próbája és a beágyazott modell hash-ének
+ellenőrzése. Ezután szükséges az AllocateTensors/Invoke valódi paneles futása.
+A 32 KiB próbaaréna megfelelősége a v2-re sem igazolt.
 
 A #5 külön branchben/worktree-ben dolgozik; mérőmodulját a #6 nem módosította.
 A #7-ben az aktuális #5 interfészt és a meglévő JSON Lines szerződést kell
@@ -72,4 +79,4 @@ A #7-re marad:
 
 A minőségi cél hiánya ismert korlát. Későbbi tanítási/architektúra-kísérletet
 új modellverzióként, tanító/validációs adaton kell végezni, a lezárt teszt
-visszacsatolása nélkül. A jelenlegi jelöltek között nem történt architektúraváltás.
+visszacsatolása nélkül. A v2 architektúrája 100 → 64 → 32 → 3; az indok és a konfiguráció a csomagban megmaradt.

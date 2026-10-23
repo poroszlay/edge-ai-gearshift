@@ -1,0 +1,17 @@
+{
+  "architecture": [
+    100,
+    64,
+    32,
+    3
+  ],
+  "architecture_reason": "FP32 macro-F1 is only 0.7591 on train and 0.7194 on validation; test higher capacity and smaller batches for rare threshold decisions. Select only by validation INT8 macro-F1.",
+  "batch_size": 512,
+  "calibration_size": 1024,
+  "class_weight": "inverse_sqrt",
+  "epochs": 160,
+  "learning_rate": 0.0005,
+  "patience": 35,
+  "schema_version": "mlp-config-v1",
+  "seed": 20261022
+}

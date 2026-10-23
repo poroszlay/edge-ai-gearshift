@@ -1,0 +1,86 @@
+{
+  "train": {
+    "float32": {
+      "conflicting_class_supports": [
+        0,
+        0,
+        0
+      ],
+      "conflicting_inputs": 0,
+      "unavoidable_errors_lower_bound": 0,
+      "unique_inputs": 190644
+    },
+    "int8": {
+      "conflicting_class_supports": [
+        0,
+        0,
+        0
+      ],
+      "conflicting_inputs": 0,
+      "unavoidable_errors_lower_bound": 0,
+      "unique_inputs": 190565
+    },
+    "threshold_margins": [
+      {
+        "class_index": 0,
+        "support": 1496,
+        "within_0_25_kmh": 917,
+        "within_1e_5_kmh": 0
+      },
+      {
+        "class_index": 1,
+        "support": 330347,
+        "within_0_25_kmh": 12938,
+        "within_1e_5_kmh": 5358
+      },
+      {
+        "class_index": 2,
+        "support": 1497,
+        "within_0_25_kmh": 1273,
+        "within_1e_5_kmh": 0
+      }
+    ]
+  },
+  "validation": {
+    "float32": {
+      "conflicting_class_supports": [
+        0,
+        0,
+        0
+      ],
+      "conflicting_inputs": 0,
+      "unavoidable_errors_lower_bound": 0,
+      "unique_inputs": 40998
+    },
+    "int8": {
+      "conflicting_class_supports": [
+        0,
+        11,
+        1
+      ],
+      "conflicting_inputs": 1,
+      "unavoidable_errors_lower_bound": 1,
+      "unique_inputs": 40997
+    },
+    "threshold_margins": [
+      {
+        "class_index": 0,
+        "support": 284,
+        "within_0_25_kmh": 179,
+        "within_1e_5_kmh": 1
+      },
+      {
+        "class_index": 1,
+        "support": 70854,
+        "within_0_25_kmh": 2732,
+        "within_1e_5_kmh": 1152
+      },
+      {
+        "class_index": 2,
+        "support": 292,
+        "within_0_25_kmh": 247,
+        "within_1e_5_kmh": 0
+      }
+    ]
+  }
+}

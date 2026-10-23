@@ -4,12 +4,41 @@ A modell a **szabályreferencia megtanulását** méri szintetikus laborjeleken.
 A PC-s referencia és az ESP32-fordítás nem helyettesíti a #7 portolási
 helyességi és valódi paneles vizsgálatát.
 
-A kis kiválasztott FP32-checkpoint és INT8-modell a verziózott
-`models/mlp-v1/` könyvtárban marad; a teljes generált adatok és a nagy
+A jelenlegi befagyasztott FP32-checkpoint és INT8-modell a verziózott
+`models/mlp-v2/` könyvtárban van; a korábbi `models/mlp-v1/` történeti baseline marad; a teljes generált adatok és a nagy
 buildtermékek nem kerülnek Gitbe.
 
 A tényleges eredmények, checksumok, red→green naplók és a #7 átadása:
 [ellenőrzési jegyzőkönyv](evidence/issue-6/verification.md).
+
+## Befagyasztott átadás és feladatszétválasztás
+
+A felhasználó döntése alapján a #6 tanítási/export-/PC-referencia feladat
+lezárható, a fennmaradó minőségjavítás a [#19 feladatban](https://github.com/poroszlay/edge-ai-gearshift/issues/19)
+folytatódik. **A 0,95 validációs makro-F1 cél nem teljesült.**
+
+A #7 számára befagyasztott modell: [`models/mlp-v2`](../models/mlp-v2/freeze.json),
+100 → 64 → 32 → 3, seed 20261022, 97. epoch. Validációs INT8 makro-F1
+0,7028518838863791; FP32 0,7190588743184095. Modell SHA-256:
+`6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79`.
+A csomag tartalmazza az eredeti checkpointot, INT8-exportot, konfigurációt,
+tanítási előzményeket, auditot, kalibrációs provenienciát, tanító-/validációs
+jelentést, 11 nyers referenciaablakot és az ehhez tartozó PC-kimeneteket.
+A `SHA256SUMS` a teljes befagyasztott csomagot azonosítja.
+
+```bash
+(cd models/mlp-v2 && sha256sum -c SHA256SUMS)
+python -m pc.model audit models/mlp-v2/model.tflite
+python -m pc.model reference --export models/mlp-v2 \
+  --input models/mlp-v2/reference-windows.jsonl --output frozen-repeat.jsonl \
+  --run-id issue6-frozen-mlp-v2
+cmp frozen-repeat.jsonl models/mlp-v2/pc-reference.jsonl
+```
+
+A csomagot későbbi kísérlet nem írhatja felül. Az alábbi v1 példák és a régi
+buildbizonyítékok a történeti baseline reprodukálását mutatják; a v2 saját
+ESP32-buildje és hardveres ellenőrzése a #7-re marad, nem igazolt eredmény.
+Az aktuális [#7 átadás](evidence/issue-6/handoff-7.md) már a v2-re mutat.
 
 ## Környezet és adatok
 
@@ -47,7 +76,8 @@ python -m pc.dataset verify data/generated/dataset-v2
 A `verify` tesztadat-olvasása integritás-/címkeaudit, nem modellértékelés.
 A modellpipeline a tanításhoz és kalibrációhoz csak `train.csv`-t,
 checkpoint-választáshoz és összehasonlításhoz csak `validation.csv`-t nyit.
-A tesztadatot nem használja. A CLI `evaluate` kizárólag validációt értékel.
+A tesztadatot nem használja. A CLI `evaluate` alapértelmezetten validációt,
+`--split train` kapcsolóval tanítóadatot értékel; teszthalmaz nem választható.
 A teljes lezárt tesztértékelés a befagyasztott modellre, a #7-ben történik.
 
 ## Tanítás, export, validáció
@@ -74,6 +104,11 @@ Minden epoch validációs makro-F1-et kap; csak szigorú javulás cseréli a
 checkpointot, holtversenyben a korábbi marad. A korai leállítás is kizárólag
 validációs. Az ablakok közti menetfelosztás változatlan.
 
+A két rejtett réteg szélessége konfigurálható; a 100 bemenet és 3 kimenet
+rögzített. Az indulótól eltérő architektúrához `architecture_reason` kell.
+A `config/model-v2-capacity.json` külön kapacitáskísérlet, nem a közzétett
+modell automatikus cseréje.
+
 A ritka osztályok miatt második jelöltként a `config/model-v1-weighted.json`
 fut, külön kimeneti könyvtárban. Osztálysúlya a tanítócímkék gyakoriságának
 inverz négyzetgyöke, a tanítóablakok átlagos súlyára normalizálva.
@@ -88,6 +123,22 @@ A tanítás kimenete: `model.keras`, teljes `config.json`, `training.json`,
 tartalmazza: makro-F1, osztályonként precision/recall/F1/support, tévesztési
 mátrix (sor=referencia, oszlop=modell), egyezési arány és eltérésszám.
 Hiányzó osztályhoz vagy nulla nevezőhöz a metrika 0-t rendel.
+
+Az értékelés az `input_quantized_fp32` jelentésben külön futtatja az eredeti
+FP32-hálót az INT8-ból visszaállított bemeneten. A `quantization_errors`
+az eredeti FP32 → visszaállított bemenetű FP32 (`input`), az utóbbi → INT8
+(`network`) és az eredeti FP32 → INT8 (`total`) új és kijavított hibáit,
+valamint döntésváltozásait számolja, valódi osztályonként is. A `network`
+együtt méri a súlyok, aktivációk és kimenet kvantálását; nem tisztán súlyhiba.
+A lépések korrigálhatják egymás hibáit, ezért az újhibaszámok nem összeadhatók.
+Az `error_examples` osztályonként legfeljebb 20, sorrendben szétterített
+hibás ablak azonosítóját, három döntését, fokozatát, telített tau értékét és
+az aktuális fokozathoz tartozó sebességküszöb előjeles távolságát adja.
+Utóbbi float32-ből visszaszámolt diagnosztika, nem új címkéző.
+Tanítóeredmény nem teljesítheti a validációs célt: ott `quality_target_met=false`.
+
+A ritka osztályok és kvantálás újabb vizsgálata:
+[minőségi jegyzőkönyv](evidence/issue-6/quality-20261023/verification.md).
 
 A kalibráció determinisztikusan, osztályonként szétterített tanítóablakokat
 választ, alapértéken 1024-et. A pontos azonosítólista és az eredeti FP32-modell
