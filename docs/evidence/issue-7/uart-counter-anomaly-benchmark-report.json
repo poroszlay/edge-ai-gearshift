@@ -1,0 +1,773 @@
+{
+  "schema": "gearshift.measurement.v1",
+  "run_id": "d52856bc585a4603b6bc40c5eceefa78",
+  "simulated": false,
+  "mode": "benchmark",
+  "workload": "int8_mlp",
+  "metadata": {
+    "event": "run_start",
+    "schema": "gearshift.measurement.v1",
+    "run_id": "d52856bc585a4603b6bc40c5eceefa78",
+    "mode": "benchmark",
+    "simulated": false,
+    "workload": "int8_mlp",
+    "model_id": "6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79",
+    "dataset_id": "ef6f8048efec22e32cc44fd4c58b08052359ab6880ee52c2257e3da59f27ba4a",
+    "expected_batches": 16,
+    "expected_tasks": 12400
+  },
+  "batches": [
+    {
+      "batch_id": "p10-warmup",
+      "phase": "warmup",
+      "series": 0,
+      "period_us": 10000,
+      "scheduled": 100,
+      "counts": {
+        "ok": 100,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.65,
+        "p95": 1.65,
+        "maximum": 3.366
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.834,
+        "maximum": 2.524
+      },
+      "inferences_per_second": 100.0,
+      "uart_wait_us": 101643,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 109172,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p10-s1",
+      "phase": "measured",
+      "series": 1,
+      "period_us": 10000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.65,
+        "p95": 1.65,
+        "maximum": 2.865
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.834,
+        "maximum": 2.026
+      },
+      "inferences_per_second": 100.0,
+      "uart_wait_us": 1318858,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81324,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p10-s2",
+      "phase": "measured",
+      "series": 2,
+      "period_us": 10000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.65,
+        "p95": 1.65,
+        "maximum": 2.864
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.833,
+        "maximum": 2.023
+      },
+      "inferences_per_second": 100.0,
+      "uart_wait_us": 12235982,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81324,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p10-s3",
+      "phase": "measured",
+      "series": 3,
+      "period_us": 10000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.649,
+        "p95": 1.649,
+        "maximum": 2.869
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.833,
+        "maximum": 2.027
+      },
+      "inferences_per_second": 99.999990000001,
+      "uart_wait_us": 12243948,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81324,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p20-warmup",
+      "phase": "warmup",
+      "series": 0,
+      "period_us": 20000,
+      "scheduled": 100,
+      "counts": {
+        "ok": 100,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.649,
+        "p95": 1.649,
+        "maximum": 2.86
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.833,
+        "maximum": 2.021
+      },
+      "inferences_per_second": 49.9999750000125,
+      "uart_wait_us": 12243990,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81324,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p20-s1",
+      "phase": "measured",
+      "series": 1,
+      "period_us": 20000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.646,
+        "p95": 1.646,
+        "maximum": 2.866
+      },
+      "inference_ms": {
+        "median": 0.829,
+        "p95": 0.83,
+        "maximum": 2.025
+      },
+      "inferences_per_second": 50.0,
+      "uart_wait_us": 1324442,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81260,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p20-s2",
+      "phase": "measured",
+      "series": 2,
+      "period_us": 20000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.65,
+        "p95": 1.65,
+        "maximum": 2.864
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.833,
+        "maximum": 2.023
+      },
+      "inferences_per_second": 50.0,
+      "uart_wait_us": 12292436,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81212,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p20-s3",
+      "phase": "measured",
+      "series": 3,
+      "period_us": 20000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.646,
+        "p95": 1.647,
+        "maximum": 2.866
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.833,
+        "maximum": 2.028
+      },
+      "inferences_per_second": 49.99999750000013,
+      "uart_wait_us": 12295964,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81208,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p50-warmup",
+      "phase": "warmup",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 100,
+      "counts": {
+        "ok": 100,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.649,
+        "p95": 1.649,
+        "maximum": 2.859
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.833,
+        "maximum": 2.021
+      },
+      "inferences_per_second": 19.9999960000008,
+      "uart_wait_us": 12295974,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81208,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p50-s1",
+      "phase": "measured",
+      "series": 1,
+      "period_us": 50000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.645,
+        "p95": 1.645,
+        "maximum": 2.866
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.833,
+        "maximum": 2.029
+      },
+      "inferences_per_second": 19.99999960000001,
+      "uart_wait_us": 1328211,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81208,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p50-s2",
+      "phase": "measured",
+      "series": 2,
+      "period_us": 50000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.648,
+        "p95": 1.649,
+        "maximum": 2.867
+      },
+      "inference_ms": {
+        "median": 0.834,
+        "p95": 0.834,
+        "maximum": 2.025
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 12329658,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81208,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p50-s3",
+      "phase": "measured",
+      "series": 3,
+      "period_us": 50000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.65,
+        "p95": 1.65,
+        "maximum": 2.866
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.833,
+        "maximum": 2.027
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 12330964,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81200,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p100-warmup",
+      "phase": "warmup",
+      "series": 0,
+      "period_us": 100000,
+      "scheduled": 100,
+      "counts": {
+        "ok": 100,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.648,
+        "p95": 1.648,
+        "maximum": 2.859
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.834,
+        "maximum": 2.021
+      },
+      "inferences_per_second": 10.0,
+      "uart_wait_us": 12328005,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136784,
+        "minimum_free_heap_bytes": 81200,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136280,
+        "minimum_free_heap_bytes": 136280,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p100-s1",
+      "phase": "measured",
+      "series": 1,
+      "period_us": 100000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.649,
+        "p95": 1.65,
+        "maximum": 2.868
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.833,
+        "maximum": 2.028
+      },
+      "inferences_per_second": 10.0,
+      "uart_wait_us": 1330911,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81172,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p100-s2",
+      "phase": "measured",
+      "series": 2,
+      "period_us": 100000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.649,
+        "p95": 1.649,
+        "maximum": 2.865
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.833,
+        "maximum": 2.025
+      },
+      "inferences_per_second": 9.9999999,
+      "uart_wait_us": 683924967,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81172,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "p100-s3",
+      "phase": "measured",
+      "series": 3,
+      "period_us": 100000,
+      "scheduled": 1000,
+      "counts": {
+        "ok": 1000,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 1.649,
+        "p95": 1.65,
+        "maximum": 2.868
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.833,
+        "maximum": 2.028
+      },
+      "inferences_per_second": 10.0,
+      "uart_wait_us": 12349941,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81172,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    }
+  ]
+}

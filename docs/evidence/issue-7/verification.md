@@ -104,5 +104,188 @@ sorrendjük downshift/hold/upshift:
 
 A korábbi validációs eredmény 0,7028518838863791; a 0,95 cél továbbra sem
 ért el. A minőségjavítás #19, a teszteredmény nem lett visszacsatolva.
-A teljes MCU-értékelést és négyprofilos benchmarkot a javított runtime-mal
-új, külön naplójú kampány igazolja; az eredmények rögzítése folyamatban.
+A teljes MCU-értékelés **71430/71430 ablakkal sikeresen lezárult**.
+A 100 elemű bemenetek és a 3 elemű kimenetek minden kódja egyezik;
+osztálydöntésbeli eltérés nincs, maximális kimeneti eltérés **0**
+(a megengedett felső határ változatlanul 1). A MCU minőségi mátrixa és
+makro-F1-e pontosan a fenti PC-érték.
+[Teljes portolási és minőségi jelentés](porting-quality.json).
+
+A minőségi mód 8929 előtöltött adagot dolgozott fel, mindegyik ablakot
+pontosan egyszer, határidő miatti kihagyás nélkül. Az összes 26788
+kérés/válasz-pár és 101087345 UART-bájt elszámolt:
+[UART-ellenőrzés](quality-uart-audit-summary.json). A legkisebb megfigyelt
+csendes intervallum a mért végrehajtási időt 6606 µs-mal meghaladta; az
+ellenőrző explicit 2000 µs hostidőbélyeg-engedményt használ. Ez hoston
+megfigyelt csend, nem logikai analizátoros buszmérés.
+
+## Végső forrás, build és élő adatút
+
+Firmware- és numerikus kampánykliens: `2d0fefed989e81cab008047c11cf7dc2ea07d95d`.
+A végső, számlálót ellenőrző benchmarkkliens és GUI: `aeef05f211183d70c912a6d86463b39b7483d2e0`.
+A végső bináris project_version értéke `2d0fefe`, dirty jelölés nélkül.
+A [buildnapló](final-runtime-build.log) és [feltöltési napló](final-runtime-flash.log)
+ezután új élő, minőségi és benchmark futásokat kapott. A generált modellheader
+13696 byte-ja külön újra SHA-256-ellenőrzött. Az
+[aritmetikai fordítási bizonyíték](arithmetic-compile-proof.json) a közös
+kvantálási rutinra és a referencia-FC-re is igazolja a SINGLE_ROUNDING=1-et.
+
+| Méret | Byte |
+| --- | ---: |
+| Alkalmazás `.bin` | 306512 |
+| Beágyazott modell | 13696 |
+| Linker statikus DRAM | 131016 |
+| Linker IRAM | 53279 |
+| Statikus tensorarena | 32768 |
+| Teljes statikus Device állapot | 69792 |
+| Eredménypufferek a Device-on belül | 60000 |
+| Ablakpuffer a Device-on belül | 9600 |
+
+A részhalmazok nem összeadandók. A 32 KiB az allokált arena, nem az
+elméletileg legkisebb szükséges arena. A [méretjelentés](size.json),
+[effektív sdkconfig](sdkconfig) és a környezetek csomagzárai
+([modell/GUI](model-ui-requirements-lock.txt), [SDK](sdk-requirements-lock.txt))
+megmaradtak.
+
+Az új runtime 11 nyers ablakos, tényleges paneles élő futása:
+[nyers kliensnapló](final-live.jsonl), [portolás](live-porting.json),
+[idő/memória](live-measurement.json), [UART](live-uart-audit.json).
+Bemeneti/kimeneti eltérés 0. Ez a nyers út külön bizonyítéka, nem a teljes
+71430-as készlet minőségi vagy időeloszlásának helyettesítése.
+
+A tényleges élő napló visszajátszása a felületen:
+[GUI-kép](gui-hardware-replay.png). A CSV oda-vissza olvasása megőrzi az
+összes eseményt és a `simulated:false` eredetet. A következő eszköz
+kiválasztása sem címkézheti át a meglévő adatokat; külön red→green
+regresszió: `21-origin-*`. A modell-/memóriahibákat a natív firmware
+interfészen is ellenőriztük, döntés és kimenet nélkül: `22-runtime-errors-*`.
+
+Végső teljes regresszió: **102 teszt, OK, 2 opcionális panelteszt kihagyva**
+([napló](final-guard-tests.log)). A saját modell 12 ablakos paneltesztje külön
+**1/1 sikeres**, lásd fent.
+
+## UART-szünetmetaadat elutasítása és védelmi regresszió
+
+Az első teljes benchmark `d52856bc585a4603b6bc40c5eceefa78` futásában minden
+feladat elszámolt és határidőn belüli volt, de a `p100-s2` válasz
+`uart_wait_us=683924967` értéke összeegyeztethetetlen a hoston mért
+ACK-közzel. A nyers UART-bájtokban is ez a szám szerepel; nem exporthiba.
+Az érték eszköz-/átviteli eredete nem bizonyított, ezért nem javítottuk
+vagy helyettesítettük becsléssel. A felvétel helye
+`results/issue-7/uart-counter-anomaly/`; ez nem elfogadott végső időmetaadat.
+
+A determinisztikus szoftverhiba a hiányzó konzisztenciavizsgálat volt:
+a kliens/elemző pozitív számként elfogadta a lehetetlen várakozást.
+A `23-uart-counter-*` red→green kör ezt a nyilvános kliens- és jelentési
+interfészen reprodukálja. Az új ellenőrzés az egymást követő execute-ACK-k
+hostidőközét felső korlátként használja, explicit 1 s konzervatív
+host/eszköz-időzítési tartalékkal. Ez nem módosít mérési értéket,
+INT8-tűrést vagy feladathatáridőt; túllépése hibás, részleges futást ad.
+A régi nyers felvétel elutasítása: [napló](uart-counter-rejection.log),
+[eredeti válasz és időköz](uart-counter-anomaly.json).
+A teljes minőségi felvétel várakozásértékei ezt a korlátot utólag is teljesítik.
+
+## Végső négyprofilos benchmark
+
+Az új kliensellenőrzéssel végzett benchmark **sikeresen lezárult**.
+Run_id: `8183cf68d8cc4307a1d883b0f4adf51b`; firmware: `2d0fefe`,
+kliens/elemző: `aeef05f`. **16 sorozat, 12400 ütemezett feladat:
+400 bemelegítő + 12000 mért**, hiány nélkül. Minden feladat `ok`;
+late=0, missed=0, failed=0. Minden UART-szünet átment az új
+hostidő-konzisztenciavizsgálaton. Nincs értékjavítás vagy kérés-újraküldés.
+[Teljes jelentés](benchmark-report.json), [összesítés](benchmark-summary.json),
+[UART-ellenőrzés](benchmark-uart-audit.json).
+
+A profilok három mért sorozatának összes 3000 rekordjából számolt
+medián/p95/megfigyelt maximum, ms-ban; bemelegítés nélkül.
+A maximum nem bizonyított WCET.
+
+| T=D [ms] | Ütemezett | ok | late | missed | failed | Inferencia [ms] | MCU-feldolgozás [ms] |
+| --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
+| 10 | 3000 | 3000 | 0 | 0 | 0 | 0.833/0.834/2.027 | 1.648/1.650/2.865 |
+| 20 | 3000 | 3000 | 0 | 0 | 0 | 0.833/0.834/2.028 | 1.650/1.650/2.869 |
+| 50 | 3000 | 3000 | 0 | 0 | 0 | 0.833/0.833/2.029 | 1.649/1.650/2.870 |
+| 100 | 3000 | 3000 | 0 | 0 | 0 | 0.833/0.834/2.025 | 1.649/1.650/2.864 |
+
+A négy rögzített nyers ablak sorrendjét a
+[benchmark-windows.jsonl](benchmark-windows.jsonl) őrzi. Ez ismételt
+munkakészlet, nem a teljes tesztadat időeloszlása. A mért feladatok az
+eredeti rácson, UART nélkül futottak; határidejük a tervezett indulástól
+számítódott. A teljes MCU-sorozatidő 558000007 µs.
+Az inferencia/s értéke a sorozatok MCU-idejére, UART-szünet nélkül értendő.
+
+Minden sorozat előtt/után memória-pillanatkép készült. Legkisebb szabad
+heap a sorozatokban 136280 B, boot óta
+81172 B; legkisebb szabad main-stack
+14140 B. Eltérő hatókörű, nem összeadható mutatók.
+
+A sorozatokat megelőző eszközoldali szünetek külön, µs-ban szerepelnek;
+tartalmazzák az átvitelt és a hostvárakozást is. Az utolsó eredményátvitel
+a nyers host-/UART-naplóban marad meg, nem MCU-feldolgozási idő.
+A teljes hostfutás 710.924 s volt.
+
+Az UART-ellenőrző mind a 1585 kérés/válasz-párt és az összes
+bájtot elszámolta; mind a 16 végrehajtásnál igazolt a hoston megfigyelt
+csend. Reset/watchdog/panic szöveget nem szűrtünk ki a bájtfolyamból.
+A teljes benchmark-CSV eseményről eseményre azonos eredménnyel olvasható vissza.
+
+## Közvetlen GUI–panel végellenőrzés
+
+A végső GUI nemcsak visszajátszással, hanem valódi UART-kapcsolattal,
+a Session háttérszálán keresztül is ellenőrzött. Mindkét mód külön
+panelresetet és run_id-t kapott.
+
+- Élő: 11 nyers átadási ablak, 11 ok eredmény, valódi inferencia/MCU-idő és heap.
+- Benchmark: a 10 ms-os profil 100 bemelegítő + 3×1000 mért feladata, mind ok;
+  a grafikon a sorozatok utáni fetch alatt frissült. A teljes négyprofilos
+  kanonikus mérés ettől külön, fent szerepel.
+- Mindkét mód minden eseménye `simulated:false`, a kiválasztott mode megmaradt.
+- A GUI saját exportháttérszálán készült két teljes CSV visszaolvasása
+  eseményről eseményre azonos volt a Session-naplóval.
+
+[Automatizált fizikai ellenőrzés naplója](gui-hardware-check.log),
+[ellenőrző harness](gui-hardware-check.py),
+[élő képernyő](gui-hardware-live.png),
+[benchmark képernyő](gui-hardware-benchmark.png).
+A harness az adott `/tmp/gearshift-sdk` környezet elérési útját rögzíti,
+kimeneti könyvtárat nem ír felül. Ezek tényleges paneles futások;
+a korábbi külön replay-kép ettől továbbra is elkülönül.
+
+## Artefaktumok és ellenőrzőösszegek
+
+A nagy nyers felvételek, referencia- és ablakfájlok, CSV-k, ELF és binárisok
+a helyi `results/issue-7/` könyvtárban maradtak, nincsenek automatikusan
+Gitbe téve. Azonosításuk: [manifest.json](manifest.json), benne a forráscommit,
+forrásfájl-hashek, panel, runtime, futásazonosítók és minden végső helyi
+artefaktum SHA-256 értéke. A helyi fő könyvtárak:
+
+- `final-build/`: a ténylegesen feltöltött binárisok, ELF, effektív konfiguráció.
+- `final-live/`: 11 nyers átadási ablak, eseménynapló, CSV, UART.
+- `final-test/`: 71430 lezárt PC-referencia és hozzá tartozó INT8-bemenet.
+- `final-quality/`: teljes MCU-futtatás, portolás/minőség és nyers UART.
+- `final-benchmark/`: a négyprofilos teljes mérés, CSV, nyers UART és elemzés.
+- `gui-live/`, `gui-benchmark/`: a közvetlen GUI–panel futások és CSV-k.
+
+Az egyes futások külön resetet és run_id-t kaptak; nincs automatikus
+kommunikációs újrapróbálás. A hibás kettős-kerekítésű részfutás külön
+diagnosztikai eredmény maradt, nem olvadt a sikeres jelentésbe.
+
+A Gitben tárolt kis bizonyítékok ellenőrzése a repó gyökeréből:
+
+```bash
+sha256sum -c docs/evidence/issue-7/SHA256SUMS
+```
+
+A helyi nagy artefaktumok ellenőrzése:
+
+```python
+import hashlib, json
+from pathlib import Path
+manifest = json.loads(Path('docs/evidence/issue-7/manifest.json').read_text())
+for name, expected in manifest['local_artifacts_sha256'].items():
+    h = hashlib.sha256()
+    with open(name, 'rb') as source:
+        for block in iter(lambda: source.read(1024 * 1024), b''):
+            h.update(block)
+    assert h.hexdigest() == expected, name
+```

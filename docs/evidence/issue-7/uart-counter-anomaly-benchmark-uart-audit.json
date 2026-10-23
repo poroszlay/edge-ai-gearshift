@@ -1,0 +1,111 @@
+{
+  "schema": "gearshift.uart-audit.v1",
+  "simulated": false,
+  "observation": "host_read_write_timestamps",
+  "requests": 1585,
+  "execution_count": 16,
+  "observed_uart_silence": true,
+  "timestamp_allowance_us": 2000,
+  "executions": [
+    {
+      "batch_id": "p10-warmup",
+      "count": 100,
+      "end_us": 1000000,
+      "observed_quiet_interval_s": 1.0072337100009463
+    },
+    {
+      "batch_id": "p10-s1",
+      "count": 1000,
+      "end_us": 10000000,
+      "observed_quiet_interval_s": 10.00708807599949
+    },
+    {
+      "batch_id": "p10-s2",
+      "count": 1000,
+      "end_us": 10000000,
+      "observed_quiet_interval_s": 10.006970185000682
+    },
+    {
+      "batch_id": "p10-s3",
+      "count": 1000,
+      "end_us": 10000001,
+      "observed_quiet_interval_s": 10.00672846100133
+    },
+    {
+      "batch_id": "p20-warmup",
+      "count": 100,
+      "end_us": 2000001,
+      "observed_quiet_interval_s": 2.0076354490011
+    },
+    {
+      "batch_id": "p20-s1",
+      "count": 1000,
+      "end_us": 20000000,
+      "observed_quiet_interval_s": 20.006512690000818
+    },
+    {
+      "batch_id": "p20-s2",
+      "count": 1000,
+      "end_us": 20000000,
+      "observed_quiet_interval_s": 20.007102857000064
+    },
+    {
+      "batch_id": "p20-s3",
+      "count": 1000,
+      "end_us": 20000001,
+      "observed_quiet_interval_s": 20.006879548000143
+    },
+    {
+      "batch_id": "p50-warmup",
+      "count": 100,
+      "end_us": 5000001,
+      "observed_quiet_interval_s": 5.006897061000927
+    },
+    {
+      "batch_id": "p50-s1",
+      "count": 1000,
+      "end_us": 50000001,
+      "observed_quiet_interval_s": 50.00636149800084
+    },
+    {
+      "batch_id": "p50-s2",
+      "count": 1000,
+      "end_us": 50000000,
+      "observed_quiet_interval_s": 50.00745113100129
+    },
+    {
+      "batch_id": "p50-s3",
+      "count": 1000,
+      "end_us": 50000000,
+      "observed_quiet_interval_s": 50.00652346099923
+    },
+    {
+      "batch_id": "p100-warmup",
+      "count": 100,
+      "end_us": 10000000,
+      "observed_quiet_interval_s": 10.007429015000525
+    },
+    {
+      "batch_id": "p100-s1",
+      "count": 1000,
+      "end_us": 100000000,
+      "observed_quiet_interval_s": 100.00718976899952
+    },
+    {
+      "batch_id": "p100-s2",
+      "count": 1000,
+      "end_us": 100000001,
+      "observed_quiet_interval_s": 100.0069539269989
+    },
+    {
+      "batch_id": "p100-s3",
+      "count": 1000,
+      "end_us": 100000000,
+      "observed_quiet_interval_s": 100.00684355900012
+    }
+  ],
+  "captured_bytes": {
+    "rx": 9843988,
+    "tx": 309027
+  }
+}

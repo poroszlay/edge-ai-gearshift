@@ -1,0 +1,89 @@
+{
+  "schema": "gearshift.benchmark-summary.v1",
+  "run_id": "8183cf68d8cc4307a1d883b0f4adf51b",
+  "simulated": false,
+  "workload": "int8_mlp",
+  "model_id": "6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79",
+  "profiles": [
+    {
+      "period_ms": 10,
+      "scheduled": 3000,
+      "counts": {
+        "ok": 3000
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.834,
+        "maximum": 2.027
+      },
+      "processing_ms": {
+        "median": 1.648,
+        "p95": 1.65,
+        "maximum": 2.865
+      }
+    },
+    {
+      "period_ms": 20,
+      "scheduled": 3000,
+      "counts": {
+        "ok": 3000
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.834,
+        "maximum": 2.028
+      },
+      "processing_ms": {
+        "median": 1.65,
+        "p95": 1.65,
+        "maximum": 2.869
+      }
+    },
+    {
+      "period_ms": 50,
+      "scheduled": 3000,
+      "counts": {
+        "ok": 3000
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.833,
+        "maximum": 2.029
+      },
+      "processing_ms": {
+        "median": 1.649,
+        "p95": 1.65,
+        "maximum": 2.87
+      }
+    },
+    {
+      "period_ms": 100,
+      "scheduled": 3000,
+      "counts": {
+        "ok": 3000
+      },
+      "inference_ms": {
+        "median": 0.833,
+        "p95": 0.834,
+        "maximum": 2.025
+      },
+      "processing_ms": {
+        "median": 1.649,
+        "p95": 1.65,
+        "maximum": 2.864
+      }
+    }
+  ],
+  "all_scheduled": 12400,
+  "warmup": 400,
+  "measured": 12000,
+  "all_counts": {
+    "ok": 12400
+  },
+  "mcu_series_duration_us": 558000007,
+  "preceding_uart_wait_us": 140676939,
+  "minimum_series_free_heap_bytes": 136280,
+  "minimum_boot_free_heap_bytes": 81172,
+  "minimum_stack_free_bytes": 14140,
+  "host_elapsed_ms": 710923.502054
+}

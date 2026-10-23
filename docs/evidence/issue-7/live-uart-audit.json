@@ -1,0 +1,81 @@
+{
+  "schema": "gearshift.uart-audit.v1",
+  "simulated": false,
+  "observation": "host_read_write_timestamps",
+  "requests": 34,
+  "execution_count": 11,
+  "observed_uart_silence": true,
+  "timestamp_allowance_us": 2000,
+  "executions": [
+    {
+      "batch_id": "live-0",
+      "count": 1,
+      "end_us": 50001,
+      "observed_quiet_interval_s": 0.05665961900012917
+    },
+    {
+      "batch_id": "live-1",
+      "count": 1,
+      "end_us": 50000,
+      "observed_quiet_interval_s": 0.05678399199950945
+    },
+    {
+      "batch_id": "live-2",
+      "count": 1,
+      "end_us": 50000,
+      "observed_quiet_interval_s": 0.056779804000143486
+    },
+    {
+      "batch_id": "live-3",
+      "count": 1,
+      "end_us": 50000,
+      "observed_quiet_interval_s": 0.056755759000225225
+    },
+    {
+      "batch_id": "live-4",
+      "count": 1,
+      "end_us": 50000,
+      "observed_quiet_interval_s": 0.05652464600007079
+    },
+    {
+      "batch_id": "live-5",
+      "count": 1,
+      "end_us": 50001,
+      "observed_quiet_interval_s": 0.05673483999999007
+    },
+    {
+      "batch_id": "live-6",
+      "count": 1,
+      "end_us": 50001,
+      "observed_quiet_interval_s": 0.056572927000161144
+    },
+    {
+      "batch_id": "live-7",
+      "count": 1,
+      "end_us": 50000,
+      "observed_quiet_interval_s": 0.05657187399992836
+    },
+    {
+      "batch_id": "live-8",
+      "count": 1,
+      "end_us": 50000,
+      "observed_quiet_interval_s": 0.056869772999561974
+    },
+    {
+      "batch_id": "live-9",
+      "count": 1,
+      "end_us": 50000,
+      "observed_quiet_interval_s": 0.056489780000447354
+    },
+    {
+      "batch_id": "live-10",
+      "count": 1,
+      "end_us": 50001,
+      "observed_quiet_interval_s": 0.05707682100000966
+    }
+  ],
+  "captured_bytes": {
+    "rx": 22736,
+    "tx": 19905
+  }
+}

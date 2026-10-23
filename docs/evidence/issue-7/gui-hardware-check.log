@@ -1,0 +1,8 @@
+This plugin does not support propagateSizeHints()
+{"mode": "live", "hardware": true, "results": 11, "all_ok": true, "csv_roundtrip": true}
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+{"mode": "benchmark", "hardware": true, "results": 3100, "all_ok": true, "csv_roundtrip": true}

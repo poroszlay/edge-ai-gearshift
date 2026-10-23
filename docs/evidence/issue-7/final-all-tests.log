@@ -1,0 +1,280 @@
+test_benchmark_working_set_remains_bounded (test_communication.CommunicationTests.test_benchmark_working_set_remains_bounded) ... ok
+test_both_modes_complete_and_every_export_is_marked (test_communication.CommunicationTests.test_both_modes_complete_and_every_export_is_marked) ... ok
+test_fragmented_and_coalesced_frames (test_communication.CommunicationTests.test_fragmented_and_coalesced_frames) ... ok
+test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply (test_communication.CommunicationTests.test_invalid_memory_ack_fails_before_fetch_and_preserves_raw_reply) ... ok
+test_invalid_result_cannot_complete_run (test_communication.CommunicationTests.test_invalid_result_cannot_complete_run) ... ok
+test_live_cli_processes_more_than_eight_windows (test_communication.CommunicationTests.test_live_cli_processes_more_than_eight_windows) ... ok
+test_load_preserves_unfetched_results (test_communication.CommunicationTests.test_load_preserves_unfetched_results) ... ok
+test_malformed_oversized_version_and_disconnect (test_communication.CommunicationTests.test_malformed_oversized_version_and_disconnect) ... ok
+test_overload_and_invalid_windows (test_communication.CommunicationTests.test_overload_and_invalid_windows) ... ok
+test_result_extensions_do_not_override_export_metadata (test_communication.CommunicationTests.test_result_extensions_do_not_override_export_metadata) ... ok
+test_timeout_and_partial_line (test_communication.CommunicationTests.test_timeout_and_partial_line) ... ok
+test_valid_result_statuses_complete_run (test_communication.CommunicationTests.test_valid_result_statuses_complete_run) ... ok
+test_validation_and_scaling (test_communication.CommunicationTests.test_validation_and_scaling) ... ok
+test_wrong_pairing_is_rejected (test_communication.CommunicationTests.test_wrong_pairing_is_rejected) ... ok
+test_coverage_reports_every_split_and_missing_coverage_blocks_sealing (test_dataset.ExportTests.test_coverage_reports_every_split_and_missing_coverage_blocks_sealing) ... ok
+test_export_is_byte_reproducible_and_records_provenance_and_split_membership (test_dataset.ExportTests.test_export_is_byte_reproducible_and_records_provenance_and_split_membership) ... ok
+test_invalid_cases_are_separate_standard_json_with_no_valid_labels (test_dataset.ExportTests.test_invalid_cases_are_separate_standard_json_with_no_valid_labels) ... ok
+test_overlap_audit_compares_actual_scaled_windows_without_run_ids (test_dataset.ExportTests.test_overlap_audit_compares_actual_scaled_windows_without_run_ids) ... ok
+test_sealed_test_identity_is_preserved_and_corruption_is_rejected (test_dataset.ExportTests.test_sealed_test_identity_is_preserved_and_corruption_is_rejected) ... ok
+test_verify_and_seal_reject_checksum_valid_cross_split_copies (test_dataset.ExportTests.test_verify_and_seal_reject_checksum_valid_cross_split_copies) ... ok
+test_all_split_pairs_have_disjoint_scaled_windows_including_noisy_derivatives (test_dataset.GenerationTests.test_all_split_pairs_have_disjoint_scaled_windows_including_noisy_derivatives) ... ok
+test_bad_configuration_and_run_specs_are_rejected (test_dataset.GenerationTests.test_bad_configuration_and_run_specs_are_rejected) ... ok
+test_default_base_families_do_not_duplicate_complete_signal_profiles (test_dataset.GenerationTests.test_default_base_families_do_not_duplicate_complete_signal_profiles) ... ok
+test_five_profiles_and_seeded_noise_use_only_reference_labels (test_dataset.GenerationTests.test_five_profiles_and_seeded_noise_use_only_reference_labels) ... ok
+test_plan_splits_whole_families_before_generation (test_dataset.GenerationTests.test_plan_splits_whole_families_before_generation) ... ok
+test_reference_decision_changes_only_the_next_sample_state (test_dataset.GenerationTests.test_reference_decision_changes_only_the_next_sample_state) ... ok
+test_reviewed_shift_windows_are_not_copied_across_profile_families (test_dataset.GenerationTests.test_reviewed_shift_windows_are_not_copied_across_profile_families) ... ok
+test_windows_start_at_sample_twenty_and_scale_without_changing_raw_tau (test_dataset.WindowTests.test_windows_start_at_sample_twenty_and_scale_without_changing_raw_tau) ... ok
+test_hardware_deadline_is_measured_from_scheduled_start (test_inference.DeadlineTests.test_hardware_deadline_is_measured_from_scheduled_start) ... ok
+test_quality_visits_every_window_without_a_realtime_deadline (test_inference.DeadlineTests.test_quality_visits_every_window_without_a_realtime_deadline) ... ok
+test_firmware_raw_path_matches_frozen_pc_reference_and_boundary_rounding (test_inference.FirmwareInputTests.test_firmware_raw_path_matches_frozen_pc_reference_and_boundary_rounding) ... ok
+test_firmware_quality_batch_visits_each_preloaded_window_once (test_inference.FirmwareProtocolTests.test_firmware_quality_batch_visits_each_preloaded_window_once) ... ok
+test_native_firmware_protocol_preloads_executes_fetches_and_accounts_benchmark (test_inference.FirmwareProtocolTests.test_native_firmware_protocol_preloads_executes_fetches_and_accounts_benchmark) ... ok
+test_final_evaluation_rejects_unfrozen_model_before_reading_locked_test (test_inference.FrozenCampaignTests.test_final_evaluation_rejects_unfrozen_model_before_reading_locked_test) ... /tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+ok
+test_client_preserves_hardware_origin_numerics_and_memory_in_csv (test_inference.HardwareContractTests.test_client_preserves_hardware_origin_numerics_and_memory_in_csv) ... ok
+test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict (test_inference.HardwareContractTests.test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict) ... ok
+test_real_live_log_is_analyzable_and_incomplete_accounting_is_rejected (test_inference.HardwareMeasurementReportTests.test_real_live_log_is_analyzable_and_incomplete_accounting_is_rejected) ... ok
+test_invalid_expected_model_terminates_the_worker_without_losing_origin (test_inference.HardwareSessionFailureTests.test_invalid_expected_model_terminates_the_worker_without_losing_origin) ... ok
+test_missing_uart_keeps_hardware_origin_and_never_completes (test_inference.HardwareSessionTests.test_missing_uart_keeps_hardware_origin_and_never_completes) ... ok
+test_porting_report_separates_raw_input_mismatch_from_output_tolerance_and_quality (test_inference.PortingReportTests.test_porting_report_separates_raw_input_mismatch_from_output_tolerance_and_quality) ... ok
+test_capture_keeps_received_bytes_and_transmit_boundaries (test_inference.UartCaptureTests.test_capture_keeps_received_bytes_and_transmit_boundaries) ... ok
+test_capture_rejects_response_bytes_before_execution_finished (test_inference.UartSilenceTests.test_capture_rejects_response_bytes_before_execution_finished) ... ok
+test_uart_adapter_frames_real_pty_bytes_and_times_out (test_inference.UartTests.test_uart_adapter_frames_real_pty_bytes_and_times_out) ... ok
+test_raw_reference_and_rounding_regression_match_the_frozen_pc (test_inference_hardware.InferenceHardwareTests.test_raw_reference_and_rounding_regression_match_the_frozen_pc) ... skipped 'set GEARSHIFT_INFERENCE_PORT for the flashed #7 ESP32 firmware'
+test_hardware_selection_and_results_are_labelled_as_measured (test_inference_ui.HardwareGuiTests.test_hardware_selection_and_results_are_labelled_as_measured) ... ok
+test_selecting_next_device_does_not_relabel_existing_hardware_data (test_inference_ui.HardwareGuiTests.test_selecting_next_device_does_not_relabel_existing_hardware_data) ... ok
+test_live_probe_exports_one_result_per_window_outside_processing (test_mcu_measurement.McuMeasurementTests.test_live_probe_exports_one_result_per_window_outside_processing) ... ok
+test_probe_exports_all_12400_scheduled_tasks_without_a_model (test_mcu_measurement.McuMeasurementTests.test_probe_exports_all_12400_scheduled_tasks_without_a_model) ... ok
+test_public_runner (test_mcu_measurement.McuMeasurementTests.test_public_runner) ... ok
+test_corrected_evidence_identifies_the_sources_it_built (test_measurement_evidence.MeasurementEvidenceTests.test_corrected_evidence_identifies_the_sources_it_built) ... ok
+test_documented_evidence_checksum_command_succeeds (test_measurement_evidence.MeasurementEvidenceTests.test_documented_evidence_checksum_command_succeeds) ... ok
+test_benchmark_export_does_not_trigger_idle_watchdog (test_measurement_hardware.MeasurementHardwareTests.test_benchmark_export_does_not_trigger_idle_watchdog) ... skipped 'ESP32 port not requested'
+test_export_roundtrip_preserves_every_event_and_accounting (test_measurement_ui.ArchiveTests.test_export_roundtrip_preserves_every_event_and_accounting) ... ok
+test_benchmark_four_profiles_post_execute_fetch_and_invalid_input (test_measurement_ui.GuiTests.test_benchmark_four_profiles_post_execute_fetch_and_invalid_input) ... This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+ok
+test_invalid_memory_ack_can_finish_export_and_restart_in_both_modes (test_measurement_ui.GuiTests.test_invalid_memory_ack_can_finish_export_and_restart_in_both_modes) ... This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+ok
+test_select_start_stop_export_and_restart (test_measurement_ui.GuiTests.test_select_start_stop_export_and_restart) ... This plugin does not support propagateSizeHints()
+ok
+test_selected_profile_only (test_measurement_ui.GuiTests.test_selected_profile_only) ... This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+ok
+test_slow_file_operations_keep_event_loop_running_and_export_error (test_measurement_ui.GuiTests.test_slow_file_operations_keep_event_loop_running_and_export_error) ... This plugin does not support propagateSizeHints()
+ok
+test_stop_interrupts_pending_socket_and_close_waits_without_blocking (test_measurement_ui.GuiTests.test_stop_interrupts_pending_socket_and_close_waits_without_blocking) ... This plugin does not support propagateSizeHints()
+ok
+test_timeout_disconnect_device_error_are_visible_and_exportable (test_measurement_ui.GuiTests.test_timeout_disconnect_device_error_are_visible_and_exportable) ... This plugin does not support propagateSizeHints()
+ok
+test_audit_rejects_float_model_even_when_it_runs_in_tflite (test_model.ExportTests.test_audit_rejects_float_model_even_when_it_runs_in_tflite) ... 2026-10-23 19:17:49.873317: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Attribute.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Call.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Try.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: FunctionDef.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Attribute.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Call.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: keyword.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Try.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: FunctionDef.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+Saved artifact at '/tmp/tmp49peaqii'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 100), dtype=tf.float32, name='keras_tensor')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  140486443148944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140486443152784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1792775870.190423   69797 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1792775870.190478   69797 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1792775870.193154   69797 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
+ok
+test_export_runs_real_int8_model_and_records_training_only_calibration (test_model.IntegerExportTests.test_export_runs_real_int8_model_and_records_training_only_calibration) ... /tmp/gearshift-quality-venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:172: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  return np.array(x)
+Saved artifact at '/tmp/tmprjq8s2wa'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 100), dtype=tf.float32, name='input_layer_1')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  140486438605968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140486438601552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140486438604240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140486438604816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140486438604432: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140486438612496: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/convert.py:863: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+W0000 00:00:1792775870.693627   69797 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1792775870.693648   69797 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+ok
+test_evaluate_cli_diagnoses_train_without_reading_validation_or_test (test_model.PCModelTests.test_evaluate_cli_diagnoses_train_without_reading_validation_or_test) ... /tmp/gearshift-quality-venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:172: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  return np.array(x)
+Saved artifact at '/tmp/tmpg_ktd1gi'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 100), dtype=tf.float32, name='input_layer_2')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  140486438605200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140486438605008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/convert.py:863: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+W0000 00:00:1792775871.048246   69797 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1792775871.048270   69797 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+ok
+test_evaluate_cli_reports_full_validation_and_fp32_int8_comparison (test_model.PCModelTests.test_evaluate_cli_reports_full_validation_and_fp32_int8_comparison) ... /tmp/gearshift-quality-venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:172: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  return np.array(x)
+Saved artifact at '/tmp/tmpyrb492u_'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 100), dtype=tf.float32, name='input_layer_3')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  140486443152592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140486443151824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/convert.py:863: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+W0000 00:00:1792775874.297388   69797 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1792775874.297413   69797 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+ok
+test_ragged_int8_input_returns_error_without_decision (test_model.PCModelTests.test_ragged_int8_input_returns_error_without_decision) ... ok
+test_raw_and_prequantized_reference_agree_and_invalid_window_has_no_decision (test_model.PCModelTests.test_raw_and_prequantized_reference_agree_and_invalid_window_has_no_decision) ... /tmp/gearshift-quality-venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:172: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  return np.array(x)
+Saved artifact at '/tmp/tmp8755opu7'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 100), dtype=tf.float32, name='input_layer_4')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  140486443151440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140486443153360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/convert.py:863: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+W0000 00:00:1792775877.173882   69797 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1792775877.173905   69797 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+ok
+test_reference_cli_exports_window_identity_and_reports_invalid_input (test_model.PCModelTests.test_reference_cli_exports_window_identity_and_reports_invalid_input) ... /tmp/gearshift-quality-venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:172: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  return np.array(x)
+Saved artifact at '/tmp/tmp8m75mvcv'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 100), dtype=tf.float32, name='input_layer_5')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  140486438613456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140486438603664: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/convert.py:863: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+W0000 00:00:1792775877.371401   69797 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1792775877.371418   69797 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+ok
+test_model_development_refuses_locked_test_and_validation_calibration (test_model.PipelineTests.test_model_development_refuses_locked_test_and_validation_calibration) ... ok
+test_quantization_distinguishes_half_from_adjacent_float32_values (test_model.ReferenceTests.test_quantization_distinguishes_half_from_adjacent_float32_values) ... ok
+test_quantization_rounds_half_away_from_zero_then_saturates (test_model.ReferenceTests.test_quantization_rounds_half_away_from_zero_then_saturates) ... ok
+test_report_counts_rare_classes_instead_of_hiding_them_in_accuracy (test_model.ReferenceTests.test_report_counts_rare_classes_instead_of_hiding_them_in_accuracy) ... ok
+test_cli_trains_and_preserves_selection_without_test_files (test_model.TrainingCLITests.test_cli_trains_and_preserves_selection_without_test_files) ... ok
+test_complete_uart_pause_cannot_be_negative_or_shorter_than_its_prefix (test_profiler.ProfilerTests.test_complete_uart_pause_cannot_be_negative_or_shorter_than_its_prefix) ... ok
+test_contradictory_task_timestamps_and_status_are_rejected (test_profiler.ProfilerTests.test_contradictory_task_timestamps_and_status_are_rejected) ... ok
+test_hardware_memory_snapshots_remain_separate_and_are_validated (test_profiler.ProfilerTests.test_hardware_memory_snapshots_remain_separate_and_are_validated) ... ok
+test_invalid_run_and_series_metadata_are_not_silently_accepted (test_profiler.ProfilerTests.test_invalid_run_and_series_metadata_are_not_silently_accepted) ... ok
+test_overload_statistics_are_recomputed_from_raw_timestamps (test_profiler.ProfilerTests.test_overload_statistics_are_recomputed_from_raw_timestamps) ... ok
+test_partial_or_duplicated_capture_cannot_be_reported_as_complete (test_profiler.ProfilerTests.test_partial_or_duplicated_capture_cannot_be_reported_as_complete) ... ok
+test_report_distinguishes_complete_pause_from_legacy_prefix (test_profiler.ProfilerTests.test_report_distinguishes_complete_pause_from_legacy_prefix) ... ok
+test_action_is_not_the_class_index (test_reference.ReferenceTests.test_action_is_not_the_class_index) ... ok
+test_documented_downshift (test_reference.ReferenceTests.test_documented_downshift) ... ok
+test_documented_lockout_holds (test_reference.ReferenceTests.test_documented_lockout_holds) ... ok
+test_documented_upper_threshold_equality_holds (test_reference.ReferenceTests.test_documented_upper_threshold_equality_holds) ... ok
+test_documented_upshift (test_reference.ReferenceTests.test_documented_upshift) ... ok
+test_downshift_uses_latest_gear_not_the_preceding_four (test_reference.ReferenceTests.test_downshift_uses_latest_gear_not_the_preceding_four) ... ok
+test_each_of_v_u_s_is_averaged_over_all_five_recent_samples (test_reference.ReferenceTests.test_each_of_v_u_s_is_averaged_over_all_five_recent_samples) ... ok
+test_inclusive_range_limits_and_tau_above_ten_are_valid (test_reference.ReferenceTests.test_inclusive_range_limits_and_tau_above_ten_are_valid) ... ok
+test_invalid_window_length_has_no_label (test_reference.ReferenceTests.test_invalid_window_length_has_no_label) ... ok
+test_labeling_does_not_change_replayed_state (test_reference.ReferenceTests.test_labeling_does_not_change_replayed_state) ... ok
+test_large_integers_have_explicit_status_instead_of_overflow (test_reference.ReferenceTests.test_large_integers_have_explicit_status_instead_of_overflow) ... ok
+test_latest_predecision_state_is_used (test_reference.ReferenceTests.test_latest_predecision_state_is_used) ... ok
+test_lower_threshold_equality_holds (test_reference.ReferenceTests.test_lower_threshold_equality_holds) ... ok
+test_missing_signal_anywhere_has_no_label_even_during_lockout (test_reference.ReferenceTests.test_missing_signal_anywhere_has_no_label_even_during_lockout) ... ok
+test_non_finite_signal_anywhere_has_no_label (test_reference.ReferenceTests.test_non_finite_signal_anywhere_has_no_label) ... ok
+test_one_second_unlocks_both_directions (test_reference.ReferenceTests.test_one_second_unlocks_both_directions) ... ok
+test_only_last_five_samples_are_averaged (test_reference.ReferenceTests.test_only_last_five_samples_are_averaged) ... ok
+test_out_of_range_signal_anywhere_has_no_label (test_reference.ReferenceTests.test_out_of_range_signal_anywhere_has_no_label) ... ok
+test_sampling_requires_nonnegative_integer_milliseconds_and_50ms_steps (test_reference.ReferenceTests.test_sampling_requires_nonnegative_integer_milliseconds_and_50ms_steps) ... ok
+test_window_cannot_cross_runs (test_reference.ReferenceTests.test_window_cannot_cross_runs) ... ok
+test_wrong_types_are_reported_without_coercion (test_reference.ReferenceTests.test_wrong_types_are_reported_without_coercion) ... ok
+test_json_task_during_execution_cannot_be_reported_as_uart_silence (test_uart_evidence.UartEvidenceTests.test_json_task_during_execution_cannot_be_reported_as_uart_silence) ... ok
+test_quiet_execution_ends_at_first_memory_byte_received (test_uart_evidence.UartEvidenceTests.test_quiet_execution_ends_at_first_memory_byte_received) ... ok
+
+----------------------------------------------------------------------
+Ran 102 tests in 80.124s
+
+OK (skipped=2)
