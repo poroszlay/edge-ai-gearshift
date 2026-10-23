@@ -1,0 +1,6 @@
+test_invalid_expected_model_terminates_the_worker_without_losing_origin (test_inference.HardwareSessionFailureTests.test_invalid_expected_model_terminates_the_worker_without_losing_origin) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.016s
+
+OK

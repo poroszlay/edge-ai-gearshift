@@ -10,6 +10,7 @@ import queue
 import socket
 import tempfile
 import threading
+import uuid
 from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
@@ -29,6 +30,9 @@ class Settings:
     profiles: tuple = (10, 20, 50, 100)
     input_path: str = ''
     duration_ms: int = 3
+    serial_port: str = ''
+    model_id: str = ''
+    baud: int = 115200
 
 
 def summary(rows):
@@ -122,9 +126,11 @@ class Session:
 
     def _run(self):
         s = self.settings
-        client = Client(None, self, s.mode, s.timeout)
+        client = None
         simulator = None
         try:
+            client = Client(None, self, s.mode, s.timeout, simulated=not bool(s.serial_port),
+                            model_id=s.model_id or None)
             client.log('session_start', settings=vars(s))
             if s.input_path:
                 windows = []
@@ -142,7 +148,10 @@ class Session:
                 windows = [example_window(i) for i in range(8 if s.mode == 'benchmark' else 200)]
             if self.cancelled.is_set():
                 raise ProtocolError('cancelled')
-            if s.demo:
+            if s.serial_port:
+                from .uart import SerialTransport
+                self.sock = SerialTransport(s.serial_port, baud=s.baud)
+            elif s.demo:
                 self.sock, peer = socket.socketpair()
                 def simulate():
                     with peer:
@@ -159,8 +168,13 @@ class Session:
         except Exception as exc:
             # Client already logs transport errors. This terminal event also
             # covers input, connect, ack validation and unexpected worker errors.
-            client.log('run_stopped' if self.cancelled.is_set() else 'run_failed',
-                       error=str(exc) or type(exc).__name__)
+            kind = 'run_stopped' if self.cancelled.is_set() else 'run_failed'
+            if client is not None:
+                client.log(kind, error=str(exc) or type(exc).__name__)
+            else:
+                self.write(json.dumps(dict(v=1, run_id=uuid.uuid4().hex, mode=s.mode,
+                    simulated=not bool(s.serial_port), event=kind, host_elapsed_ms=0,
+                    error=str(exc) or type(exc).__name__)) + '\n')
         finally:
             if self.sock is not None:
                 self.sock.close()

@@ -1,0 +1,14 @@
+{
+  "schema": "gearshift.uart-audit.v1",
+  "simulated": false,
+  "observation": "host_read_write_timestamps",
+  "requests": 26788,
+  "execution_count": 8929,
+  "observed_uart_silence": true,
+  "timestamp_allowance_us": 2000,
+  "captured_bytes": {
+    "rx": 65328535,
+    "tx": 35758810
+  },
+  "minimum_observed_margin_us": 6606
+}

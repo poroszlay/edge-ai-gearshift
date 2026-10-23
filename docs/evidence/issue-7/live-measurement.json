@@ -1,0 +1,538 @@
+{
+  "schema": "gearshift.measurement.v1",
+  "run_id": "27afb01e56244d54b4fec9197f2a1078",
+  "simulated": false,
+  "mode": "live",
+  "workload": "int8_mlp",
+  "metadata": {
+    "event": "run_start",
+    "schema": "gearshift.measurement.v1",
+    "run_id": "27afb01e56244d54b4fec9197f2a1078",
+    "mode": "live",
+    "simulated": false,
+    "workload": "int8_mlp",
+    "model_id": "6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79",
+    "dataset_id": "ef6f8048efec22e32cc44fd4c58b08052359ab6880ee52c2257e3da59f27ba4a",
+    "expected_batches": 11,
+    "expected_tasks": 11
+  },
+  "batches": [
+    {
+      "batch_id": "live-0",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 3.377,
+        "p95": 3.377,
+        "maximum": 3.377
+      },
+      "inference_ms": {
+        "median": 2.533,
+        "p95": 2.533,
+        "maximum": 2.533
+      },
+      "inferences_per_second": 19.99960000799984,
+      "uart_wait_us": 40119,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 129172,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "live-1",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 2.854,
+        "p95": 2.854,
+        "maximum": 2.854
+      },
+      "inference_ms": {
+        "median": 2.011,
+        "p95": 2.011,
+        "maximum": 2.011
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 62209,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 129168,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "live-2",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 2.854,
+        "p95": 2.854,
+        "maximum": 2.854
+      },
+      "inference_ms": {
+        "median": 2.013,
+        "p95": 2.013,
+        "maximum": 2.013
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 60418,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 129168,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "live-3",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 2.858,
+        "p95": 2.858,
+        "maximum": 2.858
+      },
+      "inference_ms": {
+        "median": 2.01,
+        "p95": 2.01,
+        "maximum": 2.01
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 60911,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 129168,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "live-4",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 2.914,
+        "p95": 2.914,
+        "maximum": 2.914
+      },
+      "inference_ms": {
+        "median": 2.016,
+        "p95": 2.016,
+        "maximum": 2.016
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 61102,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 129168,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "live-5",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 2.91,
+        "p95": 2.91,
+        "maximum": 2.91
+      },
+      "inference_ms": {
+        "median": 2.009,
+        "p95": 2.009,
+        "maximum": 2.009
+      },
+      "inferences_per_second": 19.99960000799984,
+      "uart_wait_us": 62077,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 129168,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "live-6",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 2.914,
+        "p95": 2.914,
+        "maximum": 2.914
+      },
+      "inference_ms": {
+        "median": 2.014,
+        "p95": 2.014,
+        "maximum": 2.014
+      },
+      "inferences_per_second": 19.99960000799984,
+      "uart_wait_us": 61906,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 129168,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "live-7",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 2.906,
+        "p95": 2.906,
+        "maximum": 2.906
+      },
+      "inference_ms": {
+        "median": 2.013,
+        "p95": 2.013,
+        "maximum": 2.013
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 61899,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 129168,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "live-8",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 2.916,
+        "p95": 2.916,
+        "maximum": 2.916
+      },
+      "inference_ms": {
+        "median": 2.016,
+        "p95": 2.016,
+        "maximum": 2.016
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 61039,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 129168,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "live-9",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 2.905,
+        "p95": 2.905,
+        "maximum": 2.905
+      },
+      "inference_ms": {
+        "median": 2.01,
+        "p95": 2.01,
+        "maximum": 2.01
+      },
+      "inferences_per_second": 20.0,
+      "uart_wait_us": 61862,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 129168,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    },
+    {
+      "batch_id": "live-10",
+      "phase": "live",
+      "series": 0,
+      "period_us": 50000,
+      "scheduled": 1,
+      "counts": {
+        "ok": 1,
+        "late": 0,
+        "missed": 0,
+        "failed": 0
+      },
+      "deadline_failure_percent": 0.0,
+      "processing_ms": {
+        "median": 2.915,
+        "p95": 2.915,
+        "maximum": 2.915
+      },
+      "inference_ms": {
+        "median": 2.017,
+        "p95": 2.017,
+        "maximum": 2.017
+      },
+      "inferences_per_second": 19.99960000799984,
+      "uart_wait_us": 61441,
+      "uart_wait_scope": "complete",
+      "memory_before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 129168,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "memory_after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    }
+  ]
+}

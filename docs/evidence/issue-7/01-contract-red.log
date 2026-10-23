@@ -1,0 +1,15 @@
+test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict (test_inference.HardwareContractTests.test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict) ... ERROR
+
+======================================================================
+ERROR: test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict (test_inference.HardwareContractTests.test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/richie/Desktop/edge-ai-gearshift/tests/test_inference.py", line 22, in test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict
+    self.assertIsNone(validate_result(record, 50, simulated=False, model_id=MODEL))
+                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_result() got an unexpected keyword argument 'simulated'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

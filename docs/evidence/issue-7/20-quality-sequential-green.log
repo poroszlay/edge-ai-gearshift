@@ -1,0 +1,8 @@
+test_quality_visits_every_window_without_a_realtime_deadline (test_inference.DeadlineTests.test_quality_visits_every_window_without_a_realtime_deadline) ... ok
+test_firmware_quality_batch_visits_each_preloaded_window_once (test_inference.FirmwareProtocolTests.test_firmware_quality_batch_visits_each_preloaded_window_once) ... ok
+test_porting_report_separates_raw_input_mismatch_from_output_tolerance_and_quality (test_inference.PortingReportTests.test_porting_report_separates_raw_input_mismatch_from_output_tolerance_and_quality) ... skipped 'install requirements-model.txt for quality metrics'
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.356s
+
+OK (skipped=1)

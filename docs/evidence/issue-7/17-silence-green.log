@@ -1,0 +1,6 @@
+test_capture_rejects_response_bytes_before_execution_finished (test_inference.UartSilenceTests.test_capture_rejects_response_bytes_before_execution_finished) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.009s
+
+OK

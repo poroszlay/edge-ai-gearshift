@@ -1,0 +1,45 @@
+{
+  "run_id": "d52856bc585a4603b6bc40c5eceefa78",
+  "raw_device_response": {
+    "v": 1,
+    "type": "ack",
+    "request_id": "1333",
+    "run_id": "d52856bc585a4603b6bc40c5eceefa78",
+    "mode": "benchmark",
+    "simulated": false,
+    "model_id": "6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79",
+    "batch_id": "p100-s2",
+    "count": 1000,
+    "period_ms": 100,
+    "uart_during_execution": false,
+    "end_us": 100000001,
+    "uart_wait_us": 683924967,
+    "memory": {
+      "before": {
+        "free_heap_bytes": 136788,
+        "minimum_free_heap_bytes": 81172,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      },
+      "after": {
+        "free_heap_bytes": 136296,
+        "minimum_free_heap_bytes": 136296,
+        "largest_free_block_bytes": 110592,
+        "stack_high_water_bytes": 14140,
+        "model_workspace_bytes": 32768,
+        "device_state_bytes": 69792,
+        "result_buffer_bytes": 60000,
+        "window_buffer_bytes": 9600
+      }
+    }
+  },
+  "previous_execute_ack_host_ms": 474013.08513999905,
+  "current_execute_ack_host_ms": 588346.7344559995,
+  "upper_bound_us": 115333649.3160004,
+  "accepted": false,
+  "origin": "not determined; device value or transmission, not export"
+}

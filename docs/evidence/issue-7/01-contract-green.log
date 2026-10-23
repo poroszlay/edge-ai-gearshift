@@ -1,0 +1,6 @@
+test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict (test_inference.HardwareContractTests.test_hardware_result_accepts_mlp_and_keeps_simulator_contract_strict) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK

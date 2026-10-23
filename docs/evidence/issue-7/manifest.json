@@ -1,0 +1,152 @@
+{
+  "schema": "gearshift.issue7.evidence.v1",
+  "issue": 7,
+  "firmware_source_commit": "2d0fefed989e81cab008047c11cf7dc2ea07d95d",
+  "client_source_commit": "aeef05f211183d70c912a6d86463b39b7483d2e0",
+  "numeric_campaign_client_commit": "2d0fefed989e81cab008047c11cf7dc2ea07d95d",
+  "model_id": "6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79",
+  "dataset_id": "ef6f8048efec22e32cc44fd4c58b08052359ab6880ee52c2257e3da59f27ba4a",
+  "board": {
+    "chip": "ESP32-D0WD-V3",
+    "revision": "3.1",
+    "flash_bytes": 4194304,
+    "mac": "3c:8a:1f:77:57:dc",
+    "cpu_mhz": 240,
+    "baud": 921600
+  },
+  "runtime": {
+    "idf": "5.5.1",
+    "tflm": "1.3.5",
+    "esp_nn": "1.1.1",
+    "fully_connected": "upstream TFLM reference",
+    "TFLITE_SINGLE_ROUNDING": 1,
+    "softmax": "ESP-NN",
+    "arena_storage": "static",
+    "arena_bytes": 32768
+  },
+  "source_sha256": {
+    "firmware/esp32/components/measurement/include/measurement.h": "470230e8dc68b78d3c72ddc6fd5c8c52a73e877b99362e5f8525418856f5886e",
+    "firmware/esp32/components/measurement/measurement.cc": "8bd69a44efb771e73a5f0941a2e382b230f7fe65d39ddb880fbe638925d61a7f",
+    "firmware/esp32/inference/CMakeLists.txt": "790d4fd5dd4b485d7df439b95b8fa85a92e52442e9f5b5f9184f8e3da21d1d9f",
+    "firmware/esp32/inference/build.sh": "356d7e818d8137c8bc7a3ebd80d9470f8c95821e082b0942c2e1fc0538b6fc12",
+    "firmware/esp32/inference/dependencies.lock": "ddf49dcc54656fe7d2343836fae6479bc8333a6b5a86b4df5d9b39e260d6d078",
+    "firmware/esp32/inference/main/CMakeLists.txt": "41349aa0509db9cdb6ba2ae35896b87bbb040f6a52e63cdba2741ee108937bfa",
+    "firmware/esp32/inference/main/device.cc": "cb4b87b6d56cbf5c3967eec9d8f61b83acac8d6ea6133b55239a29a5aa883e4b",
+    "firmware/esp32/inference/main/device.h": "d2722f1adce31d5915b32fb16c3b05dc9ead0928d2c4a7ef468502e4c2bf3f28",
+    "firmware/esp32/inference/main/idf_component.yml": "488d26492f7808538e846d4bfa32924c902aeb7ac392bd424a5551ce0926dafc",
+    "firmware/esp32/inference/main/inference.h": "1cf18962a7ce3082adccad83c1b4a974d57a8bef81d0d3ea2e0c672ed00f7552",
+    "firmware/esp32/inference/main/main.cc": "d99f45f8fb536ad23c371057f16c33cf8833ac051202015d667a44f23def4b1a",
+    "firmware/esp32/inference/main/reference_fc.cc": "597432baf4178aa0adb5b932f95265d10f1e4c42927b561b71ebe60d2960e5dc",
+    "firmware/esp32/inference/sdkconfig.defaults": "68628d1fa06f3a15198bdc115f2ed7628f3bc971a11bef8d205633a196c94203",
+    "gearshift/client.py": "3ec04d19bb26ac79a3e4d51c69cb4092b8287eb05b2cc9472363a6b41583403a",
+    "gearshift/protocol.py": "6ed51d6a184f48bbf2b3ecca5aa9c93fe27259800b654a6e1f6d2764a6894bbe",
+    "gearshift/run_report.py": "31321f55a74f5d52cbcc3e59fc95fa9687fe116b54dba4ff2336dfdfa3c110a4",
+    "gearshift/uart.py": "466d2b8ed685156a500ea0a1b82229b3574ecac5793aefd7f021db328cc28fa2",
+    "pc/model.py": "db3d9ab152e58aa476e2d4c0e6d6d25d8660a1440b293daf470f5d995f08854e",
+    "tools/embed-model.py": "6d5c8aaad311bd7e84f44808925b138c0d0f3646658c62fbe8ce165d92d5c431",
+    "tools/run-esp32.sh": "ac65bd2dc414dee310bc2bb1c65725d90eca4ad50ebbe70ac5890b275c77a07f"
+  },
+  "build": {
+    "project_version": "2d0fefe",
+    "firmware_bytes": 306512,
+    "model_bytes": 13696
+  },
+  "runs": {
+    "live": {
+      "run_ids": [
+        "27afb01e56244d54b4fec9197f2a1078"
+      ],
+      "windows": 11,
+      "max_output_difference": 0
+    },
+    "quality": {
+      "run_ids": [
+        "c7a2309bdc2542959056cd78a9f20f07"
+      ],
+      "windows": 71430,
+      "max_output_difference": 0,
+      "macro_f1": 0.760699131233148
+    },
+    "benchmark": {
+      "run_id": "8183cf68d8cc4307a1d883b0f4adf51b",
+      "series": 16,
+      "scheduled": 12400,
+      "measured": 12000
+    },
+    "gui_hardware": [
+      {
+        "mode": "live",
+        "run_id": "0909ba12102a4e128aeb2935ca417dcc",
+        "scheduled": 11,
+        "csv_roundtrip": true
+      },
+      {
+        "mode": "benchmark",
+        "run_id": "fddd99ae35ae42bc9de5d1fab60c5af6",
+        "scheduled": 3100,
+        "csv_roundtrip": true
+      }
+    ]
+  },
+  "local_artifacts_sha256": {
+    "results/issue-7/final-benchmark/client.log": "f16ae476d1a8ec6cc8103d11a96fb3d2555754b0221350f0cb80ecc40669bd2a",
+    "results/issue-7/final-benchmark/events.csv": "d7abceab95135c63951d3f53a64a8fabbe42c336ed7669d96b3188464d637aa4",
+    "results/issue-7/final-benchmark/events.jsonl": "4f7ed14dac3b7270f5ed66cbbc9d6dc73dd3552b4e8c3a7bdb17c3b738416707",
+    "results/issue-7/final-benchmark/report.json": "fe00b58adba0763370e28dcd6d269bbb9d38e7dd4cdcfb8445d0d11e3573e18f",
+    "results/issue-7/final-benchmark/reset.log": "ad2f1c05d356fff7addc600057f1f8131ed200c7e5f6397b4cd45419ea20a8e2",
+    "results/issue-7/final-benchmark/uart-audit.json": "46083a340eecbd8fd63e36f396fdf705e10381e6400da7add5383d581188fb74",
+    "results/issue-7/final-benchmark/wire.chunks.jsonl": "780aeefb17882308866296dc5c2093ba129614b8be99a202a0813392e50c73be",
+    "results/issue-7/final-benchmark/wire.rx": "0a2ea26142d7f376d62e2511c52e4ad06bfe30dbb3a82ebe26d6c782ff083914",
+    "results/issue-7/final-benchmark/wire.tx": "f2fe6b299a8c5b3ab429dd20c7b7f1bc77ef510b8a34dde99b440f1e1a486a7c",
+    "results/issue-7/final-build/arithmetic-compile-proof.json": "0315a33e50bf5a2f18bca206c0a65b07442a1f03d0a9f99867bd1eac6a90809b",
+    "results/issue-7/final-build/bootloader.bin": "b26d812d574a8eb4fd994d58bec5f44390c7a595bd12fae84556b1748b59c92f",
+    "results/issue-7/final-build/flasher_args.json": "9508c155495248a6f23423aed4bda25562467862ae49bf297c46dcaeb218b089",
+    "results/issue-7/final-build/gearshift_int8.bin": "6e07cd707b6c560a51568ebfb4c0f6e91293ad39e22d5ae4d1a6d8a8d1fd8121",
+    "results/issue-7/final-build/gearshift_int8.elf": "7c820e8423e1ee53bd5e14735c3eec893c04cbdc8a8a4a5737d28a2256033afb",
+    "results/issue-7/final-build/partition-table.bin": "7f00b6c042a89b15b0cac534f82ed988caf29278ff5700b0c511eb1b5bb7c820",
+    "results/issue-7/final-build/project_description.json": "8c3f8180610f5ce50c63bbb8ed046bd2cdf35c042442ce6a521667f80be60c18",
+    "results/issue-7/final-build/sdkconfig": "6749fedb054616f3cd06d6a5863b8a8c92100e1d288ca81f90c1b65ce6577cf2",
+    "results/issue-7/final-build/sdkconfig.h": "15ce1882cf8739b31141d4bf4f2fded869af496561eeb500cd41fd446cb40ace",
+    "results/issue-7/final-build/size.json": "9751774443bc3b461ee576eda7254a2860e74c5987c53d82c620f60045b533da",
+    "results/issue-7/final-live/client.log": "f3bae23615100ea06505d3ac4e9c0a9163051927c09d6687355e071d48f989ec",
+    "results/issue-7/final-live/events.csv": "a652cbecbaa95ff5767991962309a6a1f00d82b1e1878b435c2888d07453584d",
+    "results/issue-7/final-live/events.jsonl": "e7186fda52f1b24708a15991f855a61f4a1a98dcf5125fe7668d1afb72413394",
+    "results/issue-7/final-live/measurement.json": "29e56318866902d5c74e62792ef61cc4681be5e6d73d872ba1a8f9830ff8ca75",
+    "results/issue-7/final-live/porting.json": "7133984f115e05336817712c828f6e587230934c2948b0540e72b14a1d58f456",
+    "results/issue-7/final-live/reset.log": "d6b0f4b2c3d987039bfd0564794857ac9c3ae3a60bd86b46c2ad5fcccd218ead",
+    "results/issue-7/final-live/uart-audit.json": "432902cc85017f1d641499d39621cf6cef35a232c4b5af83df4623f3ca312413",
+    "results/issue-7/final-live/wire.chunks.jsonl": "2914352f57b849f07872e4169a252eef120a108a81f4dbcbefb2382a7a1160db",
+    "results/issue-7/final-live/wire.rx": "e07cac98235c95c0934fbf4104888332b132310cfd8f075f5cb8cce4f8cf74de",
+    "results/issue-7/final-live/wire.tx": "3dc1bd69785518a1d77b019820c9c27174f8c88cc2074a82752af3bd2cc8b691",
+    "results/issue-7/final-quality/client.log": "e84e118fd48d3271c9adb4ea3a770c401bb7b183e0b334b455f2be0083626030",
+    "results/issue-7/final-quality/events.jsonl": "940247bd6d2fc2f7435209ceac3cc3b3f9ded9c59448bd5958e3b70e71959e68",
+    "results/issue-7/final-quality/porting-quality.json": "79c2c8dc390983075b36c218d75daf761a45c046e24ec338c4492cf50e2d56f4",
+    "results/issue-7/final-quality/reset.log": "f7e6c4ae43f3c764d3d03fee95e6dda5f22e5ac394cfddc9f5936b70a274e90d",
+    "results/issue-7/final-quality/uart-audit.json": "249360b745daa3191f9cd77b3fc843ba8827ce96f22bc092b03e0be8f65a4ee7",
+    "results/issue-7/final-quality/wire.chunks.jsonl": "4502283589dadebd6a0f8b896ecf6d0c4979845b0bcb360926319be102483deb",
+    "results/issue-7/final-quality/wire.rx": "f97473ca04745eaac8dc469c215d29cd26a041c7f8ba489199ae7600771c1e61",
+    "results/issue-7/final-quality/wire.tx": "41c44ed7e1ea1c00430a3019d672e548a33dc2d32f9ec03e6e0f7a75271edc37",
+    "results/issue-7/final-test/pc-quality.json": "612fe466cd6c2c6b645d96294476daecc8be6b412dde0d6832caea4cd116b05a",
+    "results/issue-7/final-test/reference.jsonl": "e93b838b52bc49df9275f6d7f9d415fa93e3de882c870f9783f55a7f9351ba0b",
+    "results/issue-7/final-test/windows.jsonl": "287901492c7341cd7511d50e016b410077c39c178a4b2e5cf9ea161173f6aba1",
+    "results/issue-7/gui-benchmark/events.csv": "90abf84a27fd278b8a77cda3bf6c39652617192cf3f2cb6d1b0b3c92ea0c3a5d",
+    "results/issue-7/gui-benchmark/events.jsonl": "e9174e6766641232355f5e598c9cbf30b2c132b5b0c7065b7acf5abcea94402c",
+    "results/issue-7/gui-benchmark/reset.log": "f4deeefd83f646915eb7d71e4240840ee2f12ca0b7cdb3575fa8fb5d459da532",
+    "results/issue-7/gui-live/events.csv": "eb8e605538d9fff311271d535ed9e4178bf1764d8123db93471339fc11c7e7e1",
+    "results/issue-7/gui-live/events.jsonl": "d0f00df3c064b8c2a45bccad7c6dab0ca4bef93184b3151703449b30597c253e",
+    "results/issue-7/gui-live/reset.log": "f7e6c4ae43f3c764d3d03fee95e6dda5f22e5ac394cfddc9f5936b70a274e90d"
+  },
+  "additional_validated_source_sha256": {
+    "gearshift/gui.py": "764d48b90a1c29f481cbe3be6e28ab5f85a40c946b5ea278f53cb7e35ead2f2c",
+    "tests/inference_host.cc": "aa5aced75b76f5db26e5ac009940cb17d59ea20465b9a0c1617e7e196cd0f657",
+    "tests/test_inference.py": "759dde748ac3aec789c84096f34981773033fd1296bcdf9ee4f9154ba9944f37",
+    "tests/test_inference_ui.py": "30a74c584eb446cf96bac78aa2a086905406e5ea2384d9538102fe0beb46d0ce"
+  },
+  "tests": {
+    "total": 102,
+    "status": "OK",
+    "optional_hardware_skips": 2,
+    "log_sha256": "bd868e1e69a18f38b15e62d791ac2da2e775cfdfd43771b55add02b069958a67",
+    "separate_inference_hardware_test": "1/1 passed; 11 raw windows and the rounding regression"
+  }
+}

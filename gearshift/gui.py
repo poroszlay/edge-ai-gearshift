@@ -37,7 +37,7 @@ class Window(QMainWindow):
         form = QFormLayout()
         layout.addLayout(form)
         self.device = QComboBox()
-        self.device.addItems(['Beépített eszközszimulátor', 'TCP eszközszimulátor'])
+        self.device.addItems(['Beépített eszközszimulátor', 'TCP eszközszimulátor', 'ESP32 UART'])
         form.addRow('Eszköz', self.device)
         self.host = QLineEdit('127.0.0.1')
         form.addRow('TCP host', self.host)
@@ -45,6 +45,14 @@ class Window(QMainWindow):
         self.port.setRange(1, 65535)
         self.port.setValue(8765)
         form.addRow('TCP port', self.port)
+        self.serial_port = QLineEdit('/dev/ttyUSB0')
+        form.addRow('UART port', self.serial_port)
+        self.model_id = QLineEdit('6d5ac8613d301ca06de2ca9a4cfbadf3cd40c7c75a7af419505eaa9fcbb25f79')
+        form.addRow('Elvárt modell SHA-256', self.model_id)
+        self.baud = QComboBox()
+        self.baud.addItems(['115200', '921600'])
+        self.baud.setCurrentText('921600')
+        form.addRow('UART baud', self.baud)
         self.mode = QComboBox()
         self.mode.addItems(['Élő megfigyelés', 'Előtöltött terhelésmérés'])
         form.addRow('Üzemmód', self.mode)
@@ -108,14 +116,20 @@ class Window(QMainWindow):
         self.memory_curve = self.memory_plot.plot(pen='#3fb950', symbol='o')
         layout.addWidget(self.memory_plot)
         self.config_widgets = [self.device, self.host, self.port, self.mode, self.timeout,
-                               self.duration, self.input, self.browse] + [b for _, b in self.profiles]
+                               self.duration, self.input, self.browse, self.serial_port,
+                               self.model_id, self.baud] + [b for _, b in self.profiles]
         self.mode.currentIndexChanged.connect(self.configure)
-        self.device.currentIndexChanged.connect(self.configure)
+        self.device.currentIndexChanged.connect(self.select_device)
         self.configure()
         self.timer = QTimer(self)
         self.timer.setInterval(50)
         self.timer.timeout.connect(self.poll)
         self.timer.start()
+
+    @Slot()
+    def select_device(self):
+        self.timeout.setValue(120 if self.device.currentIndex() == 2 else 5)
+        self.configure()
 
     @Slot()
     def configure(self):
@@ -125,6 +139,16 @@ class Window(QMainWindow):
         self.host.setEnabled(not busy and self.device.currentIndex() == 1)
         self.port.setEnabled(self.host.isEnabled())
         self.duration.setEnabled(not busy and self.device.currentIndex() == 0)
+        hardware = self.device.currentIndex() == 2
+        for widget in (self.serial_port, self.model_id, self.baud):
+            widget.setEnabled(not busy and hardware)
+        if not self.points and not self.memory:
+            self.origin.setText('ESP32 • saját INT8 MLP • mért MCU-idő és heap' if hardware else
+                                'SZIMULÁCIÓ • hold döntési stub • virtuális idő • memóriabecslés')
+            self.time_plot.setTitle('MCU-feldolgozás – utolsó 2000 feladat' if hardware else
+                                    'Virtuális MCU-feldolgozás – utolsó 2000 feladat')
+            self.memory_plot.setTitle('Szabad heap a sorozat után' if hardware else 'Szimulált munkakészlet – nem mért RAM')
+            self.memory_plot.setLabel('left', 'Szabad heap' if hardware else 'Memóriabecslés', units='B')
         for _, box in self.profiles:
             box.setEnabled(not busy and self.mode.currentIndex() == 1)
         self.explanation.setText(
@@ -158,12 +182,14 @@ class Window(QMainWindow):
             mode=('live', 'benchmark')[self.mode.currentIndex()],
             demo=self.device.currentIndex() == 0, host=self.host.text(), port=self.port.value(),
             timeout=self.timeout.value(), profiles=profiles or (10, 20, 50, 100),
-            input_path=self.input.text(), duration_ms=self.duration.value()))
+            input_path=self.input.text(), duration_ms=self.duration.value(),
+            serial_port=self.serial_port.text() if self.device.currentIndex() == 2 else '',
+            model_id=self.model_id.text(), baud=int(self.baud.currentText())))
         self.finished = False
         self.start_button.setEnabled(False)
         self.stop_button.setEnabled(True)
         self.export_button.setEnabled(False)
-        self.status.setText('Indítás… SZIMULÁCIÓ')
+        self.status.setText('Indítás… ' + ('ESP32' if self.device.currentIndex() == 2 else 'SZIMULÁCIÓ'))
         self.configure()
         self.session.start()
 
@@ -176,14 +202,16 @@ class Window(QMainWindow):
 
     def consume(self, row):
         event = row['event']
+        origin = 'SZIMULÁCIÓ' if row['simulated'] else 'ESP32'
         if event == 'batch_start':
-            self.status.setText(f"SZIMULÁCIÓ • {row['mode']} • {row['batch_id']} • "
+            self.status.setText(f"{origin} • {row['mode']} • {row['batch_id']} • "
                                 f"{row['phase']} • T=D={row['period_ms']} ms")
         elif event == 'send' and row['message']['type'] == 'execute':
-            self.status.setText(f"SZIMULÁCIÓ • {row['mode']} • feldolgozás; eredményre vár…")
+            self.status.setText(f"{origin} • {row['mode']} • feldolgozás; eredményre vár…")
         elif event == 'batch_memory':
             self.memory.append((row['host_elapsed_ms'] / 1000,
-                                float(row['simulated_memory_bytes'])))
+                                float(row['simulated_memory_bytes'] if row['simulated'] else
+                                      row['memory']['after']['free_heap_bytes'])))
         elif event == 'result':
             self.result_index += 1
             self.points.append((self.result_index, row.get('processing_ms', math.nan)))
@@ -193,7 +221,7 @@ class Window(QMainWindow):
         if self.result_index:
             self.totals.setText(' | '.join(
                 f'{phase}: ' + ', '.join(f'{status}={self.counts[(phase, status)]}'
-                                         for status in ('ok', 'late', 'missed', 'invalid_window'))
+                                         for status in ('ok', 'late', 'missed', 'invalid_window', 'model_error', 'memory_error'))
                 for phase in ('live', 'warmup', 'measured')
                 if any(p == phase for p, _ in self.counts)))
 
@@ -222,7 +250,7 @@ class Window(QMainWindow):
                 self.show_totals()
                 terminal = self.session.rows[-1]
                 self.status.setText({
-                    'run_complete': 'Befejezett szimulált futás.',
+                    'run_complete': ('Befejezett szimulált futás.' if terminal['simulated'] else 'Befejezett ESP32-futás.'),
                     'run_stopped': 'Leállított, részleges futás.',
                     'run_failed': 'Hibás, részleges futás.'
                 }.get(terminal['event'], 'Hiányos futás.') + ' ' + terminal.get('error', ''))
@@ -235,7 +263,8 @@ class Window(QMainWindow):
         except queue.Empty:
             pass
         else:
-            self.export_status.setText(f'Exporthiba: {error}' if error else 'CSV-export elkészült (szimulált futás).')
+            origin = 'szimulált futás' if self.session.rows[-1]['simulated'] else 'ESP32-futás'
+            self.export_status.setText(f'Exporthiba: {error}' if error else f'CSV-export elkészült ({origin}).')
             self.start_button.setEnabled(True)
             self.export_button.setEnabled(True)
         if self.closing and (not self.session or self.finished) and (

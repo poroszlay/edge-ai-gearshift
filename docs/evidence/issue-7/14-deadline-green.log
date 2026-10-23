@@ -1,0 +1,6 @@
+test_hardware_deadline_is_measured_from_scheduled_start (test_inference.DeadlineTests.test_hardware_deadline_is_measured_from_scheduled_start) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK

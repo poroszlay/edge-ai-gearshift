@@ -1,0 +1,6 @@
+test_capture_keeps_received_bytes_and_transmit_boundaries (test_inference.UartCaptureTests.test_capture_keeps_received_bytes_and_transmit_boundaries) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.009s
+
+OK

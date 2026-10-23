@@ -1,0 +1,15 @@
+test_hardware_deadline_is_measured_from_scheduled_start (test_inference.DeadlineTests.test_hardware_deadline_is_measured_from_scheduled_start) ... FAIL
+
+======================================================================
+FAIL: test_hardware_deadline_is_measured_from_scheduled_start (test_inference.DeadlineTests.test_hardware_deadline_is_measured_from_scheduled_start)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/richie/Desktop/edge-ai-gearshift/tests/test_inference.py", line 306, in test_hardware_deadline_is_measured_from_scheduled_start
+    self.assertIsNone(validate_result(record, 50, simulated=False, model_id=MODEL))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'result_schema_mismatch' is not None
+
+----------------------------------------------------------------------
+Ran 1 test in 0.006s
+
+FAILED (failures=1)

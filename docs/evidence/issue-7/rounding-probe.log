@@ -1,0 +1,9 @@
+/tmp/gearshift-quality-venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+{"single_rounding": false, "layers": [{"tensor": 7, "different": 1, "pc": null, "emulated": null}, {"tensor": 8, "different": 3, "pc": null, "emulated": null}, {"tensor": 9, "different": 1, "pc": [92, 95, -14], "emulated": [92, 96, -14]}]}
+{"single_rounding": true, "layers": [{"tensor": 7, "different": 0, "pc": null, "emulated": null}, {"tensor": 8, "different": 0, "pc": null, "emulated": null}, {"tensor": 9, "different": 0, "pc": [92, 95, -14], "emulated": [92, 95, -14]}]}
+PC output [[-120, 120, -128]]

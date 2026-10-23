@@ -36,8 +36,9 @@ cmp frozen-repeat.jsonl models/mlp-v2/pc-reference.jsonl
 ```
 
 A csomagot későbbi kísérlet nem írhatja felül. Az alábbi v1 példák és a régi
-buildbizonyítékok a történeti baseline reprodukálását mutatják; a v2 saját
-ESP32-buildje és hardveres ellenőrzése a #7-re marad, nem igazolt eredmény.
+buildbizonyítékok a történeti baseline reprodukálását mutatják. A v2 saját
+ESP32-buildjét és hardveres ellenőrzését a [#7 naplója](evidence/issue-7/verification.md)
+rögzíti; a korábbi v1 build önmagában nem v2-bizonyíték.
 Az aktuális [#7 átadás](evidence/issue-6/handoff-7.md) már a v2-re mutat.
 
 ## Környezet és adatok

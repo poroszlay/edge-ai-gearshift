@@ -1,0 +1,14 @@
+test_real_live_log_is_analyzable_and_incomplete_accounting_is_rejected (test_inference.HardwareMeasurementReportTests.test_real_live_log_is_analyzable_and_incomplete_accounting_is_rejected) ... ERROR
+
+======================================================================
+ERROR: test_real_live_log_is_analyzable_and_incomplete_accounting_is_rejected (test_inference.HardwareMeasurementReportTests.test_real_live_log_is_analyzable_and_incomplete_accounting_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/richie/Desktop/edge-ai-gearshift/tests/test_inference.py", line 288, in test_real_live_log_is_analyzable_and_incomplete_accounting_is_rejected
+    from gearshift.run_report import analyze_run
+ModuleNotFoundError: No module named 'gearshift.run_report'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

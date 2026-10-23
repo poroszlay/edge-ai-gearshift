@@ -1,0 +1,15 @@
+test_capture_keeps_received_bytes_and_transmit_boundaries (test_inference.UartCaptureTests.test_capture_keeps_received_bytes_and_transmit_boundaries) ... ERROR
+
+======================================================================
+ERROR: test_capture_keeps_received_bytes_and_transmit_boundaries (test_inference.UartCaptureTests.test_capture_keeps_received_bytes_and_transmit_boundaries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/richie/Desktop/edge-ai-gearshift/tests/test_inference.py", line 272, in test_capture_keeps_received_bytes_and_transmit_boundaries
+    with SerialTransport(os.ttyname(slave), capture_prefix=prefix) as port:
+         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SerialTransport.__init__() got an unexpected keyword argument 'capture_prefix'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.007s
+
+FAILED (errors=1)

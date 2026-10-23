@@ -1,0 +1,6 @@
+test_raw_reference_and_rounding_regression_match_the_frozen_pc (test_inference_hardware.InferenceHardwareTests.test_raw_reference_and_rounding_regression_match_the_frozen_pc) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.048s
+
+OK
