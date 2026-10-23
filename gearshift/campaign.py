@@ -7,20 +7,15 @@ import argparse
 import json
 from pathlib import Path
 from .protocol import encode
+from .frozen_export import read_frozen_export
 
 
 def prepare(dataset, export, output):
     from pc.model import ReferenceModel, read_windows, quantize, classification_report, file_hash
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
+    read_frozen_export(export)
     reference = ReferenceModel(export)
-    freeze = json.loads((Path(export) / 'freeze.json').read_text())
-    if (freeze.get('frozen') is not True or freeze.get('model_id') != reference.model_id
-            or freeze.get('dataset_id') != reference.metadata['dataset_id']):
-        raise ValueError('final evaluation requires the frozen model')
-    for name, digest in freeze['sha256'].items():
-        if file_hash(Path(export) / name) != digest:
-            raise ValueError(f'frozen checksum mismatch: {name}')
     x, y, ids, manifest = read_windows(dataset, 'test', purpose='final-evaluation')
     if manifest['dataset_id'] != reference.metadata['dataset_id']:
         raise ValueError('frozen model/dataset mismatch')

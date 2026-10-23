@@ -13,7 +13,8 @@ if(NOT CMAKE_BUILD_EARLY_EXPANSION)
         set(GEARSHIFT_MODEL_DIR "${REPO_ROOT}/models/mlp-v2")
     endif()
     file(GLOB MODEL_FILES "${GEARSHIFT_MODEL_DIR}/*")
-    set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS ${MODEL_FILES} "${REPO_ROOT}/tools/embed-model.py")
+    set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS ${MODEL_FILES}
+        "${REPO_ROOT}/tools/embed-model.py" "${REPO_ROOT}/gearshift/frozen_export.py")
     execute_process(COMMAND "${PYTHON}" "${REPO_ROOT}/tools/embed-model.py"
         "${GEARSHIFT_MODEL_DIR}" "${CMAKE_CURRENT_BINARY_DIR}/model_data.h"
         RESULT_VARIABLE EMBED_RESULT)

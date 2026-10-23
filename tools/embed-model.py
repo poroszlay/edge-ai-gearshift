@@ -1,24 +1,22 @@
 #!/usr/bin/env python3
 """Generate a model header only from a self-consistent frozen INT8 export."""
-import hashlib
 import json
 from pathlib import Path
 import sys
 
+# CMake invokes this file by absolute path from its build directory, with
+# the SDK's stdlib-only Python environment rather than an installed package.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from gearshift.frozen_export import read_frozen_export
+
 root, destination = map(Path, sys.argv[1:])
-meta = json.loads((root / 'export.json').read_text())
-freeze = json.loads((root / 'freeze.json').read_text())
-blob = (root / 'model.tflite').read_bytes()
-identity = hashlib.sha256(blob).hexdigest()
-if (identity != meta['model_id'] or identity != freeze['model_id']
-        or not freeze['frozen'] or meta['class_order'] != ['downshift', 'hold', 'upshift']
+meta, blob = read_frozen_export(root)
+identity = meta['model_id']
+if (meta['class_order'] != ['downshift', 'hold', 'upshift']
         or meta['input_version'] != 'window-v1:20x5:sample-major:fixed-scaling:float32'
         or meta['input']['shape'] != [1, 100] or meta['output']['shape'] != [1, 3]
         or meta['input']['dtype'] != 'int8' or meta['output']['dtype'] != 'int8'):
     raise ValueError('frozen model contract mismatch')
-for name, digest in freeze['sha256'].items():
-    if hashlib.sha256((root / name).read_bytes()).hexdigest() != digest:
-        raise ValueError(f'freeze checksum mismatch: {name}')
 lines = ['#pragma once', '#include <cstdint>', 'namespace embedded {',
          f'constexpr char model_id[] = {json.dumps(identity)};',
          f'constexpr char dataset_id[] = {json.dumps(meta["dataset_id"])};',
