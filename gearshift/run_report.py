@@ -2,7 +2,7 @@
 import argparse
 import json
 from pathlib import Path
-from .protocol import validate_result
+from .protocol import validate_result, number
 from .profiler import analyze, check
 
 
@@ -19,8 +19,16 @@ def analyze_run(rows, *, require_benchmark=False):
     records = []
     seen = set()
     batches = tasks = 0
+    previous_execute_ack_ms = 0
     for row in rows:
         kind = row['event']
+        if kind == 'receive' and row.get('message', {}).get('type') == 'ack' and 'end_us' in row['message']:
+            host_ms = row.get('host_elapsed_ms')
+            wait = row['message'].get('uart_wait_us')
+            check(number(host_ms) and host_ms >= previous_execute_ack_ms
+                  and type(wait) is int and 0 <= wait <= (host_ms-previous_execute_ack_ms)*1000+1_000_000,
+                  'implausible UART pause relative to host elapsed time')
+            previous_execute_ack_ms = host_ms
         if kind in ('failure', 'run_failed', 'run_stopped'):
             raise ValueError('failed run')
         if kind == 'batch_start':

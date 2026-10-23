@@ -184,3 +184,9 @@ JSON-on kívüli watchdog/panic/reset szöveget. Az execute után elsőként
 megfigyelt válaszbájt nem érkezhet a mért végrehajtás vége előtt. A
 hostidőbélyegek külön, explicit 2 ms-os műszerezési engedményt kapnak;
 ez nem módosítja az INT8 numerikus tűrést vagy a feladatok határidejét.
+
+A UART-szünetre a kliens és a jelentéskészítő hostidő szerinti felső
+korlátot is alkalmaz (szomszédos execute-ACK-k köze + 1 s). Ez egy
+konzervatív konzisztenciakapu, nem a mért érték módosítása vagy a
+feladathatáridő lazítása. Hibás értékkel a futás részleges marad.
+A diagnosztikai és végső benchmarkfutás külön run_id-t kap.

@@ -204,3 +204,10 @@ viszonyított valódi mérések. Ez nem a négyprofilos benchmark,
 és a kliens `phase=quality` jelöléssel exportálja. Normál benchmarknál
 a count továbbra is 100/1000, élő módban 1. A közös verzió és a korábbi
 szimulátorkérések változatlanok.
+
+A paneles kliens és a mérési elemző a `uart_wait_us` mezőt az egymást
+követő execute-ACK-k hostidőközével is ellenőrzi. A felső korlát az ACK-köz
++ 1 s konzervatív host/eszköz-időzítési tartalék; ez nem mérési korrekció
+és nem változtat a feladathatáridőn. Lehetetlen értéknél
+`invalid_hardware_uart_wait` hiba és részleges futás keletkezik,
+a nyers válasz megmarad. Nincs automatikus újraküldés vagy értékjavítás.

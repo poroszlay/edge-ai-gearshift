@@ -15,12 +15,13 @@ struct HostPlatform : Platform {
 };
 struct HostRuntime : Runtime {
     HostPlatform& clock;
+    Error failure;
     int8_t in[100]{}, out[3]{-128,100,-100};
-    explicit HostRuntime(HostPlatform& p):clock(p){}
-    Error ready() override { return Error::none; }
+    explicit HostRuntime(HostPlatform& p,Error f):clock(p),failure(f){}
+    Error ready() override { return failure==Error::memory_error ? failure : Error::none; }
     int8_t* input() override { return in; }
     const int8_t* output() override { return out; }
-    Error invoke() override { clock.time+=25000; return Error::none; }
+    Error invoke() override { clock.time+=25000; return failure; }
     float scale() override { return .005345386452972889f; }
     int zero() override { return -60; }
     const char* model_id() override { return "native_test_double"; }
@@ -28,9 +29,12 @@ struct HostRuntime : Runtime {
     size_t model_bytes() override { return 0; }
     size_t arena_bytes() override { return 0; }
 };
-int main() {
+int main(int argc,char** argv) {
     static HostPlatform platform;
-    static HostRuntime runtime(platform);
+    Error failure=Error::none;
+    if(argc==2 && std::string(argv[1])=="--model-error") failure=Error::model_error;
+    if(argc==2 && std::string(argv[1])=="--memory-error") failure=Error::memory_error;
+    static HostRuntime runtime(platform,failure);
     static Device device(runtime,platform);
     std::string line;
     while(std::getline(std::cin,line)) {

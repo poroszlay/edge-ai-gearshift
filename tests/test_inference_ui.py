@@ -27,3 +27,15 @@ class HardwareGuiTests(unittest.TestCase):
             self.assertNotIn('Virtuális', widget.time_plot.plotItem.titleLabel.text)
         finally:
             widget.close()
+
+    def test_selecting_next_device_does_not_relabel_existing_hardware_data(self):
+        widget = Window()
+        try:
+            widget.device.setCurrentIndex(2)
+            widget.consume(dict(event='result', simulated=False, processing_ms=3,
+                                phase='live', status='ok'))
+            widget.device.setCurrentIndex(0)
+            self.assertIn('ESP32', widget.origin.text())
+            self.assertNotIn('Virtuális', widget.time_plot.plotItem.titleLabel.text)
+        finally:
+            widget.close()

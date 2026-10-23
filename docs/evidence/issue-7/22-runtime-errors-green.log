@@ -1,0 +1,6 @@
+test_native_firmware_protocol_preloads_executes_fetches_and_accounts_benchmark (test_inference.FirmwareProtocolTests.test_native_firmware_protocol_preloads_executes_fetches_and_accounts_benchmark) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.352s
+
+OK

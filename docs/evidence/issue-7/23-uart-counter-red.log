@@ -1,0 +1,30 @@
+test_client_preserves_hardware_origin_numerics_and_memory_in_csv (test_inference.HardwareContractTests.test_client_preserves_hardware_origin_numerics_and_memory_in_csv) ... FAIL
+
+======================================================================
+FAIL: test_client_preserves_hardware_origin_numerics_and_memory_in_csv (test_inference.HardwareContractTests.test_client_preserves_hardware_origin_numerics_and_memory_in_csv)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/richie/Desktop/edge-ai-gearshift/tests/test_inference.py", line 98, in test_client_preserves_hardware_origin_numerics_and_memory_in_csv
+    with self.assertRaisesRegex(ProtocolError, 'invalid_hardware_uart_wait'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ProtocolError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.017s
+
+FAILED (failures=1)
+test_real_live_log_is_analyzable_and_incomplete_accounting_is_rejected (test_inference.HardwareMeasurementReportTests.test_real_live_log_is_analyzable_and_incomplete_accounting_is_rejected) ... FAIL
+
+======================================================================
+FAIL: test_real_live_log_is_analyzable_and_incomplete_accounting_is_rejected (test_inference.HardwareMeasurementReportTests.test_real_live_log_is_analyzable_and_incomplete_accounting_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/richie/Desktop/edge-ai-gearshift/tests/test_inference.py", line 343, in test_real_live_log_is_analyzable_and_incomplete_accounting_is_rejected
+    with self.assertRaisesRegex(ValueError, 'UART'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.025s
+
+FAILED (failures=1)

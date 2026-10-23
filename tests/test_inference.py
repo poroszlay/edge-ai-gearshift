@@ -88,6 +88,15 @@ class HardwareContractTests(unittest.TestCase):
         from gearshift.protocol import ProtocolError
         with self.assertRaisesRegex(ProtocolError, 'invalid_hardware_measurement'):
             Client(MissingMemoryPeer(), io.StringIO(), 'live', simulated=False, model_id=MODEL).run([example_window(0)])
+        class ImpossibleWaitPeer(Peer):
+            def sendall(self, data):
+                super().sendall(data)
+                reply = json.loads(self.data)
+                if 'uart_wait_us' in reply:
+                    reply['uart_wait_us'] = 10**12
+                self.data = json.dumps(reply).encode() + b'\n'
+        with self.assertRaisesRegex(ProtocolError, 'invalid_hardware_uart_wait'):
+            Client(ImpossibleWaitPeer(), io.StringIO(), 'live', simulated=False, model_id=MODEL).run([example_window(0)])
 
 class UartTests(unittest.TestCase):
     def test_uart_adapter_frames_real_pty_bytes_and_times_out(self):
@@ -233,6 +242,17 @@ class FirmwareProtocolTests(unittest.TestCase):
                                 for r in replies[-1]['records']))
             self.assertFalse(replies[2]['uart_during_execution'])
             self.assertGreaterEqual(replies[2]['end_us'], 1000000)
+            for argument, status in [('--model-error', 'model_error'), ('--memory-error', 'memory_error')]:
+                failed = subprocess.run([str(binary), argument],
+                    input=''.join(json.dumps(r)+'\n' for r in requests[:3]+[requests[4]]),
+                    capture_output=True, text=True, timeout=10)
+                errors = [json.loads(line) for line in failed.stdout.splitlines()][-1]['records']
+                expected_statuses = (['model_error', 'missed', 'missed', 'model_error',
+                                      'missed', 'missed', 'model_error', 'missed']
+                                     if argument == '--model-error' else ['memory_error'] * 8)
+                self.assertEqual([r['status'] for r in errors], expected_statuses)
+                self.assertTrue(all('decision' not in r and 'output_int8' not in r for r in errors))
+                self.assertTrue(all(r['error'] == status for r in errors if r['status'] != 'missed'))
 
 @unittest.skipUnless(importlib.util.find_spec('numpy'), 'install requirements-model.txt for quality metrics')
 class PortingReportTests(unittest.TestCase):
@@ -313,6 +333,14 @@ class HardwareMeasurementReportTests(unittest.TestCase):
         changed = copy.deepcopy(rows)
         changed.pop(next(i for i,r in enumerate(changed) if r['event'] == 'result'))
         with self.assertRaises(ValueError):
+            analyze_run(changed)
+        changed = copy.deepcopy(rows)
+        for r in changed:
+            if r['event'] == 'batch_memory':
+                r['uart_wait_us'] = 10**12
+            elif r['event'] == 'receive' and 'end_us' in r['message']:
+                r['message']['uart_wait_us'] = 10**12
+        with self.assertRaisesRegex(ValueError, 'UART'):
             analyze_run(changed)
 
 class DeadlineTests(unittest.TestCase):

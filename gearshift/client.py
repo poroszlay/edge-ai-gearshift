@@ -26,6 +26,7 @@ class Client:
         self.mode, self.run_id = mode, uuid.uuid4().hex
         self.sequence = 0
         self.started = self.last_batch_end = time.monotonic()
+        self.last_execute_ack = self.started
 
     def log(self, event, **fields):
         # Every event retains the explicitly selected origin.
@@ -90,6 +91,13 @@ class Client:
                 raise ProtocolError('invalid_hardware_measurement')
             memory_fields = dict(memory=memory, end_us=ack['end_us'], uart_wait_us=ack['uart_wait_us'],
                                  model_id=self.model_id)
+            now = time.monotonic()
+            # This is an upper-bound sanity check, not a correction or a task
+            # deadline tolerance. Host ACK spacing includes this execution too.
+            if ack['uart_wait_us'] > (now - self.last_execute_ack) * 1_000_000 + 1_000_000:
+                self.log('failure', error='invalid_hardware_uart_wait', request_id=str(self.sequence))
+                raise ProtocolError('invalid_hardware_uart_wait')
+            self.last_execute_ack = now
         # Raw receive events remain lossless, including malformed ACKs. Only
         # validated measurement events are suitable for presentation.
         self.log('batch_memory', batch_id=batch_id, phase=phase, series=series,

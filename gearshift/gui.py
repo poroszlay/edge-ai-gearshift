@@ -142,12 +142,13 @@ class Window(QMainWindow):
         hardware = self.device.currentIndex() == 2
         for widget in (self.serial_port, self.model_id, self.baud):
             widget.setEnabled(not busy and hardware)
-        self.origin.setText('ESP32 • saját INT8 MLP • mért MCU-idő és heap' if hardware else
-                            'SZIMULÁCIÓ • hold döntési stub • virtuális idő • memóriabecslés')
-        self.time_plot.setTitle('MCU-feldolgozás – utolsó 2000 feladat' if hardware else
-                                'Virtuális MCU-feldolgozás – utolsó 2000 feladat')
-        self.memory_plot.setTitle('Szabad heap a sorozat után' if hardware else 'Szimulált munkakészlet – nem mért RAM')
-        self.memory_plot.setLabel('left', 'Szabad heap' if hardware else 'Memóriabecslés', units='B')
+        if not self.points and not self.memory:
+            self.origin.setText('ESP32 • saját INT8 MLP • mért MCU-idő és heap' if hardware else
+                                'SZIMULÁCIÓ • hold döntési stub • virtuális idő • memóriabecslés')
+            self.time_plot.setTitle('MCU-feldolgozás – utolsó 2000 feladat' if hardware else
+                                    'Virtuális MCU-feldolgozás – utolsó 2000 feladat')
+            self.memory_plot.setTitle('Szabad heap a sorozat után' if hardware else 'Szimulált munkakészlet – nem mért RAM')
+            self.memory_plot.setLabel('left', 'Szabad heap' if hardware else 'Memóriabecslés', units='B')
         for _, box in self.profiles:
             box.setEnabled(not busy and self.mode.currentIndex() == 1)
         self.explanation.setText(
